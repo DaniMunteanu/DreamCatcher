@@ -3,15 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://ccn24xlhepyt6" path="res://Sprites/RockObstacle.png" id="1_6xoaw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a0jji"]
-size = Vector2(131, 96)
+size = Vector2(131, 97)
 
 [node name="StaticObstacle" type="StaticBody2D"]
-position = Vector2(-42, -82)
+position = Vector2(3, -1)
 
 [node name="RockObstacle" type="Sprite2D" parent="."]
-position = Vector2(350, 219)
+position = Vector2(-7, 37)
 texture = ExtResource("1_6xoaw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(355.5, 183)
+position = Vector2(-1, 2)
 shape = SubResource("RectangleShape2D_a0jji")
