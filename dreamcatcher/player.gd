@@ -11,4 +11,7 @@ func _physics_process(delta):
 		get_node("PlayerTestVisual").play_idle_animation()
 	else:
 		get_node("PlayerTestVisual").play_reset_animation()
+		
+	
+		
 	
