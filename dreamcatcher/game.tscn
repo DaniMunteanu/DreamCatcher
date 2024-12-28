@@ -13,9 +13,10 @@ layer = -10
 anchors_preset = -1
 anchor_right = 1.899
 anchor_bottom = 1.83
-offset_left = 4.0
-offset_right = 4.0
-offset_bottom = 0.159912
+offset_left = 7.0
+offset_top = 65.0
+offset_right = 51.64
+offset_bottom = 65.2
 color = Color(0.650635, 0.672571, 0.667218, 1)
 
 [node name="StaticObstacle" parent="." instance=ExtResource("2_0gf4b")]
@@ -28,7 +29,7 @@ position = Vector2(786, 366)
 position = Vector2(655, 366)
 
 [node name="PlayerTest" parent="." instance=ExtResource("1_3jxgd")]
-position = Vector2(175, 187)
+position = Vector2(356, 195)
 
 [node name="Sleepless" parent="." instance=ExtResource("3_h28rv")]
 position = Vector2(279, 514)
