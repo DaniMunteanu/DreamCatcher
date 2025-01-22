@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bl6st56os8bv6"]
+
+[ext_resource type="Script" path="res://test_weapon.gd" id="1_yv80n"]
+[ext_resource type="Texture2D" uid="uid://cc0oles5o81vc" path="res://Sprites/TestWeapon.png" id="2_m7vyi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ln2n"]
+radius = 11.0454
+
+[node name="TestWeapon" type="Area2D"]
+script = ExtResource("1_yv80n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4ln2n")
+
+[node name="TestWeaponPivot" type="Marker2D" parent="."]
+position = Vector2(-48, -1)
+
+[node name="TestWeapon" type="Sprite2D" parent="TestWeaponPivot"]
+position = Vector2(48, 0)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_m7vyi")
+
+[node name="LeftShootingPoint" type="Marker2D" parent="TestWeaponPivot/TestWeapon"]
+unique_name_in_owner = true
+position = Vector2(-24, 29)
+
+[node name="RightShootingPoint" type="Marker2D" parent="TestWeaponPivot/TestWeapon"]
+unique_name_in_owner = true
+position = Vector2(30, 0)
