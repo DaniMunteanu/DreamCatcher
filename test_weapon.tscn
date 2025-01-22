@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cc0oles5o81vc" path="res://Sprites/TestWeapon.png" id="2_m7vyi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ln2n"]
-radius = 223.379
+radius = 11.0454
 
 [node name="TestWeapon" type="Area2D"]
 script = ExtResource("1_yv80n")
@@ -13,9 +13,11 @@ script = ExtResource("1_yv80n")
 shape = SubResource("CircleShape2D_4ln2n")
 
 [node name="TestWeaponPivot" type="Marker2D" parent="."]
+position = Vector2(-48, -1)
 
 [node name="TestWeapon" type="Sprite2D" parent="TestWeaponPivot"]
 position = Vector2(48, 0)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_m7vyi")
 
 [node name="LeftShootingPoint" type="Marker2D" parent="TestWeaponPivot/TestWeapon"]
