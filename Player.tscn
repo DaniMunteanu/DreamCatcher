@@ -1,20 +1,21 @@
-[gd_scene load_steps=19 format=3 uid="uid://cupqqwddnk40"]
+[gd_scene load_steps=21 format=3 uid="uid://cupqqwddnk40"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_8iasi"]
 [ext_resource type="Script" path="res://player_animation.gd" id="2_vu52e"]
 [ext_resource type="Texture2D" uid="uid://dstq37dy3mwk8" path="res://Sprites/PlayerIdleRight.png" id="3_eeue7"]
 [ext_resource type="PackedScene" uid="uid://bl6st56os8bv6" path="res://test_weapon.tscn" id="4_u5fxh"]
 [ext_resource type="Texture2D" uid="uid://1dao1nwmrcbv" path="res://Sprites/PlayerWalkingRight.png" id="4_y5qpv"]
-[ext_resource type="Texture2D" uid="uid://srwjv7qpxdp3" path="res://Sprites/PlayerIdleLeft.png" id="5_os13g"]
-[ext_resource type="Texture2D" uid="uid://chpbpo47e5e7c" path="res://Sprites/PlayerWalkingLeft.png" id="6_t6ghj"]
+[ext_resource type="Texture2D" uid="uid://oacbc33t748p" path="res://Sprites/PlayerWalkingDown.png" id="6_vlphq"]
 [ext_resource type="Texture2D" uid="uid://2chcy1ivsvwd" path="res://Sprites/PlayerFiringRight.png" id="7_dsh5e"]
-[ext_resource type="Texture2D" uid="uid://bdnks4i1ri1e6" path="res://Sprites/PlayerFiringLeft.png" id="8_fdivy"]
+[ext_resource type="Texture2D" uid="uid://g8o5l8m20xjs" path="res://Sprites/PlayerWalkingUp.png" id="7_ywyua"]
+[ext_resource type="Texture2D" uid="uid://rxyhnvvctxe3" path="res://Sprites/PlayerFiringDown.png" id="8_0duo4"]
+[ext_resource type="Texture2D" uid="uid://bpjmkmtq2jb50" path="res://Sprites/PlayerJumpingRight.png" id="9_mbps4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jciwr"]
 size = Vector2(19, 9)
 
-[sub_resource type="Animation" id="Animation_f467l"]
-resource_name = "PlayerFiringLeft"
+[sub_resource type="Animation" id="Animation_xsgow"]
+resource_name = "PlayerFiringDown"
 loop_mode = 1
 step = 0.0
 tracks/0/type = "value"
@@ -27,7 +28,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("8_fdivy")]
+"values": [ExtResource("8_0duo4")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -75,7 +76,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(8, -69)]
+"values": [Vector2(14, -69)]
 }
 
 [sub_resource type="Animation" id="Animation_xukvy"]
@@ -143,71 +144,6 @@ tracks/4/keys = {
 "values": [Vector2(14, -69)]
 }
 
-[sub_resource type="Animation" id="Animation_wiaqc"]
-resource_name = "PlayerIdleLeft"
-loop_mode = 1
-step = 0.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerModel:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("5_os13g")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerModel:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [2]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("PlayerModel:vframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("PlayerModel:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 1]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("PlayerModel:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(11, -69)]
-}
-
 [sub_resource type="Animation" id="Animation_gyjmh"]
 resource_name = "PlayerIdleRight"
 loop_mode = 1
@@ -260,9 +196,99 @@ tracks/3/keys = {
 "update": 1,
 "values": [0, 1]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PlayerModel:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(13, -69)]
+}
 
-[sub_resource type="Animation" id="Animation_dvdm8"]
-resource_name = "PlayerWalkingLeft"
+[sub_resource type="Animation" id="Animation_33sp4"]
+resource_name = "PlayerJumpingRight"
+step = 0.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerModel:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_mbps4")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerModel:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerModel:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayerModel:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PlayerModel:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(13, -96)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("..")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.98),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"on_states_reset"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_up8hn"]
+resource_name = "PlayerWalkingDown"
 loop_mode = 1
 step = 0.0
 tracks/0/type = "value"
@@ -275,7 +301,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("6_t6ghj")]
+"values": [ExtResource("6_vlphq")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -312,6 +338,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0, 1]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PlayerModel:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(14, -69)]
 }
 
 [sub_resource type="Animation" id="Animation_ced3y"]
@@ -365,6 +403,83 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0, 1]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PlayerModel:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(13, -69)]
+}
+
+[sub_resource type="Animation" id="Animation_haxgp"]
+resource_name = "PlayerWalkingUp"
+loop_mode = 1
+step = 0.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerModel:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_ywyua")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerModel:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerModel:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayerModel:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PlayerModel:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(14, -69)]
 }
 
 [sub_resource type="Animation" id="Animation_updpu"]
@@ -432,12 +547,13 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ga17d"]
 _data = {
-"PlayerFiringLeft": SubResource("Animation_f467l"),
+"PlayerFiringDown": SubResource("Animation_xsgow"),
 "PlayerFiringRight": SubResource("Animation_xukvy"),
-"PlayerIdleLeft": SubResource("Animation_wiaqc"),
 "PlayerIdleRight": SubResource("Animation_gyjmh"),
-"PlayerWalkingLeft": SubResource("Animation_dvdm8"),
+"PlayerJumpingRight": SubResource("Animation_33sp4"),
+"PlayerWalkingDown": SubResource("Animation_up8hn"),
 "PlayerWalkingRight": SubResource("Animation_ced3y"),
+"PlayerWalkingUp": SubResource("Animation_haxgp"),
 "RESET": SubResource("Animation_updpu")
 }
 

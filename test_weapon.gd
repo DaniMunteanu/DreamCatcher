@@ -13,15 +13,15 @@ func _physics_process(delta):
 	if fire_timer < fire_rate:
 		fire_timer += delta
 	
-	if Input.is_action_pressed("shoot") && fire_timer >= fire_rate:
+	if Input.is_action_pressed("fire") && fire_timer >= fire_rate:
 		visible = true
-		shoot()
+		fire()
 		fire_timer = 0
 		
-	if Input.is_action_just_released("shoot"):
+	if Input.is_action_just_released("fire"):
 		visible = false
 
-func shoot():
+func fire():
 	var new_left_bullet = BULLET.instantiate()
 	new_left_bullet.global_position = %LeftShootingPoint.global_position
 	new_left_bullet.global_rotation = %LeftShootingPoint.global_rotation
