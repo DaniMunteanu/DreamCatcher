@@ -25,7 +25,7 @@ func play_firing_down_animation():
 	get_node("PlayerAnimation").play("PlayerFiringDown")
 	
 func play_firing_up_animation():
-	get_node("PlayerAnimation").play("PlayerWalkingUp")
+	get_node("PlayerAnimation").play("PlayerFiringUp")
 	
 func play_jumping_right_animation():
 	get_node("PlayerAnimation").play("PlayerJumpingRight")
