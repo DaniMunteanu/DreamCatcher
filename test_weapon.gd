@@ -2,6 +2,12 @@ extends Area2D
 
 const BULLET = preload("res://projectile.tscn")
 
+@onready var animation_player = $WeaponAnimationPlayer
+@onready var sprite = $TestWeapon
+
+enum fire_direction {LEFT, RIGHT, UP, DOWN}
+var current_fire_direction = fire_direction.LEFT
+
 var fire_rate = 1.0
 var fire_timer : float
 
@@ -9,7 +15,6 @@ func _ready():
 	visible = false
 
 func _physics_process(delta):
-	look_at(get_global_mouse_position())
 	if fire_timer < fire_rate:
 		fire_timer += delta
 	
@@ -22,6 +27,44 @@ func _physics_process(delta):
 		visible = false
 
 func fire():
+	
+	#var firing_angle = Global.cursor_angle
+	
+	"
+	match(current_fire_direction):
+		fire_direction.LEFT:
+			sprite.flip_h = true
+			animation_player.play_fire_right_animation()
+		fire_direction.RIGHT:
+			sprite.flip_h = false
+			animation_player.play_fire_right_animation()
+		fire_direction.UP:
+			sprite.flip_h = true
+			animation_player.play_fire_down_animation()
+		fire_direction.DOWN:
+			sprite.flip_h = false
+			animation_player.play_fire_down_animation()
+	"
+	
+	"""
+	if Global.cursor_angle <= 315:
+		if Global.cursor_angle > 225:
+			sprite.flip_h = true
+			animation_player.play_fire_down_animation()
+		elif Global.cursor_angle > 135:
+			sprite.flip_h = true
+			animation_player.play_fire_right_animation()
+		elif Global.cursor_angle > 45:
+			sprite.flip_h = false
+			animation_player.play_fire_down_animation()
+		else:
+			sprite.flip_h = false
+			animation_player.play_fire_right_animation()
+	else:
+		sprite.flip_h = false
+		animation_player.play_fire_right_animation()
+	"""
+	
 	var new_left_bullet = BULLET.instantiate()
 	new_left_bullet.global_position = %LeftShootingPoint.global_position
 	new_left_bullet.global_rotation = %LeftShootingPoint.global_rotation
