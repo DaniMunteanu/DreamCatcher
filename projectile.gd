@@ -1,9 +1,8 @@
 extends Area2D
 
-var speed = 700
+var speed = 400
 
-var mouse_location = Vector2()
+var direction = Vector2()
 
 func _physics_process(delta):
-	var shooting_direction = mouse_location
-	global_position -= shooting_direction * speed * delta
+	global_position += direction * speed * delta

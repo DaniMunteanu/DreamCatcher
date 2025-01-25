@@ -9,6 +9,8 @@ extends CharacterBody2D
 enum player_states {MOVE, JUMP, FIRE}
 var current_state = player_states.MOVE
 
+var jumping_direction = Vector2.ZERO
+
 func update_movement():
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	direction = direction.normalized()
@@ -17,6 +19,7 @@ func update_movement():
 	
 func update_sprite():
 	if Input.is_action_pressed("evade") :
+		jumping_direction = get_global_position().direction_to(get_global_mouse_position())
 		current_state = player_states.JUMP
 		
 	if Input.is_action_just_pressed("fire"):
@@ -37,12 +40,18 @@ func update_sprite():
 				animation_player.play_walking_right_animation()
 	else:
 		animation_player.play_idle_right_animation()
-	
 
-func jump():
+func jump(jumping_direction):
 	animation_player.play_jumping_right_animation()
 	
+	velocity = jumping_direction * 97.0
+	move_and_slide()
+	
 func fire(delta):
+	if Input.is_action_pressed("evade") :
+		jumping_direction = get_global_position().direction_to(get_global_mouse_position())
+		current_state = player_states.JUMP
+	
 	weapon.fire(delta)
 	
 	var firing_angle = rad_to_deg(global_position.angle_to_point(get_global_mouse_position()))
@@ -76,9 +85,11 @@ func _physics_process(delta):
 		player_states.MOVE:
 			update_movement()
 			update_sprite()
-		player_states.JUMP:
-			jump()
+			get_node("JumpMarkerAnimation").play("JumpReady")
+		player_states.JUMP: 
+			jump(jumping_direction)
 		player_states.FIRE:
 			update_movement()
 			fire(delta)
+			get_node("JumpMarkerAnimation").play("JumpReady")
 	

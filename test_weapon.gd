@@ -20,18 +20,20 @@ func fire(delta):
 		fire_timer = 0.0
 
 func shoot():
-	#var firing_angle = Global.cursor_angle
+	%LeftShootingPoint.look_at(get_global_mouse_position())
 	
 	var new_left_bullet = BULLET.instantiate()
 	new_left_bullet.global_position = %LeftShootingPoint.global_position
 	new_left_bullet.global_rotation = %LeftShootingPoint.global_rotation
-	new_left_bullet.mouse_location = (global_position - get_global_mouse_position()).normalized()
+	new_left_bullet.direction = global_position.direction_to(get_global_mouse_position()).normalized()
 	%LeftShootingPoint.add_child(new_left_bullet)
 	
 	await get_tree().create_timer(0.5).timeout
 	
+	%RightShootingPoint.look_at(get_global_mouse_position())
+	
 	var new_right_bullet = BULLET.instantiate()
 	new_right_bullet.global_position = %RightShootingPoint.global_position
 	new_right_bullet.global_rotation = %RightShootingPoint.global_rotation
-	new_right_bullet.mouse_location = (global_position - get_global_mouse_position()).normalized()
+	new_right_bullet.direction = global_position.direction_to(get_global_mouse_position()).normalized()
 	%RightShootingPoint.add_child(new_right_bullet)
