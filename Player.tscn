@@ -1309,6 +1309,7 @@ flip_h = true
 hframes = 2
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
+zoom = Vector2(0.43, 0.43)
 
 [node name="JumpMarker" type="Sprite2D" parent="."]
 position = Vector2(21, 1)

@@ -1,0 +1,10 @@
+extends FloorRoom
+
+func _init():
+	room_index = 19
+	available_rooms = [7,20,30]
+	can_extend = true
+	
+func reset_room():
+	available_rooms = [7,20,30]
+	can_extend = true
