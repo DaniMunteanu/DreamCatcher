@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 #200
-@export var speed = 1000.0
+@export var speed = 200.0
 
 @onready var animation_player = $PlayerAnimationManager
 @onready var sprite = $PlayerAnimationManager/PlayerModel
@@ -14,10 +14,6 @@ var jumping_direction = Vector2.ZERO
 var jumping_target_position = Vector2.ZERO
 
 var jumping_distance = 96.0
-
-func _ready():
-	jumping_distance = global_position.distance_to($"%MaxJumpMarker".global_position)
-	print(jumping_distance)
 
 func update_movement():
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -32,7 +28,7 @@ func update_sprite():
 	
 		current_state = player_states.JUMP
 		
-	if Input.is_action_just_pressed("fire"):
+	if Input.is_action_pressed("fire"):
 		current_state = player_states.FIRE
 	
 	if velocity.length() > 0.0:

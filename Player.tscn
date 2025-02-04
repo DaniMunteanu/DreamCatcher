@@ -1283,6 +1283,7 @@ _data = {
 }
 
 [node name="PlayerTest" type="CharacterBody2D"]
+z_index = 1
 platform_floor_layers = 4294967040
 script = ExtResource("1_8iasi")
 
@@ -1309,16 +1310,11 @@ flip_h = true
 hframes = 2
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
-zoom = Vector2(0.43, 0.43)
 
 [node name="JumpMarker" type="Sprite2D" parent="."]
 position = Vector2(21, 1)
 texture = ExtResource("11_sn1d5")
 hframes = 2
-
-[node name="MaxJumpMarker" type="Marker2D" parent="JumpMarker"]
-unique_name_in_owner = true
-position = Vector2(0, -95)
 
 [node name="JumpMarkerAnimation" type="AnimationPlayer" parent="."]
 libraries = {

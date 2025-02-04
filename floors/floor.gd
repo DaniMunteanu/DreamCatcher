@@ -1,6 +1,6 @@
 extends Node2D
 
-const MINIMUM_ROOMS = 10
+const MINIMUM_ROOMS = 6
 
 var rooms_res = []
 var placed_rooms = []
@@ -66,7 +66,7 @@ func initialize_resources():
 	markers[18] = get_node("Marker_18")
 	markers[19] = get_node("Marker_19")
 	markers[20] = get_node("Marker_20")
-	markers[21] = get_node("Marker_22")
+	markers[21] = get_node("Marker_21")
 	markers[22] = get_node("Marker_22")
 	markers[23] = get_node("Marker_23")
 	markers[24] = get_node("Marker_24")
@@ -81,7 +81,7 @@ func _ready():
 	initialize_resources()
 	
 func reset():
-	for i in 30:
+	for i in 31:
 		if placed_rooms[i] != null:
 			placed_rooms[i].queue_free()
 			placed_rooms[i].reset_room()

@@ -15,13 +15,19 @@ func next_room() -> int:
 	return picked_room
 	
 func update_neighbours(placed_rooms: Array, extendable_rooms: Array):
+	var to_be_removed = []
+	
 	for i in available_rooms:
 		if placed_rooms[i] != null:
-			available_rooms.erase(i)
-			placed_rooms[i].available_rooms.erase(room_index)
-			if placed_rooms[i].available_rooms.is_empty():
-				placed_rooms[i].can_extend = false
-				extendable_rooms.erase(i)
+			to_be_removed.append(i)
+			
+	for j in to_be_removed:
+		available_rooms.erase(j)
+		placed_rooms[j].available_rooms.erase(room_index)
+		if placed_rooms[j].available_rooms.is_empty():
+			placed_rooms[j].can_extend = false
+			extendable_rooms.erase(j)
+			
 	if available_rooms.is_empty():
 		can_extend = false
 	print("Available entrances for room ", room_index, " are ", available_rooms)
