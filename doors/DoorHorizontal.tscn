@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b78gkby3vi0em"]
+
+[ext_resource type="Texture2D" uid="uid://bjqxlcscd1gxm" path="res://Sprites/DoorHorizontal.png" id="1_2m66s"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="DoorHorizontal" type="Sprite2D" parent="."]
+position = Vector2(48, 48)
+texture = ExtResource("1_2m66s")

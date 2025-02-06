@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://1cyusdr74lrj"]
+[gd_scene load_steps=42 format=3 uid="uid://1cyusdr74lrj"]
 
 [ext_resource type="Script" path="res://floors/floor.gd" id="1_icq2i"]
 [ext_resource type="PackedScene" uid="uid://556abvc22nkf" path="res://floors/FloorTemplate1.tscn" id="1_r7rng"]
@@ -34,6 +34,12 @@
 [ext_resource type="PackedScene" uid="uid://2o0r4st080ti" path="res://rooms/Floor1_Room18.tscn" id="31_3yghw"]
 [ext_resource type="PackedScene" uid="uid://c6l810xpyje1b" path="res://rooms/Floor1_Room30.tscn" id="32_yx44l"]
 [ext_resource type="PackedScene" uid="uid://cupqqwddnk40" path="res://Player.tscn" id="33_fpr7m"]
+[ext_resource type="PackedScene" uid="uid://bkwj0r7js2wrf" path="res://doors/DoorLeft.tscn" id="35_low0i"]
+[ext_resource type="PackedScene" uid="uid://dxbokub51lmpb" path="res://doors/DoorRight.tscn" id="36_nlbhn"]
+[ext_resource type="PackedScene" uid="uid://btujbbk36iulp" path="res://doors/DoorRightTop.tscn" id="37_f0wve"]
+[ext_resource type="PackedScene" uid="uid://7agqnhy1ggll" path="res://doors/DoorLeftTop.tscn" id="38_vax8t"]
+[ext_resource type="PackedScene" uid="uid://b78gkby3vi0em" path="res://doors/DoorHorizontal.tscn" id="39_xlc2i"]
+[ext_resource type="PackedScene" uid="uid://cdhb1844g65mq" path="res://doors/DoorVertical.tscn" id="40_vrmht"]
 
 [sub_resource type="GDScript" id="GDScript_85u5w"]
 script/source = "extends Node2D
@@ -237,3 +243,207 @@ position = Vector2(96, 1680)
 
 [node name="Marker_30" type="Marker2D" parent="."]
 position = Vector2(96, 1680)
+
+[node name="Door_19" parent="." instance=ExtResource("35_low0i")]
+position = Vector2(1340, 572)
+
+[node name="Marker_door_19" type="Marker2D" parent="."]
+position = Vector2(1339, 572)
+
+[node name="Door_20" parent="." instance=ExtResource("36_nlbhn")]
+position = Vector2(1676, 572)
+
+[node name="Marker_door_20" type="Marker2D" parent="."]
+position = Vector2(1676, 572)
+
+[node name="Door_41" parent="." instance=ExtResource("37_f0wve")]
+position = Vector2(1004, 188)
+
+[node name="Marker_door_41" type="Marker2D" parent="."]
+position = Vector2(1004, 188)
+
+[node name="Door_42" parent="." instance=ExtResource("38_vax8t")]
+position = Vector2(2012, 188)
+
+[node name="Marker_door_42" type="Marker2D" parent="."]
+position = Vector2(2012, 188)
+
+[node name="Door_31" parent="." instance=ExtResource("39_xlc2i")]
+position = Vector2(1488, 192)
+
+[node name="Marker_door_31" type="Marker2D" parent="."]
+position = Vector2(1488, 192)
+
+[node name="Door_40" parent="." instance=ExtResource("39_xlc2i")]
+position = Vector2(528, 432)
+
+[node name="Marker_door_40" type="Marker2D" parent="."]
+position = Vector2(528, 432)
+
+[node name="Door_43" parent="." instance=ExtResource("39_xlc2i")]
+position = Vector2(2448, 432)
+
+[node name="Marker_door_43" type="Marker2D" parent="."]
+position = Vector2(2448, 432)
+
+[node name="Door_1" parent="." instance=ExtResource("39_xlc2i")]
+position = Vector2(1200, 1200)
+
+[node name="Marker_door_1" type="Marker2D" parent="."]
+position = Vector2(1200, 1200)
+
+[node name="Door_4" parent="." instance=ExtResource("39_xlc2i")]
+position = Vector2(1776, 1200)
+
+[node name="Marker_door_4" type="Marker2D" parent="."]
+position = Vector2(1776, 1200)
+
+[node name="Door_6" parent="." instance=ExtResource("39_xlc2i")]
+position = Vector2(1776, 1824)
+
+[node name="Marker_door_6" type="Marker2D" parent="."]
+position = Vector2(1776, 1824)
+
+[node name="Door_9" parent="." instance=ExtResource("39_xlc2i")]
+position = Vector2(1200, 1824)
+
+[node name="Marker_door_9" type="Marker2D" parent="."]
+position = Vector2(1200, 1824)
+
+[node name="Door_37" parent="." instance=ExtResource("39_xlc2i")]
+position = Vector2(528, 2592)
+
+[node name="Marker_door_37" type="Marker2D" parent="."]
+position = Vector2(528, 2592)
+
+[node name="Door_35" parent="." instance=ExtResource("39_xlc2i")]
+position = Vector2(1488, 2832)
+
+[node name="Marker_door_35" type="Marker2D" parent="."]
+position = Vector2(1488, 2832)
+
+[node name="Door_46" parent="." instance=ExtResource("39_xlc2i")]
+position = Vector2(2448, 2592)
+
+[node name="Marker_door_46" type="Marker2D" parent="."]
+position = Vector2(2448, 2592)
+
+[node name="Door_18" parent="." instance=ExtResource("40_vrmht")]
+position = Vector2(768, 720)
+
+[node name="Marker_door_18" type="Marker2D" parent="."]
+position = Vector2(768, 720)
+
+[node name="Door_2" parent="." instance=ExtResource("40_vrmht")]
+position = Vector2(1440, 1008)
+
+[node name="Marker_door_2" type="Marker2D" parent="."]
+position = Vector2(1440, 1008)
+
+[node name="Door_3" parent="." instance=ExtResource("40_vrmht")]
+position = Vector2(1584, 1008)
+
+[node name="Marker_door_3" type="Marker2D" parent="."]
+position = Vector2(1584, 1008)
+
+[node name="Door_21" parent="." instance=ExtResource("40_vrmht")]
+position = Vector2(2256, 720)
+
+[node name="Marker_door_21" type="Marker2D" parent="."]
+position = Vector2(2256, 720)
+
+[node name="Door_10" parent="." instance=ExtResource("40_vrmht")]
+position = Vector2(720, 1488)
+
+[node name="Marker_door_10" type="Marker2D" parent="."]
+position = Vector2(720, 1488)
+
+[node name="Door_0" parent="." instance=ExtResource("40_vrmht")]
+position = Vector2(1152, 1488)
+
+[node name="Marker_door_0" type="Marker2D" parent="."]
+position = Vector2(1152, 1488)
+
+[node name="Door_5" parent="." instance=ExtResource("40_vrmht")]
+position = Vector2(1872, 1488)
+
+[node name="Marker_door_5" type="Marker2D" parent="."]
+position = Vector2(1872, 1488)
+
+[node name="Door_13" parent="." instance=ExtResource("40_vrmht")]
+position = Vector2(2304, 1488)
+
+[node name="Marker_door_13" type="Marker2D" parent="."]
+position = Vector2(2304, 1488)
+
+[node name="Door_29" parent="." instance=ExtResource("40_vrmht")]
+position = Vector2(192, 1488)
+
+[node name="Marker_door_29" type="Marker2D" parent="."]
+position = Vector2(192, 1488)
+
+[node name="Door_33" parent="." instance=ExtResource("40_vrmht")]
+position = Vector2(2832, 1488)
+
+[node name="Marker_door_33" type="Marker2D" parent="."]
+position = Vector2(2832, 1488)
+
+[node name="Door_27" parent="." instance=ExtResource("40_vrmht")]
+position = Vector2(768, 2256)
+
+[node name="Marker_door_27" type="Marker2D" parent="."]
+position = Vector2(768, 2256)
+
+[node name="Door_24" parent="." instance=ExtResource("40_vrmht")]
+position = Vector2(2256, 2256)
+
+[node name="Marker_door_24" type="Marker2D" parent="."]
+position = Vector2(2256, 2256)
+
+[node name="Door_12" parent="." instance=ExtResource("35_low0i")]
+position = Vector2(1964, 860)
+
+[node name="Marker_door_12" type="Marker2D" parent="."]
+position = Vector2(1964, 860)
+
+[node name="Door_32" parent="." instance=ExtResource("35_low0i")]
+position = Vector2(2636, 812)
+
+[node name="Marker_door_32" type="Marker2D" parent="."]
+position = Vector2(2636, 812)
+
+[node name="Door_22" parent="." instance=ExtResource("35_low0i")]
+position = Vector2(2684, 1340)
+
+[node name="Marker_door_22" type="Marker2D" parent="."]
+position = Vector2(2684, 1340)
+
+[node name="Door_45" parent="." instance=ExtResource("35_low0i")]
+position = Vector2(2924, 1772)
+
+[node name="Marker_door_45" type="Marker2D" parent="."]
+position = Vector2(2924, 1772)
+
+[node name="Door_8" parent="." instance=ExtResource("40_vrmht")]
+position = Vector2(1440, 1968)
+
+[node name="Marker_door_8" type="Marker2D" parent="."]
+position = Vector2(1440, 1968)
+
+[node name="Door_7" parent="." instance=ExtResource("40_vrmht")]
+position = Vector2(1584, 1968)
+
+[node name="Marker_door_7" type="Marker2D" parent="."]
+position = Vector2(1584, 1968)
+
+[node name="Door_25" parent="." instance=ExtResource("35_low0i")]
+position = Vector2(1676, 2444)
+
+[node name="Marker_door_25" type="Marker2D" parent="."]
+position = Vector2(1676, 2444)
+
+[node name="Door_36" parent="." instance=ExtResource("35_low0i")]
+position = Vector2(1004, 2828)
+
+[node name="Marker_door_36" type="Marker2D" parent="."]
+position = Vector2(1004, 2828)

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://btujbbk36iulp"]
+
+[ext_resource type="Texture2D" uid="uid://c8kjvik1aivx1" path="res://Sprites/DoorRightTop.png" id="1_rqelr"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="DoorRightTop" type="Sprite2D" parent="."]
+position = Vector2(28, 50)
+texture = ExtResource("1_rqelr")
