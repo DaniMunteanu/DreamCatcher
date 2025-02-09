@@ -56,6 +56,7 @@ position = Vector2(1528, 1452)
 [node name="Floor1" parent="." instance=ExtResource("1_r7rng")]
 
 [node name="Room_0" parent="." instance=ExtResource("2_jhue4")]
+visible = false
 position = Vector2(912, 912)
 script = SubResource("GDScript_85u5w")
 
@@ -63,12 +64,14 @@ script = SubResource("GDScript_85u5w")
 position = Vector2(912, 912)
 
 [node name="Room_4" parent="." instance=ExtResource("3_n1h8n")]
+visible = false
 position = Vector2(1872, 1152)
 
 [node name="Marker_4" type="Marker2D" parent="."]
 position = Vector2(1872, 1152)
 
 [node name="Room_13" parent="." instance=ExtResource("4_ruk6n")]
+visible = false
 position = Vector2(2256, 1152)
 
 [node name="Marker_13" type="Marker2D" parent="."]
@@ -76,6 +79,7 @@ visible = false
 position = Vector2(2256, 1152)
 
 [node name="Room_25" parent="." instance=ExtResource("5_2xa5r")]
+visible = false
 position = Vector2(2832, 1200)
 
 [node name="Marker_25" type="Marker2D" parent="."]
@@ -83,367 +87,526 @@ visible = false
 position = Vector2(2832, 1200)
 
 [node name="Room_12" parent="." instance=ExtResource("6_e4k3u")]
+visible = false
 position = Vector2(2208, 432)
 
 [node name="Marker_12" type="Marker2D" parent="."]
 position = Vector2(2208, 432)
 
 [node name="Room_24" parent="." instance=ExtResource("7_6p7fn")]
+visible = false
 position = Vector2(2352, 432)
 
 [node name="Marker_24" type="Marker2D" parent="."]
 position = Vector2(2352, 432)
 
 [node name="Room_14" parent="." instance=ExtResource("8_ykpfp")]
+visible = false
 position = Vector2(2208, 1584)
 
 [node name="Marker_14" type="Marker2D" parent="."]
 position = Vector2(2208, 1584)
 
 [node name="Room_26" parent="." instance=ExtResource("9_uod38")]
+visible = false
 position = Vector2(2352, 1680)
 
 [node name="Marker_26" type="Marker2D" parent="."]
 position = Vector2(2352, 1680)
 
 [node name="Room_10" parent="." instance=ExtResource("10_p3tag")]
+visible = false
 position = Vector2(912, 192)
 
 [node name="Marker_10" type="Marker2D" parent="."]
 position = Vector2(912, 192)
 
 [node name="Room_22" parent="." instance=ExtResource("11_n140l")]
+visible = false
 position = Vector2(960, 0)
 
 [node name="Marker_22" type="Marker2D" parent="."]
 position = Vector2(960, 0)
 
 [node name="Room_3" parent="." instance=ExtResource("12_qvqc8")]
+visible = false
 position = Vector2(1536, 720)
 
 [node name="Marker_3" type="Marker2D" parent="."]
 position = Vector2(1536, 720)
 
 [node name="Room_11" parent="." instance=ExtResource("13_5tkgd")]
+visible = false
 position = Vector2(1584, 384)
 
 [node name="Marker_11" type="Marker2D" parent="."]
 position = Vector2(1584, 384)
 
 [node name="Room_23" parent="." instance=ExtResource("14_2xroj")]
+visible = false
 position = Vector2(1968, 96)
 
 [node name="Marker_23" type="Marker2D" parent="."]
 position = Vector2(1968, 96)
 
 [node name="Room_2" parent="." instance=ExtResource("15_uyap8")]
+visible = false
 position = Vector2(864, 720)
 
 [node name="Marker_2" type="Marker2D" parent="."]
 position = Vector2(864, 720)
 
 [node name="Room_9" parent="." instance=ExtResource("16_fehk8")]
+visible = false
 position = Vector2(768, 384)
 
 [node name="Marker_9" type="Marker2D" parent="."]
 position = Vector2(768, 384)
 
 [node name="Room_21" parent="." instance=ExtResource("17_gsqr0")]
+visible = false
 position = Vector2(480, 96)
 
 [node name="Marker_21" type="Marker2D" parent="."]
 position = Vector2(480, 96)
 
 [node name="Room_16" parent="." instance=ExtResource("18_24vnp")]
+visible = false
 position = Vector2(912, 2304)
 
 [node name="Marker_16" type="Marker2D" parent="."]
 position = Vector2(912, 2304)
 
 [node name="Room_28" parent="." instance=ExtResource("19_lskxk")]
+visible = false
 position = Vector2(960, 2736)
 
 [node name="Marker_28" type="Marker2D" parent="."]
 position = Vector2(960, 2736)
 
 [node name="Room_5" parent="." instance=ExtResource("20_7aalv")]
+visible = false
 position = Vector2(1536, 1776)
 
 [node name="Marker_5" type="Marker2D" parent="."]
 position = Vector2(1536, 1776)
 
 [node name="Room_15" parent="." instance=ExtResource("21_o148b")]
+visible = false
 position = Vector2(1584, 1968)
 
 [node name="Marker_15" type="Marker2D" parent="."]
 position = Vector2(1584, 1968)
 
 [node name="Room_27" parent="." instance=ExtResource("22_s3gkb")]
+visible = false
 position = Vector2(1968, 2592)
 
 [node name="Marker_27" type="Marker2D" parent="."]
 position = Vector2(1968, 2592)
 
 [node name="Room_6" parent="." instance=ExtResource("23_1tjoy")]
+visible = false
 position = Vector2(864, 1776)
 
 [node name="Marker_6" type="Marker2D" parent="."]
 position = Vector2(864, 1776)
 
 [node name="Room_17" parent="." instance=ExtResource("24_xpq87")]
+visible = false
 position = Vector2(768, 1968)
 
 [node name="Marker_17" type="Marker2D" parent="."]
 position = Vector2(768, 1968)
 
 [node name="Room_29" parent="." instance=ExtResource("25_tq34r")]
+visible = false
 position = Vector2(480, 2592)
 
 [node name="Marker_29" type="Marker2D" parent="."]
 position = Vector2(480, 2592)
 
 [node name="Room_1" parent="." instance=ExtResource("26_owjv1")]
+visible = false
 position = Vector2(720, 1152)
 
 [node name="Marker_1" type="Marker2D" parent="."]
 position = Vector2(720, 1152)
 
 [node name="Room_7" parent="." instance=ExtResource("27_2rvtd")]
+visible = false
 position = Vector2(192, 1152)
 
 [node name="Marker_7" type="Marker2D" parent="."]
 position = Vector2(192, 1152)
 
 [node name="Room_19" parent="." instance=ExtResource("28_vnwpq")]
+visible = false
 position = Vector2(0, 1056)
 
 [node name="Marker_19" type="Marker2D" parent="."]
 position = Vector2(0, 1056)
 
 [node name="Room_8" parent="." instance=ExtResource("29_uouxl")]
+visible = false
 position = Vector2(192, 432)
 
 [node name="Marker_8" type="Marker2D" parent="."]
 position = Vector2(192, 432)
 
 [node name="Room_20" parent="." instance=ExtResource("30_iapfw")]
+visible = false
 position = Vector2(96, 432)
 
 [node name="Marker_20" type="Marker2D" parent="."]
 position = Vector2(96, 432)
 
 [node name="Room_18" parent="." instance=ExtResource("31_3yghw")]
+visible = false
 position = Vector2(192, 1584)
 
 [node name="Marker_18" type="Marker2D" parent="."]
 position = Vector2(192, 1584)
 
 [node name="Room_30" parent="." instance=ExtResource("32_yx44l")]
+visible = false
 position = Vector2(96, 1680)
 
 [node name="Marker_30" type="Marker2D" parent="."]
 position = Vector2(96, 1680)
 
 [node name="Door_19" parent="." instance=ExtResource("35_low0i")]
+visible = false
 position = Vector2(1340, 572)
 
 [node name="Marker_door_19" type="Marker2D" parent="."]
 position = Vector2(1339, 572)
 
 [node name="Door_20" parent="." instance=ExtResource("36_nlbhn")]
+visible = false
 position = Vector2(1676, 572)
 
 [node name="Marker_door_20" type="Marker2D" parent="."]
 position = Vector2(1676, 572)
 
 [node name="Door_41" parent="." instance=ExtResource("37_f0wve")]
+visible = false
 position = Vector2(1004, 188)
 
 [node name="Marker_door_41" type="Marker2D" parent="."]
 position = Vector2(1004, 188)
 
 [node name="Door_42" parent="." instance=ExtResource("38_vax8t")]
+visible = false
 position = Vector2(2012, 188)
 
 [node name="Marker_door_42" type="Marker2D" parent="."]
 position = Vector2(2012, 188)
 
 [node name="Door_31" parent="." instance=ExtResource("39_xlc2i")]
+visible = false
 position = Vector2(1488, 192)
 
 [node name="Marker_door_31" type="Marker2D" parent="."]
 position = Vector2(1488, 192)
 
 [node name="Door_40" parent="." instance=ExtResource("39_xlc2i")]
+visible = false
 position = Vector2(528, 432)
 
 [node name="Marker_door_40" type="Marker2D" parent="."]
 position = Vector2(528, 432)
 
 [node name="Door_43" parent="." instance=ExtResource("39_xlc2i")]
+visible = false
 position = Vector2(2448, 432)
 
 [node name="Marker_door_43" type="Marker2D" parent="."]
 position = Vector2(2448, 432)
 
 [node name="Door_1" parent="." instance=ExtResource("39_xlc2i")]
+visible = false
 position = Vector2(1200, 1200)
 
 [node name="Marker_door_1" type="Marker2D" parent="."]
 position = Vector2(1200, 1200)
 
 [node name="Door_4" parent="." instance=ExtResource("39_xlc2i")]
+visible = false
 position = Vector2(1776, 1200)
 
 [node name="Marker_door_4" type="Marker2D" parent="."]
 position = Vector2(1776, 1200)
 
 [node name="Door_6" parent="." instance=ExtResource("39_xlc2i")]
+visible = false
 position = Vector2(1776, 1824)
 
 [node name="Marker_door_6" type="Marker2D" parent="."]
 position = Vector2(1776, 1824)
 
 [node name="Door_9" parent="." instance=ExtResource("39_xlc2i")]
+visible = false
 position = Vector2(1200, 1824)
 
 [node name="Marker_door_9" type="Marker2D" parent="."]
 position = Vector2(1200, 1824)
 
 [node name="Door_37" parent="." instance=ExtResource("39_xlc2i")]
+visible = false
 position = Vector2(528, 2592)
 
 [node name="Marker_door_37" type="Marker2D" parent="."]
 position = Vector2(528, 2592)
 
 [node name="Door_35" parent="." instance=ExtResource("39_xlc2i")]
+visible = false
 position = Vector2(1488, 2832)
 
 [node name="Marker_door_35" type="Marker2D" parent="."]
 position = Vector2(1488, 2832)
 
 [node name="Door_46" parent="." instance=ExtResource("39_xlc2i")]
+visible = false
 position = Vector2(2448, 2592)
 
 [node name="Marker_door_46" type="Marker2D" parent="."]
 position = Vector2(2448, 2592)
 
 [node name="Door_18" parent="." instance=ExtResource("40_vrmht")]
-position = Vector2(768, 720)
+visible = false
+position = Vector2(764, 716)
 
 [node name="Marker_door_18" type="Marker2D" parent="."]
-position = Vector2(768, 720)
+position = Vector2(764, 716)
 
 [node name="Door_2" parent="." instance=ExtResource("40_vrmht")]
-position = Vector2(1440, 1008)
+visible = false
+position = Vector2(1436, 1004)
 
 [node name="Marker_door_2" type="Marker2D" parent="."]
-position = Vector2(1440, 1008)
+position = Vector2(1436, 1004)
 
 [node name="Door_3" parent="." instance=ExtResource("40_vrmht")]
-position = Vector2(1584, 1008)
+visible = false
+position = Vector2(1580, 1004)
 
 [node name="Marker_door_3" type="Marker2D" parent="."]
-position = Vector2(1584, 1008)
+position = Vector2(1580, 1004)
 
 [node name="Door_21" parent="." instance=ExtResource("40_vrmht")]
-position = Vector2(2256, 720)
+visible = false
+position = Vector2(2252, 716)
 
 [node name="Marker_door_21" type="Marker2D" parent="."]
-position = Vector2(2256, 720)
+position = Vector2(2252, 716)
 
 [node name="Door_10" parent="." instance=ExtResource("40_vrmht")]
-position = Vector2(720, 1488)
+visible = false
+position = Vector2(716, 1484)
 
 [node name="Marker_door_10" type="Marker2D" parent="."]
-position = Vector2(720, 1488)
+position = Vector2(716, 1484)
 
 [node name="Door_0" parent="." instance=ExtResource("40_vrmht")]
-position = Vector2(1152, 1488)
+visible = false
+position = Vector2(1148, 1484)
 
 [node name="Marker_door_0" type="Marker2D" parent="."]
-position = Vector2(1152, 1488)
+position = Vector2(1148, 1484)
 
 [node name="Door_5" parent="." instance=ExtResource("40_vrmht")]
-position = Vector2(1872, 1488)
+visible = false
+position = Vector2(1868, 1484)
 
 [node name="Marker_door_5" type="Marker2D" parent="."]
-position = Vector2(1872, 1488)
+position = Vector2(1868, 1484)
 
 [node name="Door_13" parent="." instance=ExtResource("40_vrmht")]
-position = Vector2(2304, 1488)
+visible = false
+position = Vector2(2300, 1484)
 
 [node name="Marker_door_13" type="Marker2D" parent="."]
-position = Vector2(2304, 1488)
+position = Vector2(2300, 1484)
 
 [node name="Door_29" parent="." instance=ExtResource("40_vrmht")]
-position = Vector2(192, 1488)
+visible = false
+position = Vector2(188, 1484)
 
 [node name="Marker_door_29" type="Marker2D" parent="."]
-position = Vector2(192, 1488)
+position = Vector2(188, 1484)
 
 [node name="Door_33" parent="." instance=ExtResource("40_vrmht")]
-position = Vector2(2832, 1488)
+visible = false
+position = Vector2(2828, 1484)
 
 [node name="Marker_door_33" type="Marker2D" parent="."]
-position = Vector2(2832, 1488)
+position = Vector2(2828, 1484)
 
 [node name="Door_27" parent="." instance=ExtResource("40_vrmht")]
-position = Vector2(768, 2256)
+visible = false
+position = Vector2(764, 2252)
 
 [node name="Marker_door_27" type="Marker2D" parent="."]
-position = Vector2(768, 2256)
+position = Vector2(764, 2252)
 
 [node name="Door_24" parent="." instance=ExtResource("40_vrmht")]
-position = Vector2(2256, 2256)
+visible = false
+position = Vector2(2252, 2252)
 
 [node name="Marker_door_24" type="Marker2D" parent="."]
-position = Vector2(2256, 2256)
+position = Vector2(2252, 2252)
 
 [node name="Door_12" parent="." instance=ExtResource("35_low0i")]
+visible = false
 position = Vector2(1964, 860)
 
 [node name="Marker_door_12" type="Marker2D" parent="."]
 position = Vector2(1964, 860)
 
 [node name="Door_32" parent="." instance=ExtResource("35_low0i")]
+visible = false
 position = Vector2(2636, 812)
 
 [node name="Marker_door_32" type="Marker2D" parent="."]
 position = Vector2(2636, 812)
 
 [node name="Door_22" parent="." instance=ExtResource("35_low0i")]
+visible = false
 position = Vector2(2684, 1340)
 
 [node name="Marker_door_22" type="Marker2D" parent="."]
 position = Vector2(2684, 1340)
 
 [node name="Door_45" parent="." instance=ExtResource("35_low0i")]
+visible = false
 position = Vector2(2924, 1772)
 
 [node name="Marker_door_45" type="Marker2D" parent="."]
 position = Vector2(2924, 1772)
 
 [node name="Door_8" parent="." instance=ExtResource("40_vrmht")]
-position = Vector2(1440, 1968)
+visible = false
+position = Vector2(1436, 1964)
 
 [node name="Marker_door_8" type="Marker2D" parent="."]
-position = Vector2(1440, 1968)
+position = Vector2(1436, 1964)
 
 [node name="Door_7" parent="." instance=ExtResource("40_vrmht")]
-position = Vector2(1584, 1968)
+visible = false
+position = Vector2(1580, 1964)
 
 [node name="Marker_door_7" type="Marker2D" parent="."]
-position = Vector2(1584, 1968)
+position = Vector2(1580, 1964)
 
 [node name="Door_25" parent="." instance=ExtResource("35_low0i")]
+visible = false
 position = Vector2(1676, 2444)
 
 [node name="Marker_door_25" type="Marker2D" parent="."]
 position = Vector2(1676, 2444)
 
-[node name="Door_36" parent="." instance=ExtResource("35_low0i")]
+[node name="Door_36" parent="." instance=ExtResource("38_vax8t")]
+visible = false
 position = Vector2(1004, 2828)
 
 [node name="Marker_door_36" type="Marker2D" parent="."]
 position = Vector2(1004, 2828)
+
+[node name="Door_28" parent="." instance=ExtResource("35_low0i")]
+visible = false
+position = Vector2(380, 2204)
+
+[node name="Marker_door_28" type="Marker2D" parent="."]
+position = Vector2(380, 2204)
+
+[node name="Door_16" parent="." instance=ExtResource("35_low0i")]
+visible = false
+position = Vector2(332, 1676)
+
+[node name="Marker_door_16" type="Marker2D" parent="."]
+position = Vector2(332, 1676)
+
+[node name="Door_39" parent="." instance=ExtResource("35_low0i")]
+visible = false
+position = Vector2(92, 1244)
+
+[node name="Marker_door_39" type="Marker2D" parent="."]
+position = Vector2(92, 1244)
+
+[node name="Door_15" parent="." instance=ExtResource("35_low0i")]
+visible = false
+position = Vector2(1052, 2156)
+
+[node name="Marker_door_15" type="Marker2D" parent="."]
+position = Vector2(1052, 2156)
+
+[node name="Door_47" parent="." instance=ExtResource("37_f0wve")]
+visible = false
+position = Vector2(2012, 2828)
+
+[node name="Marker_door_47" type="Marker2D" parent="."]
+position = Vector2(2012, 2828)
+
+[node name="Door_11" parent="." instance=ExtResource("36_nlbhn")]
+visible = false
+position = Vector2(1052, 860)
+
+[node name="Marker_door_11" type="Marker2D" parent="."]
+position = Vector2(1052, 860)
+
+[node name="Door_30" parent="." instance=ExtResource("36_nlbhn")]
+visible = false
+position = Vector2(380, 812)
+
+[node name="Marker_door_30" type="Marker2D" parent="."]
+position = Vector2(380, 812)
+
+[node name="Door_17" parent="." instance=ExtResource("36_nlbhn")]
+visible = false
+position = Vector2(332, 1340)
+
+[node name="Marker_door_17" type="Marker2D" parent="."]
+position = Vector2(332, 1340)
+
+[node name="Door_38" parent="." instance=ExtResource("36_nlbhn")]
+visible = false
+position = Vector2(92, 1772)
+
+[node name="Marker_door_38" type="Marker2D" parent="."]
+position = Vector2(92, 1772)
+
+[node name="Door_26" parent="." instance=ExtResource("36_nlbhn")]
+visible = false
+position = Vector2(1340, 2444)
+
+[node name="Marker_door_26" type="Marker2D" parent="."]
+position = Vector2(1340, 2444)
+
+[node name="Door_14" parent="." instance=ExtResource("36_nlbhn")]
+visible = false
+position = Vector2(1964, 2156)
+
+[node name="Marker_door_14" type="Marker2D" parent="."]
+position = Vector2(1964, 2156)
+
+[node name="Door_34" parent="." instance=ExtResource("36_nlbhn")]
+visible = false
+position = Vector2(2636, 2204)
+
+[node name="Marker_door_34" type="Marker2D" parent="."]
+position = Vector2(2636, 2204)
+
+[node name="Door_23" parent="." instance=ExtResource("36_nlbhn")]
+visible = false
+position = Vector2(2684, 1676)
+
+[node name="Marker_door_23" type="Marker2D" parent="."]
+position = Vector2(2684, 1676)
+
+[node name="Door_44" parent="." instance=ExtResource("36_nlbhn")]
+visible = false
+position = Vector2(2924, 1244)
+
+[node name="Marker_door_44" type="Marker2D" parent="."]
+position = Vector2(2924, 1244)

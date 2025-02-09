@@ -5,5 +5,5 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="DoorVertical" type="Sprite2D" parent="."]
-position = Vector2(24, 48)
+position = Vector2(28, 52)
 texture = ExtResource("1_20mt1")
