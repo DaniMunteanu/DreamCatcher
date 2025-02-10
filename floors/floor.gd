@@ -4,15 +4,20 @@ const MINIMUM_ROOMS = 6
 
 var rooms_res = []
 var doors_res = []
+var walls_res = []
 
 var placed_rooms = []
-var placed_doors = []
+var placed_doors_or_walls = []
+var placed_doors_indexes = []
 var room_pairs = []
 
 var room_markers = []
 var door_markers = []
 
 var number_of_rooms = 0
+
+var extendable_rooms = []
+var rng = RandomNumberGenerator.new()
 
 func initialize_room_resources():
 	placed_rooms.resize(31)
@@ -84,6 +89,7 @@ func initialize_room_resources():
 	room_markers[30] = get_node("Marker_30")
 
 func initialize_door_resources():
+	placed_doors_or_walls.resize(48)
 	doors_res.resize(48)
 	
 	var door_horizontal = preload("res://doors/DoorHorizontal.tscn")
@@ -192,6 +198,62 @@ func initialize_door_resources():
 	door_markers[46] = get_node("Marker_door_46")
 	door_markers[47] = get_node("Marker_door_47")
 
+func initialize_wall_resources():
+	walls_res.resize(48)
+	
+	var single_wall = preload("res://walls/Wall1.tscn")
+	var horizontal_wall = preload("res://walls/Wall2_horizontal.tscn")
+	var vertical_wall = preload("res://walls/Wall2_vertical.tscn")
+	
+	walls_res[0] = vertical_wall
+	walls_res[1] = horizontal_wall
+	walls_res[2] = vertical_wall
+	walls_res[3] = vertical_wall
+	walls_res[4] = horizontal_wall
+	walls_res[5] = vertical_wall
+	walls_res[6] = horizontal_wall
+	walls_res[7] = vertical_wall
+	walls_res[8] = vertical_wall
+	walls_res[9] = horizontal_wall
+	walls_res[10] = vertical_wall
+	walls_res[11] = single_wall
+	walls_res[12] = single_wall
+	walls_res[13] = vertical_wall
+	walls_res[14] = single_wall
+	walls_res[15] = single_wall
+	walls_res[16] = single_wall
+	walls_res[17] = single_wall
+	walls_res[18] = vertical_wall
+	walls_res[19] = single_wall
+	walls_res[20] = single_wall
+	walls_res[21] = vertical_wall
+	walls_res[22] = single_wall
+	walls_res[23] = single_wall
+	walls_res[24] = vertical_wall
+	walls_res[25] = single_wall
+	walls_res[26] = single_wall
+	walls_res[27] = vertical_wall
+	walls_res[28] = single_wall
+	walls_res[29] = vertical_wall
+	walls_res[30] = single_wall
+	walls_res[31] = horizontal_wall
+	walls_res[32] = single_wall
+	walls_res[33] = vertical_wall
+	walls_res[34] = single_wall
+	walls_res[35] = horizontal_wall
+	walls_res[36] = vertical_wall
+	walls_res[37] = horizontal_wall
+	walls_res[38] = single_wall
+	walls_res[39] = single_wall
+	walls_res[40] = horizontal_wall
+	walls_res[41] = vertical_wall
+	walls_res[42] = vertical_wall
+	walls_res[43] = horizontal_wall
+	walls_res[44] = single_wall
+	walls_res[45] = single_wall
+	walls_res[46] = horizontal_wall
+	walls_res[47] = vertical_wall
+
 func initialize_room_pairs():
 	room_pairs.resize(48)
 	
@@ -247,6 +309,7 @@ func initialize_room_pairs():
 func _ready():
 	initialize_room_resources()
 	initialize_door_resources()
+	initialize_wall_resources()
 	initialize_room_pairs()
 	
 func reset():
@@ -255,20 +318,17 @@ func reset():
 			placed_rooms[i].queue_free()
 			placed_rooms[i].reset_room()
 	placed_rooms.fill(null)
+	extendable_rooms.clear()
 	
-	for j in placed_doors.size():
-		placed_doors[j].queue_free()
-	placed_doors.clear()
+	for j in 48:
+		if placed_doors_or_walls[j] != null: 
+			placed_doors_or_walls[j].queue_free()
+	placed_doors_or_walls.fill(null)
+	
+	placed_doors_indexes.clear()
 
-func generate():
-	reset()
-	
-	var rng = RandomNumberGenerator.new()
+func generate_rooms():
 	number_of_rooms = rng.randi_range(MINIMUM_ROOMS, MINIMUM_ROOMS+2)
-	print("------------------------------")
-	print("Number of generated rooms is ", number_of_rooms)
-	
-	var extendable_rooms = []
 	
 	placed_rooms[0] = rooms_res[0].instantiate()
 	placed_rooms[0].global_position = room_markers[0].global_position
@@ -278,11 +338,8 @@ func generate():
 	
 	for i in range (1,number_of_rooms):
 		var room_to_extend = extendable_rooms.pick_random()
-		print("Room to be extended is ", room_to_extend)
 		
 		var next_room = placed_rooms[room_to_extend].next_room()
-		print("New room is ", next_room)
-		
 		placed_rooms[next_room] = rooms_res[next_room].instantiate()
 		placed_rooms[next_room].global_position = room_markers[next_room].global_position
 		placed_rooms[next_room].update_neighbours(placed_rooms, extendable_rooms)
@@ -291,16 +348,26 @@ func generate():
 		if placed_rooms[next_room].can_extend:
 			extendable_rooms.append(next_room)
 	
+func generate_doors_and_walls():
 	for j in 48:
+		var new_door_or_wall
 		if (placed_rooms[room_pairs[j][0]] != null) and (placed_rooms[room_pairs[j][1]] != null):
-			var new_door = doors_res[j].instantiate()
-			placed_doors.append(new_door)
-			new_door.global_position = door_markers[j].global_position
-			add_child(new_door)
-			
+			new_door_or_wall = doors_res[j].instantiate()
+			placed_doors_indexes.append(j)
+		else:
+			new_door_or_wall = walls_res[j].instantiate()
+		new_door_or_wall.global_position = door_markers[j].global_position
+		add_child(new_door_or_wall)
+		placed_doors_or_walls[j] = new_door_or_wall
+
+func generate_floor():
+	reset()
+	generate_rooms()
+	generate_doors_and_walls()
+	placed_rooms[0].open_room(placed_doors_or_walls, placed_doors_indexes)
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("floor_generate"):
-		generate()
+		generate_floor()
 	
 	

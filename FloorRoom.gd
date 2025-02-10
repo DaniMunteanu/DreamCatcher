@@ -6,6 +6,14 @@ var room_index = 0
 var neighbour_rooms = []
 var available_rooms = []
 var can_extend = true
+var room_cleared = false
+var potential_doors = []
+
+func open_room(placed_doors_or_walls: Array, placed_doors_indexes: Array):
+	for i in potential_doors:
+		if i in placed_doors_indexes:
+			placed_doors_or_walls[i].open_door()
+	room_cleared = true
 
 func next_room() -> int:
 	var picked_room = available_rooms.pick_random()
@@ -30,7 +38,6 @@ func update_neighbours(placed_rooms: Array, extendable_rooms: Array):
 			
 	if available_rooms.is_empty():
 		can_extend = false
-	print("Available entrances for room ", room_index, " are ", available_rooms)
 
 func reset_room():
 	assert(false, "Please override `reset_room()` in the derived script.")
