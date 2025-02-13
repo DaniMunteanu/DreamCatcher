@@ -9,3 +9,6 @@ func _init():
 func reset_room():
 	available_rooms = [0,7]
 	can_extend = true
+
+func _on_room_1_0_enemies_defeated() -> void:
+	Global.clear_room.emit(room_index)

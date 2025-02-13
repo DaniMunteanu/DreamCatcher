@@ -36,4 +36,5 @@ func shoot():
 	new_right_bullet.global_position = %RightShootingPoint.global_position
 	new_right_bullet.global_rotation = %RightShootingPoint.global_rotation
 	new_right_bullet.direction = global_position.direction_to(get_global_mouse_position()).normalized()
-	%RightShootingPoint.add_child(new_right_bullet)
+	if Input.is_action_pressed("fire"):
+		%RightShootingPoint.add_child(new_right_bullet)

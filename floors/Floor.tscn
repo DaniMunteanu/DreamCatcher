@@ -26,7 +26,6 @@
 [ext_resource type="PackedScene" uid="uid://du88vb8g20c65" path="res://rooms/Floor1_Room6.tscn" id="23_1tjoy"]
 [ext_resource type="PackedScene" uid="uid://drrgv5e7mswt8" path="res://rooms/Floor1_Room17.tscn" id="24_xpq87"]
 [ext_resource type="PackedScene" uid="uid://bkwkau1qwe8nf" path="res://rooms/Floor1_Room29.tscn" id="25_tq34r"]
-[ext_resource type="PackedScene" uid="uid://bstnaq52088vj" path="res://rooms/Floor1_Room1.tscn" id="26_owjv1"]
 [ext_resource type="PackedScene" uid="uid://ca62mc5eil63p" path="res://rooms/Floor1_Room7.tscn" id="27_2rvtd"]
 [ext_resource type="PackedScene" uid="uid://bb0gqre5h1q3t" path="res://rooms/Floor1_Room19.tscn" id="28_vnwpq"]
 [ext_resource type="PackedScene" uid="uid://dgxxsogcjhq8h" path="res://rooms/Floor1_Room8.tscn" id="29_uouxl"]
@@ -40,6 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://7agqnhy1ggll" path="res://doors/DoorLeftTop.tscn" id="38_vax8t"]
 [ext_resource type="PackedScene" uid="uid://b78gkby3vi0em" path="res://doors/DoorHorizontal.tscn" id="39_xlc2i"]
 [ext_resource type="PackedScene" uid="uid://cdhb1844g65mq" path="res://doors/DoorVertical.tscn" id="40_vrmht"]
+[ext_resource type="PackedScene" uid="uid://fktce8tbderh" path="res://mobs/sleepless.tscn" id="41_81u8u"]
 
 [sub_resource type="GDScript" id="GDScript_85u5w"]
 script/source = "extends Node2D
@@ -225,10 +225,6 @@ position = Vector2(480, 2592)
 
 [node name="Marker_29" type="Marker2D" parent="."]
 position = Vector2(480, 2592)
-
-[node name="Room_1" parent="." instance=ExtResource("26_owjv1")]
-visible = false
-position = Vector2(720, 1152)
 
 [node name="Marker_1" type="Marker2D" parent="."]
 position = Vector2(720, 1152)
@@ -610,3 +606,6 @@ position = Vector2(2924, 1244)
 
 [node name="Marker_door_44" type="Marker2D" parent="."]
 position = Vector2(2924, 1244)
+
+[node name="Sleepless" parent="." instance=ExtResource("41_81u8u")]
+position = Vector2(1389, 1455)

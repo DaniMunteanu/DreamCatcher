@@ -2,19 +2,21 @@
 
 [ext_resource type="Script" path="res://projectile.gd" id="1_xuy4p"]
 [ext_resource type="Texture2D" uid="uid://3rr3j1mkjlxf" path="res://Sprites/DefaultWeaponProjectile.png" id="2_lv6nq"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mg2ye"]
-size = Vector2(5, 3)
+[ext_resource type="Script" path="res://Hitbox.gd" id="3_0uxg3"]
 
 [node name="Projectile" type="Area2D"]
 top_level = true
-collision_layer = 0
-collision_mask = 3
+collision_mask = 0
 script = ExtResource("1_xuy4p")
 
 [node name="TestProjectile" type="Sprite2D" parent="."]
 texture = ExtResource("2_lv6nq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_mg2ye")
+[node name="Hitbox" type="Area2D" parent="."]
+script = ExtResource("3_0uxg3")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox"]
+visible = false
+polygon = PackedVector2Array(-5, 0, -5, 1, -4, 1, -4, 2, -2, 2, -2, 3, -1, 3, -1, 4, 3, 4, 3, 3, 4, 3, 4, 2, 5, 2, 5, -1, 4, -1, 4, -2, 3, -2, 3, -3, -1, -3, -1, -2, -2, -2, -2, -1, -4, -1, -4, 0)
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

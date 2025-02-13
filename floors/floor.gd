@@ -1,6 +1,6 @@
 extends Node2D
 
-const MINIMUM_ROOMS = 6
+const MINIMUM_ROOMS = 10
 
 var rooms_res = []
 var doors_res = []
@@ -307,6 +307,7 @@ func initialize_room_pairs():
 	room_pairs[47] = [27,28]
 	
 func _ready():
+	Global.clear_room.connect(_on_room_cleared)
 	initialize_room_resources()
 	initialize_door_resources()
 	initialize_wall_resources()
@@ -370,4 +371,5 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("floor_generate"):
 		generate_floor()
 	
-	
+func _on_room_cleared(room_index: int):
+	placed_rooms[room_index].open_room(placed_doors_or_walls, placed_doors_indexes)
