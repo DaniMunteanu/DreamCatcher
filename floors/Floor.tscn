@@ -50,9 +50,6 @@ var neighbours = [1,2,3,4,5,6]
 [node name="Floor" type="Node2D"]
 script = ExtResource("1_icq2i")
 
-[node name="PlayerTest" parent="." instance=ExtResource("33_fpr7m")]
-position = Vector2(1528, 1452)
-
 [node name="Floor1" parent="." instance=ExtResource("1_r7rng")]
 
 [node name="Room_0" parent="." instance=ExtResource("2_jhue4")]
@@ -609,3 +606,6 @@ position = Vector2(2924, 1244)
 
 [node name="Sleepless" parent="." instance=ExtResource("41_81u8u")]
 position = Vector2(1389, 1455)
+
+[node name="PlayerTest" parent="." instance=ExtResource("33_fpr7m")]
+position = Vector2(1531, 1460)

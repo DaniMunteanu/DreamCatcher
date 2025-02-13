@@ -177,3 +177,22 @@ hframes = 4
 libraries = {
 "": SubResource("AnimationLibrary_idtcw")
 }
+
+[node name="EnterZone1" type="Area2D" parent="."]
+
+[node name="CollisionZone1" type="CollisionPolygon2D" parent="EnterZone1"]
+position = Vector2(9, 26)
+
+[node name="Endpoint1" type="Marker2D" parent="."]
+
+[node name="EnterZone2" type="Area2D" parent="."]
+
+[node name="CollisionZone2" type="CollisionPolygon2D" parent="EnterZone2"]
+
+[node name="Endpoint2" type="Marker2D" parent="."]
+
+[node name="Barrier" type="StaticBody2D" parent="."]
+
+[node name="CollisionBarrier" type="CollisionPolygon2D" parent="Barrier"]
+position = Vector2(0, 19)
+polygon = PackedVector2Array(0, 6, 52, 58, 52, 57, 0, 5)

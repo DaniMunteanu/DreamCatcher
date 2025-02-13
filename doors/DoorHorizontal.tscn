@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b78gkby3vi0em"]
+[gd_scene load_steps=10 format=3 uid="uid://b78gkby3vi0em"]
 
 [ext_resource type="Texture2D" uid="uid://bjqxlcscd1gxm" path="res://Sprites/DoorHorizontal.png" id="1_2m66s"]
 [ext_resource type="Script" path="res://doors/door_horizontal.gd" id="1_m5g3y"]
@@ -171,6 +171,9 @@ size = Vector2(71.5, 8.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1sovq"]
 size = Vector2(72, 7.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8c6w7"]
+size = Vector2(95.5, 11.5)
+
 [node name="DoorHorizontal" type="Node2D"]
 script = ExtResource("1_m5g3y")
 
@@ -186,7 +189,7 @@ libraries = {
 
 [node name="EnterZone1" type="Area2D" parent="."]
 
-[node name="EnterZone1" type="CollisionShape2D" parent="EnterZone1"]
+[node name="CollisionZone1" type="CollisionShape2D" parent="EnterZone1"]
 position = Vector2(48, 51)
 shape = SubResource("RectangleShape2D_wqsc3")
 
@@ -196,13 +199,19 @@ position = Vector2(48, 19)
 
 [node name="EnterZone2" type="Area2D" parent="."]
 
-[node name="EnterZone2" type="CollisionShape2D" parent="EnterZone2"]
+[node name="CollisionZone2" type="CollisionShape2D" parent="EnterZone2"]
 position = Vector2(48, 31)
 shape = SubResource("RectangleShape2D_1sovq")
 
 [node name="Endpoint2" type="Marker2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(48, 104)
+
+[node name="Barrier" type="Area2D" parent="."]
+
+[node name="CollisionBarrier" type="CollisionShape2D" parent="Barrier"]
+position = Vector2(48, 41)
+shape = SubResource("RectangleShape2D_8c6w7")
 
 [connection signal="body_entered" from="EnterZone1" to="." method="_on_enter_zone_1_body_entered"]
 [connection signal="body_entered" from="EnterZone2" to="." method="_on_enter_zone_2_body_entered"]
