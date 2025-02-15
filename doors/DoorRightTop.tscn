@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://btujbbk36iulp"]
+[gd_scene load_steps=10 format=3 uid="uid://btujbbk36iulp"]
 
 [ext_resource type="Script" path="res://doors/door_right_top.gd" id="1_kkjg5"]
 [ext_resource type="Texture2D" uid="uid://c8kjvik1aivx1" path="res://Sprites/DoorRightTop.png" id="1_rqelr"]
@@ -165,6 +165,18 @@ _data = {
 "RESET": SubResource("Animation_0gbhw")
 }
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ncp18"]
+a = Vector2(0, -4)
+b = Vector2(50, 46)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_f0bvd"]
+a = Vector2(-3, -3)
+b = Vector2(49, 49)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_42p7g"]
+a = Vector2(10, 10)
+b = Vector2(58, 58)
+
 [node name="DoorRightTop" type="Node2D"]
 script = ExtResource("1_kkjg5")
 
@@ -177,3 +189,42 @@ hframes = 4
 libraries = {
 "": SubResource("AnimationLibrary_vuyt3")
 }
+
+[node name="EnterZone1" type="Area2D" parent="."]
+
+[node name="CollisionZone1" type="CollisionShape2D" parent="EnterZone1"]
+position = Vector2(50, 49)
+rotation = 1.5708
+shape = SubResource("SegmentShape2D_ncp18")
+
+[node name="EnterZone2" type="Area2D" parent="."]
+
+[node name="CollisionZone2" type="CollisionShape2D" parent="EnterZone2"]
+position = Vector2(49, 18)
+rotation = 1.5708
+shape = SubResource("SegmentShape2D_ncp18")
+
+[node name="Barrier2" type="StaticBody2D" parent="."]
+
+[node name="CollisionBarrier1" type="CollisionShape2D" parent="Barrier2"]
+position = Vector2(52, 52)
+rotation = 1.5708
+shape = SubResource("SegmentShape2D_f0bvd")
+
+[node name="CollisionBarrier2" type="CollisionShape2D" parent="Barrier2"]
+position = Vector2(62, 10)
+rotation = 1.5708
+shape = SubResource("SegmentShape2D_42p7g")
+
+[node name="Endpoint1" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(8, 28)
+
+[node name="Endpoint2" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(56, 96)
+
+[connection signal="body_entered" from="EnterZone1" to="." method="_on_enter_zone_1_body_entered"]
+[connection signal="body_exited" from="EnterZone1" to="." method="_on_enter_zone_1_body_exited"]
+[connection signal="body_entered" from="EnterZone2" to="." method="_on_enter_zone_2_body_entered"]
+[connection signal="body_exited" from="EnterZone2" to="." method="_on_enter_zone_2_body_exited"]

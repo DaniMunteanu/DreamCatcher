@@ -204,6 +204,7 @@ func initialize_wall_resources():
 	var single_wall = preload("res://walls/Wall1.tscn")
 	var horizontal_wall = preload("res://walls/Wall2_horizontal.tscn")
 	var vertical_wall = preload("res://walls/Wall2_vertical.tscn")
+	var triple_vertical_wall = preload("res://walls/Wall3_vertical.tscn")
 	
 	walls_res[0] = vertical_wall
 	walls_res[1] = horizontal_wall
@@ -241,18 +242,18 @@ func initialize_wall_resources():
 	walls_res[33] = vertical_wall
 	walls_res[34] = single_wall
 	walls_res[35] = horizontal_wall
-	walls_res[36] = vertical_wall
+	walls_res[36] = triple_vertical_wall
 	walls_res[37] = horizontal_wall
 	walls_res[38] = single_wall
 	walls_res[39] = single_wall
 	walls_res[40] = horizontal_wall
-	walls_res[41] = vertical_wall
-	walls_res[42] = vertical_wall
+	walls_res[41] = triple_vertical_wall
+	walls_res[42] = triple_vertical_wall
 	walls_res[43] = horizontal_wall
 	walls_res[44] = single_wall
 	walls_res[45] = single_wall
 	walls_res[46] = horizontal_wall
-	walls_res[47] = vertical_wall
+	walls_res[47] = triple_vertical_wall
 
 func initialize_room_pairs():
 	room_pairs.resize(48)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkwj0r7js2wrf"]
+[gd_scene load_steps=10 format=3 uid="uid://bkwj0r7js2wrf"]
 
 [ext_resource type="Script" path="res://doors/door_left.gd" id="1_0syp3"]
 [ext_resource type="Texture2D" uid="uid://bryvbikdik62i" path="res://Sprites/DoorLeft.png" id="1_rsag1"]
@@ -165,6 +165,18 @@ _data = {
 "RESET": SubResource("Animation_uo0qc")
 }
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xst7e"]
+a = Vector2(0, -4)
+b = Vector2(49, 45)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_7qjgb"]
+a = Vector2(-3, -3)
+b = Vector2(49, 49)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_t5sl6"]
+a = Vector2(8, 8)
+b = Vector2(53, 53)
+
 [node name="DoorLeft" type="Node2D"]
 script = ExtResource("1_0syp3")
 
@@ -180,19 +192,35 @@ libraries = {
 
 [node name="EnterZone1" type="Area2D" parent="."]
 
-[node name="CollisionZone1" type="CollisionPolygon2D" parent="EnterZone1"]
-position = Vector2(9, 26)
-
-[node name="Endpoint1" type="Marker2D" parent="."]
+[node name="CollisionZone1" type="CollisionShape2D" parent="EnterZone1"]
+position = Vector2(2, 55)
+shape = SubResource("SegmentShape2D_xst7e")
 
 [node name="EnterZone2" type="Area2D" parent="."]
 
-[node name="CollisionZone2" type="CollisionPolygon2D" parent="EnterZone2"]
-
-[node name="Endpoint2" type="Marker2D" parent="."]
+[node name="CollisionZone2" type="CollisionShape2D" parent="EnterZone2"]
+position = Vector2(4, 24)
+shape = SubResource("SegmentShape2D_xst7e")
 
 [node name="Barrier" type="StaticBody2D" parent="."]
 
-[node name="CollisionBarrier" type="CollisionPolygon2D" parent="Barrier"]
-position = Vector2(0, 19)
-polygon = PackedVector2Array(0, 6, 52, 58, 52, 57, 0, 5)
+[node name="CollisionBarrier1" type="CollisionShape2D" parent="Barrier"]
+position = Vector2(4, 52)
+shape = SubResource("SegmentShape2D_7qjgb")
+
+[node name="CollisionBarrier2" type="CollisionShape2D" parent="Barrier"]
+position = Vector2(1, 18)
+shape = SubResource("SegmentShape2D_t5sl6")
+
+[node name="Endpoint1" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(48, 28)
+
+[node name="Endpoint2" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, 96)
+
+[connection signal="body_entered" from="EnterZone1" to="." method="_on_enter_zone_1_body_entered"]
+[connection signal="body_exited" from="EnterZone1" to="." method="_on_enter_zone_1_body_exited"]
+[connection signal="body_entered" from="EnterZone2" to="." method="_on_enter_zone_2_body_entered"]
+[connection signal="body_exited" from="EnterZone2" to="." method="_on_enter_zone_2_body_exited"]

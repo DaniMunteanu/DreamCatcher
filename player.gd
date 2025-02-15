@@ -10,10 +10,31 @@ extends CharacterBody2D
 enum player_states {MOVE, JUMP, FIRE}
 var current_state = player_states.MOVE
 
+enum player_direction {LEFT, RIGHT, UP, DOWN}
+var current_player_direction = player_direction.RIGHT
+
 var jumping_direction = Vector2.ZERO
 var jumping_target_position = Vector2.ZERO
 
 var jumping_distance = 96.0
+
+var diagonal_collision_right = false
+var diagonal_collision_left = false
+
+func _ready() -> void:
+	Global.player_diagonal_collision_right.connect(_on_diagonal_collision_right)
+	Global.player_diagonal_collision_left.connect(_on_diagonal_collision_left)
+	Global.player_diagonal_collision_over.connect(_on_diagonal_collision_over)
+	
+func _on_diagonal_collision_right():
+	diagonal_collision_right = true
+	
+func _on_diagonal_collision_left():
+	diagonal_collision_left = true
+	
+func _on_diagonal_collision_over():
+	diagonal_collision_right = false
+	diagonal_collision_left = false
 
 func update_movement():
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -37,15 +58,31 @@ func update_sprite():
 			walking_angle += 360
 		match floor(walking_angle/45.0):
 			5.0, 6.0:
-				animation_player.play_walking_up_animation()
+				if not (diagonal_collision_left or diagonal_collision_right):
+					animation_player.play_walking_up_animation()
+					current_player_direction = player_direction.UP
 			3.0, 4.0:
-				animation_player.play_walking_left_animation()
+				if not diagonal_collision_right:
+					animation_player.play_walking_left_animation()
+					current_player_direction = player_direction.LEFT
 			1.0, 2.0:
-				animation_player.play_walking_down_animation()
+				if not (diagonal_collision_left or diagonal_collision_right):
+					animation_player.play_walking_down_animation()
+					current_player_direction = player_direction.DOWN
 			0.0, 7.0:
-				animation_player.play_walking_right_animation()
+				if not diagonal_collision_left:
+					animation_player.play_walking_right_animation()
+					current_player_direction = player_direction.RIGHT
 	else:
-		animation_player.play_idle_right_animation()
+		match current_player_direction:
+			player_direction.UP:
+				animation_player.play_idle_up_animation()
+			player_direction.LEFT:
+				animation_player.play_idle_left_animation()
+			player_direction.DOWN:
+				animation_player.play_idle_down_animation()
+			player_direction.RIGHT:
+				animation_player.play_idle_right_animation()
 
 func jump(delta):
 	animation_player.play_jumping_right_animation()

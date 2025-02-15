@@ -1,7 +1,16 @@
 extends Node2D
 
+func play_idle_left_animation():
+	get_node("PlayerAnimation").play("PlayerIdleLeft")
+	
 func play_idle_right_animation():
 	get_node("PlayerAnimation").play("PlayerIdleRight")
+	
+func play_idle_up_animation():
+	get_node("PlayerAnimation").play("PlayerIdleUp")
+	
+func play_idle_down_animation():
+	get_node("PlayerAnimation").play("PlayerIdleDown")
 	
 func play_walking_right_animation():
 	get_node("PlayerAnimation").play("PlayerWalkingRight")

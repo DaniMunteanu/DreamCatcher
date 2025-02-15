@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://1cyusdr74lrj"]
+[gd_scene load_steps=41 format=3 uid="uid://1cyusdr74lrj"]
 
 [ext_resource type="Script" path="res://floors/floor.gd" id="1_icq2i"]
 [ext_resource type="PackedScene" uid="uid://556abvc22nkf" path="res://floors/FloorTemplate1.tscn" id="1_r7rng"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://b52h058yirbu7" path="res://rooms/Floor1_Room10.tscn" id="10_p3tag"]
 [ext_resource type="PackedScene" uid="uid://bmumt1qe28hi4" path="res://rooms/Floor1_Room22.tscn" id="11_n140l"]
 [ext_resource type="PackedScene" uid="uid://b7ke816oldr6u" path="res://rooms/Floor1_Room3.tscn" id="12_qvqc8"]
-[ext_resource type="PackedScene" uid="uid://kng8emja455m" path="res://rooms/Floor1_Room11.tscn" id="13_5tkgd"]
 [ext_resource type="PackedScene" uid="uid://bfc5yn8i38cmt" path="res://rooms/Floor1_Room23.tscn" id="14_2xroj"]
 [ext_resource type="PackedScene" uid="uid://c1s77bexejdm5" path="res://rooms/Floor1_Room2.tscn" id="15_uyap8"]
 [ext_resource type="PackedScene" uid="uid://mxiaw57qgpus" path="res://rooms/Floor1_Room9.tscn" id="16_fehk8"]
@@ -131,10 +130,6 @@ position = Vector2(1536, 720)
 
 [node name="Marker_3" type="Marker2D" parent="."]
 position = Vector2(1536, 720)
-
-[node name="Room_11" parent="." instance=ExtResource("13_5tkgd")]
-visible = false
-position = Vector2(1584, 384)
 
 [node name="Marker_11" type="Marker2D" parent="."]
 position = Vector2(1584, 384)
@@ -449,10 +444,6 @@ position = Vector2(2252, 2252)
 
 [node name="Marker_door_24" type="Marker2D" parent="."]
 position = Vector2(2252, 2252)
-
-[node name="Door_12" parent="." instance=ExtResource("35_low0i")]
-visible = false
-position = Vector2(1964, 860)
 
 [node name="Marker_door_12" type="Marker2D" parent="."]
 position = Vector2(1964, 860)
