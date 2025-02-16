@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cdhb1844g65mq"]
+[gd_scene load_steps=9 format=3 uid="uid://cdhb1844g65mq"]
 
 [ext_resource type="Texture2D" uid="uid://bxc14hcvfrtwi" path="res://Sprites/DoorVertical.png" id="1_20mt1"]
 [ext_resource type="Script" path="res://doors/door_vertical.gd" id="1_sjss2"]
@@ -166,19 +166,10 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j2bqd"]
-size = Vector2(6, 47.5)
+size = Vector2(6, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vjw3"]
 size = Vector2(5.75, 48)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwq56"]
-size = Vector2(8, 48)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_doxco"]
-size = Vector2(48, 2)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0rw7"]
-size = Vector2(48, 2.5)
 
 [node name="DoorVertical" type="Node2D"]
 script = ExtResource("1_sjss2")
@@ -196,36 +187,22 @@ libraries = {
 [node name="EnterZone1" type="Area2D" parent="."]
 
 [node name="CollisionZone1" type="CollisionShape2D" parent="EnterZone1"]
-position = Vector2(24, 75.75)
+position = Vector2(1, 76)
 shape = SubResource("RectangleShape2D_j2bqd")
 
 [node name="EnterZone2" type="Area2D" parent="."]
 
 [node name="CollisionZone2" type="CollisionShape2D" parent="EnterZone2"]
-position = Vector2(32.125, 76)
+position = Vector2(55.125, 76)
 shape = SubResource("RectangleShape2D_5vjw3")
-
-[node name="Barrier" type="StaticBody2D" parent="."]
-
-[node name="CollisionBarrier1" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(28, 76)
-shape = SubResource("RectangleShape2D_lwq56")
-
-[node name="CollisionBarrier2" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(28, 51)
-shape = SubResource("RectangleShape2D_doxco")
-
-[node name="CollisionBarrier3" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(28, 101)
-shape = SubResource("RectangleShape2D_e0rw7")
 
 [node name="Endpoint1" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(56, 75)
+position = Vector2(76, 104)
 
 [node name="Endpoint2" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(0, 75)
+position = Vector2(-20, 103)
 
 [connection signal="body_entered" from="EnterZone1" to="." method="_on_enter_zone_1_body_entered"]
 [connection signal="body_entered" from="EnterZone2" to="." method="_on_enter_zone_2_body_entered"]
