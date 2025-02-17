@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=4 uid="uid://jjolvqvp8gcb"]
+[gd_scene load_steps=5 format=4 uid="uid://jjolvqvp8gcb"]
 
 [ext_resource type="Texture2D" uid="uid://yeu45ewmtbui" path="res://Sprites/TestTileset.png" id="1_14wat"]
 
@@ -54,9 +54,18 @@ texture = ExtResource("1_14wat")
 [sub_resource type="TileSet" id="TileSet_myjnh"]
 sources/0 = SubResource("TileSetAtlasSource_dj5v2")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0ekp"]
+size = Vector2(48, 96)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(4, 4)
 tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAIAAAABAAAAAAABAAAAAAABAAEAAAABAAEAAAABAAIAAAABAAIAAAACAAAAAAACAAAAAAACAAEAAAACAAEAAAACAAIAAAACAAIAAAAAAAMAAAAEAAYAAAABAAMAAAAEAAYAAAAAAAQAAAAEAAYAAAABAAQAAAAEAAYAAAAAAAUAAAAEAAYAAAABAAUAAAAEAAYAAAACAAMAAAAFAAYAAAACAAQAAAAFAAYAAAACAAUAAAAFAAYAAAAAAAYAAAAFAAcAAAABAAYAAAAFAAcAAAACAAYAAAAFAAcAAAA=")
 tile_set = SubResource("TileSet_myjnh")
+
+[node name="Barrier" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier"]
+position = Vector2(28, 52)
+shape = SubResource("RectangleShape2D_l0ekp")

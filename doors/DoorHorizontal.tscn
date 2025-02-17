@@ -198,11 +198,11 @@ shape = SubResource("RectangleShape2D_1sovq")
 
 [node name="Endpoint1" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(48, -4)
+position = Vector2(48, -12)
 
 [node name="Endpoint2" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(48, 107)
+position = Vector2(48, 115)
 
 [connection signal="body_entered" from="EnterZone1" to="." method="_on_enter_zone_1_body_entered"]
 [connection signal="body_entered" from="EnterZone2" to="." method="_on_enter_zone_2_body_entered"]

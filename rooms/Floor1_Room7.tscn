@@ -98,20 +98,12 @@ shape = SubResource("RectangleShape2D_5m63s")
 position = Vector2(120, 494)
 shape = SubResource("RectangleShape2D_eqfpf")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(168, 542)
-shape = SubResource("RectangleShape2D_eqfpf")
-
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Barrier"]
 position = Vector2(216, 590)
 shape = SubResource("RectangleShape2D_eqfpf")
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="Barrier"]
 position = Vector2(216, 238)
-shape = SubResource("RectangleShape2D_eqfpf")
-
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(168, 286)
 shape = SubResource("RectangleShape2D_eqfpf")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Barrier"]
@@ -132,10 +124,6 @@ shape = SubResource("RectangleShape2D_sekb6")
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="Barrier"]
 position = Vector2(238, 616)
-shape = SubResource("RectangleShape2D_sekb6")
-
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(190, 568)
 shape = SubResource("RectangleShape2D_sekb6")
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="Barrier"]
@@ -160,10 +148,6 @@ shape = SubResource("RectangleShape2D_sekb6")
 
 [node name="CollisionShape2D20" type="CollisionShape2D" parent="Barrier"]
 position = Vector2(238, 212)
-shape = SubResource("RectangleShape2D_sekb6")
-
-[node name="CollisionShape2D19" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(190, 260)
 shape = SubResource("RectangleShape2D_sekb6")
 
 [node name="CollisionShape2D26" type="CollisionShape2D" parent="Barrier"]
