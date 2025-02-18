@@ -1,6 +1,6 @@
 extends Node2D
 
-const MINIMUM_ROOMS = 10
+const MINIMUM_ROOMS = 20
 
 var rooms_res = []
 var doors_res = []

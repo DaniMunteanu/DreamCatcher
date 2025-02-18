@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cdhb1844g65mq"]
+[gd_scene load_steps=10 format=3 uid="uid://cdhb1844g65mq"]
 
 [ext_resource type="Texture2D" uid="uid://bxc14hcvfrtwi" path="res://Sprites/DoorVertical.png" id="1_20mt1"]
 [ext_resource type="Script" path="res://doors/door_vertical.gd" id="1_sjss2"]
@@ -171,6 +171,9 @@ size = Vector2(6, 48)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vjw3"]
 size = Vector2(5.75, 48)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uiyjg"]
+size = Vector2(6, 96)
+
 [node name="DoorVertical" type="Node2D"]
 script = ExtResource("1_sjss2")
 
@@ -193,7 +196,7 @@ shape = SubResource("RectangleShape2D_j2bqd")
 [node name="EnterZone2" type="Area2D" parent="."]
 
 [node name="CollisionZone2" type="CollisionShape2D" parent="EnterZone2"]
-position = Vector2(55.125, 76)
+position = Vector2(43, 76)
 shape = SubResource("RectangleShape2D_5vjw3")
 
 [node name="Endpoint1" type="Marker2D" parent="."]
@@ -203,6 +206,12 @@ position = Vector2(76, 104)
 [node name="Endpoint2" type="Marker2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(-20, 103)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(49, 52)
+shape = SubResource("RectangleShape2D_uiyjg")
 
 [connection signal="body_entered" from="EnterZone1" to="." method="_on_enter_zone_1_body_entered"]
 [connection signal="body_entered" from="EnterZone2" to="." method="_on_enter_zone_2_body_entered"]
