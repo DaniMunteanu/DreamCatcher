@@ -185,12 +185,16 @@ libraries = {
 }
 
 [node name="EnterZone1" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionZone1" type="CollisionShape2D" parent="EnterZone1"]
 position = Vector2(48, 95)
 shape = SubResource("RectangleShape2D_wqsc3")
 
 [node name="EnterZone2" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionZone2" type="CollisionShape2D" parent="EnterZone2"]
 position = Vector2(48, 8)
@@ -203,6 +207,14 @@ position = Vector2(48, -12)
 [node name="Endpoint2" type="Marker2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(48, 115)
+
+[node name="Barrier" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Barrier"]
+polygon = PackedVector2Array(96, 16, 96, 32, 0, 32, 0, 16, -4, 16, -4, 36, 100, 36, 100, 16)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Barrier"]
+polygon = PackedVector2Array(0, 89, 0, 92, -4, 92, -4, 85, 100, 85, 100, 92, 96, 92, 96, 89)
 
 [connection signal="body_entered" from="EnterZone1" to="." method="_on_enter_zone_1_body_entered"]
 [connection signal="body_entered" from="EnterZone2" to="." method="_on_enter_zone_2_body_entered"]

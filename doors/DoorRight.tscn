@@ -191,6 +191,8 @@ libraries = {
 }
 
 [node name="EnterZone1" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionZone1" type="CollisionShape2D" parent="EnterZone1"]
 position = Vector2(50, 51)
@@ -198,6 +200,8 @@ rotation = 1.5708
 shape = SubResource("SegmentShape2D_kjde0")
 
 [node name="EnterZone2" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionZone2" type="CollisionShape2D" parent="EnterZone2"]
 position = Vector2(49, 19)

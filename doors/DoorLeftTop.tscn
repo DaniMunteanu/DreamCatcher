@@ -191,12 +191,16 @@ libraries = {
 }
 
 [node name="EnterZone1" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionZone1" type="CollisionShape2D" parent="EnterZone1"]
 position = Vector2(2, 54)
 shape = SubResource("SegmentShape2D_j5gfo")
 
 [node name="EnterZone2" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionZone2" type="CollisionShape2D" parent="EnterZone2"]
 position = Vector2(4, 24)

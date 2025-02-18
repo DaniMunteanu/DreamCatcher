@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://c1s77bexejdm5"]
+[gd_scene load_steps=5 format=4 uid="uid://c1s77bexejdm5"]
 
 [ext_resource type="Script" path="res://rooms/room_2.gd" id="1_gy2ea"]
 [ext_resource type="Texture2D" uid="uid://yeu45ewmtbui" path="res://Sprites/TestTileset.png" id="1_kymyk"]
@@ -55,49 +55,6 @@ texture = ExtResource("1_kymyk")
 [sub_resource type="TileSet" id="TileSet_npx2h"]
 sources/0 = SubResource("TileSetAtlasSource_js04y")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oyo8o"]
-size = Vector2(44, 4)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bb6xc"]
-size = Vector2(92, 4)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uwmdo"]
-size = Vector2(4, 52)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vwlr1"]
-size = Vector2(140, 3.99999)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3y15"]
-size = Vector2(144, 4)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmhyo"]
-size = Vector2(4, 52)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s15wg"]
-size = Vector2(4, 164)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdl05"]
-size = Vector2(4, 196)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t0suq"]
-size = Vector2(3.5, 68)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j641e"]
-size = Vector2(140, 4.07632)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_13qwy"]
-size = Vector2(320, 4.19147)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_exm13"]
-size = Vector2(4.5, 36)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_77soa"]
-size = Vector2(4, 100)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_bu5mg"]
-a = Vector2(-6.89749, -3.2103)
-b = Vector2(9, 13)
-
 [node name="Floor1Nw1" type="Node2D"]
 script = ExtResource("1_gy2ea")
 
@@ -107,78 +64,11 @@ tile_set = SubResource("TileSet_npx2h")
 
 [node name="Barrier" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(602, 254)
-shape = SubResource("RectangleShape2D_oyo8o")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Barrier"]
+polygon = PackedVector2Array(336, 492, 204, 492, 192, 480, 192, 444, 48, 444, 48, 384, 96, 384, 96, 288, 192, 288, 192, 240, 188, 240, 188, 284, 92, 284, 92, 380, 44, 380, 44, 448, 188, 448, 188, 480, 204, 496, 336, 496)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(70, 382)
-shape = SubResource("RectangleShape2D_oyo8o")
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Barrier"]
+polygon = PackedVector2Array(432, 492, 528, 492, 528, 444, 576, 444, 576, 396, 580, 396, 580, 448, 532, 448, 532, 496, 432, 496)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(142, 286)
-shape = SubResource("RectangleShape2D_bb6xc")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(286, 190)
-shape = SubResource("RectangleShape2D_bb6xc")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(190, 262)
-shape = SubResource("RectangleShape2D_uwmdo")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(334, 166)
-shape = SubResource("RectangleShape2D_uwmdo")
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(406, 142)
-shape = SubResource("RectangleShape2D_vwlr1")
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(552, 94)
-shape = SubResource("RectangleShape2D_f3y15")
-
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(478, 118)
-shape = SubResource("RectangleShape2D_nmhyo")
-
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(626, 174)
-shape = SubResource("RectangleShape2D_s15wg")
-
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(578, 350)
-shape = SubResource("RectangleShape2D_vdl05")
-
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(554, 446)
-shape = SubResource("RectangleShape2D_oyo8o")
-
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(530, 470)
-shape = SubResource("RectangleShape2D_uwmdo")
-
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(45.75, 414)
-shape = SubResource("RectangleShape2D_t0suq")
-
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(118, 446)
-shape = SubResource("RectangleShape2D_j641e")
-
-[node name="CollisionShape2D17" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(368, 494.096)
-shape = SubResource("RectangleShape2D_13qwy")
-
-[node name="CollisionShape2D16" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(189.75, 462)
-shape = SubResource("RectangleShape2D_exm13")
-
-[node name="CollisionShape2D18" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(94, 334)
-shape = SubResource("RectangleShape2D_77soa")
-
-[node name="CollisionShape2D19" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(198, 484)
-shape = SubResource("SegmentShape2D_bu5mg")
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Barrier"]
+polygon = PackedVector2Array(240, 192, 336, 192, 336, 144, 480, 144, 480, 96, 624, 96, 624, 252, 576, 252, 576, 288, 580, 288, 580, 256, 628, 256, 628, 92, 476, 92, 476, 140, 332, 140, 332, 188, 240, 188)
