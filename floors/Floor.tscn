@@ -9,6 +9,7 @@
 script = ExtResource("1_icq2i")
 
 [node name="Floor1" parent="." instance=ExtResource("1_r7rng")]
+z_index = 2
 
 [node name="Marker_0" type="Marker2D" parent="."]
 position = Vector2(912, 912)

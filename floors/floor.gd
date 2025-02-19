@@ -259,56 +259,57 @@ func initialize_room_pairs():
 	room_pairs.resize(48)
 	
 	room_pairs[0] = [0,1]
-	room_pairs[1] = [0,2]
+	room_pairs[1] = [2,0]
 	room_pairs[2] = [0,2]
-	room_pairs[3] = [0,3]
-	room_pairs[4] = [0,3]
-	room_pairs[5] = [0,4]
+	room_pairs[3] = [3,0]
+	room_pairs[4] = [3,0]
+	room_pairs[5] = [4,0]
 	room_pairs[6] = [0,5]
-	room_pairs[7] = [0,5]
+	room_pairs[7] = [5,0]
 	room_pairs[8] = [0,6]
 	room_pairs[9] = [0,6]
 	room_pairs[10] = [1,7]
-	room_pairs[11] = [2,9]
-	room_pairs[12] = [3,11]
-	room_pairs[13] = [4,13]
+	room_pairs[11] = [9,2]
+	room_pairs[12] = [11,3]
+	room_pairs[13] = [13,4]
 	room_pairs[14] = [5,15]
 	room_pairs[15] = [6,17]
 	room_pairs[16] = [7,18]
-	room_pairs[17] = [7,8]
-	room_pairs[18] = [8,9]
-	room_pairs[19] = [9,10]
+	room_pairs[17] = [8,7]
+	room_pairs[18] = [9,8]
+	room_pairs[19] = [10,9]
 	room_pairs[20] = [10,11]
-	room_pairs[21] = [11,12]
+	room_pairs[21] = [12,11]
 	room_pairs[22] = [12,13]
 	room_pairs[23] = [13,14]
 	room_pairs[24] = [14,15]
 	room_pairs[25] = [15,16]
-	room_pairs[26] = [16,17]
+	room_pairs[26] = [17,16]
 	room_pairs[27] = [17,18]
 	room_pairs[28] = [18,30]
 	room_pairs[29] = [7,19]
-	room_pairs[30] = [8,20]
-	room_pairs[31] = [10,22]
-	room_pairs[32] = [12,24]
-	room_pairs[33] = [13,25]
+	room_pairs[30] = [20,8]
+	room_pairs[31] = [22,10]
+	room_pairs[32] = [24,12]
+	room_pairs[33] = [25,13]
 	room_pairs[34] = [14,26]
 	room_pairs[35] = [16,28]
 	room_pairs[36] = [28,29]
-	room_pairs[37] = [29,30]
+	room_pairs[37] = [30,29]
 	room_pairs[38] = [19,30]
-	room_pairs[39] = [19,20]
-	room_pairs[40] = [20,21]
+	room_pairs[39] = [20,19]
+	room_pairs[40] = [21,20]
 	room_pairs[41] = [21,22]
-	room_pairs[42] = [22,23]
+	room_pairs[42] = [23,22]
 	room_pairs[43] = [23,24]
 	room_pairs[44] = [24,25]
 	room_pairs[45] = [25,26]
 	room_pairs[46] = [26,27]
-	room_pairs[47] = [27,28]
+	room_pairs[47] = [28,27]
 	
 func _ready():
 	Global.clear_room.connect(_on_room_cleared)
+	Global.room_entered.connect(_on_room_entered)
 	initialize_room_resources()
 	initialize_door_resources()
 	initialize_wall_resources()
@@ -355,6 +356,7 @@ func generate_doors_and_walls():
 		var new_door_or_wall
 		if (placed_rooms[room_pairs[j][0]] != null) and (placed_rooms[room_pairs[j][1]] != null):
 			new_door_or_wall = doors_res[j].instantiate()
+			new_door_or_wall.set_rooms(room_pairs[j][0],room_pairs[j][1])
 			placed_doors_indexes.append(j)
 		else:
 			new_door_or_wall = walls_res[j].instantiate()
@@ -374,3 +376,8 @@ func _physics_process(delta):
 	
 func _on_room_cleared(room_index: int):
 	placed_rooms[room_index].open_room(placed_doors_or_walls, placed_doors_indexes)
+	
+func _on_room_entered(room_index: int):
+	if placed_rooms[room_index].room_cleared == false:
+		placed_rooms[room_index].close_room(placed_doors_or_walls, placed_doors_indexes)
+		
