@@ -19,6 +19,10 @@ func close_room(placed_doors_or_walls: Array, placed_doors_indexes: Array):
 	for i in potential_doors:
 		if i in placed_doors_indexes:
 			placed_doors_or_walls[i].close_door()
+	place_enemies()
+			
+func place_enemies():
+	pass
 
 func next_room() -> int:
 	var picked_room = available_rooms.pick_random()

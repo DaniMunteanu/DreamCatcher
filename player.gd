@@ -86,9 +86,11 @@ func update_sprite():
 
 func jump(delta):
 	animation_player.play_jumping_right_animation()
-	
 	if global_position.distance_to(jumping_target_position) > 3:
-		global_position += global_position.direction_to(jumping_target_position) * speed * delta
+		velocity = global_position.direction_to(jumping_target_position) * speed
+	else:
+		velocity = Vector2.ZERO
+	move_and_slide()
 	
 func fire(delta):
 	if Input.is_action_pressed("evade") :
