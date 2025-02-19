@@ -55,7 +55,7 @@ texture = ExtResource("1_4w5fd")
 sources/0 = SubResource("TileSetAtlasSource_0p3e0")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0vutf"]
-size = Vector2(48, 96)
+size = Vector2(48, 112)
 
 [node name="Node2D" type="Node2D"]
 
@@ -67,5 +67,5 @@ tile_set = SubResource("TileSet_kf71v")
 [node name="Barrier" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(28, 52)
+position = Vector2(28, 60)
 shape = SubResource("RectangleShape2D_0vutf")

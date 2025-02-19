@@ -68,7 +68,7 @@ tile_set = SubResource("TileSet_mijjy")
 polygon = PackedVector2Array(96, 144, 96, 192, 48, 192, 48, 288, 44, 288, 44, 188, 92, 188, 92, 144)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Barrier"]
-polygon = PackedVector2Array(48, 384, 48, 540, 96, 540, 96, 576, 92, 576, 92, 544, 44, 544, 44, 384)
+polygon = PackedVector2Array(48, 400, 48, 540, 96, 540, 96, 576, 92, 576, 92, 544, 44, 544, 44, 400)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Barrier"]
 polygon = PackedVector2Array(144, 96, 192, 96, 192, 636, 144, 636, 144, 640, 196, 640, 196, 92, 144, 92)

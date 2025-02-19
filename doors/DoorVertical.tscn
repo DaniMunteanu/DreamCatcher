@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cdhb1844g65mq"]
+[gd_scene load_steps=9 format=3 uid="uid://cdhb1844g65mq"]
 
 [ext_resource type="Texture2D" uid="uid://bxc14hcvfrtwi" path="res://Sprites/DoorVertical.png" id="1_20mt1"]
 [ext_resource type="Script" path="res://doors/door_vertical.gd" id="1_sjss2"]
@@ -171,9 +171,6 @@ size = Vector2(6, 48)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vjw3"]
 size = Vector2(5.75, 48)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uiyjg"]
-size = Vector2(6, 96)
-
 [node name="DoorVertical" type="Node2D"]
 script = ExtResource("1_sjss2")
 
@@ -192,7 +189,7 @@ collision_layer = 0
 collision_mask = 0
 
 [node name="CollisionZone1" type="CollisionShape2D" parent="EnterZone1"]
-position = Vector2(1, 76)
+position = Vector2(21, 76)
 shape = SubResource("RectangleShape2D_j2bqd")
 
 [node name="EnterZone2" type="Area2D" parent="."]
@@ -200,7 +197,7 @@ collision_layer = 0
 collision_mask = 0
 
 [node name="CollisionZone2" type="CollisionShape2D" parent="EnterZone2"]
-position = Vector2(43, 76)
+position = Vector2(35, 76)
 shape = SubResource("RectangleShape2D_5vjw3")
 
 [node name="Endpoint1" type="Marker2D" parent="."]
@@ -211,11 +208,10 @@ position = Vector2(76, 104)
 unique_name_in_owner = true
 position = Vector2(-20, 103)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Barrier" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(49, 52)
-shape = SubResource("RectangleShape2D_uiyjg")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Barrier"]
+polygon = PackedVector2Array(4, 4, 4, 52, 24, 52, 24, 112, 4, 112, 4, 116, 52, 116, 52, 112, 32, 112, 32, 52, 52, 52, 52, 4, 48, 4, 48, 48, 8, 48, 8, 4)
 
 [connection signal="body_entered" from="EnterZone1" to="." method="_on_enter_zone_1_body_entered"]
 [connection signal="body_entered" from="EnterZone2" to="." method="_on_enter_zone_2_body_entered"]

@@ -166,7 +166,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wqsc3"]
-size = Vector2(72, 8.5)
+size = Vector2(72, 7.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1sovq"]
 size = Vector2(72, 7.5)
@@ -189,7 +189,7 @@ collision_layer = 0
 collision_mask = 0
 
 [node name="CollisionZone1" type="CollisionShape2D" parent="EnterZone1"]
-position = Vector2(48, 95)
+position = Vector2(48, 92.375)
 shape = SubResource("RectangleShape2D_wqsc3")
 
 [node name="EnterZone2" type="Area2D" parent="."]
@@ -197,7 +197,7 @@ collision_layer = 0
 collision_mask = 0
 
 [node name="CollisionZone2" type="CollisionShape2D" parent="EnterZone2"]
-position = Vector2(48, 8)
+position = Vector2(48, 28)
 shape = SubResource("RectangleShape2D_1sovq")
 
 [node name="Endpoint1" type="Marker2D" parent="."]

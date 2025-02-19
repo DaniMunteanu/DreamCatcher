@@ -165,17 +165,17 @@ _data = {
 "RESET": SubResource("Animation_0gbhw")
 }
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_ncp18"]
-a = Vector2(0, -4)
-b = Vector2(50, 46)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_u7vak"]
+a = Vector2(0.999992, -2)
+b = Vector2(49.0002, 45.9998)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_f0bvd"]
-a = Vector2(-3, -3)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_4qobu"]
+a = Vector2(0.999992, -2)
+b = Vector2(49.0002, 45.9998)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_24imc"]
+a = Vector2(1, 0.999996)
 b = Vector2(49, 49)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_42p7g"]
-a = Vector2(10, 10)
-b = Vector2(58, 58)
 
 [node name="DoorRightTop" type="Node2D"]
 script = ExtResource("1_kkjg5")
@@ -195,30 +195,28 @@ collision_layer = 0
 collision_mask = 0
 
 [node name="CollisionZone1" type="CollisionShape2D" parent="EnterZone1"]
-position = Vector2(50, 49)
+position = Vector2(50, 51)
 rotation = 1.5708
-shape = SubResource("SegmentShape2D_ncp18")
+shape = SubResource("SegmentShape2D_u7vak")
 
 [node name="EnterZone2" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 0
 
 [node name="CollisionZone2" type="CollisionShape2D" parent="EnterZone2"]
-position = Vector2(49, 18)
+position = Vector2(50, 15)
 rotation = 1.5708
-shape = SubResource("SegmentShape2D_ncp18")
+shape = SubResource("SegmentShape2D_4qobu")
 
-[node name="Barrier2" type="StaticBody2D" parent="."]
+[node name="Barrier" type="StaticBody2D" parent="."]
 
-[node name="CollisionBarrier1" type="CollisionShape2D" parent="Barrier2"]
-position = Vector2(52, 52)
+[node name="CollisionBarrier1" type="CollisionShape2D" parent="Barrier"]
+position = Vector2(52, 50)
 rotation = 1.5708
-shape = SubResource("SegmentShape2D_f0bvd")
+shape = SubResource("SegmentShape2D_24imc")
 
-[node name="CollisionBarrier2" type="CollisionShape2D" parent="Barrier2"]
-position = Vector2(62, 10)
-rotation = 1.5708
-shape = SubResource("SegmentShape2D_42p7g")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Barrier"]
+polygon = PackedVector2Array(52, 4, 52, 16, 4, 64, 6, 66, 56, 16, 56, 4)
 
 [node name="Endpoint1" type="Marker2D" parent="."]
 unique_name_in_owner = true

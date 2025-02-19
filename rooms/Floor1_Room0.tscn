@@ -68,10 +68,10 @@ tile_set = SubResource("TileSet_cxwyq")
 polygon = PackedVector2Array(288, 384, 192, 384, 144, 336, 48, 336, 48, 352, 188, 492, 288, 492, 288, 576, 284, 576, 284, 496, 188, 496, 44, 352, 44, 332, 144, 332, 192, 380, 288, 380)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Barrier"]
-polygon = PackedVector2Array(288, 684, 288, 816, 192, 816, 48, 960, 48, 972, 148, 972, 196, 924, 288, 924, 288, 928, 196, 928, 148, 976, 44, 976, 44, 960, 192, 812, 284, 812, 284, 684)
+polygon = PackedVector2Array(288, 688, 288, 816, 192, 816, 48, 960, 48, 972, 148, 972, 196, 924, 288, 924, 288, 928, 196, 928, 148, 976, 44, 976, 44, 960, 192, 812, 284, 812, 284, 688)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Barrier"]
-polygon = PackedVector2Array(960, 684, 960, 816, 1056, 816, 1200, 960, 1200, 972, 1100, 972, 1052, 924, 960, 924, 960, 928, 1052, 928, 1100, 976, 1204, 976, 1204, 960, 1056, 812, 964, 812, 964, 684)
+polygon = PackedVector2Array(960, 688, 960, 816, 1056, 816, 1200, 960, 1200, 972, 1100, 972, 1052, 924, 960, 924, 960, 928, 1052, 928, 1100, 976, 1204, 976, 1204, 960, 1056, 812, 964, 812, 964, 688)
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Barrier"]
 polygon = PackedVector2Array(960, 384, 1056, 384, 1104, 336, 1200, 336, 1200, 352, 1060, 492, 960, 492, 960, 576, 964, 576, 964, 496, 1060, 496, 1204, 352, 1204, 332, 1104, 332, 1056, 380, 960, 380)
@@ -80,13 +80,13 @@ polygon = PackedVector2Array(960, 384, 1056, 384, 1104, 336, 1200, 336, 1200, 35
 polygon = PackedVector2Array(576, 96, 672, 96, 672, 92, 576, 92)
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Barrier"]
-polygon = PackedVector2Array(576, 1164, 576, 1212, 672, 1212, 672, 1164, 676, 1164, 676, 1216, 572, 1216, 572, 1164)
+polygon = PackedVector2Array(576, 1168, 576, 1212, 672, 1212, 672, 1168, 676, 1168, 676, 1216, 572, 1216, 572, 1168)
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Barrier"]
-polygon = PackedVector2Array(576, 204, 576, 336, 480, 336, 480, 384, 384, 384, 384, 380, 476, 380, 476, 332, 572, 332, 572, 204)
+polygon = PackedVector2Array(576, 208, 576, 336, 480, 336, 480, 384, 384, 384, 384, 380, 476, 380, 476, 332, 572, 332, 572, 208)
 
 [node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Barrier"]
-polygon = PackedVector2Array(672, 204, 672, 336, 768, 336, 768, 384, 864, 384, 864, 380, 772, 380, 772, 332, 676, 332, 676, 204)
+polygon = PackedVector2Array(672, 208, 672, 336, 768, 336, 768, 384, 864, 384, 864, 380, 772, 380, 772, 332, 676, 332, 676, 208)
 
 [node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Barrier"]
 polygon = PackedVector2Array(384, 924, 480, 924, 480, 972, 576, 972, 576, 1056, 572, 1056, 572, 976, 476, 976, 476, 928, 384, 928)

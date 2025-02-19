@@ -65,10 +65,10 @@ tile_set = SubResource("TileSet_egn0v")
 [node name="Barrier" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Barrier"]
-polygon = PackedVector2Array(48, 112, 48, 96, 144, 96, 192, 144, 288, 144, 336, 192, 528, 192, 528, 188, 336, 188, 288, 140, 192, 140, 144, 92, 44, 92, 44, 112)
+polygon = PackedVector2Array(48, 96, 144, 96, 192, 144, 288, 144, 336, 192, 528, 192, 528, 188, 336, 188, 288, 140, 192, 140, 144, 92, 48, 92)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Barrier"]
-polygon = PackedVector2Array(1104, 112, 1104, 96, 1008, 96, 960, 144, 864, 144, 816, 192, 624, 192, 624, 188, 816, 188, 864, 140, 960, 140, 1008, 92, 1108, 92, 1108, 112)
+polygon = PackedVector2Array(1104, 96, 1008, 96, 960, 144, 864, 144, 816, 192, 624, 192, 624, 188, 816, 188, 864, 140, 960, 140, 1008, 92, 1104, 92)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Barrier"]
 polygon = PackedVector2Array(96, 156, 112, 156, 112, 176, 140, 204, 188, 204, 236, 252, 332, 252, 380, 300, 772, 300, 820, 252, 916, 252, 964, 204, 1012, 204, 1040, 176, 1040, 156, 1056, 156, 1056, 160, 1044, 160, 1044, 176, 1012, 208, 964, 208, 916, 256, 820, 256, 772, 304, 380, 304, 332, 256, 236, 256, 188, 208, 140, 208, 108, 176, 108, 160, 96, 160)
