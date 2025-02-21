@@ -47,6 +47,7 @@ func update_sprite():
 		jumping_target_position = global_position.move_toward(get_global_mouse_position(), jumping_distance)
 		jumping_direction = global_position.direction_to(jumping_target_position).normalized()
 	
+		set_collision_layer_value(2,false)
 		current_state = player_states.JUMP
 		
 	if Input.is_action_pressed("fire"):
@@ -97,6 +98,7 @@ func fire(delta):
 		jumping_target_position = global_position.move_toward(get_global_mouse_position(), jumping_distance)
 		jumping_direction = global_position.direction_to(jumping_target_position).normalized()
 		
+		set_collision_layer_value(2,false)
 		current_state = player_states.JUMP
 	
 	weapon.fire(delta)
@@ -125,6 +127,7 @@ func fire(delta):
 		on_states_reset()
 		
 func on_states_reset():
+	set_collision_layer_value(2,true)
 	current_state = player_states.MOVE
 
 func _physics_process(delta):

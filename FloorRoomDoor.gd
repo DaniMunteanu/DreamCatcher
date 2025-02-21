@@ -16,9 +16,9 @@ func close_door():
 	get_node("AnimationPlayer").play("Close")
 	
 func _on_open_door():
-	get_node("EnterZone0").set_collision_mask_value(1,true)
-	get_node("EnterZone1").set_collision_mask_value(1,true)
+	get_node("EnterZone0").set_collision_mask_value(2,true)
+	get_node("EnterZone1").set_collision_mask_value(2,true)
 	
 func _on_close_door():
-	get_node("EnterZone0").set_collision_mask_value(1,false)
-	get_node("EnterZone1").set_collision_mask_value(1,false)
+	get_node("EnterZone0").set_collision_mask_value(2,false)
+	get_node("EnterZone1").set_collision_mask_value(2,false)

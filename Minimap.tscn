@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://cphxf7xhhkq7q"]
+
+[ext_resource type="Texture2D" uid="uid://detq4qdq0isty" path="res://Sprites/Minimap/FloorLayout.png" id="1_3ysfd"]
+[ext_resource type="Texture2D" uid="uid://cge6qy6ty5t05" path="res://Sprites/Minimap/MinimapRoom0.png" id="2_8tqbo"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.79975
+anchor_right = 1.0
+anchor_bottom = 0.355667
+offset_left = 0.159973
+offset_bottom = -0.0400085
+grow_horizontal = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer"]
+layout_mode = 2
+texture = ExtResource("1_3ysfd")
+
+[node name="Room0" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.109219
+anchor_top = 0.296594
+anchor_right = 1.10922
+anchor_bottom = 0.703406
+offset_left = -0.019999
+offset_top = 0.0359955
+offset_right = 0.019989
+offset_bottom = -0.0360031
+texture = ExtResource("2_8tqbo")
+metadata/_edit_use_anchors_ = true
+
+[node name="Room1" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="AspectRatioContainer/Room1"]
+layout_mode = 2
+anchor_left = -0.242374
+anchor_top = 0.601312
+anchor_right = 0.977
+anchor_bottom = 1.00744
+offset_left = 0.0240005
+offset_top = 0.0319979
+offset_right = -0.0560455
+offset_bottom = 0.0479851
+texture = ExtResource("2_8tqbo")
+metadata/_edit_use_anchors_ = true
