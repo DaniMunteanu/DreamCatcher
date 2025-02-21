@@ -1,29 +1,79 @@
-[gd_scene load_steps=3 format=3 uid="uid://cphxf7xhhkq7q"]
+[gd_scene load_steps=35 format=3 uid="uid://cphxf7xhhkq7q"]
 
 [ext_resource type="Texture2D" uid="uid://detq4qdq0isty" path="res://Sprites/Minimap/FloorLayout.png" id="1_3ysfd"]
-[ext_resource type="Texture2D" uid="uid://cge6qy6ty5t05" path="res://Sprites/Minimap/MinimapRoom0.png" id="2_8tqbo"]
+[ext_resource type="Texture2D" uid="uid://bx3aede45c8ol" path="res://Sprites/Minimap/MinimapBorder.png" id="1_4xfq1"]
+[ext_resource type="Script" path="res://minimap.gd" id="1_fp1qn"]
+[ext_resource type="Texture2D" uid="uid://rkpgu7a367ba" path="res://Sprites/Minimap/MinimapRoom0_1.png" id="3_qf8kk"]
+[ext_resource type="Texture2D" uid="uid://bgbxd1pqy3wh8" path="res://Sprites/Minimap/MinimapRoom1_1.png" id="4_f4wbe"]
+[ext_resource type="Texture2D" uid="uid://bn0kxpbdbgscl" path="res://Sprites/Minimap/MinimapRoom2_1.png" id="5_wtnqo"]
+[ext_resource type="Texture2D" uid="uid://qw12fb33ps76" path="res://Sprites/Minimap/MinimapRoom3_1.png" id="6_bqchr"]
+[ext_resource type="Texture2D" uid="uid://g4p3thwos412" path="res://Sprites/Minimap/MinimapRoom4_1.png" id="7_s7mq3"]
+[ext_resource type="Texture2D" uid="uid://dq7lmemtgaeyi" path="res://Sprites/Minimap/MinimapRoom5_1.png" id="8_1d7gc"]
+[ext_resource type="Texture2D" uid="uid://cvvucop7en3g1" path="res://Sprites/Minimap/MinimapRoom6_1.png" id="9_7s0ud"]
+[ext_resource type="Texture2D" uid="uid://xahidheijoqd" path="res://Sprites/Minimap/MinimapRoom7_1.png" id="10_8c71y"]
+[ext_resource type="Texture2D" uid="uid://bd61c5k6l73t8" path="res://Sprites/Minimap/MinimapRoom8_1.png" id="11_u4bgj"]
+[ext_resource type="Texture2D" uid="uid://d0h0wxggq40aj" path="res://Sprites/Minimap/MinimapRoom9_1.png" id="12_jjlfi"]
+[ext_resource type="Texture2D" uid="uid://d03jjlru255it" path="res://Sprites/Minimap/MinimapRoom10_1.png" id="13_r4scu"]
+[ext_resource type="Texture2D" uid="uid://57opvqcwq25m" path="res://Sprites/Minimap/MinimapRoom11_1.png" id="14_b25q4"]
+[ext_resource type="Texture2D" uid="uid://0f5ka768luse" path="res://Sprites/Minimap/MinimapRoom12_1.png" id="15_c2b1e"]
+[ext_resource type="Texture2D" uid="uid://c802oytj7jdi0" path="res://Sprites/Minimap/MinimapRoom13_1.png" id="16_p603x"]
+[ext_resource type="Texture2D" uid="uid://b8kua0x32qqng" path="res://Sprites/Minimap/MinimapRoom14_1.png" id="17_sfriy"]
+[ext_resource type="Texture2D" uid="uid://bo6uh1iqfl5ho" path="res://Sprites/Minimap/MinimapRoom15_1.png" id="18_chua4"]
+[ext_resource type="Texture2D" uid="uid://d1kuji87njix6" path="res://Sprites/Minimap/MinimapRoom16_1.png" id="19_3047y"]
+[ext_resource type="Texture2D" uid="uid://brgb66jsg4jun" path="res://Sprites/Minimap/MinimapRoom17_1.png" id="20_0owc7"]
+[ext_resource type="Texture2D" uid="uid://bd37vifuix387" path="res://Sprites/Minimap/MinimapRoom18_1.png" id="21_o50g0"]
+[ext_resource type="Texture2D" uid="uid://cswrddr2o72co" path="res://Sprites/Minimap/MinimapRoom19_1.png" id="22_gr8km"]
+[ext_resource type="Texture2D" uid="uid://b00aqglyoukqd" path="res://Sprites/Minimap/MinimapRoom20_1.png" id="23_k5011"]
+[ext_resource type="Texture2D" uid="uid://6cqo27743sy7" path="res://Sprites/Minimap/MinimapRoom21_1.png" id="24_7pqw4"]
+[ext_resource type="Texture2D" uid="uid://bhwsbruyla16s" path="res://Sprites/Minimap/MinimapRoom22_1.png" id="25_cndrk"]
+[ext_resource type="Texture2D" uid="uid://drmnh7ce81fcc" path="res://Sprites/Minimap/MinimapRoom23_1.png" id="26_f0drr"]
+[ext_resource type="Texture2D" uid="uid://tfnc675ofp26" path="res://Sprites/Minimap/MinimapRoom24_1.png" id="27_ngdsg"]
+[ext_resource type="Texture2D" uid="uid://d3nn3n6nq68gx" path="res://Sprites/Minimap/MinimapRoom25_1.png" id="28_hm86g"]
+[ext_resource type="Texture2D" uid="uid://bmi58lc40wt2u" path="res://Sprites/Minimap/MinimapRoom26_1.png" id="29_uoq67"]
+[ext_resource type="Texture2D" uid="uid://b6664vqnd3jge" path="res://Sprites/Minimap/MinimapRoom27_1.png" id="30_7a50c"]
+[ext_resource type="Texture2D" uid="uid://yxdy4j6r6hiy" path="res://Sprites/Minimap/MinimapRoom28_1.png" id="31_vm036"]
+[ext_resource type="Texture2D" uid="uid://c8qo7vsemjd1x" path="res://Sprites/Minimap/MinimapRoom29_1.png" id="32_pgn5h"]
+[ext_resource type="Texture2D" uid="uid://bhriw1neo5jhg" path="res://Sprites/Minimap/MinimapRoom30_1.png" id="33_sixkk"]
 
-[node name="Control" type="Control"]
+[node name="Minimap" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_fp1qn")
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.79975
+anchor_left = 0.794
 anchor_right = 1.0
-anchor_bottom = 0.355667
-offset_left = 0.159973
-offset_bottom = -0.0400085
+anchor_bottom = 0.367
+offset_left = -0.160034
+offset_bottom = -0.12001
 grow_horizontal = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="AspectRatioContainer"]
 layout_mode = 2
+texture = ExtResource("1_4xfq1")
+
+[node name="Control" type="Control" parent="AspectRatioContainer"]
+visible = false
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_3ysfd")
 
 [node name="Room0" type="Control" parent="AspectRatioContainer"]
@@ -32,29 +82,470 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room0"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.109219
-anchor_top = 0.296594
-anchor_right = 1.10922
-anchor_bottom = 0.703406
+anchor_left = 0.303182
+anchor_top = 0.302758
+anchor_right = 0.696818
+anchor_bottom = 0.697242
 offset_left = -0.019999
 offset_top = 0.0359955
 offset_right = 0.019989
 offset_bottom = -0.0360031
-texture = ExtResource("2_8tqbo")
+texture = ExtResource("3_qf8kk")
 metadata/_edit_use_anchors_ = true
 
 [node name="Room1" type="Control" parent="AspectRatioContainer"]
 layout_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="AspectRatioContainer/Room1"]
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room1"]
 layout_mode = 2
-anchor_left = -0.242374
-anchor_top = 0.601312
-anchor_right = 0.977
-anchor_bottom = 1.00744
+anchor_left = 0.242242
+anchor_top = 0.378545
+anchor_right = 0.394364
+anchor_bottom = 0.620849
 offset_left = 0.0240005
 offset_top = 0.0319979
 offset_right = -0.0560455
 offset_bottom = 0.0479851
-texture = ExtResource("2_8tqbo")
+texture = ExtResource("4_f4wbe")
+metadata/_edit_use_anchors_ = true
+
+[node name="Room2" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.287576
+anchor_top = 0.242
+anchor_right = 0.499576
+anchor_bottom = 0.409
+offset_left = 0.0400009
+offset_top = 0.0559978
+offset_right = 0.0559998
+offset_bottom = 0.0119972
+texture = ExtResource("5_wtnqo")
+metadata/_edit_use_anchors_ = true
+
+[node name="Room3" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.242424
+anchor_right = 0.712
+anchor_bottom = 0.409424
+offset_right = 0.0159988
+offset_bottom = -0.0440006
+texture = ExtResource("6_bqchr")
+metadata/_edit_use_anchors_ = true
+
+[node name="Room4" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.606061
+anchor_top = 0.378788
+anchor_right = 0.758061
+anchor_bottom = 0.620788
+offset_right = -0.0640011
+offset_bottom = 0.0559978
+texture = ExtResource("7_s7mq3")
+metadata/_edit_use_anchors_ = true
+
+[node name="Room5" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.590909
+anchor_right = 0.712
+anchor_bottom = 0.757909
+offset_right = 0.0159988
+offset_bottom = -0.0440006
+texture = ExtResource("8_1d7gc")
+metadata/_edit_use_anchors_ = true
+
+[node name="Room6" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.287879
+anchor_top = 0.590909
+anchor_right = 0.499879
+anchor_bottom = 0.757909
+offset_right = 0.0159988
+offset_bottom = -0.0440006
+texture = ExtResource("9_7s0ud")
+metadata/_edit_use_anchors_ = true
+
+[node name="Room7" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room7"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0757576
+anchor_top = 0.378788
+anchor_right = 0.272758
+anchor_bottom = 0.620788
+offset_right = -0.00400162
+offset_bottom = 0.0559978
+texture = ExtResource("10_8c71y")
+metadata/_edit_use_anchors_ = true
+
+[node name="Room8" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room8"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.076
+anchor_top = 0.152
+anchor_right = 0.288
+anchor_bottom = 0.485
+offset_left = -0.0320005
+offset_top = -0.0640011
+offset_right = -0.0160027
+offset_bottom = -0.0200043
+texture = ExtResource("11_u4bgj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Room9" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room9"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.257576
+anchor_top = 0.136364
+anchor_right = 0.484576
+anchor_bottom = 0.363364
+offset_right = 0.0359974
+offset_bottom = 0.0359974
+texture = ExtResource("12_jjlfi")
+metadata/_edit_use_anchors_ = true
+
+[node name="Room10" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room10"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.30303
+anchor_top = 0.0757576
+anchor_right = 0.69703
+anchor_bottom = 0.257758
+offset_right = -0.00800323
+offset_bottom = -0.0240021
+texture = ExtResource("13_r4scu")
+metadata/_edit_use_anchors_ = true
+
+[node name="Room11" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room11"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.515152
+anchor_top = 0.136364
+anchor_right = 0.742152
+anchor_bottom = 0.363364
+offset_right = 0.0359974
+offset_bottom = 0.0359974
+texture = ExtResource("14_b25q4")
+metadata/_edit_use_anchors_ = true
+
+[node name="Room12" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room12"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.712121
+anchor_top = 0.151515
+anchor_right = 0.924121
+anchor_bottom = 0.484515
+offset_right = 0.0159988
+offset_bottom = 0.0439987
+texture = ExtResource("15_c2b1e")
+metadata/_edit_use_anchors_ = true
+
+[node name="Room13" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room13"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.727273
+anchor_top = 0.378788
+anchor_right = 0.924273
+anchor_bottom = 0.620788
+offset_right = -0.00400162
+offset_bottom = 0.0559978
+texture = ExtResource("16_p603x")
+metadata/_edit_use_anchors_ = true
+
+[node name="Room14" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room14"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.712121
+anchor_top = 0.515152
+anchor_right = 0.924121
+anchor_bottom = 0.848152
+offset_right = 0.0159988
+offset_bottom = 0.0439987
+texture = ExtResource("17_sfriy")
+metadata/_edit_use_anchors_ = true
+
+[node name="Room15" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room15"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.515152
+anchor_top = 0.636364
+anchor_right = 0.742152
+anchor_bottom = 0.863364
+offset_right = 0.0359974
+offset_bottom = 0.0359974
+texture = ExtResource("18_chua4")
+metadata/_edit_use_anchors_ = true
+
+[node name="Room16" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room16"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.30303
+anchor_top = 0.742424
+anchor_right = 0.69703
+anchor_bottom = 0.924424
+offset_right = -0.00800323
+offset_bottom = -0.0240021
+texture = ExtResource("19_3047y")
+metadata/_edit_use_anchors_ = true
+
+[node name="Room17" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room17"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.257576
+anchor_top = 0.636364
+anchor_right = 0.484576
+anchor_bottom = 0.863364
+offset_right = 0.0359974
+offset_bottom = 0.0359974
+texture = ExtResource("20_0owc7")
+metadata/_edit_use_anchors_ = true
+
+[node name="Room18" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room18"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0757576
+anchor_top = 0.515152
+anchor_right = 0.287758
+anchor_bottom = 0.848152
+offset_right = 0.0159988
+offset_bottom = 0.0439987
+texture = ExtResource("21_o50g0")
+metadata/_edit_use_anchors_ = true
+
+[node name="Room19" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room19"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0151515
+anchor_top = 0.393939
+anchor_right = 0.0911515
+anchor_bottom = 0.605939
+offset_right = -0.0320005
+offset_bottom = 0.0159988
+texture = ExtResource("22_gr8km")
+metadata/_edit_use_anchors_ = true
+
+[node name="Room20" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room20"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.030303
+anchor_top = 0.151515
+anchor_right = 0.242303
+anchor_bottom = 0.439515
+offset_right = 0.0159988
+offset_bottom = -0.0160027
+texture = ExtResource("23_k5011")
+metadata/_edit_use_anchors_ = true
+
+[node name="Room21" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room21"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.167
+anchor_top = 0.045
+anchor_right = 0.364
+anchor_bottom = 0.167
+offset_left = -0.0440006
+offset_top = 0.0599999
+offset_right = -0.0480042
+offset_bottom = -0.0440006
+texture = ExtResource("24_7pqw4")
+metadata/_edit_use_anchors_ = true
+
+[node name="Room22" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room22"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.318182
+anchor_top = 0.0151515
+anchor_right = 0.682182
+anchor_bottom = 0.121152
+offset_right = -0.0480042
+offset_bottom = 0.00799942
+texture = ExtResource("25_cndrk")
+metadata/_edit_use_anchors_ = true
+
+[node name="Room23" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room23"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.636364
+anchor_top = 0.0454545
+anchor_right = 0.833364
+anchor_bottom = 0.166455
+offset_right = -0.00400162
+offset_bottom = 0.0279989
+texture = ExtResource("26_f0drr")
+metadata/_edit_use_anchors_ = true
+
+[node name="Room24" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room24"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.757576
+anchor_top = 0.151515
+anchor_right = 0.969576
+anchor_bottom = 0.439515
+offset_right = 0.0159988
+offset_bottom = -0.0160027
+texture = ExtResource("27_ngdsg")
+metadata/_edit_use_anchors_ = true
+
+[node name="Room25" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room25"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.909091
+anchor_top = 0.393939
+anchor_right = 0.985091
+anchor_bottom = 0.605939
+offset_right = -0.0320005
+offset_bottom = 0.0159988
+texture = ExtResource("28_hm86g")
+metadata/_edit_use_anchors_ = true
+
+[node name="Room26" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room26"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.757576
+anchor_top = 0.560606
+anchor_right = 0.969576
+anchor_bottom = 0.848606
+offset_right = 0.0159988
+offset_bottom = -0.0160027
+texture = ExtResource("29_uoq67")
+metadata/_edit_use_anchors_ = true
+
+[node name="Room27" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room27"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.636364
+anchor_top = 0.833333
+anchor_right = 0.833364
+anchor_bottom = 0.954333
+offset_right = -0.00400162
+offset_bottom = 0.0279989
+texture = ExtResource("30_7a50c")
+metadata/_edit_use_anchors_ = true
+
+[node name="Room28" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room28"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.318182
+anchor_top = 0.878788
+anchor_right = 0.682182
+anchor_bottom = 0.984788
+offset_right = -0.0480042
+offset_bottom = 0.00799942
+texture = ExtResource("31_vm036")
+metadata/_edit_use_anchors_ = true
+
+[node name="Room29" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room29"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.166667
+anchor_top = 0.833333
+anchor_right = 0.363667
+anchor_bottom = 0.954333
+offset_right = -0.00400162
+offset_bottom = 0.0279989
+texture = ExtResource("32_pgn5h")
+metadata/_edit_use_anchors_ = true
+
+[node name="Room30" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room30"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.030303
+anchor_top = 0.560606
+anchor_right = 0.242303
+anchor_bottom = 0.848606
+offset_right = 0.0159988
+offset_bottom = -0.0160027
+texture = ExtResource("33_sixkk")
 metadata/_edit_use_anchors_ = true

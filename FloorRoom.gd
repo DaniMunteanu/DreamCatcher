@@ -9,6 +9,9 @@ var can_extend = true
 var room_cleared = false
 var potential_doors = []
 
+func get_room_neighbours() -> Array:
+	return neighbour_rooms.filter(func(room): return (room not in available_rooms))
+
 func open_room(placed_doors_or_walls: Array, placed_doors_indexes: Array):
 	for i in potential_doors:
 		if i in placed_doors_indexes:
