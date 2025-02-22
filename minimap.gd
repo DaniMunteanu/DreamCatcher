@@ -26,10 +26,12 @@ func reveal_room(room_index: int):
 	rooms[room_index].visible = true
 
 func set_current_room(room_index: int):
+	rooms[room_index].visible = true
 	rooms[room_index].texture = rooms_res[room_index][1]
 	rooms_isDiscovered[room_index] = true
 
 func set_left_room(room_index: int):
+	rooms[room_index].visible = true
 	rooms[room_index].texture = rooms_res[room_index][2]
 	
 func _on_minimap_room_entered(room_index: int, neighbour_rooms_indices: Array):
@@ -39,15 +41,14 @@ func _on_minimap_room_entered(room_index: int, neighbour_rooms_indices: Array):
 			set_left_room(room)
 		else:
 			reveal_room(room)
-
+	
 func _ready() -> void:
-	Global.minimap_room_entered.connect(_on_minimap_room_entered)
 	build_rooms_array()
 	initialize_rooms_res()
 	rooms_isDiscovered.resize(31)
-	rooms[0].visible = true
+	reset()
+	Global.minimap_room_entered.connect(_on_minimap_room_entered)
+	Global.floor_generated.connect(reset)
 	
-func _physics_process(delta):
-	if Input.is_action_just_pressed("floor_generate"):
-		reset()
+
 	

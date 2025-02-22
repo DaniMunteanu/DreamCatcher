@@ -7,8 +7,8 @@ func _init():
 	can_extend = true
 
 func reset_room():
+	super()
 	available_rooms = [0,7]
-	can_extend = true
 
 func _on_enemies_defeated() -> void:
 	Global.clear_room.emit(room_index)

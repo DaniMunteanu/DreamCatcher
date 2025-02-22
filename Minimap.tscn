@@ -1,6 +1,5 @@
-[gd_scene load_steps=35 format=3 uid="uid://cphxf7xhhkq7q"]
+[gd_scene load_steps=34 format=3 uid="uid://cphxf7xhhkq7q"]
 
-[ext_resource type="Texture2D" uid="uid://detq4qdq0isty" path="res://Sprites/Minimap/FloorLayout.png" id="1_3ysfd"]
 [ext_resource type="Texture2D" uid="uid://bx3aede45c8ol" path="res://Sprites/Minimap/MinimapBorder.png" id="1_4xfq1"]
 [ext_resource type="Script" path="res://minimap.gd" id="1_fp1qn"]
 [ext_resource type="Texture2D" uid="uid://rkpgu7a367ba" path="res://Sprites/Minimap/MinimapRoom0_1.png" id="3_qf8kk"]
@@ -36,6 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://bhriw1neo5jhg" path="res://Sprites/Minimap/MinimapRoom30_1.png" id="33_sixkk"]
 
 [node name="Minimap" type="Control"]
+modulate = Color(1, 1, 1, 0.466667)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -58,23 +58,6 @@ metadata/_edit_use_anchors_ = true
 [node name="TextureRect" type="TextureRect" parent="AspectRatioContainer"]
 layout_mode = 2
 texture = ExtResource("1_4xfq1")
-
-[node name="Control" type="Control" parent="AspectRatioContainer"]
-visible = false
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = -2.0
-offset_bottom = -2.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_3ysfd")
 
 [node name="Room0" type="Control" parent="AspectRatioContainer"]
 layout_mode = 2

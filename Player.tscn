@@ -1872,7 +1872,7 @@ hframes = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="PlayerCamera"]
 
-[node name="Control" parent="PlayerCamera/CanvasLayer" instance=ExtResource("15_7qc35")]
+[node name="Minimap" parent="PlayerCamera/CanvasLayer" instance=ExtResource("15_7qc35")]
 anchors_preset = -1
 metadata/_edit_use_anchors_ = true
 

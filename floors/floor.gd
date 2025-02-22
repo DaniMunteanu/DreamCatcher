@@ -293,6 +293,7 @@ func generate_floor():
 	reset()
 	generate_rooms()
 	generate_doors_and_walls()
+	Global.floor_generated.emit()
 	placed_rooms[0].open_room(placed_doors_or_walls, placed_doors_indexes)
 	_on_room_entered(0)
 
@@ -304,8 +305,7 @@ func _on_room_cleared(room_index: int):
 	placed_rooms[room_index].open_room(placed_doors_or_walls, placed_doors_indexes)
 	
 func _on_room_entered(room_index: int):
+	Global.minimap_room_entered.emit(room_index, placed_rooms[room_index].neighbour_rooms)
 	if placed_rooms[room_index].room_cleared == false:
 		placed_rooms[room_index].close_room(placed_doors_or_walls, placed_doors_indexes)
-	Global.minimap_room_entered.emit(room_index, placed_rooms[room_index].get_room_neighbours())
-	print(placed_rooms[room_index].get_room_neighbours())
 		

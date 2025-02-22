@@ -7,5 +7,5 @@ func _init():
 	can_extend = true
 
 func reset_room():
+	super()
 	available_rooms = [1,2,3,4,5,6]
-	can_extend = true
