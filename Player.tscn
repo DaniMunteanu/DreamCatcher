@@ -648,6 +648,18 @@ tracks/6/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Hurtbox/CollisionPolygon2D:polygon")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [PackedVector2Array(-12, 0, -13, -1, -14, -6, -15, -14, -15, -19, -14, -21, -13, -22, -12, -22, -14, -26, -15, -29, -15, -35, -14, -37, -11, -40, -9, -41, -8, -42, -2, -42, 0, -41, 2, -39, 4, -35, 5, -32, 5, -28, 2, -23, 6, -19, 8, -10, 9, -8, 16, -1, 16, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_gyjmh"]
 resource_name = "PlayerIdleRight"
@@ -837,6 +849,18 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Hurtbox/CollisionPolygon2D:polygon")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [PackedVector2Array(-14, 0, -14, -1, -12, -3, -10, -11, -10, -13, -12, -15, -12, -19, -9, -22, -6, -22, -9, -28, -9, -32, -8, -35, -6, -39, -4, -41, -2, -42, 5, -42, 9, -38, 10, -36, 11, -33, 11, -29, 10, -26, 8, -22, 11, -22, 12, -21, 13, -19, 13, -16, 12, -14, 10, -12, 12, -5, 13, -3, 14, -2, 14, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_v81lu"]
@@ -1416,7 +1440,7 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [PackedVector2Array()]
+"values": [PackedVector2Array(-15, 0, -15, -1, -8, -8, -7, -10, -5, -19, -2, -22, -1, -22, -4, -28, -4, -32, -3, -35, -1, -39, 1, -41, 3, -42, 9, -42, 10, -41, 12, -40, 15, -37, 16, -35, 16, -29, 15, -26, 13, -22, 14, -22, 15, -21, 16, -19, 16, -14, 15, -6, 14, -1, 13, 0)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -1529,7 +1553,7 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [PackedVector2Array(), PackedVector2Array()]
+"values": [PackedVector2Array(-14, 0, -14, -1, -12, -3, -11, -7, -10, -13, -12, -15, -12, -19, -9, -22, -6, -22, -9, -28, -9, -32, -8, -35, -6, -39, -4, -41, -2, -42, 5, -42, 9, -38, 10, -36, 11, -33, 11, -29, 10, -26, 8, -22, 11, -22, 12, -21, 13, -19, 13, -16, 12, -14, 10, -12, 12, -5, 13, -3, 14, -2, 14, 0), PackedVector2Array(-14, 0, -14, -1, -12, -3, -11, -7, -10, -13, -11, -15, -11, -19, -10, -21, -9, -22, -6, -22, -9, -28, -9, -32, -8, -35, -6, -39, -4, -41, -2, -42, 5, -42, 9, -38, 10, -36, 11, -33, 11, -29, 10, -26, 8, -22, 10, -22, 11, -21, 12, -19, 12, -16, 11, -14, 10, -13, 12, -5, 13, -3, 14, -2, 14, 0)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -1741,22 +1765,10 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("JumpMarker:visible")
+tracks/4/path = NodePath("JumpMarker:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("JumpMarker:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -1816,22 +1828,10 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("JumpMarker:visible")
+tracks/4/path = NodePath("JumpMarker:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("JumpMarker:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -1914,7 +1914,12 @@ script = ExtResource("18_wjjgx")
 max_health = 10
 current_health = 10
 
+[node name="EvadeTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
 [connection signal="received_damage" from="Hurtbox" to="Health" method="_on_hurtbox_received_damage"]
 [connection signal="health_depleted" from="Health" to="." method="_on_health_health_depleted"]
+[connection signal="timeout" from="EvadeTimer" to="." method="_on_evade_timer_timeout"]
 
 [editable path="TestWeapon"]

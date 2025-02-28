@@ -9,6 +9,8 @@ extends CharacterBody2D
 @onready var sprite = $PlayerAnimationManager/PlayerModel
 @onready var weapon = $TestWeapon
 
+var evadeReady = true
+
 enum player_states {MOVE, JUMP, FIRE}
 var current_state = player_states.MOVE
 
@@ -32,6 +34,10 @@ func _ready() -> void:
 	Global.player_diagonal_collision_left.connect(_on_diagonal_collision_left)
 	Global.player_diagonal_collision_over.connect(_on_diagonal_collision_over)
 	
+func _on_evade_timer_timeout() -> void:
+	evadeReady = true
+	get_node("JumpMarker").visible = true
+
 func _on_diagonal_collision_right():
 	diagonal_collision_right = true
 	
@@ -49,11 +55,13 @@ func update_movement():
 	move_and_slide()
 	
 func update_sprite():
-	if Input.is_action_pressed("evade") :
+	if Input.is_action_pressed("evade") and evadeReady:
 		jumping_target_position = global_position.move_toward(get_global_mouse_position(), jumping_distance)
 		jumping_direction = global_position.direction_to(jumping_target_position).normalized()
 	
 		set_collision_layer_value(2,false)
+		evadeReady = false
+		$EvadeTimer.start()
 		current_state = player_states.JUMP
 		
 	if Input.is_action_pressed("fire"):
@@ -92,6 +100,7 @@ func update_sprite():
 				animation_player.play_idle_right_animation()
 
 func jump(delta):
+	get_node("JumpMarker").visible = false
 	animation_player.play_jumping_right_animation()
 	if global_position.distance_to(jumping_target_position) > 3:
 		velocity = global_position.direction_to(jumping_target_position) * speed
@@ -105,6 +114,8 @@ func fire(delta):
 		jumping_direction = global_position.direction_to(jumping_target_position).normalized()
 		
 		set_collision_layer_value(2,false)
+		evadeReady = false
+		$EvadeTimer.start()
 		current_state = player_states.JUMP
 	
 	weapon.fire(delta)
@@ -148,4 +159,3 @@ func _physics_process(delta):
 			update_movement()
 			fire(delta)
 			get_node("JumpMarkerAnimation").play("JumpReady")
-	

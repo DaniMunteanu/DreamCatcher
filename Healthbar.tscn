@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://iqvuhgs6fnod"]
+[gd_scene load_steps=10 format=3 uid="uid://iqvuhgs6fnod"]
 
 [ext_resource type="Texture2D" uid="uid://cjewsh55n30t3" path="res://Sprites/SpritesUI/Healthbar.png" id="1_b0hfs"]
 [ext_resource type="Script" path="res://healthbar.gd" id="1_qs1up"]
@@ -7,7 +7,8 @@
 [ext_resource type="Script" path="res://health_bar.gd" id="3_526xf"]
 [ext_resource type="Texture2D" uid="uid://r6v4g81n208l" path="res://Sprites/SpritesUI/Feather.png" id="3_sfg0i"]
 [ext_resource type="Texture2D" uid="uid://d38gjhpxxeovt" path="res://Sprites/SpritesUI/Quartz.png" id="4_mbhuk"]
-[ext_resource type="Texture2D" uid="uid://8tx6tdmsv8j0" path="res://Sprites/SpritesUI/StaminaBar.png" id="5_oubxj"]
+[ext_resource type="Texture2D" uid="uid://8tx6tdmsv8j0" path="res://Sprites/SpritesUI/StaminaBarCharged.png" id="5_oubxj"]
+[ext_resource type="Script" path="res://stamina_bar.gd" id="6_o13ut"]
 
 [node name="PlayerStatusBar" type="Control"]
 layout_mode = 3
@@ -73,6 +74,7 @@ offset_right = 142.0
 offset_bottom = 3.0
 value = 100.0
 texture_progress = ExtResource("5_oubxj")
+script = ExtResource("6_o13ut")
 metadata/_edit_use_anchors_ = true
 
 [node name="Coin" type="Sprite2D" parent="."]
