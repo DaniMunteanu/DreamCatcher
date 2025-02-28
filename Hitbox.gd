@@ -2,7 +2,7 @@ class_name Hitbox
 
 extends Area2D
 
-@export var damage: int = 1 : set = set_damage, get = get_damage
+var damage: int = 1 : set = set_damage, get = get_damage
 
 signal target_hit
 

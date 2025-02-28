@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://fktce8tbderh"]
+[gd_scene load_steps=11 format=3 uid="uid://fktce8tbderh"]
 
 [ext_resource type="Script" path="res://mobs/sleepless.gd" id="1_ldm3s"]
 [ext_resource type="Texture2D" uid="uid://cm0kduah721r8" path="res://Sprites/SleeplessWalkingLeft.png" id="2_4ou22"]
 [ext_resource type="Script" path="res://Health.gd" id="2_gcs7s"]
 [ext_resource type="Script" path="res://Hurtbox.gd" id="3_bnr8s"]
+[ext_resource type="Script" path="res://Hitbox.gd" id="5_kf8ye"]
 
 [sub_resource type="Animation" id="Animation_u6kp5"]
 length = 0.001
@@ -239,6 +240,9 @@ _data = {
 "WalkingRight": SubResource("Animation_q4hqp")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_181ry"]
+size = Vector2(30, 8)
+
 [node name="Sleepless" type="CharacterBody2D"]
 collision_layer = 0
 platform_floor_layers = 4294967040
@@ -246,6 +250,8 @@ script = ExtResource("1_ldm3s")
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("2_gcs7s")
+max_health = 3
+current_health = 3
 
 [node name="Sleepless" type="Sprite2D" parent="."]
 position = Vector2(15, -23)
@@ -258,12 +264,29 @@ libraries = {
 }
 
 [node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health")]
+visible = false
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("3_bnr8s")
 health = NodePath("../Health")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox"]
-visible = false
 polygon = PackedVector2Array(15, -28, 13, -28, 13, -29, 12, -29, 12, -30, 11, -30, 11, -31, 10, -31, 10, -32, 9, -32, 9, -34, 8, -34, 8, -40, 9, -40, 9, -42, 10, -42, 10, -43, 11, -43, 11, -44, 12, -44, 12, -45, 13, -45, 13, -46, 21, -46, 21, -45, 23, -45, 23, -44, 25, -44, 25, -43, 27, -43, 27, -42, 28, -42, 28, -41, 29, -41, 29, -39, 30, -39, 30, -36, 29, -36, 29, -34, 28, -34, 28, -32, 27, -32, 27, -31, 26, -31, 26, -30, 25, -30, 25, -29, 24, -29, 24, -28, 22, -28, 22, -27, 19, -27, 19, -26, 22, -26, 22, -25, 23, -25, 23, -24, 24, -24, 24, -23, 25, -23, 25, -18, 24, -18, 24, -14, 23, -14, 23, -11, 22, -11, 22, -7, 21, -7, 21, -3, 20, -3, 20, -1, 19, -1, 19, 0, 14, 0, 14, -1, 10, -1, 10, -2, 11, -2, 11, -3, 13, -3, 13, -5, 12, -5, 12, -13, 11, -13, 11, -16, 9, -16, 9, -18, 10, -18, 10, -19, 11, -19, 11, -21, 9, -21, 9, -20, 7, -20, 7, -19, 4, -19, 4, -18, 3, -18, 3, -17, 1, -17, 1, -18, 0, -18, 0, -24, 1, -24, 1, -25, 3, -25, 3, -24, 4, -24, 4, -22, 6, -22, 6, -23, 7, -23, 7, -24, 9, -24, 9, -25, 12, -25, 12, -26, 14, -26, 14, -27, 15, -27)
+
+[node name="Hitbox" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("5_kf8ye")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox"]
+polygon = PackedVector2Array(15, -28, 13, -28, 13, -29, 12, -29, 12, -30, 11, -30, 11, -31, 10, -31, 10, -32, 9, -32, 9, -34, 8, -34, 8, -40, 9, -40, 9, -42, 10, -42, 10, -43, 11, -43, 11, -44, 12, -44, 12, -45, 13, -45, 13, -46, 21, -46, 21, -45, 23, -45, 23, -44, 25, -44, 25, -43, 27, -43, 27, -42, 28, -42, 28, -41, 29, -41, 29, -39, 30, -39, 30, -36, 29, -36, 29, -34, 28, -34, 28, -32, 27, -32, 27, -31, 26, -31, 26, -30, 25, -30, 25, -29, 24, -29, 24, -28, 22, -28, 22, -27, 19, -27, 19, -26, 22, -26, 22, -25, 23, -25, 23, -24, 24, -24, 24, -23, 25, -23, 25, -18, 24, -18, 24, -14, 23, -14, 23, -11, 22, -11, 22, -7, 21, -7, 21, -3, 20, -3, 20, -1, 19, -1, 19, 0, 14, 0, 14, -1, 10, -1, 10, -2, 11, -2, 11, -3, 13, -3, 13, -5, 12, -5, 12, -13, 11, -13, 11, -16, 9, -16, 9, -18, 10, -18, 10, -19, 11, -19, 11, -21, 9, -21, 9, -20, 7, -20, 7, -19, 4, -19, 4, -18, 3, -18, 3, -17, 1, -17, 1, -18, 0, -18, 0, -24, 1, -24, 1, -25, 3, -25, 3, -24, 4, -24, 4, -22, 6, -22, 6, -23, 7, -23, 7, -24, 9, -24, 9, -25, 12, -25, 12, -26, 14, -26, 14, -27, 15, -27)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(15, -4)
+shape = SubResource("RectangleShape2D_181ry")
 
 [connection signal="health_depleted" from="Health" to="." method="_on_health_health_depleted"]
 [connection signal="received_damage" from="Hurtbox" to="Health" method="_on_hurtbox_received_damage"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

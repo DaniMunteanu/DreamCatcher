@@ -1,3 +1,5 @@
+class_name Player
+
 extends CharacterBody2D
 
 #200
@@ -20,6 +22,10 @@ var jumping_distance = 96.0
 
 var diagonal_collision_right = false
 var diagonal_collision_left = false
+
+func _on_health_health_depleted() -> void:
+	pass
+	#queue_free()	
 
 func _ready() -> void:
 	Global.player_diagonal_collision_right.connect(_on_diagonal_collision_right)

@@ -1,6 +1,6 @@
 extends Area2D
 
-const BULLET = preload("res://projectile.tscn")
+const BULLET = preload("res://projectiles/projectile.tscn")
 
 @onready var animation_player = $WeaponAnimationPlayer
 @onready var sprite = $TestWeapon
