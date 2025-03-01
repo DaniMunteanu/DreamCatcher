@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bt54fkci30mf2" path="res://Sprites/PlayerIdleDown.png" id="12_ar24f"]
 [ext_resource type="Texture2D" uid="uid://d06ri1atvph01" path="res://Sprites/PlayerIdleUp.png" id="13_1kgd2"]
 [ext_resource type="PackedScene" uid="uid://cphxf7xhhkq7q" path="res://Minimap.tscn" id="15_7qc35"]
-[ext_resource type="PackedScene" uid="uid://iqvuhgs6fnod" path="res://Healthbar.tscn" id="15_wbqpd"]
+[ext_resource type="PackedScene" uid="uid://iqvuhgs6fnod" path="res://PlayerStatusBar.tscn" id="15_wbqpd"]
 [ext_resource type="Script" path="res://Hurtbox.gd" id="17_rhecj"]
 [ext_resource type="Script" path="res://Health.gd" id="18_wjjgx"]
 
