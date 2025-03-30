@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cupqqwddnk40"]
+[gd_scene load_steps=40 format=3 uid="uid://cupqqwddnk40"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_8iasi"]
 [ext_resource type="Script" path="res://player_animation.gd" id="2_vu52e"]
@@ -14,8 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://bqmi1bgqeqwsb" path="res://Sprites/DefaultJumpMarker.png" id="11_sn1d5"]
 [ext_resource type="Texture2D" uid="uid://bt54fkci30mf2" path="res://Sprites/PlayerIdleDown.png" id="12_ar24f"]
 [ext_resource type="Texture2D" uid="uid://d06ri1atvph01" path="res://Sprites/PlayerIdleUp.png" id="13_1kgd2"]
-[ext_resource type="PackedScene" uid="uid://cphxf7xhhkq7q" path="res://Minimap.tscn" id="15_7qc35"]
-[ext_resource type="PackedScene" uid="uid://iqvuhgs6fnod" path="res://PlayerStatusBar.tscn" id="15_wbqpd"]
+[ext_resource type="PackedScene" uid="uid://cphxf7xhhkq7q" path="res://ui_elements/Minimap.tscn" id="15_7qc35"]
+[ext_resource type="PackedScene" uid="uid://iqvuhgs6fnod" path="res://ui_elements/PlayerStatusBar.tscn" id="15_wbqpd"]
+[ext_resource type="PackedScene" uid="uid://8fdhxwi6j3gh" path="res://ui_elements/Shop.tscn" id="16_jfciu"]
 [ext_resource type="Script" path="res://Hurtbox.gd" id="17_rhecj"]
 [ext_resource type="Script" path="res://Health.gd" id="18_wjjgx"]
 
@@ -1876,11 +1877,15 @@ hframes = 2
 [node name="CanvasLayer" type="CanvasLayer" parent="PlayerCamera"]
 
 [node name="StatusBar" parent="PlayerCamera/CanvasLayer" node_paths=PackedStringArray("character") instance=ExtResource("15_wbqpd")]
+visible = false
 character = NodePath("../../..")
 
 [node name="Minimap" parent="PlayerCamera/CanvasLayer" instance=ExtResource("15_7qc35")]
+visible = false
 anchors_preset = -1
 metadata/_edit_use_anchors_ = true
+
+[node name="Shop" parent="PlayerCamera/CanvasLayer" instance=ExtResource("16_jfciu")]
 
 [node name="JumpMarker" type="Sprite2D" parent="."]
 texture = ExtResource("11_sn1d5")

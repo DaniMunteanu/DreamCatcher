@@ -1,0 +1,477 @@
+[gd_scene load_steps=16 format=3 uid="uid://8fdhxwi6j3gh"]
+
+[ext_resource type="Texture2D" uid="uid://8mbbbeqtxyti" path="res://Sprites/SpritesUI/ShopBackground.png" id="1_ryky3"]
+[ext_resource type="Texture2D" uid="uid://upu3jtsni60s" path="res://Sprites/SpritesUI/Coin.png" id="2_q1q3b"]
+[ext_resource type="Texture2D" uid="uid://r6v4g81n208l" path="res://Sprites/SpritesUI/Feather.png" id="3_hsytu"]
+[ext_resource type="Texture2D" uid="uid://d38gjhpxxeovt" path="res://Sprites/SpritesUI/Quartz.png" id="4_eepa7"]
+[ext_resource type="Texture2D" uid="uid://di8ak5uovfs0p" path="res://Sprites/SpritesUI/ButtonTextureNormal.png" id="5_85xex"]
+[ext_resource type="Texture2D" uid="uid://dyd0effbhjl00" path="res://Sprites/SpritesUI/HeartIcon.png" id="6_p6vyc"]
+[ext_resource type="Texture2D" uid="uid://dgntkmvdl1mgb" path="res://Sprites/SpritesUI/LargeButtonTextureNormal.png" id="7_343dp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gxrj1"]
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_w4121"]
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_v2coh"]
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_eb7dt"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_gfpwp"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_o4xlt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_slg8p"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_l8d5c"]
+line_spacing = 0.0
+font_size = 18
+
+[node name="Shop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ShopBackground" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0004375
+anchor_top = -0.000111111
+anchor_right = 0.000437546
+anchor_bottom = -0.000111135
+offset_left = -0.28
+offset_top = 0.0399997
+offset_right = 639.72
+offset_bottom = 360.04
+texture = ExtResource("1_ryky3")
+metadata/_edit_use_anchors_ = true
+
+[node name="DamageLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.458126
+anchor_top = 0.766222
+anchor_right = 0.458126
+anchor_bottom = 0.766222
+offset_left = -0.200012
+offset_top = 0.159973
+offset_right = 39.8
+offset_bottom = 14.16
+text = "Damage"
+label_settings = SubResource("LabelSettings_gxrj1")
+metadata/_edit_use_anchors_ = true
+
+[node name="FireRateLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.458126
+anchor_top = 0.800444
+anchor_right = 0.458126
+anchor_bottom = 0.800444
+offset_left = -0.200012
+offset_top = -0.160034
+offset_right = 42.8
+offset_bottom = 13.84
+text = "Fire Rate"
+label_settings = SubResource("LabelSettings_w4121")
+metadata/_edit_use_anchors_ = true
+
+[node name="ShotSpeedLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.622125
+anchor_top = 0.766222
+anchor_right = 0.622125
+anchor_bottom = 0.766222
+offset_left = -0.160004
+offset_top = 0.159973
+offset_right = 53.84
+offset_bottom = 14.16
+text = "Shot Speed"
+label_settings = SubResource("LabelSettings_v2coh")
+metadata/_edit_use_anchors_ = true
+
+[node name="DefenseLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.622125
+anchor_top = 0.800444
+anchor_right = 0.622125
+anchor_bottom = 0.800444
+offset_left = -0.160004
+offset_top = -0.160034
+offset_right = 39.84
+offset_bottom = 13.84
+text = "Defense"
+label_settings = SubResource("LabelSettings_gxrj1")
+metadata/_edit_use_anchors_ = true
+
+[node name="SpeedLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.803125
+anchor_top = 0.766222
+anchor_right = 0.803125
+anchor_bottom = 0.766222
+offset_top = 0.159973
+offset_right = 43.0
+offset_bottom = 14.16
+text = "Speed"
+label_settings = SubResource("LabelSettings_w4121")
+metadata/_edit_use_anchors_ = true
+
+[node name="LuckLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.803125
+anchor_top = 0.800444
+anchor_right = 0.803125
+anchor_bottom = 0.800444
+offset_top = -0.160034
+offset_right = 54.0
+offset_bottom = 13.84
+text = "Luck"
+label_settings = SubResource("LabelSettings_v2coh")
+metadata/_edit_use_anchors_ = true
+
+[node name="DamageBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.526125
+anchor_top = 0.780222
+anchor_right = 0.526125
+anchor_bottom = 0.780222
+offset_left = 0.279999
+offset_top = 0.119995
+offset_right = 60.28
+offset_bottom = 6.12
+value = 40.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="FireRateBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.526125
+anchor_top = 0.814222
+anchor_right = 0.526125
+anchor_bottom = 0.814222
+offset_left = 0.279999
+offset_top = -0.120026
+offset_right = 60.28
+offset_bottom = 5.87997
+value = 30.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="ShotSpeedBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.708125
+anchor_top = 0.780222
+anchor_right = 0.708125
+anchor_bottom = 0.780222
+offset_left = -0.200012
+offset_top = 0.119995
+offset_right = 59.8
+offset_bottom = 6.12
+value = 60.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="DefenseBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.708125
+anchor_top = 0.813444
+anchor_right = 0.708125
+anchor_bottom = 0.813444
+offset_left = -0.200012
+offset_top = 0.159973
+offset_right = 59.8
+offset_bottom = 6.15997
+value = 40.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="SpeedBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.850125
+anchor_top = 0.781
+anchor_right = 0.850125
+anchor_bottom = 0.781
+offset_left = -0.0800171
+offset_top = -0.160004
+offset_right = 59.92
+offset_bottom = 5.84
+value = 30.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="LuckBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.850125
+anchor_top = 0.813444
+anchor_right = 0.850125
+anchor_bottom = 0.813444
+offset_left = -0.0800171
+offset_top = 0.159973
+offset_right = 59.92
+offset_bottom = 6.15997
+value = 60.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="PriceLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.492438
+anchor_top = 0.830333
+anchor_right = 0.492438
+anchor_bottom = 0.830333
+offset_left = -0.160004
+offset_top = 0.0799866
+offset_right = 63.84
+offset_bottom = 34.08
+text = "Price:"
+label_settings = SubResource("LabelSettings_eb7dt")
+metadata/_edit_use_anchors_ = true
+
+[node name="CoinIcon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.600062
+anchor_top = 0.858222
+anchor_right = 0.600062
+anchor_bottom = 0.858222
+offset_left = -0.0400085
+offset_top = 0.039978
+offset_right = 15.96
+offset_bottom = 16.04
+texture = ExtResource("2_q1q3b")
+metadata/_edit_use_anchors_ = true
+
+[node name="FeatherIcon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6745
+anchor_top = 0.858444
+anchor_right = 0.6745
+anchor_bottom = 0.858444
+offset_left = 0.319946
+offset_top = -0.0400085
+offset_right = 16.3199
+offset_bottom = 15.96
+texture = ExtResource("3_hsytu")
+metadata/_edit_use_anchors_ = true
+
+[node name="QuartzIcon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.733125
+anchor_top = 0.858222
+anchor_right = 0.733125
+anchor_bottom = 0.858444
+offset_left = -0.200012
+offset_top = 0.039978
+offset_right = 15.8
+offset_bottom = 15.96
+texture = ExtResource("4_eepa7")
+metadata/_edit_use_anchors_ = true
+
+[node name="BuyItemButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.856
+anchor_top = 0.838556
+anchor_right = 0.856
+anchor_bottom = 0.838556
+offset_left = 0.159973
+offset_top = 0.119965
+offset_right = 60.16
+offset_bottom = 32.12
+texture_normal = ExtResource("5_85xex")
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="BuyLabel" type="Label" parent="BuyItemButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.133
+anchor_top = -0.15625
+anchor_right = 0.133
+anchor_bottom = -0.15625
+offset_left = 0.02
+offset_right = 44.02
+offset_bottom = 34.0002
+text = "Buy"
+label_settings = SubResource("LabelSettings_gfpwp")
+metadata/_edit_use_anchors_ = true
+
+[node name="BuyHealthButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.305625
+anchor_top = 0.839
+anchor_right = 0.305625
+anchor_bottom = 0.839
+offset_left = 0.189667
+offset_top = -0.0870667
+offset_right = 60.1897
+offset_bottom = 31.9129
+texture_normal = ExtResource("5_85xex")
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="BuyLabel" type="Label" parent="BuyHealthButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.133
+anchor_top = -0.156258
+anchor_right = 0.133
+anchor_bottom = -0.156258
+offset_left = 0.02
+offset_right = 44.02
+offset_bottom = 34.0002
+text = "Buy"
+label_settings = SubResource("LabelSettings_gfpwp")
+metadata/_edit_use_anchors_ = true
+
+[node name="BuyHealthLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 191.0
+offset_top = 279.0
+offset_right = 214.0
+offset_bottom = 302.0
+text = "for"
+label_settings = SubResource("LabelSettings_o4xlt")
+
+[node name="CoinIcon2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.339438
+anchor_top = 0.780222
+anchor_right = 0.339438
+anchor_bottom = 0.780222
+offset_left = -0.240021
+offset_top = 0.119995
+offset_right = 15.76
+offset_bottom = 16.12
+texture = ExtResource("2_q1q3b")
+metadata/_edit_use_anchors_ = true
+
+[node name="CoinAmmountForHealth" type="Label" parent="."]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 279.0
+offset_right = 254.0
+offset_bottom = 302.0
+text = "50"
+label_settings = SubResource("LabelSettings_slg8p")
+
+[node name="HealthAmmount" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.239437
+anchor_top = 0.775
+anchor_right = 0.239437
+anchor_bottom = 0.775
+offset_left = -0.240005
+offset_right = 18.76
+offset_bottom = 23.0
+text = "15
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="HeartIcon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.269813
+anchor_top = 0.780667
+anchor_right = 0.269813
+anchor_bottom = 0.780667
+offset_left = 0.319992
+offset_top = -0.0400085
+offset_right = 16.32
+offset_bottom = 15.96
+texture = ExtResource("6_p6vyc")
+metadata/_edit_use_anchors_ = true
+
+[node name="CoinAmmountForItem" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6285
+anchor_top = 0.853
+anchor_right = 0.6285
+anchor_bottom = 0.853
+offset_left = -0.240021
+offset_top = -0.0800171
+offset_right = 27.76
+offset_bottom = 22.92
+text = "120"
+metadata/_edit_use_anchors_ = true
+
+[node name="FeatherAmmountForItem" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.701063
+anchor_top = 0.853
+anchor_right = 0.701063
+anchor_bottom = 0.853
+offset_left = 0.320007
+offset_top = -0.0800171
+offset_right = 19.32
+offset_bottom = 22.92
+text = "56"
+metadata/_edit_use_anchors_ = true
+
+[node name="QuartzAmmountForItem" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.760875
+anchor_top = 0.852667
+anchor_right = 0.760875
+anchor_bottom = 0.852667
+offset_left = 0.039978
+offset_top = 0.039978
+offset_right = 10.04
+offset_bottom = 23.04
+text = "1"
+metadata/_edit_use_anchors_ = true
+
+[node name="ExitShopButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.775
+anchor_right = 0.05
+anchor_bottom = 0.775
+offset_right = 60.0
+offset_bottom = 60.0
+texture_normal = ExtResource("7_343dp")
+metadata/_edit_use_anchors_ = true
+
+[node name="ExitShopLabel" type="Label" parent="ExitShopButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0503333
+anchor_top = -0.0166667
+anchor_right = 0.0503333
+anchor_bottom = -0.0163333
+offset_left = -0.0200005
+offset_right = 48.98
+offset_bottom = 55.98
+text = "Exit
+Shop"
+label_settings = SubResource("LabelSettings_l8d5c")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
