@@ -1877,11 +1877,10 @@ hframes = 2
 [node name="CanvasLayer" type="CanvasLayer" parent="PlayerCamera"]
 
 [node name="StatusBar" parent="PlayerCamera/CanvasLayer" node_paths=PackedStringArray("character") instance=ExtResource("15_wbqpd")]
-visible = false
+z_index = 1
 character = NodePath("../../..")
 
 [node name="Minimap" parent="PlayerCamera/CanvasLayer" instance=ExtResource("15_7qc35")]
-visible = false
 anchors_preset = -1
 metadata/_edit_use_anchors_ = true
 
