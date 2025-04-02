@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://8fdhxwi6j3gh"]
+[gd_scene load_steps=31 format=3 uid="uid://8fdhxwi6j3gh"]
 
 [ext_resource type="Texture2D" uid="uid://8mbbbeqtxyti" path="res://Sprites/SpritesUI/ShopBackground.png" id="1_ryky3"]
 [ext_resource type="Texture2D" uid="uid://upu3jtsni60s" path="res://Sprites/SpritesUI/Coin.png" id="2_q1q3b"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://di8ak5uovfs0p" path="res://Sprites/SpritesUI/ButtonTextureNormal.png" id="5_85xex"]
 [ext_resource type="Texture2D" uid="uid://dyd0effbhjl00" path="res://Sprites/SpritesUI/HeartIcon.png" id="6_p6vyc"]
 [ext_resource type="Texture2D" uid="uid://dgntkmvdl1mgb" path="res://Sprites/SpritesUI/LargeButtonTextureNormal.png" id="7_343dp"]
+[ext_resource type="Texture2D" uid="uid://d1qa8c7fygrop" path="res://Sprites/Tomes/TomeOfDamage.png" id="8_dyb63"]
+[ext_resource type="Texture2D" uid="uid://wl24wwe13q4a" path="res://Sprites/Tomes/TomeOfDefense.png" id="9_s7evf"]
+[ext_resource type="Texture2D" uid="uid://dpkxr76bs4vu8" path="res://Sprites/Tomes/TomeOfShotSpeed.png" id="10_k4vvd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gxrj1"]
 font_size = 10
@@ -20,12 +23,60 @@ font_size = 10
 [sub_resource type="LabelSettings" id="LabelSettings_eb7dt"]
 font_size = 24
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4b2s8"]
+atlas = ExtResource("5_85xex")
+region = Rect2(0, 0, 60, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76f5b"]
+atlas = ExtResource("5_85xex")
+region = Rect2(0, 30, 60, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhecy"]
+atlas = ExtResource("5_85xex")
+region = Rect2(0, 60, 60, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bc0w0"]
+atlas = ExtResource("5_85xex")
+region = Rect2(0, 90, 60, 30)
+
 [sub_resource type="LabelSettings" id="LabelSettings_gfpwp"]
-font_size = 24
+font_size = 22
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chthn"]
+atlas = ExtResource("5_85xex")
+region = Rect2(0, 0, 60, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8biqr"]
+atlas = ExtResource("5_85xex")
+region = Rect2(0, 30, 60, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flhmx"]
+atlas = ExtResource("5_85xex")
+region = Rect2(0, 60, 60, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvwxq"]
+atlas = ExtResource("5_85xex")
+region = Rect2(0, 90, 60, 30)
 
 [sub_resource type="LabelSettings" id="LabelSettings_o4xlt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_slg8p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itfam"]
+atlas = ExtResource("7_343dp")
+region = Rect2(0, 0, 53, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pl8j"]
+atlas = ExtResource("7_343dp")
+region = Rect2(0, 53, 53, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4qbh"]
+atlas = ExtResource("7_343dp")
+region = Rect2(0, 106, 53, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66kbt"]
+atlas = ExtResource("7_343dp")
+region = Rect2(0, 159, 53, 53)
 
 [sub_resource type="LabelSettings" id="LabelSettings_l8d5c"]
 line_spacing = 0.0
@@ -292,24 +343,27 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.856
-anchor_top = 0.838556
+anchor_top = 0.839
 anchor_right = 0.856
-anchor_bottom = 0.838556
+anchor_bottom = 0.839
 offset_left = 0.159973
-offset_top = 0.119965
+offset_top = -0.0398865
 offset_right = 60.16
-offset_bottom = 32.12
-texture_normal = ExtResource("5_85xex")
+offset_bottom = 29.9601
+texture_normal = SubResource("AtlasTexture_4b2s8")
+texture_pressed = SubResource("AtlasTexture_76f5b")
+texture_hover = SubResource("AtlasTexture_fhecy")
+texture_disabled = SubResource("AtlasTexture_bc0w0")
 stretch_mode = 4
 metadata/_edit_use_anchors_ = true
 
 [node name="BuyLabel" type="Label" parent="BuyItemButton"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.133
-anchor_top = -0.15625
-anchor_right = 0.133
-anchor_bottom = -0.15625
+anchor_left = 0.149667
+anchor_top = -0.100004
+anchor_right = 0.149667
+anchor_bottom = -0.100004
 offset_left = 0.02
 offset_right = 44.02
 offset_bottom = 34.0002
@@ -320,25 +374,28 @@ metadata/_edit_use_anchors_ = true
 [node name="BuyHealthButton" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.305625
+anchor_left = 0.305954
 anchor_top = 0.839
-anchor_right = 0.305625
+anchor_right = 0.306
 anchor_bottom = 0.839
 offset_left = 0.189667
-offset_top = -0.0870667
-offset_right = 60.1897
-offset_bottom = 31.9129
-texture_normal = ExtResource("5_85xex")
+offset_top = -0.0400085
+offset_right = 60.16
+offset_bottom = 29.96
+texture_normal = SubResource("AtlasTexture_chthn")
+texture_pressed = SubResource("AtlasTexture_8biqr")
+texture_hover = SubResource("AtlasTexture_flhmx")
+texture_disabled = SubResource("AtlasTexture_pvwxq")
 stretch_mode = 4
 metadata/_edit_use_anchors_ = true
 
 [node name="BuyLabel" type="Label" parent="BuyHealthButton"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.133
-anchor_top = -0.156258
-anchor_right = 0.133
-anchor_bottom = -0.156258
+anchor_left = 0.149667
+anchor_top = -0.0999999
+anchor_right = 0.149667
+anchor_bottom = -0.0999999
 offset_left = 0.02
 offset_right = 44.02
 offset_bottom = 34.0002
@@ -455,9 +512,12 @@ anchor_left = 0.05
 anchor_top = 0.775
 anchor_right = 0.05
 anchor_bottom = 0.775
-offset_right = 60.0
-offset_bottom = 60.0
-texture_normal = ExtResource("7_343dp")
+offset_right = 53.0
+offset_bottom = 53.0
+texture_normal = SubResource("AtlasTexture_itfam")
+texture_pressed = SubResource("AtlasTexture_7pl8j")
+texture_hover = SubResource("AtlasTexture_q4qbh")
+texture_disabled = SubResource("AtlasTexture_66kbt")
 metadata/_edit_use_anchors_ = true
 
 [node name="ExitShopLabel" type="Label" parent="ExitShopButton"]
@@ -475,3 +535,15 @@ Shop"
 label_settings = SubResource("LabelSettings_l8d5c")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="TomeOfDamage" type="Sprite2D" parent="."]
+position = Vector2(341, 176)
+texture = ExtResource("8_dyb63")
+
+[node name="TomeOfDefense" type="Sprite2D" parent="."]
+position = Vector2(448, 176)
+texture = ExtResource("9_s7evf")
+
+[node name="TomeOfShotSpeed" type="Sprite2D" parent="."]
+position = Vector2(555, 176)
+texture = ExtResource("10_k4vvd")
