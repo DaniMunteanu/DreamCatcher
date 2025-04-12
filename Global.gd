@@ -2,6 +2,13 @@ extends Node
 
 var cursor_angle = 0.0
 
+var player_damage = 5
+var player_defense = 5
+var player_shot_speed = 5
+var player_fire_rate = 5
+var player_speed = 5
+var player_luck = 5
+
 signal clear_room(room_index: int)
 signal room_entered(room_index: int)
 
@@ -12,3 +19,4 @@ signal floor_generated
 signal player_diagonal_collision_right
 signal player_diagonal_collision_left
 signal player_diagonal_collision_over
+signal tome_selected(tome_index: int)

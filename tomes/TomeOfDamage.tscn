@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bweu5uhdbprgy"]
+
+[ext_resource type="Texture2D" uid="uid://d1qa8c7fygrop" path="res://Sprites/Tomes/TomeOfDamage.png" id="1_1om0n"]
+[ext_resource type="Script" path="res://tomes/tome_of_damage.gd" id="2_oa6m7"]
+
+[node name="TomeOfDamage" type="TextureRect"]
+anchors_preset = -1
+anchor_top = -0.417
+anchor_bottom = -0.417
+offset_top = 0.12001
+offset_right = 100.0
+offset_bottom = 150.12
+texture = ExtResource("1_1om0n")
+stretch_mode = 2
+script = ExtResource("2_oa6m7")
+metadata/_edit_use_anchors_ = true

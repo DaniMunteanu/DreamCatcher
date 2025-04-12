@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfmq1iuavxfkm"]
+
+[ext_resource type="Texture2D" uid="uid://dpkxr76bs4vu8" path="res://Sprites/Tomes/TomeOfShotSpeed.png" id="1_wq8jv"]
+[ext_resource type="Script" path="res://tomes/tome_of_shot_speed.gd" id="2_qyj80"]
+
+[node name="TomeOfShotSpeed" type="TextureRect"]
+anchors_preset = -1
+anchor_top = -0.417
+anchor_bottom = -0.417
+offset_top = 0.12001
+offset_right = 100.0
+offset_bottom = 150.12
+texture = ExtResource("1_wq8jv")
+stretch_mode = 2
+script = ExtResource("2_qyj80")
+metadata/_edit_use_anchors_ = true

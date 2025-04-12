@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c87g5vuqxjc3k"]
+
+[ext_resource type="Texture2D" uid="uid://wl24wwe13q4a" path="res://Sprites/Tomes/TomeOfDefense.png" id="1_mebxr"]
+[ext_resource type="Script" path="res://tomes/tome_of_defense.gd" id="2_bdq0c"]
+
+[node name="TomeOfDefense" type="TextureRect"]
+anchors_preset = -1
+anchor_top = -0.417
+anchor_bottom = -0.417
+offset_top = 0.12001
+offset_right = 100.0
+offset_bottom = 150.12
+texture = ExtResource("1_mebxr")
+stretch_mode = 2
+script = ExtResource("2_bdq0c")
+metadata/_edit_use_anchors_ = true
