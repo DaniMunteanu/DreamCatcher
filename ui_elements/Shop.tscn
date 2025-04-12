@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://8fdhxwi6j3gh"]
+[gd_scene load_steps=40 format=3 uid="uid://8fdhxwi6j3gh"]
 
 [ext_resource type="Texture2D" uid="uid://8mbbbeqtxyti" path="res://Sprites/SpritesUI/ShopBackground.png" id="1_ryky3"]
 [ext_resource type="Script" path="res://ui_elements/shop.gd" id="1_ttsqo"]
@@ -17,6 +17,8 @@
 [ext_resource type="Script" path="res://ui_elements/defense_bar.gd" id="9_401at"]
 [ext_resource type="Script" path="res://ui_elements/speed_bar.gd" id="10_hdxr7"]
 [ext_resource type="Script" path="res://ui_elements/luck_bar.gd" id="11_gb7j6"]
+[ext_resource type="Script" path="res://ui_elements/buy_health_button.gd" id="16_nywqc"]
+[ext_resource type="Script" path="res://ui_elements/exit_shop_button.gd" id="19_i2tr8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gxrj1"]
 font_size = 10
@@ -99,6 +101,7 @@ grow_vertical = 2
 script = ExtResource("1_ttsqo")
 
 [node name="ShopBackground" type="TextureRect" parent="."]
+z_index = -1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0004375
@@ -487,6 +490,7 @@ texture_pressed = SubResource("AtlasTexture_8biqr")
 texture_hover = SubResource("AtlasTexture_flhmx")
 texture_disabled = SubResource("AtlasTexture_pvwxq")
 stretch_mode = 4
+script = ExtResource("16_nywqc")
 metadata/_edit_use_anchors_ = true
 
 [node name="BuyLabel" type="Label" parent="BuyHealthButton"]
@@ -618,6 +622,7 @@ texture_normal = SubResource("AtlasTexture_itfam")
 texture_pressed = SubResource("AtlasTexture_7pl8j")
 texture_hover = SubResource("AtlasTexture_q4qbh")
 texture_disabled = SubResource("AtlasTexture_66kbt")
+script = ExtResource("19_i2tr8")
 metadata/_edit_use_anchors_ = true
 
 [node name="ExitShopLabel" type="Label" parent="ExitShopButton"]
@@ -647,3 +652,7 @@ position = Vector2(398.456, 251.576)
 [node name="TomeMarker2" type="Marker2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(504.655, 250.814)
+
+[connection signal="mouse_entered" from="BuyHealthButton" to="BuyHealthButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="BuyHealthButton" to="BuyHealthButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="ExitShopButton" to="ExitShopButton" method="_on_pressed"]

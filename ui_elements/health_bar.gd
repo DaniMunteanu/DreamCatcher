@@ -3,8 +3,11 @@ extends TextureProgressBar
 @onready var health: Health = get_parent().character.get_node("Health")
 
 func _ready() -> void:
+	Global.buy_health_hover.connect(_on_buy_health_hover)
+	Global.buy_health_hover_end.connect(_on_buy_health_hover_end)
 	max_value = health.max_health
 	value = health.current_health
+	get_node("FutureHealthBar").value = health.current_health
 	get_node("HealthAmount").text = str(value) + "/" + str(max_value)
 	health.health_changed.connect(_update_bar)
 	
@@ -12,9 +15,16 @@ func _update_bar(diff: int):
 	value = health.current_health
 	get_node("HealthAmount").text = str(value) + "/" + str(max_value)
 	
-func _on_buy_health_hover():
-	pass
+	await get_tree().create_timer(0.5).timeout
+	get_node("FutureHealthBar").value = health.current_health
+	
+func _on_buy_health_hover(health_to_buy: int):
+	get_node("FutureHealthBar").value = clampi(value + health_to_buy,0,max_value)
+	get_node("HealthAmount").text = str(get_node("FutureHealthBar").value) + "/" + str(max_value)
+	get_node("HealthAmount").set("theme_override_colors/font_color",Color(0.792, 0.4, 0.259)) 
 
 func _on_buy_health_hover_end():
-	pass
+	get_node("FutureHealthBar").value = health.current_health
+	get_node("HealthAmount").text = str(value) + "/" + str(max_value)
+	get_node("HealthAmount").set("theme_override_colors/font_color",Color(1, 1, 1))
 	

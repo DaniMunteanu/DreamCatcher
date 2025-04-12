@@ -19,4 +19,11 @@ signal floor_generated
 signal player_diagonal_collision_right
 signal player_diagonal_collision_left
 signal player_diagonal_collision_over
+
+signal open_shop
+signal close_shop
+
 signal tome_selected(tome_index: int)
+
+signal buy_health_hover(health_to_buy: int)
+signal buy_health_hover_end

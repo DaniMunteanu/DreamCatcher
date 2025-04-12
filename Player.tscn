@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cupqqwddnk40"]
+[gd_scene load_steps=39 format=3 uid="uid://cupqqwddnk40"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_8iasi"]
 [ext_resource type="Script" path="res://player_animation.gd" id="2_vu52e"]
@@ -16,7 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://d06ri1atvph01" path="res://Sprites/PlayerIdleUp.png" id="13_1kgd2"]
 [ext_resource type="PackedScene" uid="uid://cphxf7xhhkq7q" path="res://ui_elements/Minimap.tscn" id="15_7qc35"]
 [ext_resource type="PackedScene" uid="uid://iqvuhgs6fnod" path="res://ui_elements/PlayerStatusBar.tscn" id="15_wbqpd"]
-[ext_resource type="PackedScene" uid="uid://8fdhxwi6j3gh" path="res://ui_elements/Shop.tscn" id="16_jfciu"]
 [ext_resource type="Script" path="res://Hurtbox.gd" id="17_rhecj"]
 [ext_resource type="Script" path="res://Health.gd" id="18_wjjgx"]
 
@@ -1884,8 +1883,6 @@ character = NodePath("../../..")
 anchors_preset = -1
 metadata/_edit_use_anchors_ = true
 
-[node name="Shop" parent="PlayerCamera/CanvasLayer" instance=ExtResource("16_jfciu")]
-
 [node name="JumpMarker" type="Sprite2D" parent="."]
 texture = ExtResource("11_sn1d5")
 hframes = 2
@@ -1915,8 +1912,8 @@ one_way_collision_margin = 0.0
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("18_wjjgx")
-max_health = 10
-current_health = 10
+max_health = 50
+current_health = 50
 
 [node name="EvadeTimer" type="Timer" parent="."]
 wait_time = 5.0

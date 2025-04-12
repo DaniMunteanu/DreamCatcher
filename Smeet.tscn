@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dv344btj33j0m"]
+
+[ext_resource type="Script" path="res://smeet.gd" id="1_p8gt8"]
+[ext_resource type="Texture2D" uid="uid://cw3ow33kq0xd4" path="res://Sprites/Smeet.png" id="1_p75oh"]
+[ext_resource type="PackedScene" uid="uid://cxf2wehgbng2m" path="res://InteractionArea.tscn" id="2_eljun"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8yav5"]
+radius = 52.0
+
+[node name="Smeet" type="Node2D"]
+script = ExtResource("1_p8gt8")
+
+[node name="Smeet" type="Sprite2D" parent="."]
+position = Vector2(14, -21)
+texture = ExtResource("1_p75oh")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_eljun")]
+position = Vector2(16, -65)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(-2, 43)
+shape = SubResource("CircleShape2D_8yav5")

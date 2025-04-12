@@ -9,6 +9,9 @@ extends CharacterBody2D
 @onready var sprite = $PlayerAnimationManager/PlayerModel
 @onready var weapon = $TestWeapon
 
+const SHOP = preload("res://ui_elements/Shop.tscn")
+@onready var opened_shop = SHOP.instantiate()
+
 var evadeReady = true
 
 enum player_states {MOVE, JUMP, FIRE}
@@ -27,12 +30,20 @@ var diagonal_collision_left = false
 
 func _on_health_health_depleted() -> void:
 	pass
-	#queue_free()	
 
 func _ready() -> void:
 	Global.player_diagonal_collision_right.connect(_on_diagonal_collision_right)
 	Global.player_diagonal_collision_left.connect(_on_diagonal_collision_left)
 	Global.player_diagonal_collision_over.connect(_on_diagonal_collision_over)
+	
+	Global.open_shop.connect(_on_open_shop)
+	Global.close_shop.connect(_on_close_shop)
+	
+func _on_open_shop():
+	get_node("PlayerCamera/CanvasLayer").add_child(opened_shop)
+	
+func _on_close_shop():
+	get_node("PlayerCamera/CanvasLayer").remove_child(opened_shop)
 	
 func _on_evade_timer_timeout() -> void:
 	evadeReady = true

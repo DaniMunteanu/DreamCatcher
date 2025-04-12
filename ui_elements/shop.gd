@@ -41,4 +41,3 @@ func _ready() -> void:
 	initialize_tomes_resorces()
 	place_tomes()
 	offered_tomes[0].hover()
-	
