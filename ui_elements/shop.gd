@@ -28,7 +28,16 @@ func place_tomes():
 	add_child(offered_tomes[1])
 	add_child(offered_tomes[2])
 
+func _on_tome_selected(index: int):
+	get_node("DamageBar").update(Global.player_damage, Global.player_damage + offered_tomes[index].damage_bonus)
+	get_node("DefenseBar").update(Global.player_defense, Global.player_defense + offered_tomes[index].defense_bonus)
+	get_node("ShotSpeedBar").update(Global.player_shot_speed, Global.player_shot_speed + offered_tomes[index].shot_speed_bonus)
+	get_node("FireRateBar").update(Global.player_fire_rate, Global.player_fire_rate + offered_tomes[index].fire_rate_bonus)
+	get_node("SpeedBar").update(Global.player_speed, Global.player_speed + offered_tomes[index].speed_bonus)
+	get_node("LuckBar").update(Global.player_luck, Global.player_luck + offered_tomes[index].luck_bonus)
+
 func _ready() -> void:
+	Global.tome_selected.connect(_on_tome_selected)
 	initialize_tomes_resorces()
 	place_tomes()
 	offered_tomes[0].hover()

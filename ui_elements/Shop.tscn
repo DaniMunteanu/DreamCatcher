@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://8fdhxwi6j3gh"]
+[gd_scene load_steps=38 format=3 uid="uid://8fdhxwi6j3gh"]
 
 [ext_resource type="Texture2D" uid="uid://8mbbbeqtxyti" path="res://Sprites/SpritesUI/ShopBackground.png" id="1_ryky3"]
 [ext_resource type="Script" path="res://ui_elements/shop.gd" id="1_ttsqo"]
@@ -6,11 +6,17 @@
 [ext_resource type="Texture2D" uid="uid://c5bjx2hg5q5d2" path="res://Sprites/SpritesUI/StatBarProgress.png" id="3_ay61e"]
 [ext_resource type="Texture2D" uid="uid://r6v4g81n208l" path="res://Sprites/SpritesUI/Feather.png" id="3_hsytu"]
 [ext_resource type="Texture2D" uid="uid://ciggieoqahppb" path="res://Sprites/SpritesUI/FutureStatBarUnder.png" id="4_5emao"]
+[ext_resource type="Script" path="res://ui_elements/damage_bar.gd" id="4_aw20l"]
 [ext_resource type="Texture2D" uid="uid://bbryxnawahcx2" path="res://Sprites/SpritesUI/FutureStatBarPositive.png" id="4_b3phu"]
 [ext_resource type="Texture2D" uid="uid://d38gjhpxxeovt" path="res://Sprites/SpritesUI/Quartz.png" id="4_eepa7"]
 [ext_resource type="Texture2D" uid="uid://di8ak5uovfs0p" path="res://Sprites/SpritesUI/ButtonTextureNormal.png" id="5_85xex"]
 [ext_resource type="Texture2D" uid="uid://dyd0effbhjl00" path="res://Sprites/SpritesUI/HeartIcon.png" id="6_p6vyc"]
 [ext_resource type="Texture2D" uid="uid://dgntkmvdl1mgb" path="res://Sprites/SpritesUI/LargeButtonTextureNormal.png" id="7_343dp"]
+[ext_resource type="Script" path="res://ui_elements/fire_rate_bar.gd" id="7_ds6mn"]
+[ext_resource type="Script" path="res://ui_elements/shot_speed_bar.gd" id="8_fq4g3"]
+[ext_resource type="Script" path="res://ui_elements/defense_bar.gd" id="9_401at"]
+[ext_resource type="Script" path="res://ui_elements/speed_bar.gd" id="10_hdxr7"]
+[ext_resource type="Script" path="res://ui_elements/luck_bar.gd" id="11_gb7j6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gxrj1"]
 font_size = 10
@@ -210,6 +216,7 @@ max_value = 10.0
 value = 5.0
 nine_patch_stretch = true
 texture_progress = ExtResource("3_ay61e")
+script = ExtResource("4_aw20l")
 
 [node name="FutureProgressBar" type="TextureProgressBar" parent="DamageBar"]
 z_index = -1
@@ -241,6 +248,7 @@ max_value = 10.0
 value = 3.0
 nine_patch_stretch = true
 texture_progress = ExtResource("3_ay61e")
+script = ExtResource("7_ds6mn")
 metadata/_edit_use_anchors_ = true
 
 [node name="FutureProgressBar" type="TextureProgressBar" parent="FireRateBar"]
@@ -270,6 +278,7 @@ max_value = 10.0
 value = 4.0
 nine_patch_stretch = true
 texture_progress = ExtResource("3_ay61e")
+script = ExtResource("8_fq4g3")
 metadata/_edit_use_anchors_ = true
 
 [node name="FutureProgressBar" type="TextureProgressBar" parent="ShotSpeedBar"]
@@ -299,6 +308,7 @@ max_value = 10.0
 value = 6.0
 nine_patch_stretch = true
 texture_progress = ExtResource("3_ay61e")
+script = ExtResource("9_401at")
 metadata/_edit_use_anchors_ = true
 
 [node name="FutureProgressBar" type="TextureProgressBar" parent="DefenseBar"]
@@ -328,6 +338,7 @@ max_value = 10.0
 value = 3.0
 nine_patch_stretch = true
 texture_progress = ExtResource("3_ay61e")
+script = ExtResource("10_hdxr7")
 metadata/_edit_use_anchors_ = true
 
 [node name="FutureProgressBar" type="TextureProgressBar" parent="SpeedBar"]
@@ -357,6 +368,7 @@ max_value = 10.0
 value = 7.0
 nine_patch_stretch = true
 texture_progress = ExtResource("3_ay61e")
+script = ExtResource("11_gb7j6")
 metadata/_edit_use_anchors_ = true
 
 [node name="FutureProgressBar" type="TextureProgressBar" parent="LuckBar"]

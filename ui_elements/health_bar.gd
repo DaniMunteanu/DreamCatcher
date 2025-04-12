@@ -12,3 +12,9 @@ func _update_bar(diff: int):
 	value = health.current_health
 	get_node("HealthAmount").text = str(value) + "/" + str(max_value)
 	
+func _on_buy_health_hover():
+	pass
+
+func _on_buy_health_hover_end():
+	pass
+	

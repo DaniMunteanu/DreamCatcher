@@ -2,6 +2,13 @@ class_name Tome
 
 extends TextureRect
 
+var damage_bonus = 0
+var defense_bonus = 0
+var shot_speed_bonus = 0
+var fire_rate_bonus = 0
+var speed_bonus = 0
+var luck_bonus = 0
+
 var position_up
 var position_down
 

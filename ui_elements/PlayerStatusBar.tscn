@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://iqvuhgs6fnod"]
+[gd_scene load_steps=11 format=3 uid="uid://iqvuhgs6fnod"]
 
 [ext_resource type="Script" path="res://ui_elements/player_status_bar.gd" id="1_4teh5"]
 [ext_resource type="Texture2D" uid="uid://cjewsh55n30t3" path="res://Sprites/SpritesUI/Healthbar.png" id="2_knjbu"]
 [ext_resource type="Texture2D" uid="uid://d1jm8usb8qfg8" path="res://Sprites/SpritesUI/HealthBarProgress.png" id="3_00o8p"]
 [ext_resource type="Script" path="res://ui_elements/health_bar.gd" id="4_6puap"]
+[ext_resource type="Texture2D" uid="uid://cdhpuwrwv6e0i" path="res://Sprites/SpritesUI/FutureHealthBarProgress.png" id="5_bc4ca"]
 [ext_resource type="Texture2D" uid="uid://8tx6tdmsv8j0" path="res://Sprites/SpritesUI/StaminaBarCharged.png" id="5_cgqxw"]
 [ext_resource type="Script" path="res://ui_elements/stamina_bar.gd" id="6_i7ust"]
 [ext_resource type="Texture2D" uid="uid://upu3jtsni60s" path="res://Sprites/SpritesUI/Coin.png" id="7_4t2ap"]
@@ -28,24 +29,38 @@ anchor_right = 0.295313
 anchor_bottom = 0.155556
 offset_right = -1.52588e-05
 max_value = 10.0
-value = 10.0
-texture_under = ExtResource("2_knjbu")
+value = 3.0
 texture_progress = ExtResource("3_00o8p")
 texture_progress_offset = Vector2(65, 29)
 script = ExtResource("4_6puap")
 metadata/_edit_use_anchors_ = true
 
+[node name="FutureHealthBar" type="TextureProgressBar" parent="HealthBar"]
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.00018941
+anchor_bottom = -0.00018941
+offset_top = 0.0119171
+offset_right = 208.0
+offset_bottom = 63.0119
+value = 80.0
+texture_under = ExtResource("2_knjbu")
+texture_progress = ExtResource("5_bc4ca")
+texture_progress_offset = Vector2(65, 29)
+metadata/_edit_use_anchors_ = true
+
 [node name="HealthText" type="Label" parent="HealthBar"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0703125
-anchor_top = 0.00588889
-anchor_right = 0.0703125
-anchor_bottom = 0.006
-offset_left = 49.375
-offset_top = 8.62898
-offset_right = 105.375
-offset_bottom = 31.622
+anchor_left = 0.308
+anchor_top = 0.143
+anchor_right = 0.308
+anchor_bottom = 0.143
+offset_left = -0.0640793
+offset_top = -0.00903988
+offset_right = 55.9359
+offset_bottom = 22.991
 text = "Health:"
 metadata/_edit_use_anchors_ = true
 
@@ -77,17 +92,47 @@ texture_progress = ExtResource("5_cgqxw")
 script = ExtResource("6_i7ust")
 metadata/_edit_use_anchors_ = true
 
-[node name="Coin" type="Sprite2D" parent="."]
-position = Vector2(52, 46)
+[node name="Coin" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0700625
+anchor_top = 0.105778
+anchor_right = 0.0950625
+anchor_bottom = 0.150222
+offset_left = 0.16
+offset_top = -0.0800018
+offset_right = 0.16
+offset_bottom = -0.0800018
 texture = ExtResource("7_4t2ap")
+metadata/_edit_use_anchors_ = true
 
-[node name="Feather" type="Sprite2D" parent="."]
-position = Vector2(101, 46)
+[node name="Feather" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1455
+anchor_top = 0.105778
+anchor_right = 0.1705
+anchor_bottom = 0.150222
+offset_left = -0.120003
+offset_top = -0.0800018
+offset_right = -0.120003
+offset_bottom = -0.0800018
 texture = ExtResource("8_y0ndi")
+metadata/_edit_use_anchors_ = true
 
-[node name="Quartz" type="Sprite2D" parent="."]
-position = Vector2(150, 46)
+[node name="Quartz" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2215
+anchor_top = 0.105778
+anchor_right = 0.2465
+anchor_bottom = 0.150222
+offset_left = 0.23999
+offset_top = -0.0800018
+offset_right = 0.23999
+offset_bottom = -0.0800018
 texture = ExtResource("9_28dtx")
+metadata/_edit_use_anchors_ = true
 
 [node name="CoinAmount" type="Label" parent="."]
 layout_mode = 1
