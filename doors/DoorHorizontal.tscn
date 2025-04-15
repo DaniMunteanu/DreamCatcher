@@ -243,6 +243,3 @@ polygon = PackedVector2Array(96, 16, 96, 32, 0, 32, 0, 16, -4, 16, -4, 36, 100, 
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Barrier"]
 polygon = PackedVector2Array(0, 89, 0, 92, -4, 92, -4, 85, 100, 85, 100, 92, 96, 92, 96, 89)
-
-[connection signal="body_entered" from="EnterZone0" to="." method="_on_enter_zone_0_body_entered"]
-[connection signal="body_entered" from="EnterZone1" to="." method="_on_enter_zone_1_body_entered"]

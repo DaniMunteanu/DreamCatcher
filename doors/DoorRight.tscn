@@ -249,8 +249,3 @@ position = Vector2(8, 28)
 [node name="Endpoint1" type="Marker2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(56, 96)
-
-[connection signal="body_entered" from="EnterZone0" to="." method="_on_enter_zone_0_body_entered"]
-[connection signal="body_exited" from="EnterZone0" to="." method="_on_enter_zone_0_body_exited"]
-[connection signal="body_entered" from="EnterZone1" to="." method="_on_enter_zone_1_body_entered"]
-[connection signal="body_exited" from="EnterZone1" to="." method="_on_enter_zone_1_body_exited"]

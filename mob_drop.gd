@@ -13,12 +13,13 @@ func _physics_process(delta):
 		var direction = (Global.player_current_position - global_position).normalized()
 		var distance = global_position.distance_to(Global.player_current_position)
 		
-		if distance > 1.0:
+		if distance > 2.0:
 			global_position += direction * speed * delta
 		else:
 			global_position = Global.player_current_position
 			is_moving = false
 			print("Arrived at target!")
+			queue_free()
 		
 func move_to_point():
 	target_position = Global.player_current_position

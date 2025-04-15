@@ -13,14 +13,11 @@ var player_current_position = Vector2(0,0)
 
 signal clear_room(room_index: int)
 signal room_entered(room_index: int)
+signal enemy_dead(enemy_death_position: Vector2)
 
 signal minimap_room_entered(room_index: int, neighbour_rooms_indices: Array)
 
 signal floor_generated
-
-signal player_diagonal_collision_right
-signal player_diagonal_collision_left
-signal player_diagonal_collision_over
 
 signal open_shop
 signal close_shop

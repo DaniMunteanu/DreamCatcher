@@ -240,6 +240,3 @@ position = Vector2(-20, 103)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Barrier"]
 polygon = PackedVector2Array(4, 4, 4, 52, 24, 52, 24, 112, 4, 112, 4, 116, 52, 116, 52, 112, 32, 112, 32, 52, 52, 52, 52, 4, 48, 4, 48, 48, 8, 48, 8, 4)
-
-[connection signal="body_entered" from="EnterZone0" to="." method="_on_enter_zone_0_body_entered"]
-[connection signal="body_entered" from="EnterZone1" to="." method="_on_enter_zone_1_body_entered"]

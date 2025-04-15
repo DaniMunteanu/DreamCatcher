@@ -6,8 +6,8 @@
 [node name="Room2_0" type="Node2D"]
 script = ExtResource("1_y46d0")
 
-[node name="Sleepless3" parent="." groups=["Enemies"] instance=ExtResource("3_krosd")]
+[node name="Sleepless3" parent="." instance=ExtResource("3_krosd")]
 position = Vector2(404, 340)
 
-[node name="Sleepless4" parent="." groups=["Enemies"] instance=ExtResource("3_krosd")]
+[node name="Sleepless4" parent="." instance=ExtResource("3_krosd")]
 position = Vector2(518, 271)

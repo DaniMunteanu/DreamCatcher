@@ -2,19 +2,22 @@ class_name Player
 
 extends CharacterBody2D
 
-#200
 @export var speed = 200.0
 
 @onready var animation_player = $PlayerAnimationManager
 @onready var sprite = $PlayerAnimationManager/PlayerModel
 @onready var weapon = $TestWeapon
+@onready var canvas_layer = $PlayerCamera/CanvasLayer
+
+@onready var jump_marker = $JumpMarker
+@onready var evade_timer = $EvadeTimer
 
 const SHOP = preload("res://ui_elements/Shop.tscn")
 @onready var opened_shop = SHOP.instantiate()
 
 var evadeReady = true
 
-enum player_states {MOVE, JUMP, FIRE}
+enum player_states {MOVE, JUMP, FIRE, SHOP}
 var current_state = player_states.MOVE
 
 enum player_direction {LEFT, RIGHT, UP, DOWN}
@@ -25,39 +28,24 @@ var jumping_target_position = Vector2.ZERO
 
 var jumping_distance = 96.0
 
-var diagonal_collision_right = false
-var diagonal_collision_left = false
-
 func _on_health_health_depleted() -> void:
 	pass
 
 func _ready() -> void:
-	Global.player_diagonal_collision_right.connect(_on_diagonal_collision_right)
-	Global.player_diagonal_collision_left.connect(_on_diagonal_collision_left)
-	Global.player_diagonal_collision_over.connect(_on_diagonal_collision_over)
-	
 	Global.open_shop.connect(_on_open_shop)
 	Global.close_shop.connect(_on_close_shop)
 	
 func _on_open_shop():
-	get_node("PlayerCamera/CanvasLayer").add_child(opened_shop)
+	canvas_layer.add_child(opened_shop)
+	current_state = player_states.SHOP
 	
 func _on_close_shop():
-	get_node("PlayerCamera/CanvasLayer").remove_child(opened_shop)
+	canvas_layer.remove_child(opened_shop)
+	current_state = player_states.MOVE
 	
 func _on_evade_timer_timeout() -> void:
 	evadeReady = true
 	get_node("JumpMarker").visible = true
-
-func _on_diagonal_collision_right():
-	diagonal_collision_right = true
-	
-func _on_diagonal_collision_left():
-	diagonal_collision_left = true
-	
-func _on_diagonal_collision_over():
-	diagonal_collision_right = false
-	diagonal_collision_left = false
 
 func update_movement():
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -73,7 +61,7 @@ func update_sprite():
 	
 		set_collision_layer_value(2,false)
 		evadeReady = false
-		$EvadeTimer.start()
+		evade_timer.start()
 		current_state = player_states.JUMP
 		
 	if Input.is_action_pressed("fire"):
@@ -85,21 +73,17 @@ func update_sprite():
 			walking_angle += 360
 		match floor(walking_angle/45.0):
 			5.0, 6.0:
-				if not (diagonal_collision_left or diagonal_collision_right):
-					animation_player.play_walking_up_animation()
-					current_player_direction = player_direction.UP
+				animation_player.play_walking_up_animation()
+				current_player_direction = player_direction.UP
 			3.0, 4.0:
-				if not diagonal_collision_right:
-					animation_player.play_walking_left_animation()
-					current_player_direction = player_direction.LEFT
+				animation_player.play_walking_left_animation()
+				current_player_direction = player_direction.LEFT
 			1.0, 2.0:
-				if not (diagonal_collision_left or diagonal_collision_right):
-					animation_player.play_walking_down_animation()
-					current_player_direction = player_direction.DOWN
+				animation_player.play_walking_down_animation()
+				current_player_direction = player_direction.DOWN
 			0.0, 7.0:
-				if not diagonal_collision_left:
-					animation_player.play_walking_right_animation()
-					current_player_direction = player_direction.RIGHT
+				animation_player.play_walking_right_animation()
+				current_player_direction = player_direction.RIGHT
 	else:
 		match current_player_direction:
 			player_direction.UP:
@@ -112,7 +96,7 @@ func update_sprite():
 				animation_player.play_idle_right_animation()
 
 func jump(delta):
-	get_node("JumpMarker").visible = false
+	jump_marker.visible = false
 	animation_player.play_jumping_right_animation()
 	if global_position.distance_to(jumping_target_position) > 3:
 		velocity = global_position.direction_to(jumping_target_position) * speed
@@ -127,7 +111,7 @@ func fire(delta):
 		
 		set_collision_layer_value(2,false)
 		evadeReady = false
-		$EvadeTimer.start()
+		evade_timer.start()
 		current_state = player_states.JUMP
 	
 	weapon.fire(delta)

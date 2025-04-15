@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var drop_res = preload("res://MobDrop.tscn")
+
 const MINIMUM_ROOMS = 20
 
 var rooms_res = []
@@ -235,6 +237,7 @@ func initialize_room_pairs():
 func _ready():
 	Global.clear_room.connect(_on_room_cleared)
 	Global.room_entered.connect(_on_room_entered)
+	Global.enemy_dead.connect(_on_enemy_dead)
 	initialize_room_resources()
 	initialize_door_resources()
 	initialize_wall_resources()
@@ -309,3 +312,9 @@ func _on_room_entered(room_index: int):
 	if placed_rooms[room_index].room_cleared == false:
 		placed_rooms[room_index].close_room(placed_doors_or_walls, placed_doors_indexes)
 		
+func _on_enemy_dead(enemy_death_position: Vector2):
+	var new_drop = drop_res.instantiate()
+	print("Enemy Death Position is ", enemy_death_position)
+	new_drop.global_position = enemy_death_position
+	print("New Drop Position is ", new_drop.global_position)
+	add_child(new_drop)

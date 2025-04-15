@@ -1,11 +1,1 @@
 extends FloorRoomDoor
-
-func _on_enter_zone_0_body_entered(body: Node2D) -> void:
-	if body.get_class() == "CharacterBody2D":
-		body.global_position = %Endpoint0.global_position
-		Global.room_entered.emit(room_0)
-
-func _on_enter_zone_1_body_entered(body: Node2D) -> void:
-	if body.get_class() == "CharacterBody2D":
-		body.global_position = %Endpoint1.global_position
-		Global.room_entered.emit(room_1)
