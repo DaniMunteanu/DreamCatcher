@@ -9,6 +9,8 @@ var player_fire_rate = 5
 var player_speed = 5
 var player_luck = 5
 
+var player_current_position = Vector2(0,0)
+
 signal clear_room(room_index: int)
 signal room_entered(room_index: int)
 

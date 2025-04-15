@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccg6g5ardhr0e"]
+
+[ext_resource type="PackedScene" uid="uid://bvap28syvh4pm" path="res://DropTrail.tscn" id="1_elbfi"]
+[ext_resource type="Script" path="res://mob_drop.gd" id="1_qbr02"]
+
+[node name="MobDrop" type="Node2D"]
+top_level = true
+z_index = 4
+script = ExtResource("1_qbr02")
+
+[node name="DropTrail" parent="." instance=ExtResource("1_elbfi")]

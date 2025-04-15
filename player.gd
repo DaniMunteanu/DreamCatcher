@@ -64,6 +64,7 @@ func update_movement():
 	direction = direction.normalized()
 	velocity = direction * speed
 	move_and_slide()
+	Global.player_current_position = global_position
 	
 func update_sprite():
 	if Input.is_action_pressed("evade") and evadeReady:

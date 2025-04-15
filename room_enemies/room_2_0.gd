@@ -1,7 +1,5 @@
 extends RoomEnemies
 
-@onready var drop_res = preload("res://MobDrop.tscn")
-
 func _ready() -> void:
 	enemies_count = 2
 	for enemy in get_tree().get_nodes_in_group("Enemies"):
@@ -9,12 +7,6 @@ func _ready() -> void:
 
 func _on_enemy_dead(enemy_death_position: Vector2):
 	enemies_count -= 1
-	var new_drop = drop_res.instantiate()
-	print("Enemy Death Position is ", enemy_death_position)
-	new_drop.global_position = enemy_death_position
-	print("New Drop Position is ", new_drop.global_position)
-	add_child(new_drop)
-	print("Child added")
 	if enemies_count == 0:
 		print("Au disparut inamicii")
 		enemies_defeated.emit()
