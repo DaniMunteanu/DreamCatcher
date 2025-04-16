@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cdhb1844g65mq"]
 
-[ext_resource type="Texture2D" uid="uid://bxc14hcvfrtwi" path="res://Sprites/DoorVertical.png" id="1_20mt1"]
+[ext_resource type="Texture2D" uid="uid://bxc14hcvfrtwi" path="res://Sprites/Doors/DoorVertical.png" id="1_20mt1"]
 [ext_resource type="Script" path="res://doors/door_vertical.gd" id="1_sjss2"]
 
 [sub_resource type="Animation" id="Animation_pabo3"]

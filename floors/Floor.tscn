@@ -5,10 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://cupqqwddnk40" path="res://Player.tscn" id="33_fpr7m"]
 
 [node name="Floor" type="Node2D"]
+z_index = 1
+y_sort_enabled = true
 script = ExtResource("1_icq2i")
 
 [node name="Floor1" parent="." instance=ExtResource("1_r7rng")]
-z_index = 2
 
 [node name="Marker_0" type="Marker2D" parent="."]
 position = Vector2(912, 912)
@@ -248,4 +249,4 @@ position = Vector2(2684, 1676)
 position = Vector2(2924, 1244)
 
 [node name="PlayerTest" parent="." instance=ExtResource("33_fpr7m")]
-position = Vector2(1544, 1465)
+position = Vector2(1610, 1527)

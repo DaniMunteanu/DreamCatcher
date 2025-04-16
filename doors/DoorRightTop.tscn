@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://btujbbk36iulp"]
+[gd_scene load_steps=11 format=3 uid="uid://btujbbk36iulp"]
 
 [ext_resource type="Script" path="res://doors/door_right_top.gd" id="1_kkjg5"]
-[ext_resource type="Texture2D" uid="uid://c8kjvik1aivx1" path="res://Sprites/DoorRightTop.png" id="1_rqelr"]
+[ext_resource type="Texture2D" uid="uid://c8kjvik1aivx1" path="res://Sprites/Doors/DoorRightTop.png" id="1_rqelr"]
 
 [sub_resource type="Animation" id="Animation_re08b"]
 resource_name = "Close"
@@ -198,12 +198,16 @@ a = Vector2(0.999992, -2)
 b = Vector2(49.0002, 45.9998)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_4qobu"]
-a = Vector2(0.999992, -2)
-b = Vector2(49.0002, 45.9998)
+a = Vector2(-1.00001, -4)
+b = Vector2(52.0002, 48.9998)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_24imc"]
 a = Vector2(1, 0.999996)
 b = Vector2(49, 49)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_2yj6k"]
+a = Vector2(53, -43)
+b = Vector2(-14, 24)
 
 [node name="DoorRightTop" type="Node2D"]
 script = ExtResource("1_kkjg5")
@@ -232,7 +236,7 @@ collision_layer = 0
 collision_mask = 0
 
 [node name="CollisionZone1" type="CollisionShape2D" parent="EnterZone1"]
-position = Vector2(50, 15)
+position = Vector2(48, 0)
 rotation = 1.5708
 shape = SubResource("SegmentShape2D_4qobu")
 
@@ -243,8 +247,9 @@ position = Vector2(52, 50)
 rotation = 1.5708
 shape = SubResource("SegmentShape2D_24imc")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Barrier"]
-polygon = PackedVector2Array(52, 4, 52, 16, 4, 64, 6, 66, 56, 16, 56, 4)
+[node name="CollisionBarrier2" type="CollisionShape2D" parent="Barrier"]
+position = Vector2(1, 42)
+shape = SubResource("SegmentShape2D_2yj6k")
 
 [node name="Endpoint0" type="Marker2D" parent="."]
 unique_name_in_owner = true

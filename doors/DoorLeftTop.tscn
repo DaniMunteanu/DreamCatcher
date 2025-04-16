@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://7agqnhy1ggll"]
+[gd_scene load_steps=11 format=3 uid="uid://7agqnhy1ggll"]
 
 [ext_resource type="Script" path="res://doors/door_left_top.gd" id="1_1tokg"]
-[ext_resource type="Texture2D" uid="uid://daw7d3qfijemp" path="res://Sprites/DoorLeftTop.png" id="1_dx0si"]
+[ext_resource type="Texture2D" uid="uid://daw7d3qfijemp" path="res://Sprites/Doors/DoorLeftTop.png" id="1_dx0si"]
 
 [sub_resource type="Animation" id="Animation_baoiu"]
 resource_name = "Close"
@@ -199,11 +199,15 @@ b = Vector2(49, 46)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_85b1t"]
 a = Vector2(1, -2)
-b = Vector2(49, 46)
+b = Vector2(54, 51)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_1shd2"]
 a = Vector2(1, 1)
 b = Vector2(49, 49)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xoubo"]
+a = Vector2(1, 1)
+b = Vector2(68, 68)
 
 [node name="DoorLeftTop" type="Node2D"]
 script = ExtResource("1_1tokg")
@@ -231,7 +235,7 @@ collision_layer = 0
 collision_mask = 0
 
 [node name="CollisionZone1" type="CollisionShape2D" parent="EnterZone1"]
-position = Vector2(3, 18)
+position = Vector2(3, 1)
 shape = SubResource("SegmentShape2D_85b1t")
 
 [node name="Barrier" type="StaticBody2D" parent="."]
@@ -240,8 +244,9 @@ shape = SubResource("SegmentShape2D_85b1t")
 position = Vector2(4, 50)
 shape = SubResource("SegmentShape2D_1shd2")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Barrier"]
-polygon = PackedVector2Array(4, 4, 4, 16, 52, 64, 50, 66, 0, 16, 0, 4)
+[node name="CollisionBarrier2" type="CollisionShape2D" parent="Barrier"]
+position = Vector2(1, -2)
+shape = SubResource("SegmentShape2D_xoubo")
 
 [node name="Endpoint0" type="Marker2D" parent="."]
 unique_name_in_owner = true

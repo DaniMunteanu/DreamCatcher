@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://b78gkby3vi0em"]
+[gd_scene load_steps=10 format=3 uid="uid://b78gkby3vi0em"]
 
-[ext_resource type="Texture2D" uid="uid://bjqxlcscd1gxm" path="res://Sprites/DoorHorizontal.png" id="1_2m66s"]
+[ext_resource type="Texture2D" uid="uid://bjqxlcscd1gxm" path="res://Sprites/Doors/DoorHorizontal.png" id="1_2m66s"]
 [ext_resource type="Script" path="res://doors/door_horizontal.gd" id="1_m5g3y"]
 
 [sub_resource type="Animation" id="Animation_mf2h3"]
@@ -197,9 +197,13 @@ _data = {
 size = Vector2(72, 7.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1sovq"]
-size = Vector2(72, 7.5)
+size = Vector2(72, 3.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbmkx"]
+size = Vector2(96, 4)
 
 [node name="DoorHorizontal" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_m5g3y")
 
 [node name="DoorHorizontal" type="Sprite2D" parent="."]
@@ -225,7 +229,7 @@ collision_layer = 0
 collision_mask = 0
 
 [node name="CollisionZone1" type="CollisionShape2D" parent="EnterZone1"]
-position = Vector2(48, 28)
+position = Vector2(48, 10.125)
 shape = SubResource("RectangleShape2D_1sovq")
 
 [node name="Endpoint0" type="Marker2D" parent="."]
@@ -238,8 +242,9 @@ position = Vector2(48, 115)
 
 [node name="Barrier" type="StaticBody2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Barrier"]
-polygon = PackedVector2Array(96, 16, 96, 32, 0, 32, 0, 16, -4, 16, -4, 36, 100, 36, 100, 16)
-
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Barrier"]
 polygon = PackedVector2Array(0, 89, 0, 92, -4, 92, -4, 85, 100, 85, 100, 92, 96, 92, 96, 89)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier"]
+position = Vector2(48, 14)
+shape = SubResource("RectangleShape2D_xbmkx")
