@@ -1888,6 +1888,7 @@ anchors_preset = -1
 metadata/_edit_use_anchors_ = true
 
 [node name="JumpMarker" type="Sprite2D" parent="."]
+z_index = 1
 texture = ExtResource("11_sn1d5")
 hframes = 2
 

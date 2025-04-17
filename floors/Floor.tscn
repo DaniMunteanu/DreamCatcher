@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://1cyusdr74lrj"]
+[gd_scene load_steps=5 format=3 uid="uid://1cyusdr74lrj"]
 
 [ext_resource type="Script" path="res://floors/floor.gd" id="1_icq2i"]
 [ext_resource type="PackedScene" uid="uid://556abvc22nkf" path="res://floors/FloorTemplate1.tscn" id="1_r7rng"]
+[ext_resource type="PackedScene" uid="uid://bcjch5jdlwixs" path="res://room_fills/RoomFill6.tscn" id="4_rgsj4"]
 [ext_resource type="PackedScene" uid="uid://cupqqwddnk40" path="res://Player.tscn" id="33_fpr7m"]
 
 [node name="Floor" type="Node2D"]
@@ -249,4 +250,7 @@ position = Vector2(2684, 1676)
 position = Vector2(2924, 1244)
 
 [node name="PlayerTest" parent="." instance=ExtResource("33_fpr7m")]
-position = Vector2(1610, 1527)
+position = Vector2(1327, 1363)
+
+[node name="RoomFill61" parent="." instance=ExtResource("4_rgsj4")]
+position = Vector2(864, 1776)

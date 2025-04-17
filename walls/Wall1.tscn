@@ -55,9 +55,11 @@ texture = ExtResource("1_14wat")
 sources/0 = SubResource("TileSetAtlasSource_dj5v2")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l0ekp"]
-size = Vector2(48, 96)
+size = Vector2(48, 84)
 
 [node name="Node2D" type="Node2D"]
+z_index = 1
+y_sort_enabled = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(4, 4)
@@ -65,7 +67,8 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAI
 tile_set = SubResource("TileSet_myjnh")
 
 [node name="Barrier" type="StaticBody2D" parent="."]
+y_sort_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(28, 52)
+position = Vector2(28, 58)
 shape = SubResource("RectangleShape2D_l0ekp")
