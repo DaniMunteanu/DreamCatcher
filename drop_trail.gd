@@ -1,7 +1,7 @@
 extends Line2D
 
 #50
-var max_points: int = 150
+var max_points: int = 450
 var queue: Array
 @onready var curve := Curve2D.new()
 
@@ -21,8 +21,6 @@ func _process(delta: float) -> void:
 	
 	for point in queue:
 		add_point(point)
-	
-	
 	
 	"""
 	print("Trail point drawn: ",get_parent().global_position)

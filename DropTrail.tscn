@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvap28syvh4pm"]
+[gd_scene load_steps=3 format=3 uid="uid://bvap28syvh4pm"]
 
 [ext_resource type="Script" path="res://drop_trail.gd" id="1_wyqw2"]
 
@@ -6,16 +6,13 @@
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="Gradient" id="Gradient_d4dok"]
-colors = PackedColorArray(0, 0.592346, 0.519542, 1, 0.899078, 0.603751, 0.994995, 1)
-
 [node name="DropTrail" type="Line2D"]
 show_behind_parent = true
 top_level = true
 z_index = 4
 points = PackedVector2Array(0, 0, 7, 0, 14, 0, 7, -7, 19, -12, 25, -3, 28, -17, 5, -19)
+width = 5.0
 width_curve = SubResource("Curve_go2ek")
-gradient = SubResource("Gradient_d4dok")
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
