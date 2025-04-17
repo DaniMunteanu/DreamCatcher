@@ -7,7 +7,7 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_d4dok"]
-colors = PackedColorArray(0.984314, 1, 0.0705882, 1, 0.258824, 0.196078, 0, 1)
+colors = PackedColorArray(0, 0.592346, 0.519542, 1, 0.899078, 0.603751, 0.994995, 1)
 
 [node name="DropTrail" type="Line2D"]
 show_behind_parent = true

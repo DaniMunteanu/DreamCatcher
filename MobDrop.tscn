@@ -9,3 +9,4 @@ z_index = 4
 script = ExtResource("1_qbr02")
 
 [node name="DropTrail" parent="." instance=ExtResource("1_elbfi")]
+z_as_relative = false

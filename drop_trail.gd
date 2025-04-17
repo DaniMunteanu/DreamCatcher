@@ -1,6 +1,7 @@
 extends Line2D
 
-var max_points: int = 50
+#50
+var max_points: int = 150
 var queue: Array
 @onready var curve := Curve2D.new()
 
