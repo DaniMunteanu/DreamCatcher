@@ -2,9 +2,12 @@ extends Node2D
 
 @onready var drop_res = preload("res://MobDrop.tscn")
 
+var FIRST_GENERATION = true
+
 const MINIMUM_ROOMS = 20
 
 var rooms_res = []
+var room_fills_res = []
 var doors_res = []
 var walls_res = []
 
@@ -25,41 +28,18 @@ func initialize_room_resources():
 	placed_rooms.resize(31)
 	
 	rooms_res.resize(31)
-	rooms_res[0] = preload("res://rooms/Floor1_Room0.tscn")
-	rooms_res[1] = preload("res://rooms/Floor1_Room1.tscn")
-	rooms_res[2] = preload("res://rooms/Floor1_Room2.tscn")
-	rooms_res[3] = preload("res://rooms/Floor1_Room3.tscn")
-	rooms_res[4] = preload("res://rooms/Floor1_Room4.tscn")
-	rooms_res[5] = preload("res://rooms/Floor1_Room5.tscn")
-	rooms_res[6] = preload("res://rooms/Floor1_Room6.tscn")
-	rooms_res[7] = preload("res://rooms/Floor1_Room7.tscn")
-	rooms_res[8] = preload("res://rooms/Floor1_Room8.tscn")
-	rooms_res[9] = preload("res://rooms/Floor1_Room9.tscn")
-	rooms_res[10] = preload("res://rooms/Floor1_Room10.tscn")
-	rooms_res[11] = preload("res://rooms/Floor1_Room11.tscn")
-	rooms_res[12] = preload("res://rooms/Floor1_Room12.tscn")
-	rooms_res[13] = preload("res://rooms/Floor1_Room13.tscn")
-	rooms_res[14] = preload("res://rooms/Floor1_Room14.tscn")
-	rooms_res[15] = preload("res://rooms/Floor1_Room15.tscn")
-	rooms_res[16] = preload("res://rooms/Floor1_Room16.tscn")
-	rooms_res[17] = preload("res://rooms/Floor1_Room17.tscn")
-	rooms_res[18] = preload("res://rooms/Floor1_Room18.tscn")
-	rooms_res[19] = preload("res://rooms/Floor1_Room19.tscn")
-	rooms_res[20] = preload("res://rooms/Floor1_Room20.tscn")
-	rooms_res[21] = preload("res://rooms/Floor1_Room21.tscn")
-	rooms_res[22] = preload("res://rooms/Floor1_Room22.tscn")
-	rooms_res[23] = preload("res://rooms/Floor1_Room23.tscn")
-	rooms_res[24] = preload("res://rooms/Floor1_Room24.tscn")
-	rooms_res[25] = preload("res://rooms/Floor1_Room25.tscn")
-	rooms_res[26] = preload("res://rooms/Floor1_Room26.tscn")
-	rooms_res[27] = preload("res://rooms/Floor1_Room27.tscn")
-	rooms_res[28] = preload("res://rooms/Floor1_Room28.tscn")
-	rooms_res[29] = preload("res://rooms/Floor1_Room29.tscn")
-	rooms_res[30] = preload("res://rooms/Floor1_Room30.tscn")
 	
+	for i in 31:
+		rooms_res[i] = load("res://rooms/Floor1_Room" + str(i) + ".tscn")
+		
 	room_markers.resize(31)
 	for i in 31:
-		room_markers[i] = get_node("Marker_" + str(i))
+		room_markers[i] = $FloorTemplate.get_node("Marker_" + str(i))
+
+func initialize_room_fills_resources():
+	room_fills_res.resize(31)
+	for i in range(1,31):
+		room_fills_res[i] = load("res://room_fills/RoomFill" + str(i) + ".tscn")
 
 func initialize_door_resources():
 	placed_doors_or_walls.resize(48)
@@ -123,7 +103,7 @@ func initialize_door_resources():
 	
 	door_markers.resize(48)
 	for i in 48:
-		door_markers[i] = get_node("Marker_door_" + str(i))
+		door_markers[i] = $FloorTemplate.get_node("Marker_door_" + str(i))
 
 func initialize_wall_resources():
 	walls_res.resize(48)
@@ -239,15 +219,14 @@ func _ready():
 	Global.room_entered.connect(_on_room_entered)
 	Global.enemy_dead.connect(_on_enemy_dead)
 	initialize_room_resources()
+	initialize_room_fills_resources()
 	initialize_door_resources()
 	initialize_wall_resources()
 	initialize_room_pairs()
 	
 func reset():
 	for i in 31:
-		if placed_rooms[i] != null:
-			placed_rooms[i].queue_free()
-			placed_rooms[i].reset_room()
+		placed_rooms[i].queue_free()
 	placed_rooms.fill(null)
 	extendable_rooms.clear()
 	
@@ -292,17 +271,29 @@ func generate_doors_and_walls():
 		add_child(new_door_or_wall)
 		placed_doors_or_walls[j] = new_door_or_wall
 
+func generate_room_fills():
+	for i in 31:
+		if placed_rooms[i] == null:
+			placed_rooms[i] = room_fills_res[i].instantiate()
+			placed_rooms[i].global_position = room_markers[i].global_position
+			add_child(placed_rooms[i])
+
 func generate_floor():
-	reset()
 	generate_rooms()
 	generate_doors_and_walls()
+	generate_room_fills()
 	Global.floor_generated.emit()
 	placed_rooms[0].open_room(placed_doors_or_walls, placed_doors_indexes)
 	_on_room_entered(0)
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("floor_generate"):
-		generate_floor()
+		if FIRST_GENERATION:
+			generate_floor()
+			FIRST_GENERATION = false
+		else:
+			reset()
+			generate_floor()
 	
 func _on_room_cleared(room_index: int):
 	placed_rooms[room_index].open_room(placed_doors_or_walls, placed_doors_indexes)

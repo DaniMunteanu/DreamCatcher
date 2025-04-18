@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuq3i4io1p3p1"]
+
+[ext_resource type="Script" path="res://room_enemies/enemies_17_0.gd" id="1_8nnhp"]
+[ext_resource type="PackedScene" uid="uid://fktce8tbderh" path="res://mobs/sleepless.tscn" id="2_2iiwh"]
+
+[node name="Enemies17_0" type="Node2D"]
+script = ExtResource("1_8nnhp")
+
+[node name="Sleepless" parent="." instance=ExtResource("2_2iiwh")]
+position = Vector2(143, 376)
+
+[node name="Sleepless2" parent="." instance=ExtResource("2_2iiwh")]
+position = Vector2(257, 429)

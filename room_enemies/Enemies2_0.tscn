@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://djt3b5vy6rv85"]
 
-[ext_resource type="Script" path="res://room_enemies/room_2_0.gd" id="1_y46d0"]
+[ext_resource type="Script" path="res://room_enemies/enemies_2_0.gd" id="1_y46d0"]
 [ext_resource type="PackedScene" uid="uid://fktce8tbderh" path="res://mobs/sleepless.tscn" id="3_krosd"]
 
-[node name="Room2_0" type="Node2D"]
+[node name="Enemies2_0" type="Node2D"]
 script = ExtResource("1_y46d0")
 
 [node name="Sleepless3" parent="." instance=ExtResource("3_krosd")]

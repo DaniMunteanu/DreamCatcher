@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b7mn3tvgv3gpt"]
 
-[ext_resource type="Script" path="res://room_enemies/room_9_0.gd" id="1_fwkle"]
+[ext_resource type="Script" path="res://room_enemies/enemies_9_0.gd" id="1_fwkle"]
 [ext_resource type="PackedScene" uid="uid://fktce8tbderh" path="res://mobs/sleepless.tscn" id="2_phqww"]
 
 [node name="Room9_0" type="Node2D"]
