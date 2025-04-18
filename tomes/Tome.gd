@@ -9,6 +9,10 @@ var fire_rate_bonus = 0
 var speed_bonus = 0
 var luck_bonus = 0
 
+var coin_cost = 0
+var feather_cost = 0
+var quartz_cost = 0
+
 var position_up
 var position_down
 

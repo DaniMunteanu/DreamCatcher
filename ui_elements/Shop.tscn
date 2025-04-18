@@ -653,6 +653,8 @@ position = Vector2(398.456, 251.576)
 unique_name_in_owner = true
 position = Vector2(504.655, 250.814)
 
+[connection signal="pressed" from="BuyItemButton" to="." method="_on_buy_item_button_pressed"]
 [connection signal="mouse_entered" from="BuyHealthButton" to="BuyHealthButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="BuyHealthButton" to="BuyHealthButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="BuyHealthButton" to="BuyHealthButton" method="_on_pressed"]
 [connection signal="pressed" from="ExitShopButton" to="ExitShopButton" method="_on_pressed"]

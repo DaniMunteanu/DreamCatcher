@@ -5,3 +5,4 @@ func _ready() -> void:
 	
 func open_shop():
 	Global.open_shop.emit()
+	Global.check_funds.emit()

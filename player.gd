@@ -37,6 +37,7 @@ func _ready() -> void:
 	
 func _on_open_shop():
 	canvas_layer.add_child(opened_shop)
+	opened_shop.update()
 	current_state = player_states.SHOP
 	
 func _on_close_shop():

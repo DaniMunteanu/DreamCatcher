@@ -34,3 +34,8 @@ signal tome_selected(tome_index: int)
 
 signal buy_health_hover(health_to_buy: int)
 signal buy_health_hover_end
+
+signal health_bought(health_to_buy: int)
+
+signal loot_spent(loot_type: loot_types, ammount: int)
+signal check_funds

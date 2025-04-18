@@ -12,4 +12,4 @@ script = ExtResource("1_icq2i")
 [node name="FloorTemplate" parent="." instance=ExtResource("1_r7rng")]
 
 [node name="PlayerTest" parent="." instance=ExtResource("33_fpr7m")]
-position = Vector2(1327, 1363)
+position = Vector2(1382, 1680)

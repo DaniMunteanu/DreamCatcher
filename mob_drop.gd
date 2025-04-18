@@ -13,7 +13,7 @@ var picked_loot_type = Global.loot_types
 var picked_loot_ammount = 0
 
 var coin_color = Color(0.988, 1, 0.192, 1)
-var feather_color = Color(0.38, 0.349, 0.29, 1)
+var feather_color = Color(0.271, 0.196, 0.055)
 var quartz_color = Color(0.855, 0.475, 0.882, 1)
 
 func pick_drop():
@@ -31,11 +31,11 @@ func pick_drop():
 	elif picked_number > feather_threshold:
 		$DropTrail.default_color = feather_color
 		picked_loot_type = Global.loot_types.FEATHER
-		picked_loot_ammount = 10
+		picked_loot_ammount = rng.randi_range(10,20)
 	else:
 		$DropTrail.default_color = coin_color
 		picked_loot_type = Global.loot_types.COIN
-		picked_loot_ammount = 50
+		picked_loot_ammount = rng.randi_range(20,50)
 
 func _ready() -> void:
 	pick_drop()

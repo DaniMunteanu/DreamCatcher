@@ -20,9 +20,15 @@ func close_room(placed_doors_or_walls: Array, placed_doors_indexes: Array):
 		if i in placed_doors_indexes:
 			placed_doors_or_walls[i].close_door()
 	place_enemies()
-			
+	
+func _on_enemies_defeated() -> void:
+	Global.clear_room.emit(room_index)
+	
 func place_enemies():
-	pass
+	var enemies_res = load("res://room_enemies/Enemies" + str(room_index) + "_0.tscn")
+	var enemies = enemies_res.instantiate()
+	enemies.connect("enemies_defeated",_on_enemies_defeated)
+	call_deferred("add_child",enemies)
 
 func next_room() -> int:
 	var picked_room = available_rooms.pick_random()
