@@ -11,8 +11,11 @@ func update(current_value: int, future_value: int):
 		
 		get_node("FutureProgressBar").value = future_value
 		get_node("FutureProgressBar").texture_progress = future_value_positive_texture
-	else:
+	elif future_value < current_value:
 		value = future_value
 		
 		get_node("FutureProgressBar").value = current_value
 		get_node("FutureProgressBar").texture_progress = future_value_negative_texture
+	else:
+		value = future_value
+		get_node("FutureProgressBar").value = 0

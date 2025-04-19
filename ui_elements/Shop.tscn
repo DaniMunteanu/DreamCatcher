@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://8fdhxwi6j3gh"]
+[gd_scene load_steps=39 format=3 uid="uid://8fdhxwi6j3gh"]
 
 [ext_resource type="Texture2D" uid="uid://8mbbbeqtxyti" path="res://Sprites/SpritesUI/ShopBackground.png" id="1_ryky3"]
 [ext_resource type="Script" path="res://ui_elements/shop.gd" id="1_ttsqo"]
@@ -68,8 +68,6 @@ atlas = ExtResource("5_85xex")
 region = Rect2(0, 90, 60, 30)
 
 [sub_resource type="LabelSettings" id="LabelSettings_o4xlt"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_slg8p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_itfam"]
 atlas = ExtResource("7_343dp")
@@ -537,7 +535,6 @@ offset_top = 279.0
 offset_right = 254.0
 offset_bottom = 302.0
 text = "50"
-label_settings = SubResource("LabelSettings_slg8p")
 
 [node name="HealthAmmount" type="Label" parent="."]
 layout_mode = 1

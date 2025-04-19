@@ -34,6 +34,7 @@ func _on_health_health_depleted() -> void:
 func _ready() -> void:
 	Global.open_shop.connect(_on_open_shop)
 	Global.close_shop.connect(_on_close_shop)
+	opened_shop.character = self
 	
 func _on_open_shop():
 	canvas_layer.add_child(opened_shop)

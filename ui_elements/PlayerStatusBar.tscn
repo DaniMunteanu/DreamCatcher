@@ -37,7 +37,7 @@ texture_progress_offset = Vector2(65, 29)
 script = ExtResource("4_6puap")
 metadata/_edit_use_anchors_ = true
 
-[node name="FutureHealthBar" type="TextureProgressBar" parent="HealthBar"]
+[node name="SecondaryHealthBar" type="TextureProgressBar" parent="HealthBar"]
 z_index = -1
 layout_mode = 1
 anchors_preset = -1

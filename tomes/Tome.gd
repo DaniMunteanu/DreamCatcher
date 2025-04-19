@@ -21,6 +21,8 @@ var tween = create_tween()
 var tome_index = 0
 
 var isPicked = false
+
+var sold = false
 	
 func _init() -> void:
 	z_index = 1
