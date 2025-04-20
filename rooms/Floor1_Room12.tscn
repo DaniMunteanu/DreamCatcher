@@ -63,6 +63,7 @@ tile_map_data = PackedByteArray("AAADAAMAAAAEAAYAAAAEAAMAAAAFAAYAAAADAAQAAAAEAAY
 tile_set = SubResource("TileSet_roco4")
 
 [node name="Barrier" type="StaticBody2D" parent="."]
+collision_layer = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Barrier"]
 polygon = PackedVector2Array(48, 96, 144, 96, 144, 144, 176, 144, 192, 160, 192, 192, 224, 192, 240, 208, 240, 240, 272, 240, 288, 256, 288, 288, 320, 288, 336, 304, 336, 336, 368, 336, 384, 352, 384, 432, 432, 432, 432, 428, 388, 428, 388, 352, 368, 332, 340, 332, 340, 304, 320, 284, 292, 284, 292, 256, 272, 236, 244, 236, 244, 208, 224, 188, 196, 188, 196, 160, 176, 140, 148, 140, 148, 92, 44, 92, 44, 160, 92, 160, 92, 288, 96, 288, 96, 156, 48, 156)

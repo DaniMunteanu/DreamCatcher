@@ -63,6 +63,7 @@ tile_map_data = PackedByteArray("AAAbAAMAAQAGAAQAAAAcAAMAAQAFAAYAAAAbAAQAAQAGAAU
 tile_set = SubResource("TileSet_kbuf7")
 
 [node name="Barrier" type="StaticBody2D" parent="."]
+collision_layer = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Barrier"]
 polygon = PackedVector2Array(48, 352, 48, 304, 64, 288, 192, 288, 192, 256, 208, 240, 240, 240, 240, 208, 256, 192, 336, 192, 336, 160, 352, 144, 432, 144, 432, 112, 448, 96, 576, 96, 576, 92, 448, 92, 428, 112, 428, 140, 352, 140, 332, 160, 332, 188, 256, 188, 236, 208, 236, 236, 208, 236, 188, 256, 188, 284, 64, 284, 44, 304, 43, 352)

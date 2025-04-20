@@ -2,10 +2,9 @@ class_name Enemy
 
 extends CharacterBody2D
 
+@export var damage: int
+
 func _ready() -> void:
-	$Health.max_health = 5
-	$Health.current_health = 5
-	
 	$MobHealthBar.max_value = $Health.max_health
 	$MobHealthBar.value = $Health.current_health
 	
@@ -26,4 +25,4 @@ func _on_health_health_depleted() -> void:
 	
 func _on_hitbox_area_entered(hurtbox: Hurtbox):
 	if hurtbox != null:
-		hurtbox.take_damage(get_node("Hitbox").damage)
+		hurtbox.take_damage(damage - Global.player_defense)

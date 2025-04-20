@@ -2,20 +2,21 @@ class_name Player
 
 extends CharacterBody2D
 
-@export var speed = 200.0
+var speed_multiplier = 30.0
 
 @onready var animation_player = $PlayerAnimationManager
 @onready var sprite = $PlayerAnimationManager/PlayerModel
-@onready var weapon = $TestWeapon
+@onready var portal1 = $Portal1
+@onready var portal2 = $Portal2
 @onready var canvas_layer = $PlayerCamera/CanvasLayer
 
 @onready var jump_marker = $JumpMarker
 @onready var evade_timer = $EvadeTimer
+var evadeReady = true
+var jump_speed = 200.0
 
 const SHOP = preload("res://ui_elements/Shop.tscn")
 @onready var opened_shop = SHOP.instantiate()
-
-var evadeReady = true
 
 enum player_states {MOVE, JUMP, FIRE, SHOP}
 var current_state = player_states.MOVE
@@ -35,6 +36,8 @@ func _ready() -> void:
 	Global.open_shop.connect(_on_open_shop)
 	Global.close_shop.connect(_on_close_shop)
 	opened_shop.character = self
+	portal1.fire_timer = (2.0 - (0.2 * Global.player_fire_rate)) / 2.0 
+	portal2.fire_timer = 0.0
 	
 func _on_open_shop():
 	canvas_layer.add_child(opened_shop)
@@ -52,7 +55,7 @@ func _on_evade_timer_timeout() -> void:
 func update_movement():
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	direction = direction.normalized()
-	velocity = direction * speed
+	velocity = direction * (speed_multiplier * Global.player_speed)
 	move_and_slide()
 	Global.player_current_position = global_position
 	
@@ -101,7 +104,7 @@ func jump(delta):
 	jump_marker.visible = false
 	animation_player.play_jumping_right_animation()
 	if global_position.distance_to(jumping_target_position) > 3:
-		velocity = global_position.direction_to(jumping_target_position) * speed
+		velocity = global_position.direction_to(jumping_target_position) * jump_speed
 	else:
 		velocity = Vector2.ZERO
 	move_and_slide()
@@ -116,7 +119,8 @@ func fire(delta):
 		evade_timer.start()
 		current_state = player_states.JUMP
 	
-	weapon.fire(delta)
+	portal1.fire(delta)
+	portal2.fire(delta)
 	
 	var firing_angle = rad_to_deg(global_position.angle_to_point(get_global_mouse_position()))
 	if firing_angle < 0.0:
@@ -125,20 +129,25 @@ func fire(delta):
 		
 	match floor(Global.cursor_angle/45.0):
 		5.0, 6.0:
-			weapon.animation_player.play_fire_up_animation()
+			portal1.animation_player.play("ShootUp")
+			portal2.animation_player.play("ShootUp")
 			animation_player.play_firing_up_animation()
 		3.0, 4.0:
-			weapon.animation_player.play_fire_left_animation()
+			portal1.animation_player.play("Portal1ShootLeft")
+			portal2.animation_player.play("Portal2ShootLeft")
 			animation_player.play_firing_left_animation()
 		1.0, 2.0:
-			weapon.animation_player.play_fire_down_animation()
+			portal1.animation_player.play("ShootDown")
+			portal2.animation_player.play("ShootDown")
 			animation_player.play_firing_down_animation()
 		0.0, 7.0:
-			weapon.animation_player.play_fire_right_animation()
+			portal1.animation_player.play("Portal1ShootRight")
+			portal2.animation_player.play("Portal2ShootRight")
 			animation_player.play_firing_right_animation()
 			
 	if Input.is_action_just_released("fire"):
-		weapon.fire_timer = 0.5
+		portal1.fire_timer = (2.0 - (0.2 * Global.player_fire_rate)) / 2.0 
+		portal2.fire_timer = 0.0
 		on_states_reset()
 		
 func on_states_reset():

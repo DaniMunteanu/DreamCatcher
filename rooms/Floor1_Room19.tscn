@@ -64,6 +64,7 @@ tile_set = SubResource("TileSet_gf5fe")
 metadata/_edit_lock_ = true
 
 [node name="Barrier" type="StaticBody2D" parent="."]
+collision_layer = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Barrier"]
 polygon = PackedVector2Array(144, 288, 144, 336, 192, 336, 192, 432, 196, 432, 196, 332, 148, 332, 148, 288)

@@ -262,6 +262,7 @@ size = Vector2(30, 8)
 collision_layer = 0
 platform_floor_layers = 4294967040
 script = ExtResource("1_ldm3s")
+damage = 11
 
 [node name="MobHealthBar" type="TextureProgressBar" parent="."]
 z_index = 1
@@ -285,8 +286,8 @@ texture_progress_offset = Vector2(1, 1)
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("2_gcs7s")
-max_health = 5
-current_health = 5
+max_health = 10
+current_health = 10
 
 [node name="Sleepless" type="Sprite2D" parent="."]
 position = Vector2(15, -23)
