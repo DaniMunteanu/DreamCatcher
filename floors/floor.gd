@@ -291,9 +291,11 @@ func _physics_process(delta):
 		if FIRST_GENERATION:
 			generate_floor()
 			FIRST_GENERATION = false
+			get_parent().get_parent().stretch_shrink = 1
 		else:
 			reset()
 			generate_floor()
+			get_parent().get_parent().stretch_shrink = 3
 	
 func _on_room_cleared(room_index: int):
 	placed_rooms[room_index].open_room(placed_doors_or_walls, placed_doors_indexes)
