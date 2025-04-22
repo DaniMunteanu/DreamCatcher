@@ -2044,7 +2044,6 @@ hframes = 2
 y_sort_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="PlayerCamera"]
-visible = false
 script = ExtResource("13_gh78c")
 
 [node name="StatusBar" parent="PlayerCamera/CanvasLayer" node_paths=PackedStringArray("character") instance=ExtResource("15_wbqpd")]
