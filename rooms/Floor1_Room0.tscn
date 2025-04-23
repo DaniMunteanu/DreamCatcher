@@ -97,4 +97,4 @@ polygon = PackedVector2Array(384, 924, 480, 924, 480, 972, 576, 972, 576, 1056, 
 polygon = PackedVector2Array(864, 924, 768, 924, 768, 972, 672, 972, 672, 1056, 676, 1056, 676, 976, 772, 976, 772, 928, 864, 928)
 
 [node name="Smeet" parent="." instance=ExtResource("3_r4jge")]
-position = Vector2(114, 363)
+position = Vector2(402, 667)
