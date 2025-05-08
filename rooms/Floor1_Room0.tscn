@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://v1ck5npsp0mr"]
+[gd_scene load_steps=7 format=4 uid="uid://v1ck5npsp0mr"]
 
 [ext_resource type="Texture2D" uid="uid://yeu45ewmtbui" path="res://Sprites/TestTileset.png" id="1_6mm8a"]
 [ext_resource type="Script" path="res://rooms/room_0.gd" id="1_yevi1"]
 [ext_resource type="PackedScene" uid="uid://dv344btj33j0m" path="res://Smeet.tscn" id="3_r4jge"]
+[ext_resource type="PackedScene" uid="uid://c4wbt7gplit3q" path="res://BossSummonCircle.tscn" id="4_cbm8a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gjv38"]
 texture = ExtResource("1_6mm8a")
@@ -97,4 +98,7 @@ polygon = PackedVector2Array(384, 924, 480, 924, 480, 972, 576, 972, 576, 1056, 
 polygon = PackedVector2Array(864, 924, 768, 924, 768, 972, 672, 972, 672, 1056, 676, 1056, 676, 976, 772, 976, 772, 928, 864, 928)
 
 [node name="Smeet" parent="." instance=ExtResource("3_r4jge")]
-position = Vector2(402, 667)
+position = Vector2(395, 606)
+
+[node name="BossSummonCircle" parent="." instance=ExtResource("4_cbm8a")]
+position = Vector2(552, 696)

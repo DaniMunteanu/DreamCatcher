@@ -61,27 +61,3 @@ position = Vector2(1772, 1724)
 
 [node name="Node2D14" parent="." instance=ExtResource("5_kspms")]
 position = Vector2(1724, 1772)
-
-[node name="Node2D15" parent="." instance=ExtResource("6_ukiw2")]
-z_index = 2
-position = Vector2(1488, 1439)
-
-[node name="Node2D16" parent="." instance=ExtResource("6_ukiw2")]
-z_index = 2
-position = Vector2(1488, 1487)
-
-[node name="Node2D17" parent="." instance=ExtResource("6_ukiw2")]
-z_index = 3
-position = Vector2(1488, 1391)
-
-[node name="Node2D18" parent="." instance=ExtResource("6_ukiw2")]
-z_index = 3
-position = Vector2(1488, 1439)
-
-[node name="Node2D19" parent="." instance=ExtResource("6_ukiw2")]
-z_index = 4
-position = Vector2(1488, 1343)
-
-[node name="Node2D20" parent="." instance=ExtResource("6_ukiw2")]
-z_index = 4
-position = Vector2(1488, 1391)
