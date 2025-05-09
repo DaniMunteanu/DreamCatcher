@@ -1,7 +1,59 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4wbt7gplit3q"]
+[gd_scene load_steps=8 format=3 uid="uid://c4wbt7gplit3q"]
 
 [ext_resource type="Script" path="res://boss_summon_circle.gd" id="1_mx2ih"]
 [ext_resource type="Texture2D" uid="uid://d2hpcs1vc1tjk" path="res://Sprites/BossSummoningCircle.png" id="1_skhg4"]
+[ext_resource type="PackedScene" uid="uid://cxf2wehgbng2m" path="res://InteractionArea.tscn" id="3_6a48c"]
+
+[sub_resource type="Animation" id="Animation_w8tpq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BossSummoningCircle:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BossSummoningCircle:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BossSummoningCircle:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(72, -144)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BossSummoningCircle:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_v1ir0"]
 resource_name = "Summon"
@@ -56,64 +108,17 @@ tracks/3/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 41, 43, 44, 45, 46, 47]
 }
 
-[sub_resource type="Animation" id="Animation_w8tpq"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BossSummoningCircle:hframes")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [8]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("BossSummoningCircle:vframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [6]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("BossSummoningCircle:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(72, -144)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("BossSummoningCircle:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1vrcg"]
 _data = {
 "RESET": SubResource("Animation_w8tpq"),
 "Summon": SubResource("Animation_v1ir0")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_hej1l"]
+radius = 72.0278
+
 [node name="BossSummonCircle" type="Node2D"]
+z_index = 1
 script = ExtResource("1_mx2ih")
 
 [node name="BossSummoningCircle" type="Sprite2D" parent="."]
@@ -126,3 +131,14 @@ vframes = 6
 libraries = {
 "": SubResource("AnimationLibrary_1vrcg")
 }
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_6a48c")]
+position = Vector2(72, -143)
+label_text = "[E] to summon Boss"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 71)
+shape = SubResource("CircleShape2D_hej1l")
+
+[node name="PlayerEndPosition" type="Marker2D" parent="."]
+position = Vector2(72, 48)

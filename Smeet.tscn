@@ -20,6 +20,7 @@ offset = Vector2(0, 15.96)
 
 [node name="InteractionArea" parent="." instance=ExtResource("2_eljun")]
 position = Vector2(16, -65)
+label_text = "[E] to Shop"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 visible = false
