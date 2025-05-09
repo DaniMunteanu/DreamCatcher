@@ -1,0 +1,116 @@
+[gd_scene load_steps=3 format=3 uid="uid://blcxkdt7aeyym"]
+
+[ext_resource type="Texture2D" uid="uid://d3djuc4ovq1m1" path="res://Sprites/Tothermos.png" id="1_aavls"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hb6ks"]
+radius = 48.0
+
+[node name="Tothermos" type="StaticBody2D"]
+
+[node name="Tothermos" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(60, -120)
+texture = ExtResource("1_aavls")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(48, -91)
+shape = SubResource("CircleShape2D_hb6ks")
+
+[node name="ShootPoint0" type="Marker2D" parent="."]
+position = Vector2(48, -43)
+
+[node name="ShootPoint1" type="Marker2D" parent="."]
+position = Vector2(38, -44)
+
+[node name="ShootPoint2" type="Marker2D" parent="."]
+position = Vector2(29, -47)
+
+[node name="ShootPoint3" type="Marker2D" parent="."]
+position = Vector2(21, -52)
+
+[node name="ShootPoint4" type="Marker2D" parent="."]
+position = Vector2(12, -59)
+
+[node name="ShootPoint5" type="Marker2D" parent="."]
+position = Vector2(5, -69)
+
+[node name="ShootPoint6" type="Marker2D" parent="."]
+position = Vector2(2, -80)
+
+[node name="ShootPoint7" type="Marker2D" parent="."]
+position = Vector2(1, -86)
+
+[node name="ShootPoint8" type="Marker2D" parent="."]
+position = Vector2(0, -91)
+
+[node name="ShootPoint9" type="Marker2D" parent="."]
+position = Vector2(1, -96)
+
+[node name="ShootPoint10" type="Marker2D" parent="."]
+position = Vector2(2, -102)
+
+[node name="ShootPoint11" type="Marker2D" parent="."]
+position = Vector2(5, -113)
+
+[node name="ShootPoint12" type="Marker2D" parent="."]
+position = Vector2(12, -123)
+
+[node name="ShootPoint13" type="Marker2D" parent="."]
+position = Vector2(21, -130)
+
+[node name="ShootPoint14" type="Marker2D" parent="."]
+position = Vector2(29, -135)
+
+[node name="ShootPoint15" type="Marker2D" parent="."]
+position = Vector2(38, -138)
+
+[node name="ShootPoint16" type="Marker2D" parent="."]
+position = Vector2(48, -139)
+
+[node name="ShootPoint17" type="Marker2D" parent="."]
+position = Vector2(58, -138)
+
+[node name="ShootPoint18" type="Marker2D" parent="."]
+position = Vector2(67, -135)
+
+[node name="ShootPoint19" type="Marker2D" parent="."]
+position = Vector2(75, -130)
+
+[node name="ShootPoint20" type="Marker2D" parent="."]
+position = Vector2(84, -123)
+
+[node name="ShootPoint21" type="Marker2D" parent="."]
+position = Vector2(91, -113)
+
+[node name="ShootPoint22" type="Marker2D" parent="."]
+position = Vector2(94, -102)
+
+[node name="ShootPoint23" type="Marker2D" parent="."]
+position = Vector2(95, -96)
+
+[node name="ShootPoint24" type="Marker2D" parent="."]
+position = Vector2(96, -91)
+
+[node name="ShootPoint25" type="Marker2D" parent="."]
+position = Vector2(95, -86)
+
+[node name="ShootPoint26" type="Marker2D" parent="."]
+position = Vector2(94, -80)
+
+[node name="ShootPoint27" type="Marker2D" parent="."]
+position = Vector2(91, -69)
+
+[node name="ShootPoint28" type="Marker2D" parent="."]
+position = Vector2(84, -59)
+
+[node name="ShootPoint29" type="Marker2D" parent="."]
+position = Vector2(75, -52)
+
+[node name="ShootPoint30" type="Marker2D" parent="."]
+position = Vector2(67, -47)
+
+[node name="ShootPoint31" type="Marker2D" parent="."]
+position = Vector2(58, -44)
+
+[node name="ShootPoints" type="Node" parent="."]

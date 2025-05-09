@@ -58,6 +58,7 @@ sources/0 = SubResource("TileSetAtlasSource_0p3e0")
 size = Vector2(48, 112)
 
 [node name="Node2D" type="Node2D"]
+z_index = 1
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(4, 4)

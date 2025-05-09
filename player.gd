@@ -18,7 +18,7 @@ var jump_speed = 200.0
 const SHOP = preload("res://ui_elements/Shop.tscn")
 @onready var opened_shop = SHOP.instantiate()
 
-enum player_states {MOVE, JUMP, FIRE, SHOP}
+enum player_states {MOVE, JUMP, FIRE, SHOP, CUTSCENE}
 var current_state = player_states.MOVE
 
 enum player_direction {LEFT, RIGHT, UP, DOWN}
@@ -50,7 +50,7 @@ func _on_close_shop():
 	
 func _on_evade_timer_timeout() -> void:
 	evadeReady = true
-	get_node("JumpMarker").visible = true
+	jump_marker.visible = true
 
 func update_movement():
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -153,6 +153,9 @@ func fire(delta):
 func on_states_reset():
 	set_collision_layer_value(2,true)
 	current_state = player_states.MOVE
+	
+func set_to_cutscene():
+	current_state = player_states.CUTSCENE
 
 func _physics_process(delta):
 	match current_state:
@@ -166,3 +169,6 @@ func _physics_process(delta):
 			update_movement()
 			fire(delta)
 			get_node("JumpMarkerAnimation").play("JumpReady")
+		player_states.CUTSCENE:
+			jump_marker.visible = false
+			animation_player.play_idle_up_animation()

@@ -102,3 +102,8 @@ position = Vector2(395, 606)
 
 [node name="BossSummonCircle" parent="." instance=ExtResource("4_cbm8a")]
 position = Vector2(552, 696)
+
+[node name="BossSpawnPoint" type="Marker2D" parent="."]
+position = Vector2(576, 672)
+
+[connection signal="summoning_complete" from="BossSummonCircle" to="." method="_on_boss_summon_circle_summoning_complete"]

@@ -2042,6 +2042,9 @@ hframes = 2
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
 y_sort_enabled = true
+process_callback = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="PlayerCamera"]
 script = ExtResource("13_gh78c")
