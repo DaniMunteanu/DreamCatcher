@@ -40,7 +40,6 @@ func pick_drop():
 func _ready() -> void:
 	pick_drop()
 	is_moving = true
-	print("MobDrop global position: ", global_position)
 
 func _physics_process(delta):
 	if is_moving:
@@ -53,7 +52,6 @@ func _physics_process(delta):
 			global_position = Global.player_current_position
 			is_moving = false
 			Global.loot_received.emit(picked_loot_type, picked_loot_ammount)
-			print("Arrived at target!")
 			queue_free()
 		
 func move_to_point():

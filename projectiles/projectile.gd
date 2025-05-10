@@ -14,6 +14,5 @@ func _on_hitbox_area_entered(hurtbox: Hurtbox):
 		hurtbox.take_damage(Global.player_damage)
 		queue_free()
 
-
 func _on_terrain_collision_body_entered(body: Node2D) -> void:
 	queue_free()
