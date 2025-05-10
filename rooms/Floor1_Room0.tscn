@@ -101,9 +101,9 @@ polygon = PackedVector2Array(864, 924, 768, 924, 768, 972, 672, 972, 672, 1056, 
 position = Vector2(395, 606)
 
 [node name="BossSummonCircle" parent="." instance=ExtResource("4_cbm8a")]
-position = Vector2(552, 696)
+position = Vector2(552, 739)
 
 [node name="BossSpawnPoint" type="Marker2D" parent="."]
-position = Vector2(576, 672)
+position = Vector2(576, 715)
 
 [connection signal="summoning_complete" from="BossSummonCircle" to="." method="_on_boss_summon_circle_summoning_complete"]
