@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://v1ck5npsp0mr"]
+[gd_scene load_steps=8 format=4 uid="uid://v1ck5npsp0mr"]
 
 [ext_resource type="Texture2D" uid="uid://yeu45ewmtbui" path="res://Sprites/TestTileset.png" id="1_6mm8a"]
 [ext_resource type="Script" path="res://rooms/room_0.gd" id="1_yevi1"]
 [ext_resource type="PackedScene" uid="uid://dv344btj33j0m" path="res://Smeet.tscn" id="3_r4jge"]
 [ext_resource type="PackedScene" uid="uid://c4wbt7gplit3q" path="res://BossSummonCircle.tscn" id="4_cbm8a"]
+[ext_resource type="PackedScene" uid="uid://blcxkdt7aeyym" path="res://Tothermos.tscn" id="5_okntn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gjv38"]
 texture = ExtResource("1_6mm8a")
@@ -104,6 +105,9 @@ position = Vector2(395, 606)
 position = Vector2(552, 739)
 
 [node name="BossSpawnPoint" type="Marker2D" parent="."]
-position = Vector2(576, 715)
+position = Vector2(624, 624)
+
+[node name="Tothermos" parent="." instance=ExtResource("5_okntn")]
+position = Vector2(624, 624)
 
 [connection signal="summoning_complete" from="BossSummonCircle" to="." method="_on_boss_summon_circle_summoning_complete"]

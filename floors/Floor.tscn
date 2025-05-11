@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://1cyusdr74lrj"]
+[gd_scene load_steps=8 format=3 uid="uid://1cyusdr74lrj"]
 
 [ext_resource type="Script" path="res://floors/floor.gd" id="1_icq2i"]
 [ext_resource type="PackedScene" uid="uid://556abvc22nkf" path="res://floors/FloorTemplate1.tscn" id="1_r7rng"]
 [ext_resource type="PackedScene" uid="uid://v1ck5npsp0mr" path="res://rooms/Floor1_Room0.tscn" id="4_0hydy"]
 [ext_resource type="PackedScene" uid="uid://jjolvqvp8gcb" path="res://walls/Wall1.tscn" id="5_kspms"]
 [ext_resource type="PackedScene" uid="uid://cqa1bpx8sqgn4" path="res://walls/Wall2_horizontal.tscn" id="6_ukiw2"]
-[ext_resource type="PackedScene" uid="uid://blcxkdt7aeyym" path="res://Tothermos.tscn" id="7_myohj"]
 [ext_resource type="PackedScene" uid="uid://c0mrgxeog8hxe" path="res://walls/Wall2_vertical.tscn" id="8_h5np4"]
 [ext_resource type="PackedScene" uid="uid://cupqqwddnk40" path="res://Player.tscn" id="33_fpr7m"]
 
@@ -18,7 +17,7 @@ script = ExtResource("1_icq2i")
 z_index = 2
 
 [node name="Player" parent="." instance=ExtResource("33_fpr7m")]
-position = Vector2(1382, 1680)
+position = Vector2(1755, 1525)
 
 [node name="Floor1Center" parent="." instance=ExtResource("4_0hydy")]
 position = Vector2(912, 912)
@@ -64,9 +63,6 @@ position = Vector2(1772, 1724)
 
 [node name="Node2D14" parent="." instance=ExtResource("5_kspms")]
 position = Vector2(1724, 1772)
-
-[node name="Tothermos" parent="." instance=ExtResource("7_myohj")]
-position = Vector2(1488, 1627)
 
 [node name="Node2D15" parent="." instance=ExtResource("8_h5np4")]
 position = Vector2(1196, 1484)
