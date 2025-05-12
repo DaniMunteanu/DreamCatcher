@@ -58,7 +58,6 @@ texture = ExtResource("2_e867d")
 sources/0 = SubResource("TileSetAtlasSource_qoal5")
 
 [node name="Floor1" type="Node2D"]
-z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_p4cye")
 

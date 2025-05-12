@@ -14,7 +14,7 @@ y_sort_enabled = true
 script = ExtResource("1_icq2i")
 
 [node name="FloorTemplate" parent="." instance=ExtResource("1_r7rng")]
-z_index = 2
+z_index = 1
 
 [node name="Player" parent="." instance=ExtResource("33_fpr7m")]
 position = Vector2(1755, 1525)
@@ -39,9 +39,6 @@ position = Vector2(1772, 1292)
 
 [node name="Node2D6" parent="." instance=ExtResource("5_kspms")]
 position = Vector2(1724, 1244)
-
-[node name="Node2D7" parent="." instance=ExtResource("6_ukiw2")]
-position = Vector2(1488, 1152)
 
 [node name="Node2D8" parent="." instance=ExtResource("6_ukiw2")]
 position = Vector2(1488, 1872)
@@ -69,3 +66,9 @@ position = Vector2(1196, 1484)
 
 [node name="Node2D16" parent="." instance=ExtResource("8_h5np4")]
 position = Vector2(1820, 1484)
+
+[node name="Node2D7" parent="." instance=ExtResource("5_kspms")]
+position = Vector2(1484, 1148)
+
+[node name="Node2D17" parent="." instance=ExtResource("5_kspms")]
+position = Vector2(1532, 1148)

@@ -64,7 +64,7 @@ z_index = 1
 position = Vector2(12, -29)
 texture = ExtResource("1_aavls")
 
-[node name="BulletPointsStart" type="Node" parent="."]
+[node name="BulletPointsStart" type="Node2D" parent="."]
 
 [node name="ShootPointStart0" type="Marker2D" parent="BulletPointsStart"]
 position = Vector2(0, 48)
@@ -162,7 +162,7 @@ position = Vector2(19, 44)
 [node name="ShootPointStart31" type="Marker2D" parent="BulletPointsStart"]
 position = Vector2(10, 47)
 
-[node name="BulletPointsEnd" type="Node" parent="."]
+[node name="BulletPointsEnd" type="Node2D" parent="."]
 
 [node name="ShootPointEnd0" type="Marker2D" parent="BulletPointsEnd"]
 position = Vector2(0, 348)
@@ -262,7 +262,6 @@ position = Vector2(62, 348)
 
 [node name="BulletShootLines" type="Node2D" parent="."]
 modulate = Color(1, 1, 1, 0.588235)
-z_index = 1
 
 [node name="Line0" type="Line2D" parent="BulletShootLines"]
 position = Vector2(-48, 89)

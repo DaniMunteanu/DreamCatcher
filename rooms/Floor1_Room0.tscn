@@ -1,10 +1,15 @@
-[gd_scene load_steps=8 format=4 uid="uid://v1ck5npsp0mr"]
+[gd_scene load_steps=13 format=4 uid="uid://v1ck5npsp0mr"]
 
 [ext_resource type="Texture2D" uid="uid://yeu45ewmtbui" path="res://Sprites/TestTileset.png" id="1_6mm8a"]
 [ext_resource type="Script" path="res://rooms/room_0.gd" id="1_yevi1"]
 [ext_resource type="PackedScene" uid="uid://dv344btj33j0m" path="res://Smeet.tscn" id="3_r4jge"]
 [ext_resource type="PackedScene" uid="uid://c4wbt7gplit3q" path="res://BossSummonCircle.tscn" id="4_cbm8a"]
 [ext_resource type="PackedScene" uid="uid://blcxkdt7aeyym" path="res://Tothermos.tscn" id="5_okntn"]
+[ext_resource type="PackedScene" uid="uid://jjolvqvp8gcb" path="res://walls/Wall1.tscn" id="6_mvpel"]
+[ext_resource type="PackedScene" uid="uid://calisp6iysq8m" path="res://rising_walls/RisingWall1.tscn" id="7_osw11"]
+[ext_resource type="PackedScene" uid="uid://ckmwl66m4rbe4" path="res://rising_walls/RisingWall1Small.tscn" id="8_n4qly"]
+[ext_resource type="PackedScene" uid="uid://dok0v8hpbj13d" path="res://rising_walls/RisingWall2.tscn" id="9_m7a3u"]
+[ext_resource type="PackedScene" uid="uid://c0mrgxeog8hxe" path="res://walls/Wall2_vertical.tscn" id="10_p4yim"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gjv38"]
 texture = ExtResource("1_6mm8a")
@@ -109,5 +114,115 @@ position = Vector2(624, 624)
 
 [node name="Tothermos" parent="." instance=ExtResource("5_okntn")]
 position = Vector2(624, 624)
+
+[node name="Node2D" parent="." instance=ExtResource("6_mvpel")]
+position = Vector2(284, 428)
+
+[node name="Node2D2" parent="." instance=ExtResource("6_mvpel")]
+position = Vector2(332, 380)
+
+[node name="RisingWalls" type="Node2D" parent="."]
+
+[node name="RisingWall0" parent="RisingWalls" instance=ExtResource("7_osw11")]
+position = Vector2(576, 1072)
+
+[node name="RisingWall1" parent="RisingWalls" instance=ExtResource("8_n4qly")]
+position = Vector2(384, 912)
+
+[node name="RisingWall2" parent="RisingWalls" instance=ExtResource("7_osw11")]
+position = Vector2(336, 928)
+
+[node name="RisingWall3" parent="RisingWalls" instance=ExtResource("7_osw11")]
+position = Vector2(288, 880)
+
+[node name="RisingWall4" parent="RisingWalls" instance=ExtResource("9_m7a3u")]
+position = Vector2(288, 736)
+
+[node name="RisingWall5" parent="RisingWalls" instance=ExtResource("7_osw11")]
+position = Vector2(288, 544)
+
+[node name="RisingWall6" parent="RisingWalls" instance=ExtResource("7_osw11")]
+position = Vector2(336, 492)
+
+[node name="RisingWall7" parent="RisingWalls" instance=ExtResource("7_osw11")]
+position = Vector2(384, 448)
+
+[node name="RisingWall8" parent="RisingWalls" instance=ExtResource("7_osw11")]
+position = Vector2(576, 352)
+
+[node name="RisingWall9" parent="RisingWalls" instance=ExtResource("7_osw11")]
+position = Vector2(624, 352)
+
+[node name="RisingWall10" parent="RisingWalls" instance=ExtResource("7_osw11")]
+position = Vector2(816, 448)
+
+[node name="RisingWall11" parent="RisingWalls" instance=ExtResource("7_osw11")]
+position = Vector2(864, 496)
+
+[node name="RisingWall12" parent="RisingWalls" instance=ExtResource("7_osw11")]
+position = Vector2(912, 544)
+
+[node name="RisingWall13" parent="RisingWalls" instance=ExtResource("9_m7a3u")]
+position = Vector2(912, 736)
+
+[node name="RisingWall14" parent="RisingWalls" instance=ExtResource("7_osw11")]
+position = Vector2(912, 880)
+
+[node name="RisingWall15" parent="RisingWalls" instance=ExtResource("7_osw11")]
+position = Vector2(864, 928)
+
+[node name="RisingWall16" parent="RisingWalls" instance=ExtResource("8_n4qly")]
+position = Vector2(816, 912)
+
+[node name="RisingWall17" parent="RisingWalls" instance=ExtResource("7_osw11")]
+position = Vector2(624, 1072)
+
+[node name="Node2D10" parent="." instance=ExtResource("6_mvpel")]
+position = Vector2(620, 236)
+
+[node name="Node2D6" parent="." instance=ExtResource("6_mvpel")]
+position = Vector2(380, 332)
+
+[node name="Node2D3" parent="." instance=ExtResource("6_mvpel")]
+position = Vector2(284, 764)
+
+[node name="Node2D4" parent="." instance=ExtResource("6_mvpel")]
+position = Vector2(332, 812)
+
+[node name="Node2D5" parent="." instance=ExtResource("6_mvpel")]
+position = Vector2(572, 956)
+
+[node name="Node2D7" parent="." instance=ExtResource("6_mvpel")]
+position = Vector2(380, 860)
+
+[node name="Node2D8" parent="." instance=ExtResource("10_p4yim")]
+position = Vector2(284, 572)
+
+[node name="Node2D9" parent="." instance=ExtResource("6_mvpel")]
+position = Vector2(572, 236)
+
+[node name="Node2D11" parent="." instance=ExtResource("6_mvpel")]
+position = Vector2(812, 332)
+
+[node name="Node2D12" parent="." instance=ExtResource("6_mvpel")]
+position = Vector2(860, 380)
+
+[node name="Node2D13" parent="." instance=ExtResource("6_mvpel")]
+position = Vector2(908, 428)
+
+[node name="Node2D14" parent="." instance=ExtResource("10_p4yim")]
+position = Vector2(908, 572)
+
+[node name="Node2D15" parent="." instance=ExtResource("6_mvpel")]
+position = Vector2(908, 764)
+
+[node name="Node2D16" parent="." instance=ExtResource("6_mvpel")]
+position = Vector2(860, 812)
+
+[node name="Node2D17" parent="." instance=ExtResource("6_mvpel")]
+position = Vector2(812, 860)
+
+[node name="Node2D18" parent="." instance=ExtResource("6_mvpel")]
+position = Vector2(620, 956)
 
 [connection signal="summoning_complete" from="BossSummonCircle" to="." method="_on_boss_summon_circle_summoning_complete"]

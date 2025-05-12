@@ -1,13 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://calisp6iysq8m"]
+[gd_scene load_steps=8 format=3 uid="uid://dok0v8hpbj13d"]
 
-[ext_resource type="Texture2D" uid="uid://d2tx8khr5q45p" path="res://Sprites/RisingWalls/RisingWall1.png" id="1_j12q4"]
+[ext_resource type="Texture2D" uid="uid://bx4jeqk7mxs10" path="res://Sprites/RisingWalls/RisingWall2.png" id="1_pbuqc"]
 
-[sub_resource type="Animation" id="Animation_ah44c"]
-length = 0.001
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f2rdg"]
+size = Vector2(48, 132)
+
+[sub_resource type="Animation" id="Animation_nrwd2"]
+resource_name = "Raise"
+length = 3.0
+step = 0.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("RisingWall1:hframes")
+tracks/0/path = NodePath("RisingWall2:hframes")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -19,7 +24,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("RisingWall1:vframes")
+tracks/1/path = NodePath("RisingWall2:vframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -31,51 +36,114 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("RisingWall1:position")
+tracks/2/path = NodePath("RisingWall2:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(24, -56)]
+"values": [Vector2(24, -80)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("RisingWall1:frame")
+tracks/3/path = NodePath("CollisionShape2D:shape")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [null, SubResource("RectangleShape2D_f2rdg")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RisingWall2:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_wu6py"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RisingWall2:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RisingWall2:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RisingWall2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(24, -80)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CollisionShape2D:shape")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [null]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("CollisionShape2D:shape")
+tracks/4/path = NodePath("RisingWall2:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [null]
+"values": [0]
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2mvb"]
-size = Vector2(48, 84)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_14si7"]
+size = Vector2(48, 132)
 
-[sub_resource type="Animation" id="Animation_o6ivb"]
+[sub_resource type="Animation" id="Animation_joal5"]
 resource_name = "Lower"
 length = 3.0
 step = 0.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("RisingWall1:hframes")
+tracks/0/path = NodePath("RisingWall2:hframes")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -87,7 +155,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("RisingWall1:vframes")
+tracks/1/path = NodePath("RisingWall2:vframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -99,19 +167,19 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("RisingWall1:position")
+tracks/2/path = NodePath("RisingWall2:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(24, -56)]
+"values": [Vector2(24, -80)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("RisingWall1:frame")
+tracks/3/path = NodePath("RisingWall2:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -130,93 +198,28 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [SubResource("RectangleShape2D_i2mvb"), null]
+"values": [SubResource("RectangleShape2D_14si7"), null]
 }
 
-[sub_resource type="Animation" id="Animation_8wyc2"]
-resource_name = "Raise"
-length = 3.0
-step = 0.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("RisingWall1:hframes")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("RisingWall1:vframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [2]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("RisingWall1:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(24, -56)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("RisingWall1:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [1, 2, 3, 4, 5, 6]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("CollisionShape2D:shape")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 2.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [null, SubResource("RectangleShape2D_i2mvb")]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_8mxuc"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lhkrc"]
 _data = {
-"Lower": SubResource("Animation_o6ivb"),
-"RESET": SubResource("Animation_ah44c"),
-"Raise": SubResource("Animation_8wyc2")
+"Lower": SubResource("Animation_joal5"),
+"RESET": SubResource("Animation_wu6py"),
+"Raise": SubResource("Animation_nrwd2")
 }
 
-[node name="RisingWall1" type="StaticBody2D"]
+[node name="RisingWall2" type="StaticBody2D"]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_8mxuc")
-}
-
-[node name="RisingWall1" type="Sprite2D" parent="."]
-position = Vector2(24, -56)
-texture = ExtResource("1_j12q4")
+[node name="RisingWall2" type="Sprite2D" parent="."]
+position = Vector2(24, -80)
+texture = ExtResource("1_pbuqc")
 hframes = 4
 vframes = 2
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lhkrc")
+}
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(24, -58)
+position = Vector2(24, -82)
