@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://cupqqwddnk40"]
+[gd_scene load_steps=40 format=3 uid="uid://cupqqwddnk40"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_8iasi"]
 [ext_resource type="Script" path="res://player_animation.gd" id="2_vu52e"]
@@ -17,7 +17,6 @@
 [ext_resource type="Script" path="res://canvas_layer.gd" id="13_gh78c"]
 [ext_resource type="PackedScene" uid="uid://cphxf7xhhkq7q" path="res://ui_elements/Minimap.tscn" id="15_7qc35"]
 [ext_resource type="PackedScene" uid="uid://iqvuhgs6fnod" path="res://ui_elements/PlayerStatusBar.tscn" id="15_wbqpd"]
-[ext_resource type="PackedScene" uid="uid://nypw8f6p2fuu" path="res://ui_elements/BossHealthBar.tscn" id="16_yxsbi"]
 [ext_resource type="Script" path="res://Hurtbox.gd" id="17_rhecj"]
 [ext_resource type="Script" path="res://Health.gd" id="18_wjjgx"]
 
@@ -2056,8 +2055,6 @@ character = NodePath("../../..")
 [node name="Minimap" parent="PlayerCamera/CanvasLayer" instance=ExtResource("15_7qc35")]
 anchors_preset = -1
 metadata/_edit_use_anchors_ = true
-
-[node name="BossHealthBar" parent="PlayerCamera/CanvasLayer" instance=ExtResource("16_yxsbi")]
 
 [node name="JumpMarker" type="Sprite2D" parent="."]
 z_index = 1

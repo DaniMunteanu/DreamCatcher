@@ -18,6 +18,8 @@ var jump_speed = 200.0
 const SHOP = preload("res://ui_elements/Shop.tscn")
 @onready var opened_shop = SHOP.instantiate()
 
+const BOSS_HP_BAR = preload("res://ui_elements/BossHealthBar.tscn")
+
 enum player_states {MOVE, JUMP, FIRE, SHOP, CUTSCENE}
 var current_state = player_states.MOVE
 
@@ -35,9 +37,16 @@ func _on_health_health_depleted() -> void:
 func _ready() -> void:
 	Global.open_shop.connect(_on_open_shop)
 	Global.close_shop.connect(_on_close_shop)
+	Global.boss_summoned.connect(_on_boss_summoned)
 	opened_shop.character = self
 	portal1.fire_timer = (2.0 - (0.2 * Global.player_fire_rate)) / 2.0 
 	portal2.fire_timer = 0.0
+	
+func _on_boss_summoned():
+	var boss = get_parent().get_node("Floor1_Room0/Tothermos")
+	var boss_hp_bar_instance = BOSS_HP_BAR.instantiate()
+	boss_hp_bar_instance.boss_health = boss.get_node("Health")
+	canvas_layer.add_child(boss_hp_bar_instance)
 	
 func _on_open_shop():
 	canvas_layer.add_child(opened_shop)

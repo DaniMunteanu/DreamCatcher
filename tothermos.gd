@@ -30,7 +30,7 @@ func attack():
 	for i in 32:
 		var new_bullet = BULLET.instantiate()
 		new_bullet.position = bullets_start[i].position
-		new_bullet.direction = bullets_start[i].position.direction_to(bullets_end[i].position).normalized()
+		new_bullet.direction = bullets_start[i].position.direction_to(bullets_end[i].position)
 		new_bullet.end_point = bullets_end[i].position
 		add_child(new_bullet)
 	cooldown_timer.start(3)

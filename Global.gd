@@ -39,3 +39,5 @@ signal health_bought(health_to_buy: int)
 
 signal loot_spent(loot_type: loot_types, ammount: int)
 signal check_funds
+
+signal boss_summoned

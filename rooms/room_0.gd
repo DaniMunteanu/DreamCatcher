@@ -26,6 +26,7 @@ func _on_boss_summon_circle_summoning_complete() -> void:
 	var boss_instance = boss.instantiate()
 	boss_instance.global_position = $BossSpawnPoint.position
 	add_child(boss_instance)
+	Global.boss_summoned.emit()
 
 func _on_boss_summon_circle_raise_walls() -> void:
 	for i in 18:

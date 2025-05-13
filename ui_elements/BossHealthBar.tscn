@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://nypw8f6p2fuu"]
+[gd_scene load_steps=5 format=3 uid="uid://nypw8f6p2fuu"]
 
+[ext_resource type="Script" path="res://ui_elements/boss_health_bar.gd" id="1_opagv"]
 [ext_resource type="Texture2D" uid="uid://we0q4mwj57lj" path="res://Sprites/SpritesUI/BossHealthBar.png" id="1_swrux"]
+[ext_resource type="Texture2D" uid="uid://dnq0d8rnimm3d" path="res://Sprites/SpritesUI/BossHealthBarProgress.png" id="1_u02s6"]
+[ext_resource type="Texture2D" uid="uid://bxmlbw8taot25" path="res://Sprites/SpritesUI/SecondaryBossHealthBarProgress.png" id="3_rhtkl"]
 
 [node name="BossHealthBar" type="Control"]
 layout_mode = 3
@@ -9,8 +12,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_opagv")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+[node name="PrimaryProgressBar" type="TextureProgressBar" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -23,5 +27,22 @@ offset_right = 163.0
 offset_bottom = 0.039978
 grow_horizontal = 2
 grow_vertical = 0
+value = 50.0
+texture_progress = ExtResource("1_u02s6")
+texture_progress_offset = Vector2(4, 4)
+metadata/_edit_use_anchors_ = true
+
+[node name="SecondaryProgressBar" type="TextureProgressBar" parent="PrimaryProgressBar"]
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -163.0
+offset_right = 163.0
+value = 70.0
 texture_under = ExtResource("1_swrux")
+texture_progress = ExtResource("3_rhtkl")
+texture_progress_offset = Vector2(4, 4)
 metadata/_edit_use_anchors_ = true

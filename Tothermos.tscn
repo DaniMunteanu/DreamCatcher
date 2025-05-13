@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://blcxkdt7aeyym"]
+[gd_scene load_steps=9 format=3 uid="uid://blcxkdt7aeyym"]
 
 [ext_resource type="Texture2D" uid="uid://d3djuc4ovq1m1" path="res://Sprites/Tothermos.png" id="1_aavls"]
 [ext_resource type="Script" path="res://tothermos.gd" id="1_usf5t"]
+[ext_resource type="Script" path="res://Health.gd" id="3_y8ty5"]
+[ext_resource type="Script" path="res://Hurtbox.gd" id="4_a7bk1"]
 
 [sub_resource type="Animation" id="Animation_bgwwd"]
 resource_name = "BulletsIndication"
@@ -556,5 +558,14 @@ y_sort_enabled = true
 position = Vector2(0, -43)
 
 [node name="AttackCooldownTimer" type="Timer" parent="."]
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("3_y8ty5")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+script = ExtResource("4_a7bk1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox"]
+polygon = PackedVector2Array(0, 48, -12, 46, -24, 42, -34, 34, -42, 24, -46, 12, -48, 0, -48, -103, -44, -135, -40, -159, -36, -171, -32, -177, -25, -184, -17, -189, -7, -192, 7, -192, 17, -189, 25, -184, 32, -177, 37, -169, 40, -159, 44, -135, 53, -135, 57, -134, 66, -128, 71, -120, 72, -116, 72, -106, 71, -102, 66, -94, 57, -88, 53, -87, 48, -87, 48, 7, 46, 16, 42, 24, 34, 34, 24, 42, 12, 46)
 
 [connection signal="timeout" from="AttackCooldownTimer" to="." method="_on_attack_cooldown_timer_timeout"]
