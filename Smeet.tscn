@@ -16,7 +16,7 @@ script = ExtResource("1_p8gt8")
 y_sort_enabled = true
 position = Vector2(14, -21)
 texture = ExtResource("1_p75oh")
-offset = Vector2(0, 15.96)
+offset = Vector2(0, 16)
 
 [node name="InteractionArea" parent="." instance=ExtResource("2_eljun")]
 position = Vector2(16, -65)

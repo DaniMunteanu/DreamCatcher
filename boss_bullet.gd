@@ -11,5 +11,5 @@ func _ready() -> void:
 func _physics_process(delta):
 	global_position += direction * delta * bullet_speed
 	
-	if position.distance_to(end_point) < 10.0:
+	if position.distance_to(end_point) < 1.0:
 		queue_free()
