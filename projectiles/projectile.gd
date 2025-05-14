@@ -3,7 +3,6 @@ extends Area2D
 #400
 #speed = shot_speed_multiplier * Global.player_shot_speed
 var shot_speed_multiplier = 30
-
 var direction = Vector2()
 
 func _physics_process(delta):

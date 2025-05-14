@@ -41,3 +41,4 @@ signal loot_spent(loot_type: loot_types, ammount: int)
 signal check_funds
 
 signal boss_summoned
+signal boss_defeated

@@ -10,7 +10,7 @@ func _ready() -> void:
 	
 func summon_boss():
 	$InteractionArea.can_interact = false
-	TransitionScreen.transition()
+	TransitionScreen.transition_black()
 	await TransitionScreen.on_transition_finished
 	player.set_to_cutscene()
 	player.get_node("PlayerCamera").position_smoothing_enabled = true

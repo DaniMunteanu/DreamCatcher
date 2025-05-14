@@ -12,6 +12,7 @@ func initialize_movable_walls():
 
 func _ready() -> void:
 	initialize_movable_walls()
+	Global.boss_defeated.connect(_on_boss_defeated)
 
 func _init():
 	room_index = 0
@@ -27,8 +28,21 @@ func _on_boss_summon_circle_summoning_complete() -> void:
 	var boss_instance = boss.instantiate()
 	boss_instance.global_position = $BossSpawnPoint.position
 	add_child(boss_instance)
+	boss_instance.lower_walls.connect(_on_tothermos_lower_walls)
 	Global.boss_summoned.emit()
+	
+func _on_boss_defeated() -> void:
+	await TransitionScreen.on_transition_finished
+	player.get_node("PlayerCamera").global_position = player.global_position
+	await get_tree().create_timer(0.5).timeout
+	player.get_node("PlayerCamera").position_smoothing_enabled = false
+	player.on_states_reset()
+	player.jump_marker.visible = true
 
 func _on_boss_summon_circle_raise_walls() -> void:
 	for i in 18:
 		movable_walls[i].get_node("AnimationPlayer").play("Raise")
+	
+func _on_tothermos_lower_walls() -> void:
+	for i in 18:
+		movable_walls[i].get_node("AnimationPlayer").play("Lower")

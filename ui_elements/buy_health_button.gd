@@ -1,6 +1,6 @@
 extends TextureButton
 
-@onready var health: Health = get_parent().character.get_node("Health")
+@onready var health: Health = get_parent().character.get_node("PlayerHealth")
 
 func _ready() -> void:
 	Global.check_funds.connect(_on_check_funds)
