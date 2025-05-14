@@ -1,6 +1,6 @@
 extends TextureProgressBar
 
-@onready var health: Health = get_parent().character.get_node("Health")
+@onready var health: Health = get_parent().character.get_node("PlayerHealth")
 
 func _ready() -> void:
 	Global.buy_health_hover.connect(_on_buy_health_hover)

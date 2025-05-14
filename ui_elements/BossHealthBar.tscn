@@ -14,7 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_opagv")
 
-[node name="PrimaryProgressBar" type="TextureProgressBar" parent="."]
+[node name="PrimaryHealthBar" type="TextureProgressBar" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -32,7 +32,7 @@ texture_progress = ExtResource("1_u02s6")
 texture_progress_offset = Vector2(4, 4)
 metadata/_edit_use_anchors_ = true
 
-[node name="SecondaryProgressBar" type="TextureProgressBar" parent="PrimaryProgressBar"]
+[node name="SecondaryHealthBar" type="TextureProgressBar" parent="PrimaryHealthBar"]
 z_index = -1
 layout_mode = 1
 anchors_preset = -1

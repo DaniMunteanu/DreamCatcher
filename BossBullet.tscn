@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dtn4sgp412ans"]
+[gd_scene load_steps=8 format=3 uid="uid://dtn4sgp412ans"]
 
 [ext_resource type="Script" path="res://boss_bullet.gd" id="1_b2sh1"]
 [ext_resource type="Texture2D" uid="uid://l0mwqwrax0ow" path="res://Sprites/BossBulletCore.png" id="1_vc1dt"]
 [ext_resource type="Texture2D" uid="uid://b85po3udp5ra6" path="res://Sprites/BossBulletOutline.png" id="2_67518"]
+[ext_resource type="Script" path="res://Hitbox.gd" id="4_48880"]
 
 [sub_resource type="Animation" id="Animation_6qyk0"]
 resource_name = "Fired"
@@ -94,6 +95,7 @@ _data = {
 [node name="BossBullet" type="Area2D"]
 y_sort_enabled = true
 script = ExtResource("1_b2sh1")
+damage = 10
 
 [node name="BossBulletCore" type="Sprite2D" parent="."]
 texture = ExtResource("1_vc1dt")
@@ -109,6 +111,12 @@ libraries = {
 "": SubResource("AnimationLibrary_8roiy")
 }
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-visible = false
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("4_48880")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox"]
 polygon = PackedVector2Array(-2, -1, -1, -2, 1, -2, 2, -1, 2, 1, 1, 2, -1, 2, -2, 1)
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

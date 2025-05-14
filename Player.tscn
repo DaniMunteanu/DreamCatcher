@@ -2078,17 +2078,19 @@ y_sort_enabled = true
 collision_layer = 16
 collision_mask = 0
 script = ExtResource("17_rhecj")
-health = NodePath("../Health")
+health = NodePath("../PlayerHealth")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox"]
 build_mode = 1
 polygon = PackedVector2Array(-13, 0, -14, -1, -15, -6, -16, -14, -16, -19, -15, -21, -14, -22, -13, -22, -15, -26, -16, -29, -16, -35, -15, -37, -12, -40, -10, -41, -9, -42, -3, -42, -1, -41, 1, -39, 3, -35, 4, -32, 4, -28, 2, -24, 1, -23, 5, -19, 6, -15, 7, -10, 8, -8, 15, -1, 15, 0)
 one_way_collision_margin = 0.0
 
-[node name="Health" type="Node" parent="."]
+[node name="PlayerHealth" type="Node" parent="."]
 script = ExtResource("18_5bono")
 max_health = 50
 current_health = 50
+
+[node name="InvincibilityTimer" type="Timer" parent="PlayerHealth"]
 
 [node name="EvadeTimer" type="Timer" parent="."]
 wait_time = 5.0
@@ -2102,6 +2104,7 @@ position = Vector2(-19, -19)
 visible = false
 position = Vector2(10, -19)
 
-[connection signal="received_damage" from="Hurtbox" to="Health" method="_on_hurtbox_received_damage"]
-[connection signal="health_depleted" from="Health" to="." method="_on_health_health_depleted"]
+[connection signal="received_damage" from="Hurtbox" to="PlayerHealth" method="_on_hurtbox_received_damage"]
+[connection signal="health_depleted" from="PlayerHealth" to="." method="_on_health_health_depleted"]
+[connection signal="timeout" from="PlayerHealth/InvincibilityTimer" to="PlayerHealth" method="_on_invincibility_timer_timeout"]
 [connection signal="timeout" from="EvadeTimer" to="." method="_on_evade_timer_timeout"]
