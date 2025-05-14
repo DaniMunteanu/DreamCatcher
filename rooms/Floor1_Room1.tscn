@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://bstnaq52088vj"]
+[gd_scene load_steps=6 format=4 uid="uid://bstnaq52088vj"]
 
 [ext_resource type="Script" path="res://rooms/room_1.gd" id="1_22adr"]
 [ext_resource type="Texture2D" uid="uid://yeu45ewmtbui" path="res://Sprites/TestTileset.png" id="1_oyrgt"]
+[ext_resource type="PackedScene" uid="uid://dv344btj33j0m" path="res://Smeet.tscn" id="3_lat7o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t3ydb"]
 texture = ExtResource("1_oyrgt")
@@ -70,3 +71,6 @@ polygon = PackedVector2Array(432, 336, 384, 336, 384, 304, 368, 288, 336, 288, 3
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Barrier"]
 polygon = PackedVector2Array(432, 448, 432, 492, 384, 492, 384, 528, 372, 540, 336, 540, 336, 576, 324, 588, 288, 588, 288, 624, 276, 636, 240, 636, 240, 672, 228, 684, 192, 684, 192, 732, 96, 732, 96, 588, 48, 588, 48, 448, 44, 448, 44, 592, 92, 592, 92, 736, 196, 736, 196, 688, 228, 688, 244, 673, 244, 640, 276, 640, 292, 624, 292, 592, 324, 592, 340, 576, 340, 544, 372, 544, 388, 528, 388, 496, 436, 496, 436, 448)
+
+[node name="Smeet" parent="." instance=ExtResource("3_lat7o")]
+position = Vector2(120, 444)

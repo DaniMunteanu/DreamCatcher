@@ -248,3 +248,10 @@ polygon = PackedVector2Array(0, 89, 0, 92, -4, 92, -4, 85, 100, 85, 100, 92, 96,
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier"]
 position = Vector2(48, 14)
 shape = SubResource("RectangleShape2D_xbmkx")
+
+[node name="PlayerProjectileBarrier" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlayerProjectileBarrier"]
+polygon = PackedVector2Array(0, 20, 96, 20, 96, 89, 0, 89)

@@ -254,3 +254,10 @@ position = Vector2(8, 28)
 [node name="Endpoint1" type="Marker2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(56, 96)
+
+[node name="PlayerProjectileBarrier" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlayerProjectileBarrier"]
+polygon = PackedVector2Array(52, 0, 52, 4, 56, 4, 56, 52, 52, 52, 4, 100, 4, 52, 0, 52)

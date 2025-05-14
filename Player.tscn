@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://cphxf7xhhkq7q" path="res://ui_elements/Minimap.tscn" id="15_7qc35"]
 [ext_resource type="PackedScene" uid="uid://iqvuhgs6fnod" path="res://ui_elements/PlayerStatusBar.tscn" id="15_wbqpd"]
 [ext_resource type="Script" path="res://Hurtbox.gd" id="17_rhecj"]
-[ext_resource type="Script" path="res://Health.gd" id="18_wjjgx"]
+[ext_resource type="Script" path="res://PlayerHealth.gd" id="18_5bono"]
 
 [sub_resource type="Animation" id="Animation_xsgow"]
 resource_name = "PlayerFiringDown"
@@ -2086,7 +2086,7 @@ polygon = PackedVector2Array(-13, 0, -14, -1, -15, -6, -16, -14, -16, -19, -15, 
 one_way_collision_margin = 0.0
 
 [node name="Health" type="Node" parent="."]
-script = ExtResource("18_wjjgx")
+script = ExtResource("18_5bono")
 max_health = 50
 current_health = 50
 

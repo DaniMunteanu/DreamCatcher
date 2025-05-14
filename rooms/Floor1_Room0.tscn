@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=4 uid="uid://v1ck5npsp0mr"]
+[gd_scene load_steps=9 format=4 uid="uid://v1ck5npsp0mr"]
 
 [ext_resource type="Texture2D" uid="uid://yeu45ewmtbui" path="res://Sprites/TestTileset.png" id="1_6mm8a"]
 [ext_resource type="Script" path="res://rooms/room_0.gd" id="1_yevi1"]
-[ext_resource type="PackedScene" uid="uid://dv344btj33j0m" path="res://Smeet.tscn" id="3_r4jge"]
 [ext_resource type="PackedScene" uid="uid://c4wbt7gplit3q" path="res://BossSummonCircle.tscn" id="4_cbm8a"]
 [ext_resource type="PackedScene" uid="uid://calisp6iysq8m" path="res://rising_walls/RisingWall1.tscn" id="7_osw11"]
 [ext_resource type="PackedScene" uid="uid://ckmwl66m4rbe4" path="res://rising_walls/RisingWall1Small.tscn" id="8_n4qly"]
@@ -69,7 +68,6 @@ tile_map_data = PackedByteArray("AAADABIAAAAEAAYAAAAEABIAAAAFAAYAAAADABMAAAAEAAY
 tile_set = SubResource("TileSet_cxwyq")
 
 [node name="Barrier" type="StaticBody2D" parent="."]
-collision_layer = 5
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Barrier"]
 polygon = PackedVector2Array(288, 384, 192, 384, 144, 336, 48, 336, 48, 352, 188, 492, 288, 492, 288, 576, 284, 576, 284, 496, 188, 496, 44, 352, 44, 332, 144, 332, 192, 380, 288, 380)
@@ -100,9 +98,6 @@ polygon = PackedVector2Array(384, 924, 480, 924, 480, 972, 576, 972, 576, 1056, 
 
 [node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="Barrier"]
 polygon = PackedVector2Array(864, 924, 768, 924, 768, 972, 672, 972, 672, 1056, 676, 1056, 676, 976, 772, 976, 772, 928, 864, 928)
-
-[node name="Smeet" parent="." instance=ExtResource("3_r4jge")]
-position = Vector2(395, 606)
 
 [node name="BossSummonCircle" parent="." instance=ExtResource("4_cbm8a")]
 position = Vector2(552, 739)

@@ -24,8 +24,9 @@ func send_raise_walls_signal():
 
 func on_cutscene_finished():
 	player.get_node("PlayerCamera").global_position = player.global_position
+	await get_tree().create_timer(0.5).timeout
+	player.get_node("PlayerCamera").position_smoothing_enabled = false
 	player.on_states_reset()
 	player.jump_marker.visible = true
-	#player.get_node("PlayerCamera").position_smoothing_enabled = false
 	summoning_complete.emit()
 	queue_free()

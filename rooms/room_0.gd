@@ -1,6 +1,7 @@
 extends FloorRoom
 
 @onready var boss = preload("res://Tothermos.tscn")
+@onready var player = get_parent().get_node("Player")
 
 var movable_walls = []
 

@@ -34,7 +34,7 @@ func initialize_room_resources():
 		
 	room_markers.resize(31)
 	for i in 31:
-		room_markers[i] = $FloorTemplate.get_node("Marker_" + str(i))
+		room_markers[i] = $FloorTemplate.get_node("RoomMarkers/Marker_" + str(i))
 
 func initialize_room_fills_resources():
 	room_fills_res.resize(31)
@@ -103,7 +103,7 @@ func initialize_door_resources():
 	
 	door_markers.resize(48)
 	for i in 48:
-		door_markers[i] = $FloorTemplate.get_node("Marker_door_" + str(i))
+		door_markers[i] = $FloorTemplate.get_node("DoorMarkers/Marker_door_" + str(i))
 
 func initialize_wall_resources():
 	walls_res.resize(48)

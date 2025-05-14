@@ -72,235 +72,233 @@ offset = Vector2(12, -72)
 
 [node name="BulletPointsStart" type="Node2D" parent="."]
 y_sort_enabled = true
-position = Vector2(0, -43)
 
 [node name="ShootPointStart0" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(0, 48)
+position = Vector2(0, 5)
 
 [node name="ShootPointStart1" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(-10, 47)
+position = Vector2(-10, 4)
 
 [node name="ShootPointStart2" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(-19, 44)
+position = Vector2(-19, 1)
 
 [node name="ShootPointStart3" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(-27, 39)
+position = Vector2(-27, -4)
 
 [node name="ShootPointStart4" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(-36, 32)
+position = Vector2(-36, -11)
 
 [node name="ShootPointStart5" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(-43, 22)
+position = Vector2(-43, -21)
 
 [node name="ShootPointStart6" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(-46, 11)
+position = Vector2(-46, -32)
 
 [node name="ShootPointStart7" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(-47, 5)
+position = Vector2(-47, -38)
 
 [node name="ShootPointStart8" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(-48, 0)
+position = Vector2(-48, -43)
 
 [node name="ShootPointStart9" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(-47, -5)
+position = Vector2(-47, -48)
 
 [node name="ShootPointStart10" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(-46, -11)
+position = Vector2(-46, -54)
 
 [node name="ShootPointStart11" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(-43, -22)
+position = Vector2(-43, -65)
 
 [node name="ShootPointStart12" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(-36, -32)
+position = Vector2(-36, -75)
 
 [node name="ShootPointStart13" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(-27, -39)
+position = Vector2(-27, -82)
 
 [node name="ShootPointStart14" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(-19, -44)
+position = Vector2(-19, -87)
 
 [node name="ShootPointStart15" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(-10, -47)
+position = Vector2(-10, -90)
 
 [node name="ShootPointStart16" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(0, -48)
+position = Vector2(0, -91)
 
 [node name="ShootPointStart17" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(10, -47)
+position = Vector2(10, -90)
 
 [node name="ShootPointStart18" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(19, -44)
+position = Vector2(19, -87)
 
 [node name="ShootPointStart19" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(27, -39)
+position = Vector2(27, -82)
 
 [node name="ShootPointStart20" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(36, -32)
+position = Vector2(36, -75)
 
 [node name="ShootPointStart21" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(43, -22)
+position = Vector2(43, -65)
 
 [node name="ShootPointStart22" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(46, -11)
+position = Vector2(46, -54)
 
 [node name="ShootPointStart23" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(47, -5)
+position = Vector2(47, -48)
 
 [node name="ShootPointStart24" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(48, 0)
+position = Vector2(48, -43)
 
 [node name="ShootPointStart25" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(47, 5)
+position = Vector2(47, -38)
 
 [node name="ShootPointStart26" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(46, 11)
+position = Vector2(46, -32)
 
 [node name="ShootPointStart27" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(43, 22)
+position = Vector2(43, -21)
 
 [node name="ShootPointStart28" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(36, 32)
+position = Vector2(36, -11)
 
 [node name="ShootPointStart29" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(27, 39)
+position = Vector2(27, -4)
 
 [node name="ShootPointStart30" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(19, 44)
+position = Vector2(19, 1)
 
 [node name="ShootPointStart31" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(10, 47)
+position = Vector2(10, 4)
 
 [node name="BulletPointsEnd" type="Node2D" parent="."]
 y_sort_enabled = true
-position = Vector2(0, -43)
 
 [node name="ShootPointEnd0" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(0, 336)
+position = Vector2(0, 293)
 
 [node name="ShootPointEnd1" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(-62, 336)
+position = Vector2(-62, 293)
 
 [node name="ShootPointEnd2" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(-125, 335)
+position = Vector2(-125, 292)
 
 [node name="ShootPointEnd3" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(-167, 287)
+position = Vector2(-167, 244)
 
 [node name="ShootPointEnd4" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(-241, 237)
+position = Vector2(-241, 194)
 
 [node name="ShootPointEnd5" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(-290, 165)
+position = Vector2(-290, 122)
 
 [node name="ShootPointEnd6" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(-337, 119)
+position = Vector2(-337, 76)
 
 [node name="ShootPointEnd7" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(-288, 48)
+position = Vector2(-288, 5)
 
 [node name="ShootPointEnd8" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(-288, 0)
+position = Vector2(-288, -43)
 
 [node name="ShootPointEnd9" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(-288, -47)
+position = Vector2(-288, -90)
 
 [node name="ShootPointEnd10" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(-335, -113)
+position = Vector2(-335, -156)
 
 [node name="ShootPointEnd11" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(-287, -163)
+position = Vector2(-287, -206)
 
 [node name="ShootPointEnd12" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(-239, -235)
+position = Vector2(-239, -278)
 
 [node name="ShootPointEnd13" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(-172, -287)
+position = Vector2(-172, -330)
 
 [node name="ShootPointEnd14" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(-125, -335)
+position = Vector2(-125, -378)
 
 [node name="ShootPointEnd15" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(-60, -336)
+position = Vector2(-60, -379)
 
 [node name="ShootPointEnd16" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(0, -336)
+position = Vector2(0, -379)
 
 [node name="ShootPointEnd17" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(62, -336)
+position = Vector2(62, -379)
 
 [node name="ShootPointEnd18" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(125, -335)
+position = Vector2(125, -378)
 
 [node name="ShootPointEnd19" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(168, -287)
+position = Vector2(168, -330)
 
 [node name="ShootPointEnd20" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(239, -235)
+position = Vector2(239, -278)
 
 [node name="ShootPointEnd21" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(287, -163)
+position = Vector2(287, -206)
 
 [node name="ShootPointEnd22" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(335, -118)
+position = Vector2(335, -161)
 
 [node name="ShootPointEnd23" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(288, -48)
+position = Vector2(288, -91)
 
 [node name="ShootPointEnd24" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(288, 0)
+position = Vector2(288, -43)
 
 [node name="ShootPointEnd25" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(288, 47)
+position = Vector2(288, 4)
 
 [node name="ShootPointEnd26" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(335, 113)
+position = Vector2(335, 70)
 
 [node name="ShootPointEnd27" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(289, 164)
+position = Vector2(289, 121)
 
 [node name="ShootPointEnd28" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(241, 237)
+position = Vector2(241, 194)
 
 [node name="ShootPointEnd29" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(167, 287)
+position = Vector2(167, 244)
 
 [node name="ShootPointEnd30" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(125, 335)
+position = Vector2(125, 292)
 
 [node name="ShootPointEnd31" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(60, 336)
+position = Vector2(60, 293)
 
 [node name="BulletShootLines" type="Node2D" parent="."]
 visible = false
@@ -561,6 +559,8 @@ position = Vector2(0, -43)
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("3_y8ty5")
+max_health = 50
+current_health = 50
 
 [node name="Hurtbox" type="Area2D" parent="."]
 script = ExtResource("4_a7bk1")
