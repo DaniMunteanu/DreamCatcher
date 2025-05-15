@@ -17,8 +17,8 @@ var bullet_lines_angles = []
 var initial_active_shooting_points = []
 var active_shooting_points = []
 
-var safe_spots_half = []
-var safe_spots_minus_three = []
+var safe_spots = []
+
 var attack_waves
 
 enum boss_attacks {BULLETS_HALF, BULLETS_MINUS_THREE}
@@ -30,8 +30,6 @@ func init_variables():
 	bullet_lines.resize(32)
 	bullet_lines_angles.resize(32)
 	initial_active_shooting_points.resize(32)
-	safe_spots_half.resize(16)
-	safe_spots_minus_three.resize(3)
 	for i in 32:
 		bullets_start[i] = get_node("BulletPointsStart/ShootPointStart" + str(i))
 		bullets_end[i] = get_node("BulletPointsEnd/ShootPointEnd" + str(i))
@@ -66,22 +64,22 @@ func right_neighbour_index(index: int) -> int:
 	
 func bullets_half():
 	attack_waves = 2
+	safe_spots.resize(16)
 	
 	for i in attack_waves:
 		for j in 16:
-			safe_spots_half[j] = 2*j
-		await begin_attack(safe_spots_half)
+			safe_spots[j] = 2*j
+		await begin_attack()
 		
 		for j in 16:
-			safe_spots_half[j] = 2*j+1
-		await begin_attack(safe_spots_half)
-	
-	attack_over.emit()
+			safe_spots[j] = 2*j+1
+		await begin_attack()
 
 func bullets_minus_three():
 	attack_waves = 5
 	
-	safe_spots_minus_three = [31,0,1]
+	safe_spots.resize(3)
+	safe_spots = [31,0,1]
 	
 	var firing_angle = rad_to_deg($BulletsCenterPoint.global_position.angle_to_point(player.global_position))
 	if firing_angle < 0.0:
@@ -89,29 +87,27 @@ func bullets_minus_three():
 		
 	for i in 32: 
 		if firing_angle <= bullet_lines_angles[i]:
-			safe_spots_minus_three[0] = left_neighbour_index(i)
-			safe_spots_minus_three[1] = i
-			safe_spots_minus_three[2] = right_neighbour_index(i)
+			safe_spots[0] = left_neighbour_index(i)
+			safe_spots[1] = i
+			safe_spots[2] = right_neighbour_index(i)
 			break
 			
 	for i in attack_waves:
-		await begin_attack(safe_spots_minus_three)
+		await begin_attack()
 	
 		var rng = RandomNumberGenerator.new()
 		var picked_direction = rng.randi_range(direction.CLOCKWISE,direction.COUNTER_CLOCKWISE)
 		
 		if picked_direction == direction.CLOCKWISE:
-			safe_spots_minus_three[0] = right_neighbour_index(safe_spots_minus_three[2])
-			safe_spots_minus_three[1] = right_neighbour_index(safe_spots_minus_three[0])
-			safe_spots_minus_three[2] = right_neighbour_index(safe_spots_minus_three[1])
+			safe_spots[0] = right_neighbour_index(safe_spots[2])
+			safe_spots[1] = right_neighbour_index(safe_spots[0])
+			safe_spots[2] = right_neighbour_index(safe_spots[1])
 		else:
-			safe_spots_minus_three[2] = left_neighbour_index(safe_spots_minus_three[0])
-			safe_spots_minus_three[1] = left_neighbour_index(safe_spots_minus_three[2])
-			safe_spots_minus_three[0] = left_neighbour_index(safe_spots_minus_three[1])
-			
-	attack_over.emit()
+			safe_spots[2] = left_neighbour_index(safe_spots[0])
+			safe_spots[1] = left_neighbour_index(safe_spots[2])
+			safe_spots[0] = left_neighbour_index(safe_spots[1])
 	
-func begin_attack(safe_spots: Array):
+func begin_attack():
 	active_shooting_points = initial_active_shooting_points.duplicate(false)
 	for spot in safe_spots:
 		bullet_lines[spot].visible = false
@@ -126,18 +122,17 @@ func begin_attack(safe_spots: Array):
 
 func _ready() -> void:
 	init_variables()
-	cooldown_timer.start(5)
+	cooldown_timer.start(3)
 
 func _on_attack_cooldown_timer_timeout() -> void:
 	var rng = RandomNumberGenerator.new()
 	var picked_attack = rng.randi_range(boss_attacks.BULLETS_HALF,boss_attacks.BULLETS_MINUS_THREE)
 	match picked_attack:
 		boss_attacks.BULLETS_HALF:
-			bullets_half()
+			await bullets_half()
 		boss_attacks.BULLETS_MINUS_THREE:
-			bullets_minus_three()
-	await attack_over
-	cooldown_timer.start(5)
+			await bullets_minus_three()
+	cooldown_timer.start(3)
 	
 func send_lower_walls_signal():
 	lower_walls.emit()

@@ -662,11 +662,12 @@ y_sort_enabled = true
 position = Vector2(0, -43)
 
 [node name="AttackCooldownTimer" type="Timer" parent="."]
+one_shot = true
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("3_y8ty5")
-max_health = 50
-current_health = 50
+max_health = 100
+current_health = 100
 
 [node name="Hurtbox" type="Area2D" parent="."]
 collision_layer = 4
