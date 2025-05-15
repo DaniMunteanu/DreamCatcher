@@ -26,14 +26,11 @@ var rng = RandomNumberGenerator.new()
 
 func initialize_room_resources():
 	placed_rooms.resize(31)
-	
 	rooms_res.resize(31)
+	room_markers.resize(31)
 	
 	for i in 31:
 		rooms_res[i] = load("res://rooms/Floor1_Room" + str(i) + ".tscn")
-		
-	room_markers.resize(31)
-	for i in 31:
 		room_markers[i] = $FloorTemplate.get_node("RoomMarkers/Marker_" + str(i))
 
 func initialize_room_fills_resources():

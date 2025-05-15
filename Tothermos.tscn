@@ -180,230 +180,230 @@ y_sort_enabled = true
 
 [node name="ShootPointStart0" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(0, 5)
+position = Vector2(48, -43)
 
 [node name="ShootPointStart1" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(-10, 4)
+position = Vector2(47, -38)
 
 [node name="ShootPointStart2" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(-19, 1)
+position = Vector2(46, -32)
 
 [node name="ShootPointStart3" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(-27, -4)
+position = Vector2(43, -21)
 
 [node name="ShootPointStart4" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(-36, -11)
+position = Vector2(36, -11)
 
 [node name="ShootPointStart5" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(-43, -21)
+position = Vector2(27, -4)
 
 [node name="ShootPointStart6" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(-46, -32)
+position = Vector2(19, 1)
 
 [node name="ShootPointStart7" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(-47, -38)
+position = Vector2(10, 4)
 
 [node name="ShootPointStart8" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(-48, -43)
+position = Vector2(0, 5)
 
 [node name="ShootPointStart9" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(-47, -48)
+position = Vector2(-10, 4)
 
 [node name="ShootPointStart10" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(-46, -54)
+position = Vector2(-19, 1)
 
 [node name="ShootPointStart11" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(-43, -65)
+position = Vector2(-27, -4)
 
 [node name="ShootPointStart12" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(-36, -75)
+position = Vector2(-36, -11)
 
 [node name="ShootPointStart13" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(-27, -82)
+position = Vector2(-43, -21)
 
 [node name="ShootPointStart14" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(-19, -87)
+position = Vector2(-46, -32)
 
 [node name="ShootPointStart15" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(-10, -90)
+position = Vector2(-47, -38)
 
 [node name="ShootPointStart16" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(0, -91)
+position = Vector2(-48, -43)
 
 [node name="ShootPointStart17" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(10, -90)
+position = Vector2(-47, -48)
 
 [node name="ShootPointStart18" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(19, -87)
+position = Vector2(-46, -54)
 
 [node name="ShootPointStart19" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(27, -82)
+position = Vector2(-43, -65)
 
 [node name="ShootPointStart20" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(36, -75)
+position = Vector2(-36, -75)
 
 [node name="ShootPointStart21" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(43, -65)
+position = Vector2(-27, -82)
 
 [node name="ShootPointStart22" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(46, -54)
+position = Vector2(-19, -87)
 
 [node name="ShootPointStart23" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(47, -48)
+position = Vector2(-10, -90)
 
 [node name="ShootPointStart24" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(48, -43)
+position = Vector2(0, -91)
 
 [node name="ShootPointStart25" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(47, -38)
+position = Vector2(10, -90)
 
 [node name="ShootPointStart26" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(46, -32)
+position = Vector2(19, -87)
 
 [node name="ShootPointStart27" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(43, -21)
+position = Vector2(27, -82)
 
 [node name="ShootPointStart28" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(36, -11)
+position = Vector2(36, -75)
 
 [node name="ShootPointStart29" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(27, -4)
+position = Vector2(43, -65)
 
 [node name="ShootPointStart30" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(19, 1)
+position = Vector2(46, -54)
 
 [node name="ShootPointStart31" type="Marker2D" parent="BulletPointsStart"]
 y_sort_enabled = true
-position = Vector2(10, 4)
+position = Vector2(47, -48)
 
 [node name="BulletPointsEnd" type="Node2D" parent="."]
 y_sort_enabled = true
 
 [node name="ShootPointEnd0" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(0, 293)
-
-[node name="ShootPointEnd1" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(-62, 293)
-
-[node name="ShootPointEnd2" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(-125, 292)
-
-[node name="ShootPointEnd3" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(-167, 244)
-
-[node name="ShootPointEnd4" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(-241, 194)
-
-[node name="ShootPointEnd5" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(-290, 122)
-
-[node name="ShootPointEnd6" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(-337, 76)
-
-[node name="ShootPointEnd7" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(-288, 5)
-
-[node name="ShootPointEnd8" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(-288, -43)
-
-[node name="ShootPointEnd9" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(-288, -90)
-
-[node name="ShootPointEnd10" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(-335, -156)
-
-[node name="ShootPointEnd11" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(-287, -206)
-
-[node name="ShootPointEnd12" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(-239, -278)
-
-[node name="ShootPointEnd13" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(-172, -330)
-
-[node name="ShootPointEnd14" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(-125, -378)
-
-[node name="ShootPointEnd15" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(-60, -379)
-
-[node name="ShootPointEnd16" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(0, -379)
-
-[node name="ShootPointEnd17" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(62, -379)
-
-[node name="ShootPointEnd18" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(125, -378)
-
-[node name="ShootPointEnd19" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(168, -330)
-
-[node name="ShootPointEnd20" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(239, -278)
-
-[node name="ShootPointEnd21" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(287, -206)
-
-[node name="ShootPointEnd22" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(335, -161)
-
-[node name="ShootPointEnd23" type="Marker2D" parent="BulletPointsEnd"]
-position = Vector2(288, -91)
-
-[node name="ShootPointEnd24" type="Marker2D" parent="BulletPointsEnd"]
 position = Vector2(288, -43)
 
-[node name="ShootPointEnd25" type="Marker2D" parent="BulletPointsEnd"]
+[node name="ShootPointEnd1" type="Marker2D" parent="BulletPointsEnd"]
 position = Vector2(288, 4)
 
-[node name="ShootPointEnd26" type="Marker2D" parent="BulletPointsEnd"]
+[node name="ShootPointEnd2" type="Marker2D" parent="BulletPointsEnd"]
 position = Vector2(335, 70)
 
-[node name="ShootPointEnd27" type="Marker2D" parent="BulletPointsEnd"]
+[node name="ShootPointEnd3" type="Marker2D" parent="BulletPointsEnd"]
 position = Vector2(289, 121)
 
-[node name="ShootPointEnd28" type="Marker2D" parent="BulletPointsEnd"]
+[node name="ShootPointEnd4" type="Marker2D" parent="BulletPointsEnd"]
 position = Vector2(241, 194)
 
-[node name="ShootPointEnd29" type="Marker2D" parent="BulletPointsEnd"]
+[node name="ShootPointEnd5" type="Marker2D" parent="BulletPointsEnd"]
 position = Vector2(167, 244)
 
-[node name="ShootPointEnd30" type="Marker2D" parent="BulletPointsEnd"]
+[node name="ShootPointEnd6" type="Marker2D" parent="BulletPointsEnd"]
 position = Vector2(125, 292)
 
-[node name="ShootPointEnd31" type="Marker2D" parent="BulletPointsEnd"]
+[node name="ShootPointEnd7" type="Marker2D" parent="BulletPointsEnd"]
 position = Vector2(60, 293)
+
+[node name="ShootPointEnd8" type="Marker2D" parent="BulletPointsEnd"]
+position = Vector2(0, 293)
+
+[node name="ShootPointEnd9" type="Marker2D" parent="BulletPointsEnd"]
+position = Vector2(-62, 293)
+
+[node name="ShootPointEnd10" type="Marker2D" parent="BulletPointsEnd"]
+position = Vector2(-125, 292)
+
+[node name="ShootPointEnd11" type="Marker2D" parent="BulletPointsEnd"]
+position = Vector2(-167, 244)
+
+[node name="ShootPointEnd12" type="Marker2D" parent="BulletPointsEnd"]
+position = Vector2(-241, 194)
+
+[node name="ShootPointEnd13" type="Marker2D" parent="BulletPointsEnd"]
+position = Vector2(-290, 122)
+
+[node name="ShootPointEnd14" type="Marker2D" parent="BulletPointsEnd"]
+position = Vector2(-337, 76)
+
+[node name="ShootPointEnd15" type="Marker2D" parent="BulletPointsEnd"]
+position = Vector2(-288, 5)
+
+[node name="ShootPointEnd16" type="Marker2D" parent="BulletPointsEnd"]
+position = Vector2(-288, -43)
+
+[node name="ShootPointEnd17" type="Marker2D" parent="BulletPointsEnd"]
+position = Vector2(-288, -90)
+
+[node name="ShootPointEnd18" type="Marker2D" parent="BulletPointsEnd"]
+position = Vector2(-335, -156)
+
+[node name="ShootPointEnd19" type="Marker2D" parent="BulletPointsEnd"]
+position = Vector2(-287, -206)
+
+[node name="ShootPointEnd20" type="Marker2D" parent="BulletPointsEnd"]
+position = Vector2(-239, -278)
+
+[node name="ShootPointEnd21" type="Marker2D" parent="BulletPointsEnd"]
+position = Vector2(-172, -330)
+
+[node name="ShootPointEnd22" type="Marker2D" parent="BulletPointsEnd"]
+position = Vector2(-125, -378)
+
+[node name="ShootPointEnd23" type="Marker2D" parent="BulletPointsEnd"]
+position = Vector2(-60, -379)
+
+[node name="ShootPointEnd24" type="Marker2D" parent="BulletPointsEnd"]
+position = Vector2(0, -379)
+
+[node name="ShootPointEnd25" type="Marker2D" parent="BulletPointsEnd"]
+position = Vector2(62, -379)
+
+[node name="ShootPointEnd26" type="Marker2D" parent="BulletPointsEnd"]
+position = Vector2(125, -378)
+
+[node name="ShootPointEnd27" type="Marker2D" parent="BulletPointsEnd"]
+position = Vector2(168, -330)
+
+[node name="ShootPointEnd28" type="Marker2D" parent="BulletPointsEnd"]
+position = Vector2(239, -278)
+
+[node name="ShootPointEnd29" type="Marker2D" parent="BulletPointsEnd"]
+position = Vector2(287, -206)
+
+[node name="ShootPointEnd30" type="Marker2D" parent="BulletPointsEnd"]
+position = Vector2(335, -161)
+
+[node name="ShootPointEnd31" type="Marker2D" parent="BulletPointsEnd"]
+position = Vector2(288, -91)
 
 [node name="BulletShootLines" type="Node2D" parent="."]
 visible = false
@@ -413,67 +413,123 @@ y_sort_enabled = true
 position = Vector2(0, -43)
 
 [node name="Line0" type="Line2D" parent="BulletShootLines"]
+position = Vector2(288, 91)
+points = PackedVector2Array(0, -91, -240, -91)
+width = 4.0
+default_color = Color(0.313726, 0.113725, 0.0901961, 1)
+
+[node name="Line1" type="Line2D" parent="BulletShootLines"]
+position = Vector2(131, 21)
+rotation = -1.39626
+points = PackedVector2Array(1.17048, -85.5022, 1.65776, 159.13)
+width = 4.0
+default_color = Color(0.313726, 0.113725, 0.0901961, 1)
+
+[node name="Line2" type="Line2D" parent="BulletShootLines"]
+position = Vector2(117, 38)
+rotation = -1.22173
+points = PackedVector2Array(1.08827, -75.9527, 4.08345, 230.505)
+width = 4.0
+default_color = Color(0.313726, 0.113725, 0.0901961, 1)
+
+[node name="Line3" type="Line2D" parent="BulletShootLines"]
+position = Vector2(97, 59)
+rotation = -1.0472
+points = PackedVector2Array(5.04294, -65.2654, 5.06731, 218.777)
+width = 4.0
+default_color = Color(0.313726, 0.113725, 0.0901961, 1)
+
+[node name="Line4" type="Line2D" parent="BulletShootLines"]
+position = Vector2(67, 80)
+rotation = -0.785398
+points = PackedVector2Array(12.0208, -55.8614, 12.0208, 234.052)
+width = 4.0
+default_color = Color(0.313726, 0.113725, 0.0901961, 1)
+
+[node name="Line5" type="Line2D" parent="BulletShootLines"]
+position = Vector2(28, 82)
+rotation = -0.523599
+points = PackedVector2Array(20.634, -37.7391, 17.8775, 247.035)
+width = 4.0
+default_color = Color(0.313726, 0.113725, 0.0901961, 1)
+
+[node name="Line6" type="Line2D" parent="BulletShootLines"]
+position = Vector2(4, 85)
+rotation = -0.349066
+points = PackedVector2Array(28.1182, -33.3971, 28.1977, 276.308)
+width = 4.0
+default_color = Color(0.313726, 0.113725, 0.0901961, 1)
+
+[node name="Line7" type="Line2D" parent="BulletShootLines"]
+position = Vector2(-22, 85)
+rotation = -0.174533
+scale = Vector2(1, 1)
+points = PackedVector2Array(38.1125, -31.8659, 37.1685, 261.426)
+width = 4.0
+default_color = Color(0.313726, 0.113725, 0.0901961, 1)
+
+[node name="Line8" type="Line2D" parent="BulletShootLines"]
 position = Vector2(-48, 89)
 points = PackedVector2Array(48, -41, 48, 247)
 width = 4.0
 default_color = Color(0.313726, 0.113725, 0.0901961, 1)
 
-[node name="Line1" type="Line2D" parent="BulletShootLines"]
+[node name="Line9" type="Line2D" parent="BulletShootLines"]
 position = Vector2(-55, 83)
 rotation = 0.174533
 points = PackedVector2Array(38.065, -43.2673, 37.0394, 250.372)
 width = 4.0
 default_color = Color(0.313726, 0.113725, 0.0901961, 1)
 
-[node name="Line2" type="Line2D" parent="BulletShootLines"]
+[node name="Line10" type="Line2D" parent="BulletShootLines"]
 position = Vector2(-62, 78)
 rotation = 0.349066
 points = PackedVector2Array(28.7781, -46.6564, 28.6986, 263.048)
 width = 4.0
 default_color = Color(0.313726, 0.113725, 0.0901961, 1)
 
-[node name="Line3" type="Line2D" parent="BulletShootLines"]
+[node name="Line11" type="Line2D" parent="BulletShootLines"]
 position = Vector2(-71, 74)
 rotation = 0.523599
 points = PackedVector2Array(20.6051, -52.3109, 23.3616, 232.463)
 width = 4.0
 default_color = Color(0.313726, 0.113725, 0.0901961, 1)
 
-[node name="Line4" type="Line2D" parent="BulletShootLines"]
+[node name="Line12" type="Line2D" parent="BulletShootLines"]
 position = Vector2(-86, 65)
 rotation = 0.785398
 points = PackedVector2Array(12.0208, -58.6899, 12.0208, 231.224)
 width = 4.0
 default_color = Color(0.313726, 0.113725, 0.0901961, 1)
 
-[node name="Line5" type="Line2D" parent="BulletShootLines"]
+[node name="Line13" type="Line2D" parent="BulletShootLines"]
 position = Vector2(-105, 52)
 rotation = 1.0472
 points = PackedVector2Array(5.01924, -68.6936, 5.36089, 216.715)
 width = 4.0
 default_color = Color(0.313726, 0.113725, 0.0901961, 1)
 
-[node name="Line6" type="Line2D" parent="BulletShootLines"]
+[node name="Line14" type="Line2D" parent="BulletShootLines"]
 position = Vector2(-122, 37)
 rotation = 1.22173
 points = PackedVector2Array(1.56153, -80.3092, 3.52046, 230.08)
 width = 4.0
 default_color = Color(0.313726, 0.113725, 0.0901961, 1)
 
-[node name="Line7" type="Line2D" parent="BulletShootLines"]
+[node name="Line15" type="Line2D" parent="BulletShootLines"]
 position = Vector2(-132, 19)
 rotation = 1.39626
 points = PackedVector2Array(0.972786, -86.1397, 1.47031, 158.666)
 width = 4.0
 default_color = Color(0.313726, 0.113725, 0.0901961, 1)
 
-[node name="Line8" type="Line2D" parent="BulletShootLines"]
+[node name="Line16" type="Line2D" parent="BulletShootLines"]
 position = Vector2(-48, 91)
 points = PackedVector2Array(0, -91, -240, -91)
 width = 4.0
 default_color = Color(0.313726, 0.113725, 0.0901961, 1)
 
-[node name="Line9" type="Line2D" parent="BulletShootLines"]
+[node name="Line17" type="Line2D" parent="BulletShootLines"]
 z_index = -1
 position = Vector2(-204, -31)
 rotation = -1.39626
@@ -481,7 +537,7 @@ points = PackedVector2Array(1.17019, -85.5022, 1.65776, 159.13)
 width = 4.0
 default_color = Color(0.313726, 0.113725, 0.0901961, 1)
 
-[node name="Line10" type="Line2D" parent="BulletShootLines"]
+[node name="Line18" type="Line2D" parent="BulletShootLines"]
 z_index = -1
 position = Vector2(-264, -86)
 rotation = -1.22173
@@ -489,7 +545,7 @@ points = PackedVector2Array(1.08827, -75.9527, 4.08345, 230.505)
 width = 4.0
 default_color = Color(0.313726, 0.113725, 0.0901961, 1)
 
-[node name="Line11" type="Line2D" parent="BulletShootLines"]
+[node name="Line19" type="Line2D" parent="BulletShootLines"]
 z_index = -1
 position = Vector2(-233, -126)
 rotation = -1.0472
@@ -497,7 +553,7 @@ points = PackedVector2Array(5.04294, -65.2654, 4.93335, 216.545)
 width = 4.0
 default_color = Color(0.313726, 0.113725, 0.0901961, 1)
 
-[node name="Line12" type="Line2D" parent="BulletShootLines"]
+[node name="Line20" type="Line2D" parent="BulletShootLines"]
 z_index = -1
 position = Vector2(-208, -187)
 rotation = -0.785398
@@ -505,7 +561,7 @@ points = PackedVector2Array(12.0208, -55.8614, 12.0208, 231.224)
 width = 4.0
 default_color = Color(0.313726, 0.113725, 0.0901961, 1)
 
-[node name="Line13" type="Line2D" parent="BulletShootLines"]
+[node name="Line21" type="Line2D" parent="BulletShootLines"]
 z_index = -1
 position = Vector2(-171, -244)
 rotation = -0.523599
@@ -513,7 +569,7 @@ points = PackedVector2Array(20.634, -37.7391, 22.2076, 249.535)
 width = 4.0
 default_color = Color(0.313726, 0.113725, 0.0901961, 1)
 
-[node name="Line14" type="Line2D" parent="BulletShootLines"]
+[node name="Line22" type="Line2D" parent="BulletShootLines"]
 z_index = -1
 position = Vector2(-140, -294)
 rotation = -0.349066
@@ -521,7 +577,7 @@ points = PackedVector2Array(28.1182, -33.3971, 28.1978, 276.308)
 width = 4.0
 default_color = Color(0.313726, 0.113725, 0.0901961, 1)
 
-[node name="Line15" type="Line2D" parent="BulletShootLines"]
+[node name="Line23" type="Line2D" parent="BulletShootLines"]
 z_index = -1
 position = Vector2(-92, -298)
 rotation = -0.174533
@@ -529,14 +585,14 @@ points = PackedVector2Array(38.1125, -31.8659, 37.1685, 261.426)
 width = 4.0
 default_color = Color(0.313726, 0.113725, 0.0901961, 1)
 
-[node name="Line16" type="Line2D" parent="BulletShootLines"]
+[node name="Line24" type="Line2D" parent="BulletShootLines"]
 z_index = -1
 position = Vector2(-48, -307)
 points = PackedVector2Array(48, -29, 48, 259)
 width = 4.0
 default_color = Color(0.313726, 0.113725, 0.0901961, 1)
 
-[node name="Line17" type="Line2D" parent="BulletShootLines"]
+[node name="Line25" type="Line2D" parent="BulletShootLines"]
 z_index = -1
 position = Vector2(19, -312)
 rotation = 0.174533
@@ -544,7 +600,7 @@ points = PackedVector2Array(38.1792, -31.1022, 37.1535, 262.537)
 width = 4.0
 default_color = Color(0.313726, 0.113725, 0.0901961, 1)
 
-[node name="Line18" type="Line2D" parent="BulletShootLines"]
+[node name="Line26" type="Line2D" parent="BulletShootLines"]
 z_index = -1
 position = Vector2(87, -314)
 rotation = 0.349066
@@ -552,7 +608,7 @@ points = PackedVector2Array(28.5259, -32.7303, 28.4463, 276.974)
 width = 4.0
 default_color = Color(0.313726, 0.113725, 0.0901961, 1)
 
-[node name="Line19" type="Line2D" parent="BulletShootLines"]
+[node name="Line27" type="Line2D" parent="BulletShootLines"]
 z_index = -1
 position = Vector2(132, -266)
 rotation = 0.523599
@@ -560,7 +616,7 @@ points = PackedVector2Array(20.6769, -36.1866, 22.5673, 249.088)
 width = 4.0
 default_color = Color(0.313726, 0.113725, 0.0901961, 1)
 
-[node name="Line20" type="Line2D" parent="BulletShootLines"]
+[node name="Line28" type="Line2D" parent="BulletShootLines"]
 z_index = -1
 position = Vector2(191, -204)
 rotation = 0.785398
@@ -568,7 +624,7 @@ points = PackedVector2Array(12.0208, -55.8614, 12.0208, 231.224)
 width = 4.0
 default_color = Color(0.313726, 0.113725, 0.0901961, 1)
 
-[node name="Line21" type="Line2D" parent="BulletShootLines"]
+[node name="Line29" type="Line2D" parent="BulletShootLines"]
 z_index = -1
 position = Vector2(228, -135)
 rotation = 1.0472
@@ -576,7 +632,7 @@ points = PackedVector2Array(5.25131, -65.0955, 5.36089, 216.715)
 width = 4.0
 default_color = Color(0.313726, 0.113725, 0.0901961, 1)
 
-[node name="Line22" type="Line2D" parent="BulletShootLines"]
+[node name="Line30" type="Line2D" parent="BulletShootLines"]
 z_index = -1
 position = Vector2(261, -93)
 rotation = 1.22173
@@ -584,66 +640,11 @@ points = PackedVector2Array(1.81718, -78.0878, 3.52046, 230.08)
 width = 4.0
 default_color = Color(0.313726, 0.113725, 0.0901961, 1)
 
-[node name="Line23" type="Line2D" parent="BulletShootLines"]
+[node name="Line31" type="Line2D" parent="BulletShootLines"]
 z_index = -1
 position = Vector2(203, -34)
 rotation = 1.39626
 points = PackedVector2Array(0.972786, -86.1397, 1.47031, 158.666)
-width = 4.0
-default_color = Color(0.313726, 0.113725, 0.0901961, 1)
-
-[node name="Line24" type="Line2D" parent="BulletShootLines"]
-position = Vector2(288, 91)
-points = PackedVector2Array(0, -91, -240, -91)
-width = 4.0
-default_color = Color(0.313726, 0.113725, 0.0901961, 1)
-
-[node name="Line25" type="Line2D" parent="BulletShootLines"]
-position = Vector2(131, 21)
-rotation = -1.39626
-points = PackedVector2Array(1.17048, -85.5022, 1.65776, 159.13)
-width = 4.0
-default_color = Color(0.313726, 0.113725, 0.0901961, 1)
-
-[node name="Line26" type="Line2D" parent="BulletShootLines"]
-position = Vector2(117, 38)
-rotation = -1.22173
-points = PackedVector2Array(1.08827, -75.9527, 4.08345, 230.505)
-width = 4.0
-default_color = Color(0.313726, 0.113725, 0.0901961, 1)
-
-[node name="Line27" type="Line2D" parent="BulletShootLines"]
-position = Vector2(97, 59)
-rotation = -1.0472
-points = PackedVector2Array(5.04294, -65.2654, 5.06731, 218.777)
-width = 4.0
-default_color = Color(0.313726, 0.113725, 0.0901961, 1)
-
-[node name="Line28" type="Line2D" parent="BulletShootLines"]
-position = Vector2(67, 80)
-rotation = -0.785398
-points = PackedVector2Array(12.0208, -55.8614, 12.0208, 234.052)
-width = 4.0
-default_color = Color(0.313726, 0.113725, 0.0901961, 1)
-
-[node name="Line29" type="Line2D" parent="BulletShootLines"]
-position = Vector2(28, 82)
-rotation = -0.523599
-points = PackedVector2Array(20.634, -37.7391, 17.8775, 247.035)
-width = 4.0
-default_color = Color(0.313726, 0.113725, 0.0901961, 1)
-
-[node name="Line30" type="Line2D" parent="BulletShootLines"]
-position = Vector2(4, 85)
-rotation = -0.349066
-points = PackedVector2Array(28.1182, -33.3971, 28.1977, 276.308)
-width = 4.0
-default_color = Color(0.313726, 0.113725, 0.0901961, 1)
-
-[node name="Line31" type="Line2D" parent="BulletShootLines"]
-position = Vector2(-22, 85)
-rotation = -0.174533
-points = PackedVector2Array(38.1125, -31.8659, 37.1685, 261.426)
 width = 4.0
 default_color = Color(0.313726, 0.113725, 0.0901961, 1)
 
