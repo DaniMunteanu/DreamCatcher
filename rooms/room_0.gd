@@ -33,6 +33,7 @@ func _on_boss_summon_circle_summoning_complete() -> void:
 	
 func _on_boss_defeated() -> void:
 	await TransitionScreen.on_transition_finished
+	TransitionScreen.ready_for_fade_out.emit()
 	player.get_node("PlayerCamera").global_position = player.global_position
 	await get_tree().create_timer(0.5).timeout
 	player.get_node("PlayerCamera").position_smoothing_enabled = false

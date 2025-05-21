@@ -113,3 +113,5 @@ grow_vertical = 2
 libraries = {
 "": SubResource("AnimationLibrary_jo8ff")
 }
+
+[connection signal="ready_for_fade_out" from="." to="." method="_on_ready_for_fade_out"]

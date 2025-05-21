@@ -42,3 +42,5 @@ signal check_funds
 
 signal boss_summoned
 signal boss_defeated
+
+signal create_new_game

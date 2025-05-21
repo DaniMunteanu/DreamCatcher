@@ -2,8 +2,6 @@ extends Node2D
 
 @onready var drop_res = preload("res://MobDrop.tscn")
 
-var FIRST_GENERATION = true
-
 const MINIMUM_ROOMS = 20
 
 var rooms_res = []
@@ -220,6 +218,8 @@ func _ready():
 	initialize_door_resources()
 	initialize_wall_resources()
 	initialize_room_pairs()
+	generate_floor()
+	TransitionScreen.ready_for_fade_out.emit()
 	
 func reset():
 	for i in 31:
@@ -285,12 +285,8 @@ func generate_floor():
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("floor_generate"):
-		if FIRST_GENERATION:
-			generate_floor()
-			FIRST_GENERATION = false
-		else:
-			reset()
-			generate_floor()
+		reset()
+		generate_floor()
 	
 func _on_room_cleared(room_index: int):
 	placed_rooms[room_index].open_room(placed_doors_or_walls, placed_doors_indexes)

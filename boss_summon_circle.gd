@@ -12,6 +12,7 @@ func summon_boss():
 	$InteractionArea.can_interact = false
 	TransitionScreen.transition_black()
 	await TransitionScreen.on_transition_finished
+	TransitionScreen.ready_for_fade_out.emit()
 	player.set_to_cutscene()
 	player.get_node("PlayerCamera").position_smoothing_enabled = true
 	player.get_node("PlayerCamera").position_smoothing_speed = 2.0

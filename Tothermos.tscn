@@ -463,7 +463,6 @@ default_color = Color(0.313726, 0.113725, 0.0901961, 1)
 [node name="Line7" type="Line2D" parent="BulletShootLines"]
 position = Vector2(-22, 85)
 rotation = -0.174533
-scale = Vector2(1, 1)
 points = PackedVector2Array(38.1125, -31.8659, 37.1685, 261.426)
 width = 4.0
 default_color = Color(0.313726, 0.113725, 0.0901961, 1)
