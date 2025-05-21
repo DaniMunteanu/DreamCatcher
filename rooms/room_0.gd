@@ -1,6 +1,7 @@
 extends FloorRoom
 
 @onready var boss = preload("res://Tothermos.tscn")
+@onready var floor_exit = preload("res://FloorExit.tscn")
 @onready var player = get_parent().get_node("Player")
 
 var movable_walls = []
@@ -33,6 +34,9 @@ func _on_boss_summon_circle_summoning_complete() -> void:
 	
 func _on_boss_defeated() -> void:
 	await TransitionScreen.on_transition_finished
+	var floor_exit_instance = floor_exit.instantiate()
+	floor_exit_instance.global_position = $BossSpawnPoint.position
+	add_child(floor_exit_instance)
 	TransitionScreen.ready_for_fade_out.emit()
 	player.get_node("PlayerCamera").global_position = player.global_position
 	await get_tree().create_timer(0.5).timeout

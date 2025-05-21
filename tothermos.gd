@@ -46,6 +46,7 @@ func attack():
 		new_bullet.direction = bullets_start[i].position.direction_to(bullets_end[i].position)
 		new_bullet.end_point = bullets_end[i].position
 		$Bullets.add_child(new_bullet)
+	attack_over.emit()
 
 func show_attack_indicators():
 	$AttackIndicatorsAnimations.play("BulletsIndication")
@@ -115,7 +116,7 @@ func begin_attack():
 	
 	show_attack_indicators()
 	
-	await $AttackIndicatorsAnimations.animation_finished
+	await attack_over
 	
 	for spot in safe_spots:
 		bullet_lines[spot].visible = true

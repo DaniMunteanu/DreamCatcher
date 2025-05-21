@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dv344btj33j0m" path="res://Smeet.tscn" id="2_3ew2n"]
 [ext_resource type="Texture2D" uid="uid://cw3ow33kq0xd4" path="res://Sprites/Smeet.png" id="3_lul5r"]
 [ext_resource type="PackedScene" uid="uid://b78gkby3vi0em" path="res://doors/DoorHorizontal.tscn" id="4_b4gx8"]
-[ext_resource type="PackedScene" uid="uid://blcxkdt7aeyym" path="res://Tothermos.tscn" id="5_4udiu"]
+[ext_resource type="PackedScene" uid="uid://bgxwn6vn08wac" path="res://FloorExit.tscn" id="6_p1nd4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pbbel"]
 radius = 12.3693
@@ -37,5 +37,5 @@ shape = SubResource("CircleShape2D_pbbel")
 z_index = 1
 position = Vector2(367, 91)
 
-[node name="Tothermos" parent="." instance=ExtResource("5_4udiu")]
-position = Vector2(429, 669)
+[node name="FloorExit" parent="." instance=ExtResource("6_p1nd4")]
+position = Vector2(198, 654)

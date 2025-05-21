@@ -682,6 +682,7 @@ libraries = {
 }
 
 [node name="Bullets" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [connection signal="timeout" from="AttackCooldownTimer" to="." method="_on_attack_cooldown_timer_timeout"]
 [connection signal="health_depleted" from="Health" to="." method="_on_health_health_depleted"]

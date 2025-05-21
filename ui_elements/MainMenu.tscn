@@ -1,64 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://bupedborl800r"]
+[gd_scene load_steps=25 format=3 uid="uid://bupedborl800r"]
 
-[ext_resource type="Texture2D" uid="uid://dhv85gt805m6g" path="res://Sprites/SpritesUI/PlayerFallingBackground.png" id="1_ishwg"]
 [ext_resource type="Script" path="res://ui_elements/main_menu.gd" id="1_lk70e"]
 [ext_resource type="Texture2D" uid="uid://drjhu2e8dgbuk" path="res://Sprites/SpritesUI/MainMenuBackground.png" id="2_252vn"]
 [ext_resource type="Texture2D" uid="uid://7utn5f7c4pye" path="res://Sprites/SpritesUI/MainMenuButtons.png" id="4_46sxr"]
 [ext_resource type="Script" path="res://ui_elements/new_game_button.gd" id="5_7nb4a"]
-
-[sub_resource type="Animation" id="Animation_xtsvx"]
-resource_name = "Falling"
-length = 0.2
-loop_mode = 1
-step = 0.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerFallingBackground:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("1_ishwg")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerFallingBackground:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("PlayerFallingBackground:vframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("PlayerFallingBackground:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
 
 [sub_resource type="Animation" id="Animation_hjhct"]
 resource_name = "MainMenu"
@@ -68,7 +13,7 @@ step = 0.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerFallingBackground:texture")
+tracks/0/path = NodePath("MainMenuSprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -80,7 +25,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerFallingBackground:hframes")
+tracks/1/path = NodePath("MainMenuSprite:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -92,7 +37,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("PlayerFallingBackground:vframes")
+tracks/2/path = NodePath("MainMenuSprite:vframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -104,7 +49,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("PlayerFallingBackground:frame")
+tracks/3/path = NodePath("MainMenuSprite:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -119,7 +64,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerFallingBackground:texture")
+tracks/0/path = NodePath("MainMenuSprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -131,7 +76,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerFallingBackground:hframes")
+tracks/1/path = NodePath("MainMenuSprite:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -143,7 +88,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("PlayerFallingBackground:vframes")
+tracks/2/path = NodePath("MainMenuSprite:vframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -155,7 +100,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("PlayerFallingBackground:frame")
+tracks/3/path = NodePath("MainMenuSprite:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -167,7 +112,6 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3deuy"]
 _data = {
-"Falling": SubResource("Animation_xtsvx"),
 "MainMenu": SubResource("Animation_hjhct"),
 "RESET": SubResource("Animation_g18q5")
 }
@@ -254,21 +198,21 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Cutscenes" type="Control" parent="AspectRatioContainer"]
+[node name="Screen" type="Control" parent="AspectRatioContainer"]
 layout_mode = 2
 
-[node name="PlayerFallingBackground" type="Sprite2D" parent="AspectRatioContainer/Cutscenes"]
+[node name="MainMenuSprite" type="Sprite2D" parent="AspectRatioContainer/Screen"]
 position = Vector2(180, 180)
 texture = ExtResource("2_252vn")
 hframes = 2
 vframes = 3
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AspectRatioContainer/Cutscenes"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AspectRatioContainer/Screen"]
 libraries = {
 "": SubResource("AnimationLibrary_3deuy")
 }
 
-[node name="NewGameButton" type="TextureButton" parent="AspectRatioContainer/Cutscenes"]
+[node name="NewGameButton" type="TextureButton" parent="AspectRatioContainer/Screen"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.1
@@ -289,7 +233,7 @@ stretch_mode = 4
 script = ExtResource("5_7nb4a")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="AspectRatioContainer/Cutscenes/NewGameButton"]
+[node name="Label" type="Label" parent="AspectRatioContainer/Screen/NewGameButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -305,7 +249,7 @@ grow_vertical = 2
 text = "New Game"
 label_settings = SubResource("LabelSettings_h34ax")
 
-[node name="ResumeGameButton" type="TextureButton" parent="AspectRatioContainer/Cutscenes"]
+[node name="ResumeGameButton" type="TextureButton" parent="AspectRatioContainer/Screen"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.1
@@ -325,7 +269,7 @@ texture_disabled = SubResource("AtlasTexture_55b6x")
 stretch_mode = 4
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="AspectRatioContainer/Cutscenes/ResumeGameButton"]
+[node name="Label" type="Label" parent="AspectRatioContainer/Screen/ResumeGameButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -341,7 +285,7 @@ grow_vertical = 2
 text = "Resume Game"
 label_settings = SubResource("LabelSettings_moli3")
 
-[node name="SettingsButton" type="TextureButton" parent="AspectRatioContainer/Cutscenes"]
+[node name="SettingsButton" type="TextureButton" parent="AspectRatioContainer/Screen"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.1
@@ -361,7 +305,7 @@ texture_disabled = SubResource("AtlasTexture_rmdt7")
 stretch_mode = 4
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="AspectRatioContainer/Cutscenes/SettingsButton"]
+[node name="Label" type="Label" parent="AspectRatioContainer/Screen/SettingsButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -377,7 +321,7 @@ grow_vertical = 2
 text = "Settings"
 label_settings = SubResource("LabelSettings_y20x2")
 
-[node name="ExitToDesktopButton" type="TextureButton" parent="AspectRatioContainer/Cutscenes"]
+[node name="ExitToDesktopButton" type="TextureButton" parent="AspectRatioContainer/Screen"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.1
@@ -397,7 +341,7 @@ texture_disabled = SubResource("AtlasTexture_is57l")
 stretch_mode = 4
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="AspectRatioContainer/Cutscenes/ExitToDesktopButton"]
+[node name="Label" type="Label" parent="AspectRatioContainer/Screen/ExitToDesktopButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -413,4 +357,4 @@ grow_vertical = 2
 text = "Exit to Desktop"
 label_settings = SubResource("LabelSettings_2is0d")
 
-[connection signal="pressed" from="AspectRatioContainer/Cutscenes/NewGameButton" to="AspectRatioContainer/Cutscenes/NewGameButton" method="_on_pressed"]
+[connection signal="pressed" from="AspectRatioContainer/Screen/NewGameButton" to="AspectRatioContainer/Screen/NewGameButton" method="_on_pressed"]
