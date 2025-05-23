@@ -13,6 +13,5 @@ func _ready() -> void:
 func _on_enemy_dead(enemy_death_position: Vector2):
 	enemies_count -= 1
 	if enemies_count == 0:
-		print("Au disparut inamicii")
 		enemies_defeated.emit()
 		queue_free()

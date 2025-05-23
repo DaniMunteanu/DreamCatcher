@@ -21,3 +21,4 @@ func set_current_health(value: int):
 
 func _on_hurtbox_received_damage(damage: int) -> void:
 	set_current_health(current_health - damage)
+	get_parent().hurt_animation_player.play("Hurt")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cupqqwddnk40"]
+[gd_scene load_steps=43 format=3 uid="uid://cupqqwddnk40"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_8iasi"]
 [ext_resource type="Script" path="res://player_animation.gd" id="2_vu52e"]
@@ -1879,6 +1879,44 @@ _data = {
 "RESET": SubResource("Animation_updpu")
 }
 
+[sub_resource type="Animation" id="Animation_ite3j"]
+resource_name = "Hurt"
+length = 2.0
+step = 0.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerModel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_iah2a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerModel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gbx1p"]
+_data = {
+"Hurt": SubResource("Animation_ite3j"),
+"RESET": SubResource("Animation_iah2a")
+}
+
 [sub_resource type="Animation" id="Animation_0b5gi"]
 resource_name = "JumpReady"
 loop_mode = 1
@@ -2039,6 +2077,11 @@ position = Vector2(-7, -70)
 texture = ExtResource("3_eeue7")
 flip_h = true
 hframes = 2
+
+[node name="HurtAnimationPlayer" type="AnimationPlayer" parent="PlayerAnimationManager"]
+libraries = {
+"": SubResource("AnimationLibrary_gbx1p")
+}
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
 y_sort_enabled = true

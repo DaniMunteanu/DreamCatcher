@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cljfayr0a0a26"]
+[gd_scene load_steps=14 format=3 uid="uid://cljfayr0a0a26"]
 
 [ext_resource type="Texture2D" uid="uid://um3ofr4c8ni" path="res://Sprites/SpritesUI/FallingToMenu.png" id="1_6s85e"]
 [ext_resource type="Texture2D" uid="uid://dhv85gt805m6g" path="res://Sprites/SpritesUI/PlayerFallingBackground.png" id="1_k3ysv"]
+[ext_resource type="Script" path="res://ui_elements/victory_menu.gd" id="1_qbmnj"]
+[ext_resource type="Texture2D" uid="uid://7utn5f7c4pye" path="res://Sprites/SpritesUI/MainMenuButtons.png" id="3_4u1bk"]
 
 [sub_resource type="Animation" id="Animation_rx26u"]
 resource_name = "FallingLoop"
@@ -109,6 +111,20 @@ tracks/3/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
 }
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../..")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"open_main_menu"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_qikgm"]
 length = 0.001
@@ -168,6 +184,25 @@ _data = {
 "RESET": SubResource("Animation_qikgm")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xxot"]
+atlas = ExtResource("3_4u1bk")
+region = Rect2(0, 0, 60, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eoaql"]
+atlas = ExtResource("3_4u1bk")
+region = Rect2(0, 15, 60, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffafi"]
+atlas = ExtResource("3_4u1bk")
+region = Rect2(0, 30, 60, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6xfe"]
+atlas = ExtResource("3_4u1bk")
+region = Rect2(0, 45, 60, 15)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wxc14"]
+font_size = 20
+
 [node name="VictoryMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -175,12 +210,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_qbmnj")
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Screen" type="Control" parent="AspectRatioContainer"]
@@ -196,3 +234,78 @@ vframes = 6
 libraries = {
 "": SubResource("AnimationLibrary_thfeo")
 }
+
+[node name="StartNewGameButton" type="TextureButton" parent="AspectRatioContainer/Screen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.06111
+anchor_top = 0.661111
+anchor_right = 1.06111
+anchor_bottom = 0.661111
+offset_left = -88.0
+offset_top = -22.0
+offset_right = 88.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_1xxot")
+texture_pressed = SubResource("AtlasTexture_eoaql")
+texture_hover = SubResource("AtlasTexture_ffafi")
+texture_disabled = SubResource("AtlasTexture_u6xfe")
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="AspectRatioContainer/Screen/StartNewGameButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start new Game"
+label_settings = SubResource("LabelSettings_wxc14")
+
+[node name="ExitToMainMenuButton" type="TextureButton" parent="AspectRatioContainer/Screen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.06111
+anchor_top = 0.794444
+anchor_right = 1.06111
+anchor_bottom = 0.794444
+offset_left = -88.0
+offset_top = -22.0
+offset_right = 88.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_1xxot")
+texture_pressed = SubResource("AtlasTexture_eoaql")
+texture_hover = SubResource("AtlasTexture_ffafi")
+texture_disabled = SubResource("AtlasTexture_u6xfe")
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="AspectRatioContainer/Screen/ExitToMainMenuButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit to Menu"
+label_settings = SubResource("LabelSettings_wxc14")
+
+[connection signal="pressed" from="AspectRatioContainer/Screen/StartNewGameButton" to="." method="_on_start_new_game_button_pressed"]
+[connection signal="pressed" from="AspectRatioContainer/Screen/ExitToMainMenuButton" to="." method="_on_exit_to_main_menu_button_pressed"]

@@ -5,6 +5,8 @@ extends StaticBody2D
 @onready var boss_animation_player = $BossAnimations
 @onready var player = get_parent().get_parent().get_node("Player")
 
+@onready var hurt_animation_player = $HurtAnimationPlayer
+
 signal lower_walls
 signal attack_over
 
@@ -141,7 +143,6 @@ func send_lower_walls_signal():
 func boss_death_cutscene_finished():
 	TransitionScreen.transition_white()
 	Global.boss_defeated.emit()
-	queue_free()
 	
 func _on_health_health_depleted() -> void:
 	cooldown_timer.stop()

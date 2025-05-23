@@ -57,6 +57,7 @@ texture = ExtResource("1_oyrgt")
 sources/0 = SubResource("TileSetAtlasSource_t3ydb")
 
 [node name="Floor1W1" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_22adr")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]

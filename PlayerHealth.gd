@@ -10,7 +10,7 @@ func _on_health_bought(health_to_buy: int):
 	
 func _on_hurtbox_received_damage(damage: int) -> void:
 	if is_invincible == false:
-		set_current_health(current_health - damage)
+		super(damage)
 		is_invincible = true
 		$InvincibilityTimer.start(2)
 

@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://fktce8tbderh" path="res://mobs/sleepless.tscn" id="3_krosd"]
 
 [node name="Enemies2_0" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_y46d0")
 
 [node name="Sleepless3" parent="." instance=ExtResource("3_krosd")]

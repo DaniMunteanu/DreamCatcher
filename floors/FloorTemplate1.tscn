@@ -73,7 +73,7 @@ physics_layer_0/collision_layer = 4
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_qoal5")
 
-[node name="Floor1" type="Node2D"]
+[node name="FloorTemplate" type="Node2D"]
 y_sort_enabled = true
 script = SubResource("GDScript_lmf81")
 

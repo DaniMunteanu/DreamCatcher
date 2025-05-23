@@ -7,7 +7,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_8yav5"]
 radius = 52.0
 
-[node name="Smeet" type="Node2D"]
+[node name="Smeet" type="StaticBody2D"]
 z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_p8gt8")
@@ -26,3 +26,8 @@ label_text = "[E] to Shop"
 visible = false
 position = Vector2(-2, 43)
 shape = SubResource("CircleShape2D_8yav5")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+y_sort_enabled = true
+polygon = PackedVector2Array(0, 0, 28, 0, 24, 16, 2, 16)

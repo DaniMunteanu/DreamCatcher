@@ -8,10 +8,13 @@ func _ready() -> void:
 func exit_floor():
 	$InteractionArea.can_interact = false
 	TransitionScreen.transition_black()
+	await TransitionScreen.on_transition_finished
 	player.set_to_cutscene()
 	player.visible = false
-	await TransitionScreen.on_transition_finished
 	player.get_node("PlayerCamera").global_position = global_position
 	$FloorExitSprite.frame = 1
 	TransitionScreen.ready_for_fade_out.emit()
 	$AnimationPlayer.play("ExitCutscene")
+	
+func send_victory_signal():
+	Global.game_victory.emit()

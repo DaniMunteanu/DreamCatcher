@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://room_enemies/enemies_6_0.gd" id="1_kcjrq"]
 
 [node name="Enemies6_0" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_kcjrq")
 
 [node name="Sleepless" parent="." instance=ExtResource("1_hx3do")]

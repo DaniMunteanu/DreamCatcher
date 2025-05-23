@@ -44,3 +44,6 @@ signal boss_summoned
 signal boss_defeated
 
 signal create_new_game
+signal delete_current_game
+signal game_victory
+signal open_main_menu

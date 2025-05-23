@@ -298,7 +298,5 @@ func _on_room_entered(room_index: int):
 		
 func _on_enemy_dead(enemy_death_position: Vector2):
 	var new_drop = drop_res.instantiate()
-	print("Enemy Death Position is ", enemy_death_position)
 	new_drop.global_position = enemy_death_position
-	print("New Drop Position is ", new_drop.global_position)
 	add_child(new_drop)

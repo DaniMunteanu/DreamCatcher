@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=4 uid="uid://v1ck5npsp0mr"]
+[gd_scene load_steps=9 format=4 uid="uid://v1ck5npsp0mr"]
 
 [ext_resource type="Texture2D" uid="uid://yeu45ewmtbui" path="res://Sprites/TestTileset.png" id="1_6mm8a"]
 [ext_resource type="Script" path="res://rooms/room_0.gd" id="1_yevi1"]
 [ext_resource type="PackedScene" uid="uid://c4wbt7gplit3q" path="res://BossSummonCircle.tscn" id="4_cbm8a"]
 [ext_resource type="PackedScene" uid="uid://calisp6iysq8m" path="res://rising_walls/RisingWall1.tscn" id="7_osw11"]
-[ext_resource type="PackedScene" uid="uid://blcxkdt7aeyym" path="res://Tothermos.tscn" id="7_un8y3"]
 [ext_resource type="PackedScene" uid="uid://ckmwl66m4rbe4" path="res://rising_walls/RisingWall1Small.tscn" id="8_n4qly"]
 [ext_resource type="PackedScene" uid="uid://dok0v8hpbj13d" path="res://rising_walls/RisingWall2.tscn" id="9_m7a3u"]
 
@@ -101,6 +100,7 @@ polygon = PackedVector2Array(384, 924, 480, 924, 480, 972, 576, 972, 576, 1056, 
 polygon = PackedVector2Array(864, 924, 768, 924, 768, 972, 672, 972, 672, 1056, 676, 1056, 676, 976, 772, 976, 772, 928, 864, 928)
 
 [node name="BossSummonCircle" parent="." instance=ExtResource("4_cbm8a")]
+z_index = 0
 position = Vector2(552, 739)
 
 [node name="BossSpawnPoint" type="Marker2D" parent="."]
@@ -162,9 +162,6 @@ position = Vector2(816, 912)
 
 [node name="RisingWall17" parent="RisingWalls" instance=ExtResource("7_osw11")]
 position = Vector2(624, 1072)
-
-[node name="Tothermos" parent="." instance=ExtResource("7_un8y3")]
-position = Vector2(623, 664)
 
 [connection signal="raise_walls" from="BossSummonCircle" to="." method="_on_boss_summon_circle_raise_walls"]
 [connection signal="summoning_complete" from="BossSummonCircle" to="." method="_on_boss_summon_circle_summoning_complete"]

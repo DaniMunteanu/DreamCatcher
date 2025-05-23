@@ -3,6 +3,7 @@ class_name Enemy
 extends CharacterBody2D
 
 @export var damage: int
+@onready var hurt_animation_player = $HurtAnimationPlayer
 
 func _ready() -> void:
 	$MobHealthBar.max_value = $Health.max_health

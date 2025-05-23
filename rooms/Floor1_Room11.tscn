@@ -34,6 +34,7 @@ texture = ExtResource("1_u1grw")
 sources/0 = SubResource("TileSetAtlasSource_fhjbc")
 
 [node name="Floor1Ne2" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_cy0rb")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -41,6 +42,7 @@ tile_map_data = PackedByteArray("AAADABIAAAAEAAYAAAAEABIAAAAFAAYAAAADABMAAAAEAAY
 tile_set = SubResource("TileSet_ukys8")
 
 [node name="Barrier" type="StaticBody2D" parent="."]
+y_sort_enabled = true
 collision_layer = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Barrier"]

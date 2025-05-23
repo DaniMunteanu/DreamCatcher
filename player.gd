@@ -5,6 +5,7 @@ extends CharacterBody2D
 var speed_multiplier = 30.0
 
 @onready var animation_player = $PlayerAnimationManager
+@onready var hurt_animation_player = $PlayerAnimationManager/HurtAnimationPlayer
 @onready var sprite = $PlayerAnimationManager/PlayerModel
 @onready var portal1 = $Portal1
 @onready var portal2 = $Portal2
@@ -35,7 +36,20 @@ var jumping_distance = 96.0
 func _on_health_health_depleted() -> void:
 	pass
 
+func reset_stats_and_resources():
+	Global.player_damage = 5
+	Global.player_defense = 5
+	Global.player_fire_rate = 5
+	Global.player_luck = 5
+	Global.player_shot_speed = 5
+	Global.player_speed = 5
+	
+	Global.player_coins = 0
+	Global.player_feathers = 0
+	Global.player_quartz = 0
+	
 func _ready() -> void:
+	reset_stats_and_resources()
 	Global.open_shop.connect(_on_open_shop)
 	Global.close_shop.connect(_on_close_shop)
 	Global.boss_summoned.connect(_on_boss_summoned)
@@ -45,7 +59,7 @@ func _ready() -> void:
 	portal2.fire_timer = 0.0
 	
 func _on_boss_summoned():
-	var boss = get_parent().get_node("Floor1_Room0/Tothermos")
+	var boss = get_parent().placed_rooms[0].boss_instance
 	boss_hp_bar_instance = BOSS_HP_BAR.instantiate()
 	boss_hp_bar_instance.boss_health = boss.get_node("Health")
 	canvas_layer.add_child(boss_hp_bar_instance)

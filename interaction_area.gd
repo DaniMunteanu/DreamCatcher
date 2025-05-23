@@ -18,12 +18,14 @@ func _ready() -> void:
 	label.text = label_text
 
 func _on_body_entered(body: Node2D) -> void:
-	label.show()
-	can_interact = true
+	if body.get_class() == "CharacterBody2D":
+		label.show()
+		can_interact = true
 
 func _on_body_exited(body: Node2D) -> void:
-	label.hide()
-	can_interact = false
+	if body.get_class() == "CharacterBody2D":
+		label.hide()
+		can_interact = false
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") && can_interact:
