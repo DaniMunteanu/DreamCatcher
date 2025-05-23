@@ -46,4 +46,5 @@ signal boss_defeated
 signal create_new_game
 signal delete_current_game
 signal game_victory
+signal game_over
 signal open_main_menu

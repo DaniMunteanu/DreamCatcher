@@ -16,3 +16,7 @@ func _on_hurtbox_received_damage(damage: int) -> void:
 
 func _on_invincibility_timer_timeout() -> void:
 	is_invincible = false
+	
+func _on_health_depleted() -> void:
+	get_parent().set_to_dead()
+	Global.game_over.emit()

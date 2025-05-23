@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 var speed_multiplier = 30.0
 
-@onready var animation_player = $PlayerAnimationManager
+@onready var animation_player = $PlayerAnimationManager/PlayerAnimation
 @onready var hurt_animation_player = $PlayerAnimationManager/HurtAnimationPlayer
 @onready var sprite = $PlayerAnimationManager/PlayerModel
 @onready var portal1 = $Portal1
@@ -22,7 +22,7 @@ const SHOP = preload("res://ui_elements/Shop.tscn")
 const BOSS_HP_BAR = preload("res://ui_elements/BossHealthBar.tscn")
 var boss_hp_bar_instance
 
-enum player_states {MOVE, JUMP, FIRE, SHOP, CUTSCENE}
+enum player_states {MOVE, JUMP, FIRE, SHOP, CUTSCENE, DEAD}
 var current_state = player_states.MOVE
 
 enum player_direction {LEFT, RIGHT, UP, DOWN}
@@ -32,9 +32,6 @@ var jumping_direction = Vector2.ZERO
 var jumping_target_position = Vector2.ZERO
 
 var jumping_distance = 96.0
-
-func _on_health_health_depleted() -> void:
-	pass
 
 func reset_stats_and_resources():
 	Global.player_damage = 5
@@ -106,31 +103,31 @@ func update_sprite():
 			walking_angle += 360
 		match floor(walking_angle/45.0):
 			5.0, 6.0:
-				animation_player.play_walking_up_animation()
+				animation_player.play("PlayerWalkingUp")
 				current_player_direction = player_direction.UP
 			3.0, 4.0:
-				animation_player.play_walking_left_animation()
+				animation_player.play("PlayerWalkingLeft")
 				current_player_direction = player_direction.LEFT
 			1.0, 2.0:
-				animation_player.play_walking_down_animation()
+				animation_player.play("PlayerWalkingDown")
 				current_player_direction = player_direction.DOWN
 			0.0, 7.0:
-				animation_player.play_walking_right_animation()
+				animation_player.play("PlayerWalkingRight")
 				current_player_direction = player_direction.RIGHT
 	else:
 		match current_player_direction:
 			player_direction.UP:
-				animation_player.play_idle_up_animation()
+				animation_player.play("PlayerIdleUp")
 			player_direction.LEFT:
-				animation_player.play_idle_left_animation()
+				animation_player.play("PlayerIdleLeft")
 			player_direction.DOWN:
-				animation_player.play_idle_down_animation()
+				animation_player.play("PlayerIdleDown")
 			player_direction.RIGHT:
-				animation_player.play_idle_right_animation()
+				animation_player.play("PlayerIdleRight")
 
 func jump(delta):
 	jump_marker.visible = false
-	animation_player.play_jumping_right_animation()
+	animation_player.play("PlayerJumpingRight")
 	if global_position.distance_to(jumping_target_position) > 3:
 		velocity = global_position.direction_to(jumping_target_position) * jump_speed
 	else:
@@ -159,19 +156,19 @@ func fire(delta):
 		5.0, 6.0:
 			portal1.animation_player.play("ShootUp")
 			portal2.animation_player.play("ShootUp")
-			animation_player.play_firing_up_animation()
+			animation_player.play("PlayerFiringUp")
 		3.0, 4.0:
 			portal1.animation_player.play("Portal1ShootLeft")
 			portal2.animation_player.play("Portal2ShootLeft")
-			animation_player.play_firing_left_animation()
+			animation_player.play("PlayerFiringLeft")
 		1.0, 2.0:
 			portal1.animation_player.play("ShootDown")
 			portal2.animation_player.play("ShootDown")
-			animation_player.play_firing_down_animation()
+			animation_player.play("PlayerFiringDown")
 		0.0, 7.0:
 			portal1.animation_player.play("Portal1ShootRight")
 			portal2.animation_player.play("Portal2ShootRight")
-			animation_player.play_firing_right_animation()
+			animation_player.play("PlayerFiringRight")
 			
 	if Input.is_action_just_released("fire"):
 		portal1.fire_timer = (2.0 - (0.2 * Global.player_fire_rate)) / 2.0 
@@ -184,6 +181,9 @@ func on_states_reset():
 	
 func set_to_cutscene():
 	current_state = player_states.CUTSCENE
+	
+func set_to_dead():
+	current_state = player_states.DEAD
 
 func _physics_process(delta):
 	match current_state:
@@ -199,4 +199,8 @@ func _physics_process(delta):
 			get_node("JumpMarkerAnimation").play("JumpReady")
 		player_states.CUTSCENE:
 			jump_marker.visible = false
-			animation_player.play_idle_up_animation()
+			animation_player.play("PlayerIdleUp")
+		player_states.DEAD:
+			jump_marker.visible = false
+			animation_player.play("PlayerDead")
+			hurt_animation_player.play("RESET")

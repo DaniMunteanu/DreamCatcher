@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://cupqqwddnk40"]
+[gd_scene load_steps=45 format=3 uid="uid://cupqqwddnk40"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_8iasi"]
 [ext_resource type="Script" path="res://player_animation.gd" id="2_vu52e"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bt54fkci30mf2" path="res://Sprites/PlayerIdleDown.png" id="12_ar24f"]
 [ext_resource type="Texture2D" uid="uid://d06ri1atvph01" path="res://Sprites/PlayerIdleUp.png" id="13_1kgd2"]
 [ext_resource type="Script" path="res://canvas_layer.gd" id="13_gh78c"]
+[ext_resource type="Texture2D" uid="uid://dogh73hs23ls8" path="res://Sprites/PlayerFallingAsleep.png" id="13_ivoy8"]
 [ext_resource type="PackedScene" uid="uid://cphxf7xhhkq7q" path="res://ui_elements/Minimap.tscn" id="15_7qc35"]
 [ext_resource type="PackedScene" uid="uid://iqvuhgs6fnod" path="res://ui_elements/PlayerStatusBar.tscn" id="15_wbqpd"]
 [ext_resource type="Script" path="res://Hurtbox.gd" id="17_rhecj"]
@@ -1860,8 +1861,74 @@ tracks/9/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_a6s7j"]
+resource_name = "PlayerDead"
+loop_mode = 1
+step = 0.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerModel:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("13_ivoy8")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerModel:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerModel:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayerModel:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-6, -70)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PlayerModel:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ga17d"]
 _data = {
+"PlayerDead": SubResource("Animation_a6s7j"),
 "PlayerFiringDown": SubResource("Animation_xsgow"),
 "PlayerFiringLeft": SubResource("Animation_leufm"),
 "PlayerFiringRight": SubResource("Animation_xukvy"),
@@ -2148,6 +2215,6 @@ visible = false
 position = Vector2(10, -19)
 
 [connection signal="received_damage" from="Hurtbox" to="PlayerHealth" method="_on_hurtbox_received_damage"]
-[connection signal="health_depleted" from="PlayerHealth" to="." method="_on_health_health_depleted"]
+[connection signal="health_depleted" from="PlayerHealth" to="PlayerHealth" method="_on_health_depleted"]
 [connection signal="timeout" from="PlayerHealth/InvincibilityTimer" to="PlayerHealth" method="_on_invincibility_timer_timeout"]
 [connection signal="timeout" from="EvadeTimer" to="." method="_on_evade_timer_timeout"]
