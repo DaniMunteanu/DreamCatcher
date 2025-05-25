@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://ui_elements/main_menu.gd" id="1_lk70e"]
 [ext_resource type="Texture2D" uid="uid://drjhu2e8dgbuk" path="res://Sprites/SpritesUI/MainMenuBackground.png" id="2_252vn"]
+[ext_resource type="Texture2D" uid="uid://orp0kh5ojfbi" path="res://Sprites/SpritesUI/DreamcatcherTitle.png" id="3_tltn7"]
 [ext_resource type="Texture2D" uid="uid://7utn5f7c4pye" path="res://Sprites/SpritesUI/MainMenuButtons.png" id="4_46sxr"]
 [ext_resource type="Script" path="res://ui_elements/new_game_button.gd" id="5_7nb4a"]
 
@@ -116,6 +117,45 @@ _data = {
 "RESET": SubResource("Animation_g18q5")
 }
 
+[sub_resource type="Animation" id="Animation_g64y0"]
+resource_name = "TitleFloat"
+length = 4.0
+loop_mode = 1
+step = 0.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DreamcatcherTitle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(180, 180), Vector2(180, 174), Vector2(180, 180), Vector2(180, 186), Vector2(180, 180)]
+}
+
+[sub_resource type="Animation" id="Animation_b77nb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DreamcatcherTitle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(180, 180)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1mkw3"]
+_data = {
+"RESET": SubResource("Animation_b77nb"),
+"TitleFloat": SubResource("Animation_g64y0")
+}
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_k4yce"]
 atlas = ExtResource("4_46sxr")
 region = Rect2(0, 0, 60, 15)
@@ -148,21 +188,6 @@ atlas = ExtResource("4_46sxr")
 region = Rect2(0, 45, 60, 15)
 
 [sub_resource type="LabelSettings" id="LabelSettings_moli3"]
-font_size = 20
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sg4hg"]
-atlas = ExtResource("4_46sxr")
-region = Rect2(0, 15, 60, 15)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lv3db"]
-atlas = ExtResource("4_46sxr")
-region = Rect2(0, 30, 60, 15)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rmdt7"]
-atlas = ExtResource("4_46sxr")
-region = Rect2(0, 45, 60, 15)
-
-[sub_resource type="LabelSettings" id="LabelSettings_y20x2"]
 font_size = 20
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pn56d"]
@@ -207,18 +232,27 @@ texture = ExtResource("2_252vn")
 hframes = 2
 vframes = 3
 
+[node name="DreamcatcherTitle" type="Sprite2D" parent="AspectRatioContainer/Screen"]
+position = Vector2(180, 180)
+texture = ExtResource("3_tltn7")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AspectRatioContainer/Screen"]
 libraries = {
 "": SubResource("AnimationLibrary_3deuy")
+}
+
+[node name="TitleAnimationPlayer" type="AnimationPlayer" parent="AspectRatioContainer/Screen"]
+libraries = {
+"": SubResource("AnimationLibrary_1mkw3")
 }
 
 [node name="NewGameButton" type="TextureButton" parent="AspectRatioContainer/Screen"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.1
-anchor_top = 0.517
+anchor_top = 0.650333
 anchor_right = 1.1
-anchor_bottom = 0.517
+anchor_bottom = 0.650333
 offset_left = -88.0
 offset_top = -22.12
 offset_right = 88.0
@@ -253,9 +287,9 @@ label_settings = SubResource("LabelSettings_h34ax")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.1
-anchor_top = 0.65
+anchor_top = 0.783333
 anchor_right = 1.1
-anchor_bottom = 0.65
+anchor_bottom = 0.783333
 offset_left = -88.0
 offset_top = -22.0
 offset_right = 88.0
@@ -284,42 +318,6 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Resume Game"
 label_settings = SubResource("LabelSettings_moli3")
-
-[node name="SettingsButton" type="TextureButton" parent="AspectRatioContainer/Screen"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.1
-anchor_top = 0.783
-anchor_right = 1.1
-anchor_bottom = 0.783
-offset_left = -88.0
-offset_top = -21.88
-offset_right = 88.0
-offset_bottom = 22.12
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = SubResource("AtlasTexture_k4yce")
-texture_pressed = SubResource("AtlasTexture_sg4hg")
-texture_hover = SubResource("AtlasTexture_lv3db")
-texture_disabled = SubResource("AtlasTexture_rmdt7")
-stretch_mode = 4
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="AspectRatioContainer/Screen/SettingsButton"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Settings"
-label_settings = SubResource("LabelSettings_y20x2")
 
 [node name="ExitToDesktopButton" type="TextureButton" parent="AspectRatioContainer/Screen"]
 layout_mode = 1
@@ -358,3 +356,4 @@ text = "Exit to Desktop"
 label_settings = SubResource("LabelSettings_2is0d")
 
 [connection signal="pressed" from="AspectRatioContainer/Screen/NewGameButton" to="AspectRatioContainer/Screen/NewGameButton" method="_on_pressed"]
+[connection signal="pressed" from="AspectRatioContainer/Screen/ExitToDesktopButton" to="." method="_on_exit_to_desktop_button_pressed"]

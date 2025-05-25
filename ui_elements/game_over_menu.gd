@@ -1,6 +1,8 @@
 extends Control
 
 @onready var animation_player = get_node("AspectRatioContainer/Screen/AnimationPlayer")
+@onready var title_animation_player = get_node("AspectRatioContainer/Screen/TitleAnimationPlayer")
+
 @onready var start_new_game_button = get_node("AspectRatioContainer/Screen/StartNewGameButton")
 @onready var exit_to_main_menu_button = get_node("AspectRatioContainer/Screen/ExitToMainMenuButton")
 
@@ -25,6 +27,7 @@ func _on_exit_to_main_menu_button_pressed() -> void:
 
 func start_sleep_loop():
 	animation_player.play("Sleeping")
+	title_animation_player.play("TitleFloat")
 	
 	start_new_game_button.disabled = false
 	exit_to_main_menu_button.disabled = false

@@ -2215,6 +2215,5 @@ visible = false
 position = Vector2(10, -19)
 
 [connection signal="received_damage" from="Hurtbox" to="PlayerHealth" method="_on_hurtbox_received_damage"]
-[connection signal="health_depleted" from="PlayerHealth" to="PlayerHealth" method="_on_health_depleted"]
 [connection signal="timeout" from="PlayerHealth/InvincibilityTimer" to="PlayerHealth" method="_on_invincibility_timer_timeout"]
 [connection signal="timeout" from="EvadeTimer" to="." method="_on_evade_timer_timeout"]
