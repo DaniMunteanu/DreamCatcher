@@ -213,6 +213,8 @@ func _ready():
 	Global.clear_room.connect(_on_room_cleared)
 	Global.room_entered.connect(_on_room_entered)
 	Global.enemy_dead.connect(_on_enemy_dead)
+	Global.pause_game.connect(_on_pause_game)
+	Global.unpause_game.connect(_on_unpause_game)
 	initialize_room_resources()
 	initialize_room_fills_resources()
 	initialize_door_resources()
@@ -300,3 +302,9 @@ func _on_enemy_dead(enemy_death_position: Vector2):
 	var new_drop = drop_res.instantiate()
 	new_drop.global_position = enemy_death_position
 	add_child(new_drop)
+
+func _on_pause_game() -> void:
+	get_tree().paused = true
+	
+func _on_unpause_game() -> void:
+	get_tree().paused = false

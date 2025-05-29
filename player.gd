@@ -10,6 +10,7 @@ var speed_multiplier = 30.0
 @onready var portal1 = $Portal1
 @onready var portal2 = $Portal2
 @onready var canvas_layer = $PlayerCamera/CanvasLayer
+@onready var pause_menu = $PlayerCamera/CanvasLayer/PauseMenu
 
 @onready var jump_marker = $JumpMarker
 @onready var evade_timer = $EvadeTimer
@@ -18,6 +19,8 @@ var jump_speed = 200.0
 
 const SHOP = preload("res://ui_elements/Shop.tscn")
 @onready var opened_shop = SHOP.instantiate()
+
+const PAUSE_MENU = preload("res://ui_elements/PauseMenu.tscn")
 
 const BOSS_HP_BAR = preload("res://ui_elements/BossHealthBar.tscn")
 var boss_hp_bar_instance
@@ -188,19 +191,26 @@ func set_to_dead():
 func _physics_process(delta):
 	match current_state:
 		player_states.MOVE:
+			pause_menu.can_open_menu = true
 			update_movement()
 			update_sprite()
 			get_node("JumpMarkerAnimation").play("JumpReady")
 		player_states.JUMP: 
+			pause_menu.can_open_menu = true
 			jump(delta)
 		player_states.FIRE:
+			pause_menu.can_open_menu = true
 			update_movement()
 			fire(delta)
 			get_node("JumpMarkerAnimation").play("JumpReady")
+		player_states.SHOP:
+			pause_menu.can_open_menu = false
 		player_states.CUTSCENE:
+			pause_menu.can_open_menu = false
 			jump_marker.visible = false
 			animation_player.play("PlayerIdleUp")
 		player_states.DEAD:
+			pause_menu.can_open_menu = false
 			jump_marker.visible = false
 			animation_player.play("PlayerDead")
 			hurt_animation_player.play("RESET")

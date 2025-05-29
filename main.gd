@@ -17,9 +17,15 @@ func _ready() -> void:
 	Global.delete_current_game.connect(_on_delete_current_game)
 	Global.game_victory.connect(_on_game_victory)
 	Global.game_over.connect(_on_game_over)
+	Global.save_game.connect(_on_save_game)
+	Global.load_saved_game.connect(_on_load_saved_game)
 	Global.open_main_menu.connect(_on_open_main_menu)
+	
+	if FileAccess.file_exists("user://SavedFloor.tscn") == false:
+		current_main_menu.resume_game_button.disabled = true
 		
 func _on_start_new_game():
+	DirAccess.remove_absolute("user://SavedFloor.tscn")
 	current_floor = FLOOR.instantiate()
 	sub_viewport.add_child(current_floor)
 	TransitionScreen.transition_black()
@@ -36,6 +42,28 @@ func _on_start_new_game():
 		current_game_over_menu = null
 	
 	TransitionScreen.ready_for_fade_out.emit()
+	Global.unpause_game.emit()
+	current_floor.get_node("Player").pause_menu.game_started = true
+
+func _on_save_game():
+	var floor_save = PackedScene.new()
+	floor_save.pack(current_floor)
+	ResourceSaver.save(floor_save,"user://SavedFloor.tscn")
+	_on_delete_current_game()
+	
+func _on_load_saved_game():
+	var current_saved_game = ResourceLoader.load("user://SavedFloor.tscn")
+	current_floor = current_saved_game.instantiate()
+	sub_viewport.add_child(current_floor)
+	TransitionScreen.transition_black()
+	await TransitionScreen.on_transition_finished
+	
+	current_main_menu.queue_free()
+	current_main_menu = null
+	
+	TransitionScreen.ready_for_fade_out.emit()
+	Global.unpause_game.emit()
+	current_floor.get_node("Player").pause_menu.game_started = true
 
 func _on_delete_current_game():
 	current_floor.get_node("Player").opened_shop.queue_free()

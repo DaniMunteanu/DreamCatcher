@@ -48,3 +48,8 @@ signal delete_current_game
 signal game_victory
 signal game_over
 signal open_main_menu
+
+signal pause_game
+signal unpause_game
+signal save_game
+signal load_saved_game

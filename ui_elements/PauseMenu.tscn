@@ -1,0 +1,115 @@
+[gd_scene load_steps=9 format=3 uid="uid://b4xlf5eaaidmj"]
+
+[ext_resource type="Script" path="res://ui_elements/pause_menu.gd" id="1_cxka1"]
+[ext_resource type="Texture2D" uid="uid://7utn5f7c4pye" path="res://Sprites/SpritesUI/MainMenuButtons.png" id="2_ssuxt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80i5i"]
+atlas = ExtResource("2_ssuxt")
+region = Rect2(0, 0, 60, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c04ge"]
+atlas = ExtResource("2_ssuxt")
+region = Rect2(0, 15, 60, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jymq0"]
+atlas = ExtResource("2_ssuxt")
+region = Rect2(0, 30, 60, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5clfu"]
+atlas = ExtResource("2_ssuxt")
+region = Rect2(0, 45, 60, 15)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vxoym"]
+font_size = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_at6oq"]
+font_size = 28
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cxka1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.298039, 0.298039, 0.298039, 0.376471)
+
+[node name="ResumeGameButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -32.0
+offset_right = 128.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_80i5i")
+texture_pressed = SubResource("AtlasTexture_c04ge")
+texture_hover = SubResource("AtlasTexture_jymq0")
+texture_disabled = SubResource("AtlasTexture_5clfu")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="ResumeGameButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Resume Game"
+label_settings = SubResource("LabelSettings_vxoym")
+
+[node name="ExitToMenuButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = 40.0
+offset_right = 128.0
+offset_bottom = 105.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_80i5i")
+texture_pressed = SubResource("AtlasTexture_c04ge")
+texture_hover = SubResource("AtlasTexture_jymq0")
+texture_disabled = SubResource("AtlasTexture_5clfu")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="ExitToMenuButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Save & Quit"
+label_settings = SubResource("LabelSettings_at6oq")
+
+[connection signal="pressed" from="ResumeGameButton" to="." method="_on_resume_game_button_pressed"]
+[connection signal="pressed" from="ExitToMenuButton" to="." method="_on_exit_to_menu_button_pressed"]
