@@ -53,3 +53,8 @@ signal pause_game
 signal unpause_game
 signal save_game
 signal load_saved_game
+
+signal save_minimap
+signal load_saved_minimap
+
+signal load_doors

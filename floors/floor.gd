@@ -208,19 +208,15 @@ func initialize_room_pairs():
 	room_pairs[45] = [25,26]
 	room_pairs[46] = [26,27]
 	room_pairs[47] = [28,27]
-	
+
 func _ready():
 	Global.clear_room.connect(_on_room_cleared)
 	Global.room_entered.connect(_on_room_entered)
 	Global.enemy_dead.connect(_on_enemy_dead)
 	Global.pause_game.connect(_on_pause_game)
 	Global.unpause_game.connect(_on_unpause_game)
-	initialize_room_resources()
-	initialize_room_fills_resources()
-	initialize_door_resources()
-	initialize_wall_resources()
-	initialize_room_pairs()
-	generate_floor()
+	
+	#generate_floor()
 	TransitionScreen.ready_for_fade_out.emit()
 	
 func reset():
@@ -243,6 +239,7 @@ func generate_rooms():
 	placed_rooms[0].global_position = room_markers[0].global_position
 	
 	add_child(placed_rooms[0])
+	placed_rooms[0].set_owner(self)
 	extendable_rooms.append(0)
 	
 	for i in range (1,number_of_rooms):
@@ -253,6 +250,7 @@ func generate_rooms():
 		placed_rooms[next_room].global_position = room_markers[next_room].global_position
 		placed_rooms[next_room].update_neighbours(placed_rooms, extendable_rooms)
 		add_child(placed_rooms[next_room])
+		placed_rooms[next_room].set_owner(self)
 		
 		if placed_rooms[next_room].can_extend:
 			extendable_rooms.append(next_room)
@@ -268,6 +266,7 @@ func generate_doors_and_walls():
 			new_door_or_wall = walls_res[j].instantiate()
 		new_door_or_wall.global_position = door_markers[j].global_position
 		add_child(new_door_or_wall)
+		new_door_or_wall.set_owner(self)
 		placed_doors_or_walls[j] = new_door_or_wall
 
 func generate_room_fills():
@@ -276,8 +275,15 @@ func generate_room_fills():
 			placed_rooms[i] = room_fills_res[i].instantiate()
 			placed_rooms[i].global_position = room_markers[i].global_position
 			add_child(placed_rooms[i])
+			placed_rooms[i].set_owner(self)
 
 func generate_floor():
+	initialize_room_resources()
+	initialize_room_fills_resources()
+	initialize_door_resources()
+	initialize_wall_resources()
+	initialize_room_pairs()
+	
 	generate_rooms()
 	generate_doors_and_walls()
 	generate_room_fills()

@@ -2,12 +2,12 @@ class_name FloorRoom
 
 extends Node2D
 
-var room_index = 0
-var neighbour_rooms = []
-var available_rooms = []
-var can_extend = true
-var room_cleared = false
-var potential_doors = []
+@export var room_index = 0
+@export var neighbour_rooms = []
+@export var available_rooms = []
+@export var can_extend = true
+@export var room_cleared = false
+@export var potential_doors = []
 
 func open_room(placed_doors_or_walls: Array, placed_doors_indexes: Array):
 	for i in potential_doors:
@@ -29,6 +29,7 @@ func place_enemies():
 	var enemies = enemies_res.instantiate()
 	enemies.connect("enemies_defeated",_on_enemies_defeated)
 	call_deferred("add_child",enemies)
+	enemies.call_deferred("set_owner",self)
 
 func next_room() -> int:
 	var picked_room = available_rooms.pick_random()

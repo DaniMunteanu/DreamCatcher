@@ -27,7 +27,11 @@ func _ready() -> void:
 func _on_start_new_game():
 	DirAccess.remove_absolute("user://SavedFloor.tscn")
 	current_floor = FLOOR.instantiate()
+	print("Inainte de generare: ", current_floor.get_child_count())
+	
 	sub_viewport.add_child(current_floor)
+	current_floor.generate_floor()
+	print("Dupa generare: ", current_floor.get_child_count())
 	TransitionScreen.transition_black()
 	await TransitionScreen.on_transition_finished
 
@@ -47,14 +51,20 @@ func _on_start_new_game():
 
 func _on_save_game():
 	var floor_save = PackedScene.new()
+	print("Inainte de packing: ", current_floor.get_child_count())
 	floor_save.pack(current_floor)
+	print("Dupa packing: ", current_floor.get_child_count())
 	ResourceSaver.save(floor_save,"user://SavedFloor.tscn")
+	Global.save_minimap.emit()
 	_on_delete_current_game()
 	
 func _on_load_saved_game():
 	var current_saved_game = ResourceLoader.load("user://SavedFloor.tscn")
 	current_floor = current_saved_game.instantiate()
+	print("Dupa load: ", current_floor.get_child_count())
 	sub_viewport.add_child(current_floor)
+	Global.load_saved_minimap.emit()
+	Global.load_doors.emit()
 	TransitionScreen.transition_black()
 	await TransitionScreen.on_transition_finished
 	
