@@ -11,10 +11,11 @@ var speed_multiplier = 30.0
 @onready var portal2 = $Portal2
 @onready var canvas_layer = $PlayerCamera/CanvasLayer
 @onready var pause_menu = $PlayerCamera/CanvasLayer/PauseMenu
-
+@onready var status_bar = $PlayerCamera/CanvasLayer/StatusBar 
 @onready var jump_marker = $JumpMarker
 @onready var evade_timer = $EvadeTimer
-var evadeReady = true
+
+@export var evadeReady = true
 var jump_speed = 200.0
 
 const SHOP = preload("res://ui_elements/Shop.tscn")
@@ -29,12 +30,14 @@ enum player_states {MOVE, JUMP, FIRE, SHOP, CUTSCENE, DEAD}
 var current_state = player_states.MOVE
 
 enum player_direction {LEFT, RIGHT, UP, DOWN}
-var current_player_direction = player_direction.RIGHT
+@export var current_player_direction = player_direction.RIGHT
 
 var jumping_direction = Vector2.ZERO
 var jumping_target_position = Vector2.ZERO
 
 var jumping_distance = 96.0
+
+var player_save_file_path = "user://PlayerSaveData.tres"
 
 func reset_stats_and_resources():
 	Global.player_damage = 5
@@ -48,8 +51,42 @@ func reset_stats_and_resources():
 	Global.player_feathers = 0
 	Global.player_quartz = 0
 	
+	status_bar.refresh()
+	
+func save_player_data():
+	var player_data = PlayerSaveData.new()
+	player_data.player_damage = Global.player_damage
+	player_data.player_defense = Global.player_defense
+	player_data.player_fire_rate = Global.player_fire_rate
+	player_data.player_luck = Global.player_luck
+	player_data.player_shot_speed = Global.player_shot_speed
+	player_data.player_speed = Global.player_speed
+	
+	player_data.player_coins = Global.player_coins
+	player_data.player_feathers = Global.player_feathers
+	player_data.player_quartz = Global.player_quartz
+	
+	ResourceSaver.save(player_data, player_save_file_path)
+	
+func load_player_data():
+	var player_data = ResourceLoader.load(player_save_file_path)
+	
+	Global.player_damage = player_data.player_damage
+	Global.player_defense = player_data.player_defense
+	Global.player_fire_rate = player_data.player_fire_rate 
+	Global.player_luck = player_data.player_luck
+	Global.player_shot_speed = player_data.player_shot_speed
+	Global.player_speed = player_data.player_speed
+	
+	Global.player_coins = player_data.player_coins
+	Global.player_feathers = player_data.player_feathers
+	Global.player_quartz = player_data.player_quartz
+	
+	#Refresh status bar
+	status_bar.refresh()
+
 func _ready() -> void:
-	reset_stats_and_resources()
+	
 	Global.open_shop.connect(_on_open_shop)
 	Global.close_shop.connect(_on_close_shop)
 	Global.boss_summoned.connect(_on_boss_summoned)

@@ -12,6 +12,7 @@ var walls_res = []
 var placed_rooms = []
 var placed_doors_or_walls = []
 var placed_doors_indexes = []
+
 var room_pairs = []
 
 var room_markers = []
@@ -22,6 +23,49 @@ var number_of_rooms = 0
 var extendable_rooms = []
 var rng = RandomNumberGenerator.new()
 
+var floor_save_file_path = "user://FloorSaveData.tres"
+
+func save_floor():
+	var floor_data = FloorSaveData.new()
+	floor_data.room_array.resize(31)
+	floor_data.door_or_wall_array.resize(48)
+	
+	for i in 31:
+		var packed_room = PackedScene.new()
+		if placed_rooms[i].has_method("save_room"):
+			placed_rooms[i].save_room()
+		packed_room.pack(placed_rooms[i])
+		floor_data.room_array[i] = packed_room
+		
+	for j in 48:
+		var packed_door_or_wall = PackedScene.new()
+		packed_door_or_wall.pack(placed_doors_or_walls[j])
+		floor_data.door_or_wall_array[j] = packed_door_or_wall
+		
+	for index in placed_doors_indexes:
+		floor_data.door_index_array.append(index)
+	
+	ResourceSaver.save(floor_data, floor_save_file_path)
+	
+func load_floor():
+	var floor_data = ResourceLoader.load(floor_save_file_path) as FloorSaveData
+	
+	for i in 31:
+		var room_node = floor_data.room_array[i].instantiate()
+		add_child(room_node)
+		placed_rooms[i] = room_node
+		if placed_rooms[i].has_method("load_room"):
+			placed_rooms[i].load_room()
+		
+	for j in 48:
+		var door_or_wall_node = floor_data.door_or_wall_array[j].instantiate()
+		add_child(door_or_wall_node)
+		placed_doors_or_walls[j] = door_or_wall_node
+		
+	for index in floor_data.door_index_array:
+		placed_doors_indexes.append(index)
+	floor_data.door_index_array.clear()
+		
 func initialize_room_resources():
 	placed_rooms.resize(31)
 	rooms_res.resize(31)
@@ -210,6 +254,12 @@ func initialize_room_pairs():
 	room_pairs[47] = [28,27]
 
 func _ready():
+	initialize_room_resources()
+	initialize_room_fills_resources()
+	initialize_door_resources()
+	initialize_wall_resources()
+	initialize_room_pairs()
+	
 	Global.clear_room.connect(_on_room_cleared)
 	Global.room_entered.connect(_on_room_entered)
 	Global.enemy_dead.connect(_on_enemy_dead)
@@ -239,7 +289,7 @@ func generate_rooms():
 	placed_rooms[0].global_position = room_markers[0].global_position
 	
 	add_child(placed_rooms[0])
-	placed_rooms[0].set_owner(self)
+	#placed_rooms[0].set_owner(self)
 	extendable_rooms.append(0)
 	
 	for i in range (1,number_of_rooms):
@@ -250,7 +300,7 @@ func generate_rooms():
 		placed_rooms[next_room].global_position = room_markers[next_room].global_position
 		placed_rooms[next_room].update_neighbours(placed_rooms, extendable_rooms)
 		add_child(placed_rooms[next_room])
-		placed_rooms[next_room].set_owner(self)
+		#placed_rooms[next_room].set_owner(self)
 		
 		if placed_rooms[next_room].can_extend:
 			extendable_rooms.append(next_room)
@@ -266,7 +316,7 @@ func generate_doors_and_walls():
 			new_door_or_wall = walls_res[j].instantiate()
 		new_door_or_wall.global_position = door_markers[j].global_position
 		add_child(new_door_or_wall)
-		new_door_or_wall.set_owner(self)
+		#new_door_or_wall.set_owner(self)
 		placed_doors_or_walls[j] = new_door_or_wall
 
 func generate_room_fills():
@@ -275,7 +325,7 @@ func generate_room_fills():
 			placed_rooms[i] = room_fills_res[i].instantiate()
 			placed_rooms[i].global_position = room_markers[i].global_position
 			add_child(placed_rooms[i])
-			placed_rooms[i].set_owner(self)
+			#placed_rooms[i].set_owner(self)
 
 func generate_floor():
 	initialize_room_resources()
@@ -297,6 +347,7 @@ func _physics_process(delta):
 		generate_floor()
 	
 func _on_room_cleared(room_index: int):
+	print("Room cleared!")
 	placed_rooms[room_index].open_room(placed_doors_or_walls, placed_doors_indexes)
 	
 func _on_room_entered(room_index: int):
@@ -307,7 +358,9 @@ func _on_room_entered(room_index: int):
 func _on_enemy_dead(enemy_death_position: Vector2):
 	var new_drop = drop_res.instantiate()
 	new_drop.global_position = enemy_death_position
+	new_drop.pick_drop()
 	add_child(new_drop)
+	new_drop.set_owner(self)
 
 func _on_pause_game() -> void:
 	get_tree().paused = true

@@ -2,9 +2,15 @@ extends Control
 
 @export var character: CharacterBody2D
 
+func refresh():
+	$CoinAmount.text = str(Global.player_coins)
+	$FeatherAmount.text = str(Global.player_feathers)
+	$QuartzAmount.text = str(Global.player_quartz)
+
 func _ready() -> void:
 	Global.loot_received.connect(_on_loot_received)
 	Global.loot_spent.connect(_on_loot_spent)
+	refresh()
 	
 func _on_loot_received(loot_type: Global.loot_types, loot_ammount: int):
 	match loot_type:

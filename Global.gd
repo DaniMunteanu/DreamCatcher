@@ -56,5 +56,3 @@ signal load_saved_game
 
 signal save_minimap
 signal load_saved_minimap
-
-signal load_doors

@@ -29,11 +29,17 @@ func _on_start_new_game():
 	current_floor = FLOOR.instantiate()
 	print("Inainte de generare: ", current_floor.get_child_count())
 	
-	sub_viewport.add_child(current_floor)
-	current_floor.generate_floor()
+	
+	
 	print("Dupa generare: ", current_floor.get_child_count())
 	TransitionScreen.transition_black()
+	
+	
 	await TransitionScreen.on_transition_finished
+
+	sub_viewport.add_child(current_floor)
+	current_floor.generate_floor()
+	current_floor.get_node("Player").reset_stats_and_resources()
 
 	if current_main_menu != null:
 		current_main_menu.queue_free()
@@ -52,6 +58,8 @@ func _on_start_new_game():
 func _on_save_game():
 	var floor_save = PackedScene.new()
 	print("Inainte de packing: ", current_floor.get_child_count())
+	current_floor.get_node("Player").save_player_data()
+	current_floor.save_floor()
 	floor_save.pack(current_floor)
 	print("Dupa packing: ", current_floor.get_child_count())
 	ResourceSaver.save(floor_save,"user://SavedFloor.tscn")
@@ -61,12 +69,18 @@ func _on_save_game():
 func _on_load_saved_game():
 	var current_saved_game = ResourceLoader.load("user://SavedFloor.tscn")
 	current_floor = current_saved_game.instantiate()
+	
 	print("Dupa load: ", current_floor.get_child_count())
-	sub_viewport.add_child(current_floor)
-	Global.load_saved_minimap.emit()
-	Global.load_doors.emit()
+	
+	
 	TransitionScreen.transition_black()
+	
 	await TransitionScreen.on_transition_finished
+	
+	sub_viewport.add_child(current_floor)
+	current_floor.load_floor()
+	current_floor.get_node("Player").load_player_data()
+	Global.load_saved_minimap.emit()
 	
 	current_main_menu.queue_free()
 	current_main_menu = null
