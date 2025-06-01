@@ -9,6 +9,7 @@ var speed_multiplier = 30.0
 @onready var sprite = $PlayerAnimationManager/PlayerModel
 @onready var portal1 = $Portal1
 @onready var portal2 = $Portal2
+@onready var camera = $PlayerCamera
 @onready var canvas_layer = $PlayerCamera/CanvasLayer
 @onready var pause_menu = $PlayerCamera/CanvasLayer/PauseMenu
 @onready var status_bar = $PlayerCamera/CanvasLayer/StatusBar 

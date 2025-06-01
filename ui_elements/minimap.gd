@@ -21,10 +21,11 @@ func save_data():
 		
 func load_data():
 	build_rooms_array()
+	build_icons_array()
 	initialize_rooms_res()
 	rooms_is_discovered.resize(31)
 	
-	minimap_saved_data = ResourceLoader.load(minimap_save_file_path).duplicate(true)
+	minimap_saved_data = ResourceLoader.load(minimap_save_file_path) as MinimapSave
 	for i in 31:
 		rooms[i].texture = minimap_saved_data.rooms_texture[i]
 		rooms[i].visible = minimap_saved_data.rooms_visibility[i]

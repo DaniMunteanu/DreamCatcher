@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var drop_res = preload("res://MobDrop.tscn")
 
-const MINIMUM_ROOMS = 20
+const MINIMUM_ROOMS = 5
 
 var rooms_res = []
 var room_fills_res = []
@@ -57,7 +57,7 @@ func load_floor():
 		if placed_rooms[i].has_method("load_room"):
 			placed_rooms[i].load_room()
 			
-	if placed_rooms[0].get_node("Tothermos") != null:
+	if placed_rooms[0].boss_instance != null:
 		placed_rooms[0].instant_raise_walls()
 		Global.boss_summoned.emit()
 		
@@ -351,10 +351,24 @@ func _on_room_cleared(room_index: int):
 	placed_rooms[room_index].open_room(placed_doors_or_walls, placed_doors_indexes)
 	
 func _on_room_entered(room_index: int):
+	$Player.camera.position_smoothing_enabled = true
+	$Player.camera.position_smoothing_speed = 2.0
 	Global.minimap_room_entered.emit(room_index, placed_rooms[room_index].neighbour_rooms)
 	if placed_rooms[room_index].room_cleared == false:
 		placed_rooms[room_index].close_room(placed_doors_or_walls, placed_doors_indexes)
 		
+	#Camera smoothing doar in timpul tranzitiei dintre camere
+	await get_tree().create_timer(0.1).timeout
+	$Player.camera.position_smoothing_speed = 3.0
+	await get_tree().create_timer(0.1).timeout
+	$Player.camera.position_smoothing_speed = 4.0
+	await get_tree().create_timer(0.1).timeout
+	$Player.camera.position_smoothing_speed = 6.0
+	await get_tree().create_timer(0.1).timeout
+	$Player.camera.position_smoothing_speed = 8.0
+	await get_tree().create_timer(0.1).timeout
+	$Player.camera.position_smoothing_enabled = false
+	
 func _on_enemy_dead(enemy_death_position: Vector2):
 	var new_drop = drop_res.instantiate()
 	new_drop.global_position = enemy_death_position

@@ -163,5 +163,8 @@ position = Vector2(816, 912)
 [node name="RisingWall17" parent="RisingWalls" instance=ExtResource("7_osw11")]
 position = Vector2(624, 1072)
 
+[node name="ShopSpawnMarker" type="Marker2D" parent="."]
+position = Vector2(611, 408)
+
 [connection signal="raise_walls" from="BossSummonCircle" to="." method="_on_boss_summon_circle_raise_walls"]
 [connection signal="summoning_complete" from="BossSummonCircle" to="." method="_on_boss_summon_circle_summoning_complete"]

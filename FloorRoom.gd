@@ -48,6 +48,7 @@ func load_room():
 			
 func spawn_shop():
 	var shopkeeper_instance = SHOPKEEPER.instantiate()
+	shopkeeper_instance.position = $ShopSpawnMarker.position
 	add_child(shopkeeper_instance)
 	shopkeeper_instance.set_owner(self)
 

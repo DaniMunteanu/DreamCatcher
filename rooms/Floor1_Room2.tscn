@@ -75,3 +75,6 @@ polygon = PackedVector2Array(432, 492, 528, 492, 528, 444, 576, 444, 576, 400, 5
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Barrier"]
 polygon = PackedVector2Array(240, 192, 336, 192, 336, 144, 480, 144, 480, 96, 624, 96, 624, 252, 576, 252, 576, 288, 580, 288, 580, 256, 628, 256, 628, 92, 476, 92, 476, 140, 332, 140, 332, 188, 240, 188)
+
+[node name="ShopSpawnMarker" type="Marker2D" parent="."]
+position = Vector2(574, 133)

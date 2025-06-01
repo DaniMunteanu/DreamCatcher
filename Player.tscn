@@ -2158,6 +2158,7 @@ process_callback = 0
 position_smoothing_speed = 2.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="PlayerCamera"]
+visible = false
 script = ExtResource("13_gh78c")
 
 [node name="PauseMenu" parent="PlayerCamera/CanvasLayer" instance=ExtResource("15_n70cv")]
@@ -2185,7 +2186,6 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, -4)
 rotation = -1.5708
 shape = SubResource("RectangleShape2D_nkgrr")
