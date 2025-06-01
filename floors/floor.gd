@@ -270,7 +270,6 @@ func _ready():
 	Global.pause_game.connect(_on_pause_game)
 	Global.unpause_game.connect(_on_unpause_game)
 	
-	#generate_floor()
 	TransitionScreen.ready_for_fade_out.emit()
 	
 func reset():
@@ -287,13 +286,14 @@ func reset():
 	placed_doors_indexes.clear()
 
 func generate_rooms():
+	var potential_shop_spawn_rooms = []
+	
 	number_of_rooms = rng.randi_range(MINIMUM_ROOMS, MINIMUM_ROOMS+2)
 	
 	placed_rooms[0] = rooms_res[0].instantiate()
 	placed_rooms[0].global_position = room_markers[0].global_position
 	
 	add_child(placed_rooms[0])
-	#placed_rooms[0].set_owner(self)
 	extendable_rooms.append(0)
 	
 	for i in range (1,number_of_rooms):
@@ -304,10 +304,14 @@ func generate_rooms():
 		placed_rooms[next_room].global_position = room_markers[next_room].global_position
 		placed_rooms[next_room].update_neighbours(placed_rooms, extendable_rooms)
 		add_child(placed_rooms[next_room])
-		#placed_rooms[next_room].set_owner(self)
+		potential_shop_spawn_rooms.append(next_room)
 		
 		if placed_rooms[next_room].can_extend:
 			extendable_rooms.append(next_room)
+	
+	var shop_room_index = potential_shop_spawn_rooms.pick_random()
+	placed_rooms[shop_room_index].spawn_shop()
+	Global.shop_room_picked.emit(shop_room_index)
 	
 func generate_doors_and_walls():
 	for j in 48:
@@ -320,7 +324,6 @@ func generate_doors_and_walls():
 			new_door_or_wall = walls_res[j].instantiate()
 		new_door_or_wall.global_position = door_markers[j].global_position
 		add_child(new_door_or_wall)
-		#new_door_or_wall.set_owner(self)
 		placed_doors_or_walls[j] = new_door_or_wall
 
 func generate_room_fills():
@@ -329,7 +332,6 @@ func generate_room_fills():
 			placed_rooms[i] = room_fills_res[i].instantiate()
 			placed_rooms[i].global_position = room_markers[i].global_position
 			add_child(placed_rooms[i])
-			#placed_rooms[i].set_owner(self)
 
 func generate_floor():
 	initialize_room_resources()
@@ -344,14 +346,8 @@ func generate_floor():
 	Global.floor_generated.emit()
 	placed_rooms[0].open_room(placed_doors_or_walls, placed_doors_indexes)
 	_on_room_entered(0)
-
-func _physics_process(delta):
-	if Input.is_action_just_pressed("floor_generate"):
-		reset()
-		generate_floor()
 	
 func _on_room_cleared(room_index: int):
-	print("Room cleared!")
 	placed_rooms[room_index].open_room(placed_doors_or_walls, placed_doors_indexes)
 	
 func _on_room_entered(room_index: int):

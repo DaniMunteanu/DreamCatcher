@@ -21,6 +21,7 @@ signal clear_room(room_index: int)
 signal room_entered(room_index: int)
 signal enemy_dead(enemy_death_position: Vector2)
 
+signal shop_room_picked(room_index: int)
 signal minimap_room_entered(room_index: int, neighbour_rooms_indices: Array)
 
 signal floor_generated

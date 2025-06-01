@@ -2,6 +2,8 @@ class_name FloorRoom
 
 extends Node2D
 
+@onready var SHOPKEEPER = preload("res://Smeet.tscn")
+
 @export var room_index = 0
 @export var neighbour_rooms = []
 @export var available_rooms = []
@@ -43,7 +45,11 @@ func load_room():
 		enemies.connect("enemies_defeated",_on_enemies_defeated)
 		if is_ongoing_encounter == true:
 			place_enemies()
-	
+			
+func spawn_shop():
+	var shopkeeper_instance = SHOPKEEPER.instantiate()
+	add_child(shopkeeper_instance)
+	shopkeeper_instance.set_owner(self)
 
 func open_room(placed_doors_or_walls: Array, placed_doors_indexes: Array):
 	for i in potential_doors:
@@ -63,7 +69,6 @@ func _on_enemies_defeated() -> void:
 	Global.clear_room.emit(room_index)
 	
 func place_enemies():
-	
 	call_deferred("add_child",enemies)
 
 func next_room() -> int:

@@ -1,8 +1,9 @@
-[gd_scene load_steps=34 format=3 uid="uid://cphxf7xhhkq7q"]
+[gd_scene load_steps=35 format=3 uid="uid://cphxf7xhhkq7q"]
 
 [ext_resource type="Texture2D" uid="uid://bx3aede45c8ol" path="res://Sprites/Minimap/MinimapBorder.png" id="1_4xfq1"]
 [ext_resource type="Script" path="res://ui_elements/minimap.gd" id="1_fp1qn"]
 [ext_resource type="Texture2D" uid="uid://rkpgu7a367ba" path="res://Sprites/Minimap/MinimapRoom0_1.png" id="3_qf8kk"]
+[ext_resource type="Texture2D" uid="uid://bx1mrjjv5m8np" path="res://Sprites/Minimap/ShopIcon.png" id="4_5kn8w"]
 [ext_resource type="Texture2D" uid="uid://bgbxd1pqy3wh8" path="res://Sprites/Minimap/MinimapRoom1_1.png" id="4_f4wbe"]
 [ext_resource type="Texture2D" uid="uid://bn0kxpbdbgscl" path="res://Sprites/Minimap/MinimapRoom2_1.png" id="5_wtnqo"]
 [ext_resource type="Texture2D" uid="uid://qw12fb33ps76" path="res://Sprites/Minimap/MinimapRoom3_1.png" id="6_bqchr"]
@@ -35,7 +36,6 @@
 [ext_resource type="Texture2D" uid="uid://bhriw1neo5jhg" path="res://Sprites/Minimap/MinimapRoom30_1.png" id="33_sixkk"]
 
 [node name="Minimap" type="Control"]
-modulate = Color(1, 1, 1, 0.466667)
 z_index = -1
 layout_mode = 3
 anchors_preset = 15
@@ -56,31 +56,23 @@ offset_bottom = -0.12001
 grow_horizontal = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer"]
+[node name="Rooms" type="Control" parent="AspectRatioContainer"]
+modulate = Color(1, 1, 1, 0.466667)
 layout_mode = 2
+
+[node name="Frame" type="TextureRect" parent="AspectRatioContainer/Rooms"]
+layout_mode = 2
+offset_right = 132.0
+offset_bottom = 132.0
 texture = ExtResource("1_4xfq1")
 
-[node name="Room0" type="Control" parent="AspectRatioContainer"]
+[node name="Room1" type="Control" parent="AspectRatioContainer/Rooms"]
 layout_mode = 2
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 132.0
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room0"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.303182
-anchor_top = 0.302758
-anchor_right = 0.696818
-anchor_bottom = 0.697242
-offset_left = -0.019999
-offset_top = 0.0359955
-offset_right = 0.019989
-offset_bottom = -0.0360031
-texture = ExtResource("3_qf8kk")
-metadata/_edit_use_anchors_ = true
-
-[node name="Room1" type="Control" parent="AspectRatioContainer"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room1"]
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Rooms/Room1"]
 layout_mode = 2
 anchor_left = 0.242242
 anchor_top = 0.378545
@@ -93,10 +85,13 @@ offset_bottom = 0.0479851
 texture = ExtResource("4_f4wbe")
 metadata/_edit_use_anchors_ = true
 
-[node name="Room2" type="Control" parent="AspectRatioContainer"]
+[node name="Room2" type="Control" parent="AspectRatioContainer/Rooms"]
 layout_mode = 2
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 132.0
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room2"]
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Rooms/Room2"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.287576
@@ -110,10 +105,13 @@ offset_bottom = 0.0119972
 texture = ExtResource("5_wtnqo")
 metadata/_edit_use_anchors_ = true
 
-[node name="Room3" type="Control" parent="AspectRatioContainer"]
+[node name="Room3" type="Control" parent="AspectRatioContainer/Rooms"]
 layout_mode = 2
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 132.0
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room3"]
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Rooms/Room3"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -125,10 +123,13 @@ offset_bottom = -0.0440006
 texture = ExtResource("6_bqchr")
 metadata/_edit_use_anchors_ = true
 
-[node name="Room4" type="Control" parent="AspectRatioContainer"]
+[node name="Room4" type="Control" parent="AspectRatioContainer/Rooms"]
 layout_mode = 2
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 132.0
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room4"]
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Rooms/Room4"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.606061
@@ -140,10 +141,13 @@ offset_bottom = 0.0559978
 texture = ExtResource("7_s7mq3")
 metadata/_edit_use_anchors_ = true
 
-[node name="Room5" type="Control" parent="AspectRatioContainer"]
+[node name="Room5" type="Control" parent="AspectRatioContainer/Rooms"]
 layout_mode = 2
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 132.0
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room5"]
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Rooms/Room5"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -155,10 +159,13 @@ offset_bottom = -0.0440006
 texture = ExtResource("8_1d7gc")
 metadata/_edit_use_anchors_ = true
 
-[node name="Room6" type="Control" parent="AspectRatioContainer"]
+[node name="Room6" type="Control" parent="AspectRatioContainer/Rooms"]
 layout_mode = 2
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 132.0
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room6"]
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Rooms/Room6"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.287879
@@ -170,10 +177,13 @@ offset_bottom = -0.0440006
 texture = ExtResource("9_7s0ud")
 metadata/_edit_use_anchors_ = true
 
-[node name="Room7" type="Control" parent="AspectRatioContainer"]
+[node name="Room7" type="Control" parent="AspectRatioContainer/Rooms"]
 layout_mode = 2
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 132.0
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room7"]
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Rooms/Room7"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0757576
@@ -185,10 +195,13 @@ offset_bottom = 0.0559978
 texture = ExtResource("10_8c71y")
 metadata/_edit_use_anchors_ = true
 
-[node name="Room8" type="Control" parent="AspectRatioContainer"]
+[node name="Room8" type="Control" parent="AspectRatioContainer/Rooms"]
 layout_mode = 2
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 132.0
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room8"]
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Rooms/Room8"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.076
@@ -202,10 +215,13 @@ offset_bottom = -0.0200043
 texture = ExtResource("11_u4bgj")
 metadata/_edit_use_anchors_ = true
 
-[node name="Room9" type="Control" parent="AspectRatioContainer"]
+[node name="Room9" type="Control" parent="AspectRatioContainer/Rooms"]
 layout_mode = 2
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 132.0
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room9"]
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Rooms/Room9"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.257576
@@ -217,10 +233,13 @@ offset_bottom = 0.0359974
 texture = ExtResource("12_jjlfi")
 metadata/_edit_use_anchors_ = true
 
-[node name="Room10" type="Control" parent="AspectRatioContainer"]
+[node name="Room10" type="Control" parent="AspectRatioContainer/Rooms"]
 layout_mode = 2
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 132.0
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room10"]
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Rooms/Room10"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.30303
@@ -232,10 +251,13 @@ offset_bottom = -0.0240021
 texture = ExtResource("13_r4scu")
 metadata/_edit_use_anchors_ = true
 
-[node name="Room11" type="Control" parent="AspectRatioContainer"]
+[node name="Room11" type="Control" parent="AspectRatioContainer/Rooms"]
 layout_mode = 2
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 132.0
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room11"]
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Rooms/Room11"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.515152
@@ -247,10 +269,13 @@ offset_bottom = 0.0359974
 texture = ExtResource("14_b25q4")
 metadata/_edit_use_anchors_ = true
 
-[node name="Room12" type="Control" parent="AspectRatioContainer"]
+[node name="Room12" type="Control" parent="AspectRatioContainer/Rooms"]
 layout_mode = 2
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 132.0
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room12"]
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Rooms/Room12"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.712121
@@ -262,10 +287,13 @@ offset_bottom = 0.0439987
 texture = ExtResource("15_c2b1e")
 metadata/_edit_use_anchors_ = true
 
-[node name="Room13" type="Control" parent="AspectRatioContainer"]
+[node name="Room13" type="Control" parent="AspectRatioContainer/Rooms"]
 layout_mode = 2
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 132.0
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room13"]
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Rooms/Room13"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.727273
@@ -277,10 +305,13 @@ offset_bottom = 0.0559978
 texture = ExtResource("16_p603x")
 metadata/_edit_use_anchors_ = true
 
-[node name="Room14" type="Control" parent="AspectRatioContainer"]
+[node name="Room14" type="Control" parent="AspectRatioContainer/Rooms"]
 layout_mode = 2
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 132.0
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room14"]
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Rooms/Room14"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.712121
@@ -292,10 +323,13 @@ offset_bottom = 0.0439987
 texture = ExtResource("17_sfriy")
 metadata/_edit_use_anchors_ = true
 
-[node name="Room15" type="Control" parent="AspectRatioContainer"]
+[node name="Room15" type="Control" parent="AspectRatioContainer/Rooms"]
 layout_mode = 2
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 132.0
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room15"]
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Rooms/Room15"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.515152
@@ -307,10 +341,13 @@ offset_bottom = 0.0359974
 texture = ExtResource("18_chua4")
 metadata/_edit_use_anchors_ = true
 
-[node name="Room16" type="Control" parent="AspectRatioContainer"]
+[node name="Room16" type="Control" parent="AspectRatioContainer/Rooms"]
 layout_mode = 2
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 132.0
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room16"]
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Rooms/Room16"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.30303
@@ -322,10 +359,13 @@ offset_bottom = -0.0240021
 texture = ExtResource("19_3047y")
 metadata/_edit_use_anchors_ = true
 
-[node name="Room17" type="Control" parent="AspectRatioContainer"]
+[node name="Room17" type="Control" parent="AspectRatioContainer/Rooms"]
 layout_mode = 2
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 132.0
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room17"]
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Rooms/Room17"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.257576
@@ -337,10 +377,13 @@ offset_bottom = 0.0359974
 texture = ExtResource("20_0owc7")
 metadata/_edit_use_anchors_ = true
 
-[node name="Room18" type="Control" parent="AspectRatioContainer"]
+[node name="Room18" type="Control" parent="AspectRatioContainer/Rooms"]
 layout_mode = 2
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 132.0
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room18"]
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Rooms/Room18"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0757576
@@ -352,10 +395,13 @@ offset_bottom = 0.0439987
 texture = ExtResource("21_o50g0")
 metadata/_edit_use_anchors_ = true
 
-[node name="Room19" type="Control" parent="AspectRatioContainer"]
+[node name="Room19" type="Control" parent="AspectRatioContainer/Rooms"]
 layout_mode = 2
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 132.0
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room19"]
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Rooms/Room19"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0151515
@@ -367,10 +413,13 @@ offset_bottom = 0.0159988
 texture = ExtResource("22_gr8km")
 metadata/_edit_use_anchors_ = true
 
-[node name="Room20" type="Control" parent="AspectRatioContainer"]
+[node name="Room20" type="Control" parent="AspectRatioContainer/Rooms"]
 layout_mode = 2
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 132.0
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room20"]
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Rooms/Room20"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.030303
@@ -382,10 +431,13 @@ offset_bottom = -0.0160027
 texture = ExtResource("23_k5011")
 metadata/_edit_use_anchors_ = true
 
-[node name="Room21" type="Control" parent="AspectRatioContainer"]
+[node name="Room21" type="Control" parent="AspectRatioContainer/Rooms"]
 layout_mode = 2
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 132.0
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room21"]
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Rooms/Room21"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.167
@@ -399,10 +451,13 @@ offset_bottom = -0.0440006
 texture = ExtResource("24_7pqw4")
 metadata/_edit_use_anchors_ = true
 
-[node name="Room22" type="Control" parent="AspectRatioContainer"]
+[node name="Room22" type="Control" parent="AspectRatioContainer/Rooms"]
 layout_mode = 2
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 132.0
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room22"]
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Rooms/Room22"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.318182
@@ -414,10 +469,13 @@ offset_bottom = 0.00799942
 texture = ExtResource("25_cndrk")
 metadata/_edit_use_anchors_ = true
 
-[node name="Room23" type="Control" parent="AspectRatioContainer"]
+[node name="Room23" type="Control" parent="AspectRatioContainer/Rooms"]
 layout_mode = 2
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 132.0
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room23"]
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Rooms/Room23"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.636364
@@ -429,10 +487,13 @@ offset_bottom = 0.0279989
 texture = ExtResource("26_f0drr")
 metadata/_edit_use_anchors_ = true
 
-[node name="Room24" type="Control" parent="AspectRatioContainer"]
+[node name="Room24" type="Control" parent="AspectRatioContainer/Rooms"]
 layout_mode = 2
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 132.0
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room24"]
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Rooms/Room24"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.757576
@@ -444,10 +505,13 @@ offset_bottom = -0.0160027
 texture = ExtResource("27_ngdsg")
 metadata/_edit_use_anchors_ = true
 
-[node name="Room25" type="Control" parent="AspectRatioContainer"]
+[node name="Room25" type="Control" parent="AspectRatioContainer/Rooms"]
 layout_mode = 2
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 132.0
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room25"]
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Rooms/Room25"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.909091
@@ -459,10 +523,13 @@ offset_bottom = 0.0159988
 texture = ExtResource("28_hm86g")
 metadata/_edit_use_anchors_ = true
 
-[node name="Room26" type="Control" parent="AspectRatioContainer"]
+[node name="Room26" type="Control" parent="AspectRatioContainer/Rooms"]
 layout_mode = 2
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 132.0
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room26"]
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Rooms/Room26"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.757576
@@ -474,10 +541,13 @@ offset_bottom = -0.0160027
 texture = ExtResource("29_uoq67")
 metadata/_edit_use_anchors_ = true
 
-[node name="Room27" type="Control" parent="AspectRatioContainer"]
+[node name="Room27" type="Control" parent="AspectRatioContainer/Rooms"]
 layout_mode = 2
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 132.0
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room27"]
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Rooms/Room27"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.636364
@@ -489,10 +559,13 @@ offset_bottom = 0.0279989
 texture = ExtResource("30_7a50c")
 metadata/_edit_use_anchors_ = true
 
-[node name="Room28" type="Control" parent="AspectRatioContainer"]
+[node name="Room28" type="Control" parent="AspectRatioContainer/Rooms"]
 layout_mode = 2
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 132.0
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room28"]
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Rooms/Room28"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.318182
@@ -504,10 +577,13 @@ offset_bottom = 0.00799942
 texture = ExtResource("31_vm036")
 metadata/_edit_use_anchors_ = true
 
-[node name="Room29" type="Control" parent="AspectRatioContainer"]
+[node name="Room29" type="Control" parent="AspectRatioContainer/Rooms"]
 layout_mode = 2
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 132.0
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room29"]
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Rooms/Room29"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.166667
@@ -519,10 +595,13 @@ offset_bottom = 0.0279989
 texture = ExtResource("32_pgn5h")
 metadata/_edit_use_anchors_ = true
 
-[node name="Room30" type="Control" parent="AspectRatioContainer"]
+[node name="Room30" type="Control" parent="AspectRatioContainer/Rooms"]
 layout_mode = 2
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 132.0
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Room30"]
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Rooms/Room30"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.030303
@@ -532,4 +611,581 @@ anchor_bottom = 0.848606
 offset_right = 0.0159988
 offset_bottom = -0.0160027
 texture = ExtResource("33_sixkk")
+metadata/_edit_use_anchors_ = true
+
+[node name="Room0" type="Control" parent="AspectRatioContainer/Rooms"]
+layout_mode = 2
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 132.0
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Rooms/Room0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.303182
+anchor_top = 0.302758
+anchor_right = 0.696818
+anchor_bottom = 0.697242
+offset_left = -0.019999
+offset_top = 0.0359955
+offset_right = 0.019989
+offset_bottom = -0.0360031
+texture = ExtResource("3_qf8kk")
+metadata/_edit_use_anchors_ = true
+
+[node name="Icons" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="ShopIcon0" type="TextureRect" parent="AspectRatioContainer/Icons"]
+visible = false
+layout_mode = 2
+anchor_left = 0.484727
+anchor_top = 0.423848
+anchor_right = 0.514727
+anchor_bottom = 0.454848
+offset_left = 0.0159988
+offset_top = 0.052002
+offset_right = 0.0559978
+offset_bottom = -0.0400009
+texture = ExtResource("4_5kn8w")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopIcon1" type="TextureRect" parent="AspectRatioContainer/Icons"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = -11.0
+offset_right = -25.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5kn8w")
+stretch_mode = 2
+
+[node name="ShopIcon2" type="TextureRect" parent="AspectRatioContainer/Icons"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.462
+anchor_top = 0.288
+anchor_right = 0.462
+anchor_bottom = 0.288
+offset_left = -1.984
+offset_top = -2.016
+offset_right = 2.016
+offset_bottom = 1.984
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5kn8w")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopIcon3" type="TextureRect" parent="AspectRatioContainer/Icons"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.659
+anchor_top = 0.356
+anchor_right = 0.659
+anchor_bottom = 0.356
+offset_left = -1.98801
+offset_top = -1.992
+offset_right = 2.01199
+offset_bottom = 2.008
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5kn8w")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopIcon4" type="TextureRect" parent="AspectRatioContainer/Icons"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.705
+anchor_top = 0.568
+anchor_right = 0.705
+anchor_bottom = 0.568
+offset_left = -2.06001
+offset_top = -1.97601
+offset_right = 1.93999
+offset_bottom = 2.02399
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5kn8w")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopIcon5" type="TextureRect" parent="AspectRatioContainer/Icons"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.538
+anchor_top = 0.705
+anchor_right = 0.538
+anchor_bottom = 0.705
+offset_left = -2.01601
+offset_top = -2.06001
+offset_right = 1.98399
+offset_bottom = 1.93999
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5kn8w")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopIcon6" type="TextureRect" parent="AspectRatioContainer/Icons"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.341
+anchor_top = 0.644
+anchor_right = 0.341
+anchor_bottom = 0.644
+offset_left = -2.012
+offset_top = -2.00801
+offset_right = 1.988
+offset_bottom = 1.99199
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5kn8w")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopIcon7" type="TextureRect" parent="AspectRatioContainer/Icons"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.22
+anchor_top = 0.568
+anchor_right = 0.22
+anchor_bottom = 0.568
+offset_left = -2.04
+offset_top = -1.97601
+offset_right = 1.96
+offset_bottom = 2.02399
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5kn8w")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopIcon8" type="TextureRect" parent="AspectRatioContainer/Icons"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.356
+anchor_right = 0.25
+anchor_bottom = 0.356
+offset_left = -2.0
+offset_top = -1.992
+offset_right = 2.0
+offset_bottom = 2.008
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5kn8w")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopIcon9" type="TextureRect" parent="AspectRatioContainer/Icons"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.311
+anchor_top = 0.174
+anchor_right = 0.311
+anchor_bottom = 0.174
+offset_left = -2.052
+offset_top = -1.968
+offset_right = 1.948
+offset_bottom = 2.032
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5kn8w")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopIcon10" type="TextureRect" parent="AspectRatioContainer/Icons"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.614
+anchor_top = 0.129
+anchor_right = 0.614
+anchor_bottom = 0.129
+offset_left = -2.048
+offset_top = -2.028
+offset_right = 1.952
+offset_bottom = 1.972
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5kn8w")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopIcon11" type="TextureRect" parent="AspectRatioContainer/Icons"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.689
+anchor_top = 0.174
+anchor_right = 0.689
+anchor_bottom = 0.174
+offset_left = -1.948
+offset_top = -1.968
+offset_right = 2.052
+offset_bottom = 2.032
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5kn8w")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopIcon12" type="TextureRect" parent="AspectRatioContainer/Icons"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.75
+anchor_top = 0.356
+anchor_right = 0.75
+anchor_bottom = 0.356
+offset_left = -2.00001
+offset_top = -1.992
+offset_right = 1.99999
+offset_bottom = 2.008
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5kn8w")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopIcon13" type="TextureRect" parent="AspectRatioContainer/Icons"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.78
+anchor_top = 0.432
+anchor_right = 0.78
+anchor_bottom = 0.432
+offset_left = -1.96001
+offset_top = -2.024
+offset_right = 2.03999
+offset_bottom = 1.976
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5kn8w")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopIcon14" type="TextureRect" parent="AspectRatioContainer/Icons"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.75
+anchor_top = 0.644
+anchor_right = 0.75
+anchor_bottom = 0.644
+offset_left = -2.00001
+offset_top = -2.00801
+offset_right = 1.99999
+offset_bottom = 1.99199
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5kn8w")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopIcon15" type="TextureRect" parent="AspectRatioContainer/Icons"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.689
+anchor_top = 0.826
+anchor_right = 0.689
+anchor_bottom = 0.826
+offset_left = -1.948
+offset_top = -2.03201
+offset_right = 2.052
+offset_bottom = 1.96799
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5kn8w")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopIcon16" type="TextureRect" parent="AspectRatioContainer/Icons"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.386
+anchor_top = 0.871
+anchor_right = 0.386
+anchor_bottom = 0.871
+offset_left = -1.952
+offset_top = -1.97201
+offset_right = 2.048
+offset_bottom = 2.02799
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5kn8w")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopIcon17" type="TextureRect" parent="AspectRatioContainer/Icons"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.311
+anchor_top = 0.826
+anchor_right = 0.311
+anchor_bottom = 0.826
+offset_left = -2.052
+offset_top = -2.03201
+offset_right = 1.948
+offset_bottom = 1.96799
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5kn8w")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopIcon18" type="TextureRect" parent="AspectRatioContainer/Icons"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.644
+anchor_right = 0.25
+anchor_bottom = 0.644
+offset_left = -2.0
+offset_top = -2.00801
+offset_right = 2.0
+offset_bottom = 1.99199
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5kn8w")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopIcon19" type="TextureRect" parent="AspectRatioContainer/Icons"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.053
+anchor_top = 0.5
+anchor_right = 0.053
+anchor_bottom = 0.5
+offset_left = -1.996
+offset_top = -2.0
+offset_right = 2.004
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5kn8w")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopIcon20" type="TextureRect" parent="AspectRatioContainer/Icons"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.121
+anchor_top = 0.258
+anchor_right = 0.121
+anchor_bottom = 0.258
+offset_left = -1.972
+offset_top = -2.056
+offset_right = 2.028
+offset_bottom = 1.944
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5kn8w")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopIcon21" type="TextureRect" parent="AspectRatioContainer/Icons"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.265
+anchor_top = 0.114
+anchor_right = 0.265
+anchor_bottom = 0.114
+offset_left = -1.98
+offset_top = -2.048
+offset_right = 2.02
+offset_bottom = 1.952
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5kn8w")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopIcon22" type="TextureRect" parent="AspectRatioContainer/Icons"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.053
+anchor_right = 0.5
+anchor_bottom = 0.053
+offset_left = -2.0
+offset_top = -1.996
+offset_right = 2.0
+offset_bottom = 2.004
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5kn8w")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopIcon23" type="TextureRect" parent="AspectRatioContainer/Icons"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.735
+anchor_top = 0.114
+anchor_right = 0.735
+anchor_bottom = 0.114
+offset_left = -2.02
+offset_top = -2.048
+offset_right = 1.98
+offset_bottom = 1.952
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5kn8w")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopIcon24" type="TextureRect" parent="AspectRatioContainer/Icons"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.879
+anchor_top = 0.258
+anchor_right = 0.879
+anchor_bottom = 0.258
+offset_left = -2.02801
+offset_top = -2.056
+offset_right = 1.97199
+offset_bottom = 1.944
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5kn8w")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopIcon25" type="TextureRect" parent="AspectRatioContainer/Icons"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.947
+anchor_top = 0.5
+anchor_right = 0.947
+anchor_bottom = 0.5
+offset_left = -2.00401
+offset_top = -2.0
+offset_right = 1.99599
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5kn8w")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopIcon26" type="TextureRect" parent="AspectRatioContainer/Icons"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.879
+anchor_top = 0.742
+anchor_right = 0.879
+anchor_bottom = 0.742
+offset_left = -2.02801
+offset_top = -1.94401
+offset_right = 1.97199
+offset_bottom = 2.05599
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5kn8w")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopIcon27" type="TextureRect" parent="AspectRatioContainer/Icons"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.735
+anchor_top = 0.886
+anchor_right = 0.735
+anchor_bottom = 0.886
+offset_left = -2.02
+offset_top = -1.952
+offset_right = 1.98
+offset_bottom = 2.048
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5kn8w")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopIcon28" type="TextureRect" parent="AspectRatioContainer/Icons"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.947
+anchor_right = 0.5
+anchor_bottom = 0.947
+offset_left = -2.0
+offset_top = -2.00401
+offset_right = 2.0
+offset_bottom = 1.99599
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5kn8w")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopIcon29" type="TextureRect" parent="AspectRatioContainer/Icons"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.265
+anchor_top = 0.886
+anchor_right = 0.265
+anchor_bottom = 0.886
+offset_left = -1.98
+offset_top = -1.952
+offset_right = 2.02
+offset_bottom = 2.048
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5kn8w")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopIcon30" type="TextureRect" parent="AspectRatioContainer/Icons"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.121
+anchor_top = 0.742
+anchor_right = 0.121
+anchor_bottom = 0.742
+offset_left = -1.972
+offset_top = -1.94401
+offset_right = 2.028
+offset_bottom = 2.05599
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5kn8w")
+stretch_mode = 2
 metadata/_edit_use_anchors_ = true
