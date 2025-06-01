@@ -5,9 +5,11 @@ extends TextureProgressBar
 var stamina_texture = load("res://Sprites/SpritesUI/StaminaBar.png")
 var charged_stamina_texture = load("res://Sprites/SpritesUI/StaminaBarCharged.png")
 
+var start_point = 0.0
+
 func _process(delta: float) -> void:
-	max_value = timer.wait_time
-	value = timer.wait_time - timer.time_left
+	max_value = start_point + timer.wait_time
+	value = start_point + timer.wait_time - timer.time_left
 	
 	if value == max_value:
 		texture_progress = charged_stamina_texture

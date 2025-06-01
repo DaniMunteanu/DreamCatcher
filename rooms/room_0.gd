@@ -30,6 +30,7 @@ func _on_boss_summon_circle_summoning_complete() -> void:
 	boss_instance = BOSS.instantiate()
 	boss_instance.global_position = $BossSpawnPoint.position
 	add_child(boss_instance)
+	boss_instance.set_owner(self)
 	boss_instance.lower_walls.connect(_on_tothermos_lower_walls)
 	Global.boss_summoned.emit()
 	
@@ -39,6 +40,7 @@ func _on_boss_defeated() -> void:
 	var floor_exit_instance = FLOOR_EXIT.instantiate()
 	floor_exit_instance.global_position = $BossSpawnPoint.position
 	add_child(floor_exit_instance)
+	floor_exit_instance.set_owner(self)
 	TransitionScreen.ready_for_fade_out.emit()
 	player.get_node("PlayerCamera").global_position = player.global_position
 	await get_tree().create_timer(0.5).timeout
@@ -49,6 +51,13 @@ func _on_boss_defeated() -> void:
 func _on_boss_summon_circle_raise_walls() -> void:
 	for i in 18:
 		movable_walls[i].get_node("AnimationPlayer").play("Raise")
+		
+func instant_raise_walls():
+	for i in 18:
+		movable_walls[i].get_node("AnimationPlayer").play("InstantRaise")
+		
+	boss_instance = get_node("Tothermos")
+	boss_instance.lower_walls.connect(_on_tothermos_lower_walls)
 	
 func _on_tothermos_lower_walls() -> void:
 	for i in 18:

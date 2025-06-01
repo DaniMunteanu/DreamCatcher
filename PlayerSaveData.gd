@@ -11,3 +11,7 @@ class_name PlayerSaveData
 @export var player_coins = 0
 @export var player_feathers = 0
 @export var player_quartz = 0
+
+@export var evade_cooldown_left = 0.0
+
+@export var current_health = 0

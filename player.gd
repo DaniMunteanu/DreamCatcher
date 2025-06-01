@@ -14,6 +14,7 @@ var speed_multiplier = 30.0
 @onready var status_bar = $PlayerCamera/CanvasLayer/StatusBar 
 @onready var jump_marker = $JumpMarker
 @onready var evade_timer = $EvadeTimer
+@onready var player_health = $PlayerHealth
 
 @export var evadeReady = true
 var jump_speed = 200.0
@@ -66,10 +67,14 @@ func save_player_data():
 	player_data.player_feathers = Global.player_feathers
 	player_data.player_quartz = Global.player_quartz
 	
+	player_data.evade_cooldown_left = evade_timer.time_left
+	
+	player_data.current_health = player_health.current_health
+	
 	ResourceSaver.save(player_data, player_save_file_path)
 	
 func load_player_data():
-	var player_data = ResourceLoader.load(player_save_file_path)
+	var player_data = ResourceLoader.load(player_save_file_path) as PlayerSaveData
 	
 	Global.player_damage = player_data.player_damage
 	Global.player_defense = player_data.player_defense
@@ -81,6 +86,14 @@ func load_player_data():
 	Global.player_coins = player_data.player_coins
 	Global.player_feathers = player_data.player_feathers
 	Global.player_quartz = player_data.player_quartz
+	
+	#Reset jump cooldown if jump was not ready before saving
+	if evadeReady == false:
+		jump_marker.visible = false
+		evade_timer.start(player_data.evade_cooldown_left)
+		status_bar.get_node("StaminaBar").start_point = 5 - player_data.evade_cooldown_left
+		
+	player_health.current_health = player_data.current_health
 	
 	#Refresh status bar
 	status_bar.refresh()
@@ -116,6 +129,8 @@ func _on_close_shop():
 func _on_evade_timer_timeout() -> void:
 	evadeReady = true
 	jump_marker.visible = true
+	status_bar.get_node("StaminaBar").start_point = 0.0
+	evade_timer.wait_time = 5
 
 func update_movement():
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")

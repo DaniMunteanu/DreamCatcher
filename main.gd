@@ -79,12 +79,13 @@ func _on_load_saved_game():
 	
 	sub_viewport.add_child(current_floor)
 	current_floor.load_floor()
-	current_floor.get_node("Player").load_player_data()
+	
 	Global.load_saved_minimap.emit()
 	
 	current_main_menu.queue_free()
 	current_main_menu = null
 	
+	current_floor.get_node("Player").load_player_data()
 	TransitionScreen.ready_for_fade_out.emit()
 	Global.unpause_game.emit()
 	current_floor.get_node("Player").pause_menu.game_started = true

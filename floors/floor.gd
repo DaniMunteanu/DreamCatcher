@@ -56,6 +56,10 @@ func load_floor():
 		placed_rooms[i] = room_node
 		if placed_rooms[i].has_method("load_room"):
 			placed_rooms[i].load_room()
+			
+	if placed_rooms[0].get_node("Tothermos") != null:
+		placed_rooms[0].instant_raise_walls()
+		Global.boss_summoned.emit()
 		
 	for j in 48:
 		var door_or_wall_node = floor_data.door_or_wall_array[j].instantiate()
@@ -65,7 +69,7 @@ func load_floor():
 	for index in floor_data.door_index_array:
 		placed_doors_indexes.append(index)
 	floor_data.door_index_array.clear()
-		
+	
 func initialize_room_resources():
 	placed_rooms.resize(31)
 	rooms_res.resize(31)

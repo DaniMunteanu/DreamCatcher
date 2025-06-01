@@ -12,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_opagv")
 
 [node name="PrimaryHealthBar" type="TextureProgressBar" parent="."]
@@ -27,6 +28,7 @@ offset_right = 163.0
 offset_bottom = 0.039978
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 value = 50.0
 texture_progress = ExtResource("1_u02s6")
 texture_progress_offset = Vector2(4, 4)
@@ -41,6 +43,7 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -163.0
 offset_right = 163.0
+mouse_filter = 2
 value = 70.0
 texture_under = ExtResource("1_swrux")
 texture_progress = ExtResource("3_rhtkl")

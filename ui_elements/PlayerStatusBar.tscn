@@ -224,6 +224,7 @@ anchor_right = 0.071875
 anchor_bottom = 0.0916667
 offset_right = 142.0
 offset_bottom = 3.0
+step = 0.1
 value = 100.0
 texture_progress = ExtResource("5_cgqxw")
 script = ExtResource("6_i7ust")

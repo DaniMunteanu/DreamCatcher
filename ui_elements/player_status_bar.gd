@@ -6,6 +6,8 @@ func refresh():
 	$CoinAmount.text = str(Global.player_coins)
 	$FeatherAmount.text = str(Global.player_feathers)
 	$QuartzAmount.text = str(Global.player_quartz)
+	
+	$HealthBar.refresh_health_bar()
 
 func _ready() -> void:
 	Global.loot_received.connect(_on_loot_received)

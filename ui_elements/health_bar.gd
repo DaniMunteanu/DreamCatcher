@@ -2,11 +2,19 @@ extends TextureProgressBar
 
 @onready var health: Health = get_parent().character.get_node("PlayerHealth")
 
+func refresh_health_bar():
+	max_value = health.max_health
+	value = health.current_health
+	get_node("SecondaryHealthBar").max_value = health.max_health
+	get_node("SecondaryHealthBar").value = health.current_health
+	get_node("HealthAmount").text = str(value) + "/" + str(max_value)
+
 func _ready() -> void:
 	Global.buy_health_hover.connect(_on_buy_health_hover)
 	Global.buy_health_hover_end.connect(_on_buy_health_hover_end)
 	max_value = health.max_health
 	value = health.current_health
+	get_node("SecondaryHealthBar").max_value = health.max_health
 	get_node("SecondaryHealthBar").value = health.current_health
 	get_node("HealthAmount").text = str(value) + "/" + str(max_value)
 	health.health_changed.connect(_update_bar)
