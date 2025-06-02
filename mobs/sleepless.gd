@@ -4,21 +4,50 @@ extends CharacterBody2D
 
 @export var damage: int
 @onready var hurt_animation_player = $HurtAnimationPlayer
+@onready var movement_animation_player = $AnimationPlayer
+@onready var health = $Health
+
+@export var speed = 100
 
 func _ready() -> void:
-	$MobHealthBar.max_value = $Health.max_health
-	$MobHealthBar.value = $Health.current_health
+	$MobHealthBar.max_value = health.max_health
+	$MobHealthBar.value = health.current_health
 	
-	$MobHealthBar/MobSecondaryHealthBar.max_value = $Health.max_health
-	$MobHealthBar/MobSecondaryHealthBar.value = $Health.current_health
+	$MobHealthBar/MobSecondaryHealthBar.max_value = health.max_health
+	$MobHealthBar/MobSecondaryHealthBar.value = health.current_health
 	
-	$Health.health_changed.connect(_update_bar)
+	health.health_changed.connect(_update_bar)
+
+func update_movement():
+	var direction = global_position.direction_to(Global.player_current_position).normalized()
+	if global_position.distance_to(Global.player_current_position) < 2.0:
+		velocity = Vector2.ZERO
+	else:
+		velocity = direction * speed
+	move_and_slide()
+	
+	var moving_angle = rad_to_deg(global_position.angle_to_point(Global.player_current_position))
+	if moving_angle < 0.0:
+		moving_angle += 360.0
+		
+	match floor(moving_angle/45.0):
+		5.0, 6.0:
+			movement_animation_player.play("WalkingUp")
+		3.0, 4.0:
+			movement_animation_player.play("WalkingLeft")
+		1.0, 2.0:
+			movement_animation_player.play("WalkingDown")
+		0.0, 7.0:
+			movement_animation_player.play("WalkingRight")
+
+func _process(delta: float) -> void:
+	update_movement()
 
 func _update_bar(diff: int):
-	$MobHealthBar.value = $Health.current_health
+	$MobHealthBar.value = health.current_health
 	
 	await get_tree().create_timer(0.5).timeout
-	$MobHealthBar/MobSecondaryHealthBar.value = $Health.current_health
+	$MobHealthBar/MobSecondaryHealthBar.value = health.current_health
 
 func _on_health_health_depleted() -> void:
 	Global.enemy_dead.emit(global_position)

@@ -2128,6 +2128,7 @@ z_index = 1
 y_sort_enabled = true
 collision_layer = 3
 platform_floor_layers = 4294967040
+safe_margin = 0.001
 script = ExtResource("1_8iasi")
 
 [node name="PlayerAnimationManager" type="Node2D" parent="."]
@@ -2158,7 +2159,6 @@ process_callback = 0
 position_smoothing_speed = 2.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="PlayerCamera"]
-visible = false
 script = ExtResource("13_gh78c")
 
 [node name="PauseMenu" parent="PlayerCamera/CanvasLayer" instance=ExtResource("15_n70cv")]
