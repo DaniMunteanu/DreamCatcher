@@ -2,12 +2,14 @@ class_name Enemy
 
 extends CharacterBody2D
 
+@onready var COFFEE_STAIN = preload("res://CoffeeGroundStain.tscn")
+
 @export var damage: int
 @onready var hurt_animation_player = $HurtAnimationPlayer
 @onready var movement_animation_player = $AnimationPlayer
 @onready var health = $Health
 
-@export var speed = 100
+@export var speed = 50
 
 func _ready() -> void:
 	$MobHealthBar.max_value = health.max_health
@@ -42,6 +44,19 @@ func update_movement():
 
 func _process(delta: float) -> void:
 	update_movement()
+
+func spawn_coffee_stain():
+	var coffee_stain_instance = COFFEE_STAIN.instantiate()
+	
+	#coffee_stain_instance.global_position = global_position
+	#Spawn in room, not enemy or room_enemies
+	var room_node = get_parent().get_parent()
+	var relative_spawn_global_position = $CoffeeStainSpawnPoint.global_position - room_node.global_position
+	
+	coffee_stain_instance.global_position = relative_spawn_global_position
+	
+	room_node.add_child(coffee_stain_instance)
+	coffee_stain_instance.set_owner(room_node)
 
 func _update_bar(diff: int):
 	$MobHealthBar.value = health.current_health

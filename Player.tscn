@@ -2222,6 +2222,10 @@ position = Vector2(-19, -19)
 visible = false
 position = Vector2(10, -19)
 
+[node name="SlowDebuffTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="received_damage" from="Hurtbox" to="PlayerHealth" method="_on_hurtbox_received_damage"]
 [connection signal="timeout" from="PlayerHealth/InvincibilityTimer" to="PlayerHealth" method="_on_invincibility_timer_timeout"]
 [connection signal="timeout" from="EvadeTimer" to="." method="_on_evade_timer_timeout"]
+[connection signal="timeout" from="SlowDebuffTimer" to="." method="_on_slow_debuff_timer_timeout"]

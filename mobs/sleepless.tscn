@@ -132,6 +132,54 @@ tracks/9/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Sleepless:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Hitbox:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-15, 23)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("CollisionShape2D:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 19)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Hurtbox:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-15, 23)]
+}
 
 [sub_resource type="Animation" id="Animation_ssynn"]
 resource_name = "WalkingDown"
@@ -232,6 +280,20 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [PackedVector2Array(22, -16, 25, -16, 25, -17, 27, -17, 27, -19, 26, -20, 23, -20, 22, -19), PackedVector2Array(27, -13, 27, -16, 26, -17, 24, -17, 23, -15, 23, -14, 24, -13)]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"spawn_coffee_stain"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_27prc"]
@@ -334,6 +396,20 @@ tracks/7/keys = {
 "update": 1,
 "values": [PackedVector2Array(9, -18, 12, -19, 12, -16, 9, -16), PackedVector2Array(10, -17, 10, -15, 13, -15, 14, -16, 14, -17, 13, -18, 11, -18)]
 }
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"spawn_coffee_stain"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_q4hqp"]
 resource_name = "WalkingRight"
@@ -434,6 +510,20 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [PackedVector2Array(21, -22, 25, -22, 25, -21, 21, -21), PackedVector2Array(21, -18, 23, -18, 24, -17, 24, -14, 22, -14, 21, -15)]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"spawn_coffee_stain"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_7uf5u"]
@@ -536,6 +626,20 @@ tracks/7/keys = {
 "update": 1,
 "values": [PackedVector2Array(22, -19, 26, -19, 26, -17, 25, -16, 23, -16, 22, -17), PackedVector2Array(22, -18, 23, -18, 26, -15, 26, -13, 25, -12, 23, -12, 22, -13)]
 }
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"spawn_coffee_stain"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w1c6b"]
 _data = {
@@ -585,7 +689,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_si12a"]
-size = Vector2(30, 4)
+size = Vector2(30, 8)
 
 [node name="Sleepless" type="CharacterBody2D"]
 z_index = 1
@@ -599,9 +703,10 @@ damage = 11
 [node name="MobHealthBar" type="TextureProgressBar" parent="."]
 z_index = 1
 y_sort_enabled = true
-offset_top = -53.0
-offset_right = 30.0
-offset_bottom = -48.0
+offset_left = -15.0
+offset_top = -30.0
+offset_right = 15.0
+offset_bottom = -25.0
 size_flags_horizontal = 4
 value = 20.0
 texture_progress = ExtResource("3_n3qj7")
@@ -610,7 +715,7 @@ texture_progress_offset = Vector2(1, 1)
 [node name="MobSecondaryHealthBar" type="TextureProgressBar" parent="MobHealthBar"]
 z_index = -1
 layout_mode = 0
-offset_right = 4.0
+offset_right = 30.0
 offset_bottom = 27.0
 value = 20.0
 texture_under = ExtResource("2_b00wq")
@@ -623,7 +728,6 @@ max_health = 10
 current_health = 10
 
 [node name="Sleepless" type="Sprite2D" parent="."]
-position = Vector2(15, -23)
 texture = ExtResource("2_4ou22")
 hframes = 2
 
@@ -638,8 +742,8 @@ libraries = {
 }
 
 [node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health")]
-visible = false
 y_sort_enabled = true
+position = Vector2(-15, 23)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("3_bnr8s")
@@ -651,6 +755,7 @@ polygon = PackedVector2Array(1, -17, 0, -18, 0, -24, 1, -25, 3, -25, 6, -23, 7, 
 
 [node name="Hitbox" type="Area2D" parent="."]
 y_sort_enabled = true
+position = Vector2(-15, 23)
 collision_layer = 0
 collision_mask = 16
 script = ExtResource("5_kf8ye")
@@ -662,8 +767,11 @@ polygon = PackedVector2Array(0, -24, 1, -25, 3, -25, 4, -24, 6, -22, 8, -22, 8, 
 polygon = PackedVector2Array(9, -18, 12, -19, 12, -16, 9, -16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(15, -2)
+position = Vector2(0, 19)
 shape = SubResource("RectangleShape2D_si12a")
+
+[node name="CoffeeStainSpawnPoint" type="Marker2D" parent="."]
+position = Vector2(0, 22)
 
 [connection signal="health_depleted" from="Health" to="." method="_on_health_health_depleted"]
 [connection signal="received_damage" from="Hurtbox" to="Health" method="_on_hurtbox_received_damage"]

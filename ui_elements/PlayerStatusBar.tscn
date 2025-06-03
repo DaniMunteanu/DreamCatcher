@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://iqvuhgs6fnod"]
+[gd_scene load_steps=16 format=3 uid="uid://iqvuhgs6fnod"]
 
 [ext_resource type="Script" path="res://ui_elements/player_status_bar.gd" id="1_4teh5"]
 [ext_resource type="Texture2D" uid="uid://bcot7526lqgqq" path="res://Sprites/SpritesUI/HealthbarCoffee.png" id="2_jrnho"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://upu3jtsni60s" path="res://Sprites/SpritesUI/Coin.png" id="7_4t2ap"]
 [ext_resource type="Texture2D" uid="uid://r6v4g81n208l" path="res://Sprites/SpritesUI/Feather.png" id="8_y0ndi"]
 [ext_resource type="Texture2D" uid="uid://d38gjhpxxeovt" path="res://Sprites/SpritesUI/Quartz.png" id="9_28dtx"]
+[ext_resource type="Texture2D" uid="uid://bq1037wl5y2tx" path="res://Sprites/SpritesUI/StaminaBarBlocker.png" id="9_o3axi"]
 
 [sub_resource type="Animation" id="Animation_po5fb"]
 resource_name = "HealthDepleted"
@@ -229,6 +230,14 @@ value = 100.0
 texture_progress = ExtResource("5_cgqxw")
 script = ExtResource("6_i7ust")
 metadata/_edit_use_anchors_ = true
+
+[node name="StaminaBarBlocker" type="TextureRect" parent="StaminaBar"]
+visible = false
+layout_mode = 0
+offset_right = 142.0
+offset_bottom = 3.0
+texture = ExtResource("9_o3axi")
+stretch_mode = 2
 
 [node name="Coin" type="TextureRect" parent="."]
 layout_mode = 1

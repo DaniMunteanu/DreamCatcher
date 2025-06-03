@@ -2,7 +2,9 @@ class_name Player
 
 extends CharacterBody2D
 
-var speed_multiplier = 30.0
+var current_speed_multiplier = 30.0
+var default_speed_multiplier = 30.0
+var slowed_speed_multiplier = 15.0
 
 @onready var animation_player = $PlayerAnimationManager/PlayerAnimation
 @onready var hurt_animation_player = $PlayerAnimationManager/HurtAnimationPlayer
@@ -15,9 +17,12 @@ var speed_multiplier = 30.0
 @onready var status_bar = $PlayerCamera/CanvasLayer/StatusBar 
 @onready var jump_marker = $JumpMarker
 @onready var evade_timer = $EvadeTimer
+@onready var slow_timer = $SlowDebuffTimer
+
 @onready var player_health = $PlayerHealth
 
-@export var evadeReady = true
+@export var evade_ready = true
+@export var evade_restricted = false
 var jump_speed = 200.0
 
 const SHOP = preload("res://ui_elements/Shop.tscn")
@@ -89,7 +94,7 @@ func load_player_data():
 	Global.player_quartz = player_data.player_quartz
 	
 	#Reset jump cooldown if jump was not ready before saving
-	if evadeReady == false:
+	if evade_ready == false:
 		jump_marker.visible = false
 		evade_timer.start(player_data.evade_cooldown_left)
 		status_bar.get_node("StaminaBar").start_point = 5 - player_data.evade_cooldown_left
@@ -100,7 +105,6 @@ func load_player_data():
 	status_bar.refresh()
 
 func _ready() -> void:
-	
 	Global.open_shop.connect(_on_open_shop)
 	Global.close_shop.connect(_on_close_shop)
 	Global.boss_summoned.connect(_on_boss_summoned)
@@ -108,6 +112,7 @@ func _ready() -> void:
 	opened_shop.character = self
 	portal1.fire_timer = (2.0 - (0.2 * Global.player_fire_rate)) / 2.0 
 	portal2.fire_timer = 0.0
+	slow_timer.start(2)
 	
 func _on_boss_summoned():
 	var boss = get_parent().placed_rooms[0].boss_instance
@@ -128,25 +133,34 @@ func _on_close_shop():
 	current_state = player_states.MOVE
 	
 func _on_evade_timer_timeout() -> void:
-	evadeReady = true
+	evade_ready = true
 	jump_marker.visible = true
 	status_bar.get_node("StaminaBar").start_point = 0.0
 	evade_timer.wait_time = 5
 
+func apply_slow_debuff():
+	current_speed_multiplier = slowed_speed_multiplier
+	evade_restricted = true
+	slow_timer.start(2)
+	
+func _on_slow_debuff_timer_timeout() -> void:
+	current_speed_multiplier = default_speed_multiplier
+	evade_restricted = false
+
 func update_movement():
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	direction = direction.normalized()
-	velocity = direction * (speed_multiplier * Global.player_speed)
+	velocity = direction * (current_speed_multiplier * Global.player_speed)
 	move_and_slide()
 	Global.player_current_position = global_position
 	
 func update_sprite():
-	if Input.is_action_pressed("evade") and evadeReady:
+	if Input.is_action_pressed("evade") and evade_ready and evade_restricted == false:
 		jumping_target_position = global_position.move_toward(get_global_mouse_position(), jumping_distance)
 		jumping_direction = global_position.direction_to(jumping_target_position).normalized()
 	
 		set_collision_layer_value(2,false)
-		evadeReady = false
+		evade_ready = false
 		evade_timer.start()
 		current_state = player_states.JUMP
 		
@@ -191,12 +205,12 @@ func jump(delta):
 	move_and_slide()
 	
 func fire(delta):
-	if Input.is_action_pressed("evade") :
+	if Input.is_action_pressed("evade") and evade_restricted == false:
 		jumping_target_position = global_position.move_toward(get_global_mouse_position(), jumping_distance)
 		jumping_direction = global_position.direction_to(jumping_target_position).normalized()
 		
 		set_collision_layer_value(2,false)
-		evadeReady = false
+		evade_ready = false
 		evade_timer.start()
 		current_state = player_states.JUMP
 	
