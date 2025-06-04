@@ -4,6 +4,8 @@ extends Node2D
 
 @onready var SHOPKEEPER = preload("res://Smeet.tscn")
 
+@onready var fog_layer = get_node("FogLayer")
+
 @export var room_index = 0
 @export var neighbour_rooms = []
 @export var available_rooms = []
@@ -13,6 +15,7 @@ extends Node2D
 @export var potential_doors = []
 
 @export var is_ongoing_encounter = false
+@export var is_shop_room = false
 
 var enemies
 var room_data_save_file_path
@@ -51,6 +54,12 @@ func spawn_shop():
 	shopkeeper_instance.position = $ShopSpawnMarker.position
 	add_child(shopkeeper_instance)
 	shopkeeper_instance.set_owner(self)
+	
+func place_fog():
+	fog_layer.visible = true
+	
+func clear_fog():
+	fog_layer.visible = false
 
 func open_room(placed_doors_or_walls: Array, placed_doors_indexes: Array):
 	for i in potential_doors:
@@ -65,6 +74,9 @@ func close_room(placed_doors_or_walls: Array, placed_doors_indexes: Array):
 			placed_doors_or_walls[i].close_door()
 	place_enemies()
 	is_ongoing_encounter = true
+	
+	if is_shop_room:
+		call_deferred("spawn_shop")
 	
 func _on_enemies_defeated() -> void:
 	Global.clear_room.emit(room_index)

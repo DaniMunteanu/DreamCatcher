@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var drop_res = preload("res://MobDrop.tscn")
 
-const MINIMUM_ROOMS = 5
+const MINIMUM_ROOMS = 26
 
 var rooms_res = []
 var room_fills_res = []
@@ -310,7 +310,7 @@ func generate_rooms():
 			extendable_rooms.append(next_room)
 	
 	var shop_room_index = potential_shop_spawn_rooms.pick_random()
-	placed_rooms[shop_room_index].spawn_shop()
+	placed_rooms[shop_room_index].is_shop_room = true
 	Global.shop_room_picked.emit(shop_room_index)
 	
 func generate_doors_and_walls():
@@ -345,17 +345,21 @@ func generate_floor():
 	generate_room_fills()
 	Global.floor_generated.emit()
 	placed_rooms[0].open_room(placed_doors_or_walls, placed_doors_indexes)
-	_on_room_entered(0)
+	Global.room_entered.emit(0,0)
 	
 func _on_room_cleared(room_index: int):
 	placed_rooms[room_index].open_room(placed_doors_or_walls, placed_doors_indexes)
 	
-func _on_room_entered(room_index: int):
+func _on_room_entered(entered_room_index: int, left_room_index: int):
 	$Player.camera.position_smoothing_enabled = true
 	$Player.camera.position_smoothing_speed = 2.0
-	Global.minimap_room_entered.emit(room_index, placed_rooms[room_index].neighbour_rooms)
-	if placed_rooms[room_index].room_cleared == false:
-		placed_rooms[room_index].close_room(placed_doors_or_walls, placed_doors_indexes)
+	Global.minimap_room_entered.emit(entered_room_index, placed_rooms[entered_room_index].neighbour_rooms)
+	if placed_rooms[entered_room_index].room_cleared == false:
+		placed_rooms[entered_room_index].close_room(placed_doors_or_walls, placed_doors_indexes)
+	
+	placed_rooms[entered_room_index].clear_fog()
+	if entered_room_index != left_room_index:
+		placed_rooms[left_room_index].place_fog()
 		
 	#Camera smoothing doar in timpul tranzitiei dintre camere
 	await get_tree().create_timer(0.1).timeout

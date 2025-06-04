@@ -18,7 +18,7 @@ var player_current_position = Vector2(0,0)
 enum loot_types {COIN, FEATHER, QUARTZ}
 
 signal clear_room(room_index: int)
-signal room_entered(room_index: int)
+signal room_entered(entered_room_index: int, left_room_index: int)
 signal enemy_dead(enemy_death_position: Vector2)
 
 signal shop_room_picked(room_index: int)

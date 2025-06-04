@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://btujbbk36iulp"]
+[gd_scene load_steps=12 format=3 uid="uid://btujbbk36iulp"]
 
 [ext_resource type="Script" path="res://doors/door_right_top.gd" id="1_kkjg5"]
 [ext_resource type="Texture2D" uid="uid://c8kjvik1aivx1" path="res://Sprites/Doors/DoorRightTop.png" id="1_rqelr"]
+[ext_resource type="Texture2D" uid="uid://btmcpg8ub7k5s" path="res://Sprites/Doors/DoorRightFog.png" id="3_fvfe0"]
 
 [sub_resource type="Animation" id="Animation_re08b"]
 resource_name = "Close"
@@ -216,6 +217,13 @@ script = ExtResource("1_kkjg5")
 position = Vector2(28, 50)
 texture = ExtResource("1_rqelr")
 hframes = 4
+
+[node name="DoorFog" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.4)
+z_index = 2
+position = Vector2(28, 50)
+texture = ExtResource("3_fvfe0")
+hframes = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
