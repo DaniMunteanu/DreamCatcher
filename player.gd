@@ -18,7 +18,7 @@ var slowed_speed_multiplier = 15.0
 @onready var jump_marker = $JumpMarker
 @onready var evade_timer = $EvadeTimer
 @onready var slow_timer = $SlowDebuffTimer
-
+@onready var hurtbox = $Hurtbox
 @onready var player_health = $PlayerHealth
 
 @export var evade_ready = true
@@ -139,11 +139,13 @@ func _on_evade_timer_timeout() -> void:
 	evade_timer.wait_time = 5
 
 func apply_slow_debuff():
+	sprite.modulate = Color(0.696, 0.696, 0.696)
 	current_speed_multiplier = slowed_speed_multiplier
 	evade_restricted = true
 	slow_timer.start(2)
 	
 func _on_slow_debuff_timer_timeout() -> void:
+	sprite.modulate = Color(1, 1, 1)
 	current_speed_multiplier = default_speed_multiplier
 	evade_restricted = false
 
@@ -159,7 +161,9 @@ func update_sprite():
 		jumping_target_position = global_position.move_toward(get_global_mouse_position(), jumping_distance)
 		jumping_direction = global_position.direction_to(jumping_target_position).normalized()
 	
+		hurtbox.set_collision_layer_value(5,false)
 		set_collision_layer_value(2,false)
+		set_collision_layer_value(6,false)
 		evade_ready = false
 		evade_timer.start()
 		current_state = player_states.JUMP
@@ -209,7 +213,9 @@ func fire(delta):
 		jumping_target_position = global_position.move_toward(get_global_mouse_position(), jumping_distance)
 		jumping_direction = global_position.direction_to(jumping_target_position).normalized()
 		
+		hurtbox.set_collision_layer_value(5,false)
 		set_collision_layer_value(2,false)
+		set_collision_layer_value(6,false)
 		evade_ready = false
 		evade_timer.start()
 		current_state = player_states.JUMP
@@ -246,7 +252,9 @@ func fire(delta):
 		on_states_reset()
 		
 func on_states_reset():
+	hurtbox.set_collision_layer_value(5,true)
 	set_collision_layer_value(2,true)
+	set_collision_layer_value(6,true)
 	current_state = player_states.MOVE
 	
 func set_to_cutscene():

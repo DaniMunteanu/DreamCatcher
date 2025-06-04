@@ -56,7 +56,11 @@ func spawn_coffee_stain():
 	coffee_stain_instance.global_position = relative_spawn_global_position
 	
 	room_node.add_child(coffee_stain_instance)
-	coffee_stain_instance.set_owner(room_node)
+	
+	#I tried to make coffee stains persist after loading, but it leads to an error
+	#("signal body_entered is already connected to callable...")
+	
+	#coffee_stain_instance.set_owner(room_node)
 
 func _update_bar(diff: int):
 	$MobHealthBar.value = health.current_health

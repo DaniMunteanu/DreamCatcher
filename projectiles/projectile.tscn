@@ -6,7 +6,7 @@
 
 [node name="Projectile" type="Area2D"]
 top_level = true
-z_index = 1
+z_index = 2
 collision_mask = 0
 script = ExtResource("1_xuy4p")
 
