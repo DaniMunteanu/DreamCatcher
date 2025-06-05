@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var drop_res = preload("res://MobDrop.tscn")
 
-const MINIMUM_ROOMS = 26
+const MINIMUM_ROOMS = 5
 
 var rooms_res = []
 var room_fills_res = []

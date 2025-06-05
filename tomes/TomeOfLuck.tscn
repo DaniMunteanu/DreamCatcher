@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxqv30skp3t12"]
+
+[ext_resource type="Texture2D" uid="uid://dcjshggrwnorf" path="res://Sprites/Tomes/TomeOfLuck.png" id="1_d7i4f"]
+[ext_resource type="Script" path="res://tomes/tome_of_luck.gd" id="2_1vkkh"]
+
+[node name="TomeOfLuck" type="TextureRect"]
+anchors_preset = -1
+anchor_top = -0.417
+anchor_bottom = -0.417
+offset_top = 0.12001
+offset_right = 100.0
+offset_bottom = 150.12
+texture = ExtResource("1_d7i4f")
+stretch_mode = 2
+script = ExtResource("2_1vkkh")
+metadata/_edit_use_anchors_ = true

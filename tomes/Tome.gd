@@ -18,11 +18,11 @@ var position_down
 
 var tween = create_tween()
 
-var tome_index = 0
+@export var tome_index = 0
 
-var isPicked = false
+@export var isPicked = false
 
-var sold = false
+@export var sold = false
 	
 func _init() -> void:
 	z_index = 1

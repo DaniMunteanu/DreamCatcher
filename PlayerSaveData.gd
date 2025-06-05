@@ -15,3 +15,5 @@ class_name PlayerSaveData
 @export var evade_cooldown_left = 0.0
 
 @export var current_health = 0
+
+@export var shop : PackedScene

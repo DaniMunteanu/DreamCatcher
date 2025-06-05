@@ -34,6 +34,7 @@ func _on_start_new_game():
 	sub_viewport.add_child(current_floor)
 	current_floor.generate_floor()
 	current_floor.get_node("Player").reset_stats_and_resources()
+	current_floor.get_node("Player").create_shop()
 
 	if current_main_menu != null:
 		current_main_menu.queue_free()
@@ -81,7 +82,7 @@ func _on_load_saved_game():
 	current_floor.get_node("Player").pause_menu.game_started = true
 
 func _on_delete_current_game():
-	current_floor.get_node("Player").opened_shop.queue_free()
+	current_floor.get_node("Player").shop.queue_free()
 	current_floor.queue_free()
 	current_floor = null
 	

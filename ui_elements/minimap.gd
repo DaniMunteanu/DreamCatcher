@@ -100,3 +100,7 @@ func _ready() -> void:
 	Global.minimap_room_entered.connect(_on_minimap_room_entered)
 	Global.floor_generated.connect(reset)
 	Global.shop_room_picked.connect(_on_shop_room_picked)
+	
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("toggle_minimap"): 
+		visible = !visible

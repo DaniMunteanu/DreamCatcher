@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d121kb0a4mcwv"]
+
+[ext_resource type="Script" path="res://tomes/tome_of_fire_rate.gd" id="1_dr655"]
+[ext_resource type="Texture2D" uid="uid://rpon3bi6uyiy" path="res://Sprites/Tomes/TomeOfFireRate.png" id="1_khs8c"]
+
+[node name="TomeOfFireRate" type="TextureRect"]
+anchors_preset = -1
+anchor_top = -0.417
+anchor_bottom = -0.417
+offset_top = 0.12001
+offset_right = 100.0
+offset_bottom = 150.12
+texture = ExtResource("1_khs8c")
+stretch_mode = 2
+script = ExtResource("1_dr655")

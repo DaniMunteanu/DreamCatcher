@@ -26,7 +26,7 @@ var slowed_speed_multiplier = 15.0
 var jump_speed = 200.0
 
 const SHOP = preload("res://ui_elements/Shop.tscn")
-@onready var opened_shop = SHOP.instantiate()
+var shop
 
 const PAUSE_MENU = preload("res://ui_elements/PauseMenu.tscn")
 
@@ -77,6 +77,11 @@ func save_player_data():
 	
 	player_data.current_health = player_health.current_health
 	
+	var packed_shop = PackedScene.new()
+	shop.save_shop()
+	packed_shop.pack(shop)
+	player_data.shop = packed_shop
+	
 	ResourceSaver.save(player_data, player_save_file_path)
 	
 func load_player_data():
@@ -103,13 +108,17 @@ func load_player_data():
 	
 	#Refresh status bar
 	status_bar.refresh()
+	
+	shop = player_data.shop.instantiate()
+	shop.load_shop()
+	shop.character = self
 
 func _ready() -> void:
 	Global.open_shop.connect(_on_open_shop)
 	Global.close_shop.connect(_on_close_shop)
 	Global.boss_summoned.connect(_on_boss_summoned)
 	Global.boss_defeated.connect(_on_boss_defeated)
-	opened_shop.character = self
+	
 	portal1.fire_timer = (2.0 - (0.2 * Global.player_fire_rate)) / 2.0 
 	portal2.fire_timer = 0.0
 	slow_timer.start(2)
@@ -123,13 +132,18 @@ func _on_boss_summoned():
 func _on_boss_defeated():
 	boss_hp_bar_instance.queue_free()
 	
+func create_shop():
+	shop = SHOP.instantiate()
+	shop.place_tomes()
+	shop.character = self
+
 func _on_open_shop():
-	canvas_layer.add_child(opened_shop)
-	opened_shop.update()
+	canvas_layer.add_child(shop)
+	shop.update()
 	current_state = player_states.SHOP
 	
 func _on_close_shop():
-	canvas_layer.remove_child(opened_shop)
+	canvas_layer.remove_child(shop)
 	current_state = player_states.MOVE
 	
 func _on_evade_timer_timeout() -> void:

@@ -6,17 +6,46 @@ var tomes_res = []
 var offered_tomes = []
 var picked_tome_index = 0
 
+var shop_save_file_path = "user://ShopSaveData.tres"
+
+func save_shop():
+	var shop_data = ShopSaveData.new()
+	shop_data.tome_array.resize(3)
+	
+	for i in 3:
+		var packed_tome = PackedScene.new()
+		packed_tome.pack(offered_tomes[i])
+		shop_data.tome_array[i] = packed_tome
+		
+	ResourceSaver.save(shop_data, shop_save_file_path)
+	
+func load_shop():
+	var shop_data = ResourceLoader.load(shop_save_file_path) as ShopSaveData
+	
+	offered_tomes.resize(3)
+	
+	for i in 3:
+		offered_tomes[i] = shop_data.tome_array[i].instantiate()
+		add_child(offered_tomes[i])
+
 func initialize_tomes_resorces():
-	tomes_res.resize(3)
+	tomes_res.resize(5)
 	tomes_res[0] = preload("res://tomes/TomeOfDamage.tscn")
 	tomes_res[1] = preload("res://tomes/TomeOfDefense.tscn")
 	tomes_res[2] = preload("res://tomes/TomeOfShotSpeed.tscn")
+	tomes_res[3] = preload("res://tomes/TomeOfLuck.tscn")
+	tomes_res[4] = preload("res://tomes/TomeOfFireRate.tscn")
 	
 func place_tomes():
+	initialize_tomes_resorces()
+	
 	offered_tomes.resize(3)
-	offered_tomes[0] = tomes_res[0].instantiate()
-	offered_tomes[1] = tomes_res[1].instantiate()
-	offered_tomes[2] = tomes_res[2].instantiate()
+	
+	var available_tome_indexes = [0,1,2,3,4]
+	for i in 3:
+		var chosen_tome_index = available_tome_indexes.pick_random()
+		offered_tomes[i] = tomes_res[chosen_tome_index].instantiate()
+		available_tome_indexes.erase(chosen_tome_index)
 	
 	offered_tomes[0].global_position = %TomeMarker0.global_position
 	offered_tomes[1].global_position = %TomeMarker1.global_position
@@ -92,8 +121,7 @@ func _on_tome_selected(index: int):
 func _ready() -> void:
 	Global.tome_selected.connect(_on_tome_selected)
 	Global.check_funds.connect(_on_check_funds)
-	initialize_tomes_resorces()
-	place_tomes()
+	#place_tomes()
 	
 func _on_check_funds():
 	$BuyItemButton.disabled = false
