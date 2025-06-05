@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var drop_res = preload("res://MobDrop.tscn")
 
-const MINIMUM_ROOMS = 5
+const MINIMUM_ROOMS = 20
 
 var rooms_res = []
 var room_fills_res = []
@@ -57,7 +57,7 @@ func load_floor():
 		if placed_rooms[i].has_method("load_room"):
 			placed_rooms[i].load_room()
 			
-	if placed_rooms[0].boss_instance != null:
+	if placed_rooms[0].is_ongoing_boss_fight:
 		placed_rooms[0].instant_raise_walls()
 		Global.boss_summoned.emit()
 		

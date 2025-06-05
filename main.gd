@@ -20,10 +20,7 @@ func _ready() -> void:
 	Global.save_game.connect(_on_save_game)
 	Global.load_saved_game.connect(_on_load_saved_game)
 	Global.open_main_menu.connect(_on_open_main_menu)
-	
-	if FileAccess.file_exists("user://SavedFloor.tscn") == false:
-		current_main_menu.resume_game_button.disabled = true
-		
+
 func _on_start_new_game():
 	DirAccess.remove_absolute("user://SavedFloor.tscn")
 	current_floor = FLOOR.instantiate()
@@ -90,6 +87,7 @@ func _on_game_victory():
 	TransitionScreen.transition_black()
 	await TransitionScreen.on_transition_finished
 	_on_delete_current_game()
+	DirAccess.remove_absolute("user://SavedFloor.tscn")
 	current_victory_menu = VICTORY_MENU.instantiate()
 	$CanvasLayer.add_child(current_victory_menu)
 	TransitionScreen.ready_for_fade_out.emit()
@@ -98,6 +96,7 @@ func _on_game_over():
 	TransitionScreen.transition_black()
 	await TransitionScreen.on_transition_finished
 	_on_delete_current_game()
+	DirAccess.remove_absolute("user://SavedFloor.tscn")
 	current_game_over_menu = GAME_OVER_MENU.instantiate()
 	$CanvasLayer.add_child(current_game_over_menu)
 	TransitionScreen.ready_for_fade_out.emit()

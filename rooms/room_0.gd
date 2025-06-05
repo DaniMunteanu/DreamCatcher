@@ -7,6 +7,8 @@ extends FloorRoom
 var movable_walls = []
 var boss_instance
 
+@export var is_ongoing_boss_fight = false
+
 func initialize_movable_walls():
 	movable_walls.resize(18)
 	for i in 18:
@@ -30,6 +32,7 @@ func _on_boss_summon_circle_summoning_complete() -> void:
 	boss_instance = BOSS.instantiate()
 	boss_instance.global_position = $BossSpawnPoint.position
 	add_child(boss_instance)
+	is_ongoing_boss_fight = true
 	boss_instance.set_owner(self)
 	boss_instance.lower_walls.connect(_on_tothermos_lower_walls)
 	Global.boss_summoned.emit()
@@ -37,6 +40,7 @@ func _on_boss_summon_circle_summoning_complete() -> void:
 func _on_boss_defeated() -> void:
 	await TransitionScreen.on_transition_finished
 	boss_instance.queue_free()
+	is_ongoing_boss_fight = false
 	var floor_exit_instance = FLOOR_EXIT.instantiate()
 	floor_exit_instance.global_position = $BossSpawnPoint.position
 	add_child(floor_exit_instance)

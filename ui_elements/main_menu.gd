@@ -7,6 +7,8 @@ extends Control
 func _ready() -> void:
 	animation_player.play("MainMenu")
 	title_animation_player.play("TitleFloat")
+	if FileAccess.file_exists("user://SavedFloor.tscn") == false:
+		resume_game_button.disabled = true
 
 func _on_exit_to_desktop_button_pressed() -> void:
 	get_tree().quit()
