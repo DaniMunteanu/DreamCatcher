@@ -7,6 +7,11 @@ extends StaticBody2D
 
 @onready var hurt_animation_player = $HurtAnimationPlayer
 
+@onready var audio_player = $AudioStreamPlayer2D
+var projectile_hit = "res://sound_effects/PlayerProjectileHit.wav"
+var boss_dead = "res://sound_effects/BossDead.wav"
+var room_rumble = "res://sound_effects/RoomRumble.wav"
+
 signal lower_walls
 signal attack_over
 
@@ -124,6 +129,7 @@ func begin_attack():
 		bullet_lines[spot].visible = true
 
 func _ready() -> void:
+	BackgroundMusic.play_audio(BackgroundMusic.boss_audio)
 	init_variables()
 	cooldown_timer.start(3)
 
@@ -143,8 +149,11 @@ func send_lower_walls_signal():
 func boss_death_cutscene_finished():
 	TransitionScreen.transition_white()
 	Global.boss_defeated.emit()
+	BackgroundMusic.play_audio(BackgroundMusic.floor_audio)
 	
 func _on_health_health_depleted() -> void:
+	audio_player.stream = load(boss_dead)
+	audio_player.play()
 	cooldown_timer.stop()
 	for bullet in $Bullets.get_children():
 		bullet.queue_free()
@@ -155,4 +164,11 @@ func _on_health_health_depleted() -> void:
 	player.get_node("PlayerCamera").position_smoothing_speed = 2.0
 	player.get_node("PlayerCamera").global_position = self.global_position
 	boss_animation_player.play("Dead")
+	audio_player.stream = load(room_rumble)
+	audio_player.play()
 	lower_walls.emit()
+	BackgroundMusic.gradual_volume_down(3)
+
+func _on_health_health_changed(diff: int) -> void:
+	audio_player.stream = load(projectile_hit)
+	audio_player.play()

@@ -23,6 +23,8 @@ func _on_mouse_exited() -> void:
 	Global.buy_health_hover_end.emit()
 	
 func _on_pressed() -> void:
+	get_parent().audio_player.play()
+	
 	Global.health_bought.emit(15)
 	Global.loot_spent.emit(Global.loot_types.COIN, 50)
 	Global.check_funds.emit()

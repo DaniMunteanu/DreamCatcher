@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var drop_res = preload("res://MobDrop.tscn")
 
-const MINIMUM_ROOMS = 20
+const MINIMUM_ROOMS = 10
 
 var rooms_res = []
 var room_fills_res = []
@@ -271,6 +271,8 @@ func _ready():
 	Global.unpause_game.connect(_on_unpause_game)
 	
 	TransitionScreen.ready_for_fade_out.emit()
+	
+	BackgroundMusic.play_audio(BackgroundMusic.floor_audio)
 	
 func reset():
 	for i in 31:

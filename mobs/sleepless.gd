@@ -11,6 +11,12 @@ extends CharacterBody2D
 
 @export var speed = 50
 
+@onready var audio_player = $AudioStreamPlayer2D
+var projectile_hit = "res://sound_effects/PlayerProjectileHit.wav"
+var sleepless = "res://sound_effects/Sleepless.wav"
+
+var rng = RandomNumberGenerator.new()
+
 func _ready() -> void:
 	$MobHealthBar.max_value = health.max_health
 	$MobHealthBar.value = health.current_health
@@ -41,9 +47,17 @@ func update_movement():
 			movement_animation_player.play("WalkingDown")
 		0.0, 7.0:
 			movement_animation_player.play("WalkingRight")
+			
+	random_sound()
 
 func _process(delta: float) -> void:
 	update_movement()
+
+func random_sound():
+	var picked_number = rng.randi_range(1,200)
+	if picked_number == 6:
+		audio_player.stream = load(sleepless)
+		audio_player.play()
 
 func spawn_coffee_stain():
 	var coffee_stain_instance = COFFEE_STAIN.instantiate()
@@ -63,6 +77,9 @@ func spawn_coffee_stain():
 	#coffee_stain_instance.set_owner(room_node)
 
 func _update_bar(diff: int):
+	audio_player.stream = load(projectile_hit)
+	audio_player.play()
+	
 	$MobHealthBar.value = health.current_health
 	
 	await get_tree().create_timer(0.5).timeout

@@ -15,6 +15,7 @@ func exit_floor():
 	$FloorExitSprite.frame = 1
 	TransitionScreen.ready_for_fade_out.emit()
 	$AnimationPlayer.play("ExitCutscene")
+	BackgroundMusic.play_audio(BackgroundMusic.victory_audio)
 	
 func send_victory_signal():
 	Global.game_victory.emit()

@@ -15,6 +15,8 @@ var coin_color = Color(0.988, 1, 0.192, 1)
 var feather_color = Color(0.271, 0.196, 0.055)
 var quartz_color = Color(0.855, 0.475, 0.882, 1)
 
+@onready var audio_player = $AudioStreamPlayer2D
+
 func pick_drop():
 	var rng = RandomNumberGenerator.new()
 	var picked_number = rng.randi_range(1,100)
@@ -39,6 +41,7 @@ func pick_drop():
 func _ready() -> void:
 	is_moving = true
 	$DropTrail.default_color = picked_loot_color
+	audio_player.play()
 
 func _physics_process(delta):
 	if is_moving:

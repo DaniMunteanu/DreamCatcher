@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Global="*res://Global.gd"
 TransitionScreen="*res://TransitionScreen.tscn"
+BackgroundMusic="*res://BackgroundMusic.tscn"
 
 [display]
 

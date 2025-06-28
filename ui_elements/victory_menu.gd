@@ -32,6 +32,7 @@ func _on_exit_to_main_menu_button_pressed() -> void:
 	title_sprite.visible = false
 	
 	animation_player.play("FallingToMainMenu")
+	BackgroundMusic.gradual_volume_down(1)
 	
 func open_main_menu():
 	Global.open_main_menu.emit()

@@ -114,9 +114,30 @@ tracks/4/path = NodePath(".")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(12.5, 16),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(3.25, 4.25, 5.25, 6.25, 7.25, 8.25, 9.25, 12.5, 16),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "values": [{
+"args": [],
+"method": &"play_summoning_sound"
+}, {
+"args": [],
+"method": &"play_summoning_sound"
+}, {
+"args": [],
+"method": &"play_summoning_sound"
+}, {
+"args": [],
+"method": &"play_summoning_sound"
+}, {
+"args": [],
+"method": &"play_summoning_sound"
+}, {
+"args": [],
+"method": &"play_summoning_sound"
+}, {
+"args": [],
+"method": &"play_summoning_sound"
+}, {
 "args": [],
 "method": &"send_raise_walls_signal"
 }, {
@@ -162,3 +183,5 @@ position = Vector2(72, 48)
 
 [node name="CameraCutscenePosition" type="Marker2D" parent="."]
 position = Vector2(72, -72)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

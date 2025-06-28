@@ -2,6 +2,8 @@ class_name FloorRoom
 
 extends Node2D
 
+var enemies
+
 @onready var SHOPKEEPER = preload("res://Smeet.tscn")
 
 @onready var fog_layer = get_node("FogLayer")
@@ -17,7 +19,6 @@ extends Node2D
 @export var is_ongoing_encounter = false
 @export var is_shop_room = false
 
-var enemies
 var room_data_save_file_path
 
 func _ready() -> void:
@@ -47,7 +48,7 @@ func load_room():
 		enemies = room_data.room_enemies.instantiate()
 		enemies.connect("enemies_defeated",_on_enemies_defeated)
 		if is_ongoing_encounter == true:
-			place_enemies()
+			call_deferred("add_child",enemies)
 			
 func spawn_shop():
 	var shopkeeper_instance = SHOPKEEPER.instantiate()
@@ -72,7 +73,7 @@ func close_room(placed_doors_or_walls: Array, placed_doors_indexes: Array):
 	for i in potential_doors:
 		if i in placed_doors_indexes:
 			placed_doors_or_walls[i].close_door()
-	place_enemies()
+	call_deferred("add_child",enemies)
 	is_ongoing_encounter = true
 	
 	if is_shop_room:
@@ -80,9 +81,6 @@ func close_room(placed_doors_or_walls: Array, placed_doors_indexes: Array):
 	
 func _on_enemies_defeated() -> void:
 	Global.clear_room.emit(room_index)
-	
-func place_enemies():
-	call_deferred("add_child",enemies)
 
 func next_room() -> int:
 	var picked_room = available_rooms.pick_random()

@@ -708,8 +708,8 @@ one_shot = true
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("3_y8ty5")
-max_health = 200
-current_health = 200
+max_health = 500
+current_health = 500
 
 [node name="Hurtbox" type="Area2D" parent="."]
 collision_layer = 4
@@ -727,6 +727,9 @@ libraries = {
 [node name="Bullets" type="Node2D" parent="."]
 y_sort_enabled = true
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="timeout" from="AttackCooldownTimer" to="." method="_on_attack_cooldown_timer_timeout"]
+[connection signal="health_changed" from="Health" to="." method="_on_health_health_changed"]
 [connection signal="health_depleted" from="Health" to="." method="_on_health_health_depleted"]
 [connection signal="received_damage" from="Hurtbox" to="Health" method="_on_hurtbox_received_damage"]

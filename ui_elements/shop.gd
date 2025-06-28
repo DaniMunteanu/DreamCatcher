@@ -2,6 +2,8 @@ extends Control
 
 var character: CharacterBody2D
 
+@onready var audio_player = $AudioStreamPlayer
+
 var tomes_res = []
 var offered_tomes = []
 var picked_tome_index = 0
@@ -136,6 +138,8 @@ func _on_check_funds():
 		$BuyItemButton.disabled = true
 
 func _on_buy_item_button_pressed() -> void:
+	audio_player.play()
+	
 	offered_tomes[picked_tome_index].sold = true
 	
 	Global.player_damage = Global.player_damage + offered_tomes[picked_tome_index].damage_bonus

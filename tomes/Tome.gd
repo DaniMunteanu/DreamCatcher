@@ -13,6 +13,8 @@ var coin_cost = 0
 var feather_cost = 0
 var quartz_cost = 0
 
+@export var sold = false
+
 var position_up
 var position_down
 
@@ -22,7 +24,6 @@ var tween = create_tween()
 
 @export var isPicked = false
 
-@export var sold = false
 	
 func _init() -> void:
 	z_index = 1

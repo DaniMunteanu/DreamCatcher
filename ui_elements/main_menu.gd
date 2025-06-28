@@ -5,6 +5,7 @@ extends Control
 @onready var resume_game_button = get_node("AspectRatioContainer/Screen/ResumeGameButton")
 
 func _ready() -> void:
+	BackgroundMusic.play_audio(BackgroundMusic.main_menu_audio)
 	animation_player.play("MainMenu")
 	title_animation_player.play("TitleFloat")
 	if FileAccess.file_exists("user://SavedFloor.tscn") == false:

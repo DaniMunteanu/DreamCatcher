@@ -14,6 +14,7 @@ func _ready() -> void:
 	exit_to_main_menu_button.visible = false
 	
 	animation_player.play("FallingAsleep")
+	BackgroundMusic.play_audio(BackgroundMusic.game_over_audio)
 
 func _on_start_new_game_button_pressed() -> void:
 	Global.create_new_game.emit()

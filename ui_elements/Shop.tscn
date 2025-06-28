@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://8fdhxwi6j3gh"]
+[gd_scene load_steps=40 format=3 uid="uid://8fdhxwi6j3gh"]
 
 [ext_resource type="Texture2D" uid="uid://8mbbbeqtxyti" path="res://Sprites/SpritesUI/ShopBackground.png" id="1_ryky3"]
 [ext_resource type="Script" path="res://ui_elements/shop.gd" id="1_ttsqo"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" path="res://ui_elements/luck_bar.gd" id="11_gb7j6"]
 [ext_resource type="Script" path="res://ui_elements/buy_health_button.gd" id="16_nywqc"]
 [ext_resource type="Script" path="res://ui_elements/exit_shop_button.gd" id="19_i2tr8"]
+[ext_resource type="AudioStream" uid="uid://tkqlekre6qss" path="res://sound_effects/Purchase.wav" id="20_1dis5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gxrj1"]
 font_size = 10
@@ -649,6 +650,9 @@ position = Vector2(398.456, 251.576)
 [node name="TomeMarker2" type="Marker2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(504.655, 250.814)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_1dis5")
 
 [connection signal="pressed" from="BuyItemButton" to="." method="_on_buy_item_button_pressed"]
 [connection signal="mouse_entered" from="BuyHealthButton" to="BuyHealthButton" method="_on_mouse_entered"]

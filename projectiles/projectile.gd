@@ -5,6 +5,11 @@ extends Area2D
 var shot_speed_multiplier = 30
 var direction = Vector2()
 
+@onready var audio_player = $AudioStreamPlayer2D
+
+func _ready() -> void:
+	audio_player.play()
+
 func _physics_process(delta):
 	global_position += direction * delta * (shot_speed_multiplier * Global.player_shot_speed)
 	

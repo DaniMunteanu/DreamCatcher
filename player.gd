@@ -20,6 +20,11 @@ var slowed_speed_multiplier = 15.0
 @onready var slow_timer = $SlowDebuffTimer
 @onready var hurtbox = $Hurtbox
 @onready var player_health = $PlayerHealth
+@onready var audio_player = $AudioStreamPlayer2D
+
+var player_hit = "res://sound_effects/PlayerHit.wav"
+var player_jump = "res://sound_effects/PlayerJump.wav"
+var stamina_restored = "res://sound_effects/StaminaRestored.wav"
 
 @export var evade_ready = true
 @export var evade_restricted = false
@@ -147,6 +152,9 @@ func _on_close_shop():
 	current_state = player_states.MOVE
 	
 func _on_evade_timer_timeout() -> void:
+	audio_player.stream = load(stamina_restored)
+	audio_player.play()
+	
 	evade_ready = true
 	jump_marker.visible = true
 	status_bar.get_node("StaminaBar").start_point = 0.0
@@ -180,6 +188,10 @@ func update_sprite():
 		set_collision_layer_value(6,false)
 		evade_ready = false
 		evade_timer.start()
+		
+		audio_player.stream = load(player_jump)
+		audio_player.play()
+		
 		current_state = player_states.JUMP
 		
 	if Input.is_action_pressed("fire"):
@@ -232,6 +244,10 @@ func fire(delta):
 		set_collision_layer_value(6,false)
 		evade_ready = false
 		evade_timer.start()
+		
+		audio_player.stream = load(player_jump)
+		audio_player.play()
+		
 		current_state = player_states.JUMP
 	
 	portal1.fire(delta)
@@ -277,6 +293,10 @@ func set_to_cutscene():
 func set_to_dead():
 	current_state = player_states.DEAD
 
+func play_hurt_sound():
+	audio_player.stream = load(player_hit)
+	audio_player.play()
+
 func _physics_process(delta):
 	match current_state:
 		player_states.MOVE:
@@ -303,3 +323,4 @@ func _physics_process(delta):
 			jump_marker.visible = false
 			animation_player.play("PlayerDead")
 			hurt_animation_player.play("RESET")
+			BackgroundMusic.gradual_volume_down(3)

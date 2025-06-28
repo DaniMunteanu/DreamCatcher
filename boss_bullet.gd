@@ -7,7 +7,10 @@ var end_point = Vector2()
 
 @export var damage: int
 
+@onready var audio_player = $AudioStreamPlayer2D
+
 func _ready() -> void:
+	audio_player.play()
 	$AnimationPlayer.play("Fired")
 
 func _physics_process(delta):
