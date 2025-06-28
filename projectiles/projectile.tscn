@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://projectiles/projectile.gd" id="1_xuy4p"]
 [ext_resource type="Texture2D" uid="uid://3rr3j1mkjlxf" path="res://Sprites/DefaultWeaponProjectile.png" id="2_lv6nq"]
 [ext_resource type="Script" path="res://Hitbox.gd" id="3_0uxg3"]
-[ext_resource type="AudioStream" uid="uid://by5aht3gt3x0v" path="res://sound_effects/PlayerProjectileShot.wav" id="4_ddb47"]
+[ext_resource type="AudioStream" uid="uid://dodtkadembfmm" path="res://sound_effects/PlayerProjectileShot.wav" id="4_ddb47"]
 
 [node name="Projectile" type="Area2D"]
 top_level = true

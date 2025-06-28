@@ -19,7 +19,7 @@
 [ext_resource type="Script" path="res://ui_elements/luck_bar.gd" id="11_gb7j6"]
 [ext_resource type="Script" path="res://ui_elements/buy_health_button.gd" id="16_nywqc"]
 [ext_resource type="Script" path="res://ui_elements/exit_shop_button.gd" id="19_i2tr8"]
-[ext_resource type="AudioStream" uid="uid://tkqlekre6qss" path="res://sound_effects/Purchase.wav" id="20_1dis5"]
+[ext_resource type="AudioStream" uid="uid://dmjrlmyxa7b24" path="res://sound_effects/Purchase.wav" id="20_1dis5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gxrj1"]
 font_size = 10
