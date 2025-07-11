@@ -83,7 +83,6 @@ offset_top = 0.0319979
 offset_right = -0.0560455
 offset_bottom = 0.0479851
 texture = ExtResource("4_f4wbe")
-metadata/_edit_use_anchors_ = true
 
 [node name="Room2" type="Control" parent="AspectRatioContainer/Rooms"]
 layout_mode = 2
@@ -121,7 +120,6 @@ anchor_bottom = 0.409424
 offset_right = 0.0159988
 offset_bottom = -0.0440006
 texture = ExtResource("6_bqchr")
-metadata/_edit_use_anchors_ = true
 
 [node name="Room4" type="Control" parent="AspectRatioContainer/Rooms"]
 layout_mode = 2
